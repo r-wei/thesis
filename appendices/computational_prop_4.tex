@@ -1,0 +1,232 @@
+\begin{figure} \label{fig:upsilon}
+\centerline{\xymatrix{
+A_0 \ar@/^5pc/[r]^{f_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+\ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+& A_1 \ar@/^5pc/[r]^{g_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+& A_2 \ar@/^5pc/[r]^{h_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
+& A_0
+}
+$\overset{\mathcal{B}}\longrightarrow$
+\xymatrix{
+A_2 \ar@/^5pc/[r]^{h_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
+\ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+& A_0 \ar@/^5pc/[r]^{f_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+& A_1 \ar@/^5pc/[r]^{g_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+& A_2
+}}
+\caption{A picture of the domain and target of $\mathcal{B}$}
+\end{figure}
+
+
+\begin{prop}
+\begin{equation} \label{eq:prop4}
+D(\mathcal{B}) = \tau^{2*}({\delta_0}_!) \circ (\delta_0 \tau)^*(\Upsilon) \circ \delta_0^*(\Upsilon) 
+   - \delta_1^*(\Upsilon) \circ {\delta_1}_!.
+\end{equation} where
+\begin{align*}
+\mathcal{B}_{n, m, p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha) 
+= & \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \\
+                          \textrm{as ordered sets}}}
+  1 \otimes \lambda(\vec{\phi}_{I_1})\big( \lambda(\vec{\theta}) \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2})
+  \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1 \big)                          
+\end{align*}
+\end{prop}
+
+\begin{proof}
+We must show: (1) $\mathcal{B}$ is a map of comodules, and (2) Equation \ref{eq:prop4} holds.
+
+(1) This proof is standard for cofree comodules. 
+
+(2) We show that Equation \ref{eq:prop4} holds by direct computation. Since all of the maps are maps of cofree comodules, we only need to check that $\pi_1($Equation \ref{eq:prop4}$)$ holds where $\pi_1$ denotes projection of the comodule onto its degree-1 component, (i.e., $\pi_1: Bar(C^\bullet(A_1, A_2)) \otimes Bar(C^\bullet(A_2, A_0)) \otimes Bar(C^\bullet(A_0, A_1)) \otimes C_{-\bullet}(A_1, A_1) \rightarrow C_{-\bullet}(A_1, A_1)$). More explicitly, we want to check that
+\begin{equation} \label{eq:prop4_expand}
+\begin{aligned}
+%hochschild cochain delta
+\mathcal{B}_{n, m, p} ( \tilde{\delta}(\vec{\phi}) | \vec{\psi} | \vec{\theta} | \alpha ) \; + 
+\mathcal{B}_{n, m, p} ( \vec{\phi} | \tilde{\delta}(\vec{\psi}) | \vec{\theta} | \alpha ) \; + 
+\mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \tilde{\delta}(\vec{\theta}) | \alpha ) \; + \\
+%cochain b prime
+\mathcal{B}_{n-1, m, p} ( b^\prime(\vec{\phi}) | \vec{\psi} | \vec{\theta} | \alpha ) \; + 
+\mathcal{B}_{n, m-1, p} ( \vec{\phi} | b^\prime(\vec{\psi}) | \vec{\theta} | \alpha ) \; + 
+\mathcal{B}_{n, m, p-1} ( \vec{\phi} | \vec{\psi} | b^\prime(\vec{\theta}) | \alpha ) \; + \\
+%chain b
+\mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | b(\alpha) ) \; + 
+b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha ) \; + \\
+%twist before
+ \mathcal{B}_{|I_1|, |J_1|, p-1}(\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \vec{\theta}_{\{1,\cdots, p-1\}} |
+     \theta_{p} \{\vec{\psi}_{J_2}\} \{\vec{\phi}_{I_2}\} \cdot \alpha ) \; + \\
+ \mathcal{B}_{|I_1|, m-1, p}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \vec{\theta} |
+     \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha ) \; + 
+\mathcal{B}_{n-1, m, p}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \vec{\theta} | 
+     \phi_{n} \cdot \alpha) \; + \\
+%twist after
+\phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot
+     \mathcal{B}_{n-1, |J_2|, |K_2|}
+     (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha) \; + \\
+\theta_1 \{\vec{\psi}_{J_1}\} \cdot
+     \mathcal{B}_{n, |J_2|, p-1}
+     (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha) \; +
+\psi_1 \cdot
+     \mathcal{B}_{n, m-1, p}
+     (\vec{\phi} | \vec{\psi}_{\{2,\cdots,m\}} | \vec{\theta} | \alpha) \; + \\
+%prop4
+\upsilon_{n, p \leq * \leq m+p}(\vec{\phi} | \vec{\psi} \bullet \vec{\theta} | \alpha ) \; + \\
+\upsilon_{|I_1| \leq * \leq |I_1| + |K_1|,|J_1|}(\vec{\theta}_{K_1} \bullet \vec{\phi}_{I_1}, \vec{\psi}_{J_1}, 
+    \upsilon_{|J_2| \leq * \leq |I_2| + |J_2|,|K_2|}(\vec{\phi}_{I_2} \bullet \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha )) \\
+%
+=0.
+\end{aligned}
+\end{equation}
+
+We will call the terms in rows 1-3 the ``standard terms'' in the computaion of $D(\mathcal{B})$, and the terms in rows 4-7 the ``extra terms'' in the computation of $D(\mathcal{B})$. The terms in rows 8-9 are $\pi_1$ of the righthand side of Equation \ref{eq:prop4}; we will call these the ``8$^{th}$- and 9$^{th}$-row terms''.
+
+Following the logic of Lemma [number], we compute the sum of the standard terms. In the chart below, the leftmost column lists the expressions that don't cancel in the sum of the standard terms, the middle column gives the standard term from which the expression comes, and the rightmost column gives the term that cancels the expression. 
+
+\newpage
+
+\begin{landscape}
+\begin{center}
+  \begin{tabular}{ p{3.25in} | p{1.75in} | p{2.75in} }
+    \hline
+    Expression & Comes from Standard Term & Cancelling Term \\ \hline
+    %
+    % twist before
+    $1 \otimes \lambda(\vec{\phi}_{I_1}) [
+    \lambda(\vec{\theta}_{\{1,\cdots,p-1\}}
+    \lambda(\vec{\psi}_{J_1})
+    \lambda(\vec{\phi}_{I_2})
+    \mathfrak{a}_2 \otimes 
+    \theta_p(\lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3) \cdot a_0 \otimes
+    \mathfrak{a}_1 ]$ & 
+    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $\mathcal{B}_{|I_1|, |J_1|, p-1}(\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \vec{\theta}_{\{1,\cdots, p-1\}} |
+     \theta_{p} \{\vec{\psi}_{J_2}\} \{\vec{\phi}_{I_2}\} \cdot \alpha )$ \\ \hline
+
+    $1 \otimes \lambda(\vec{\phi}_{I_1}) [
+    \lambda(\vec{\theta}
+    \lambda(\vec{\psi}_{\{1,\cdots,m-1\}})
+    \lambda(\vec{\phi}_{I_2})
+    \mathfrak{a}_2 \otimes 
+    \psi_m(\lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3) \cdot a_0 \otimes
+    \mathfrak{a}_1 ]$ & 
+    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $\mathcal{B}_{|I_1|, m-1, p}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \vec{\theta} |
+     \psi_m \{\vec{\phi}_{I_2}\} \cdot \alpha )$ \\ \hline
+
+    $1 \otimes \lambda(\vec{\phi}_{I_1}) [
+    \lambda(\vec{\theta}
+    \lambda(\vec{\psi}
+    \lambda(\vec{\phi}_{\{1,\cdots,n-1\}})
+    \mathfrak{a}_2 \otimes 
+    \psi_n(\mathfrak{a}_3) \cdot a_0 \otimes
+    \mathfrak{a}_1 ]$ & 
+    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $\mathcal{B}_{n-1, m, p}(\vec{\phi}_{\{1,\cdots, n-1\}} | \vec{\psi} | \vec{\theta} |
+     \phi_n \cdot \alpha )$ \\ \hline
+    %
+    %twist after
+    $\phi_1(\lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2)
+    \otimes \lambda(\vec{\phi}_{I_1\backslash 1})[
+    \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3
+    \otimes a_0 \otimes \mathfrak{a}_1]$ &
+    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $\phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot
+     \mathcal{B}_{n-1, |J_2|, |K_2|}
+     (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)$ \\ \hline
+
+    $f_0\theta_1( \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2)
+    \otimes \lambda(\vec{\phi}_{I_1})[
+    \lambda(\vec{\theta}_{\{2,\cdots,p\}}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3
+    \otimes a_0 \otimes \mathfrak{a}_1]$ &
+    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $\theta_1 \{\vec{\psi}_{J_1}\} \cdot
+     \mathcal{B}_{n, |J_2|, p-1}
+     (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha)$ \\ \hline
+
+    $f_0h_0\psi_1( \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2)
+    \otimes \lambda(\vec{\phi}_{I_1})[
+    \lambda(\vec{\theta}) \lambda(\vec{\psi}_{\{2,\cdots,m\}}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3
+    \otimes a_0 \otimes \mathfrak{a}_1]$ &
+    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $\psi_1 \cdot
+     \mathcal{B}_{n, m-1, p}
+     (\vec{\phi} | \vec{\psi}_{\{2,\cdots,m\}} | \vec{\theta} | \alpha)$ \\ \hline
+
+    %wrap around
+    $f_0h_0g_0 \phi_{i_1} ( \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3})
+       \mathfrak{a}_3 \otimes a_0 \otimes \mathfrak{a}_1) \otimes
+       \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) 
+       \lambda(\vec{\phi}_{I_2 \backslash i_1}) \mathfrak{a}_2$ &
+    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    9$^{th}$ row \\ \hline
+
+    $f_0h_0g_0f_{i_1}a_0 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}) 
+       \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_1$ &
+    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    9$^{th}$ row \\ \hline
+
+    $\phi_1( \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}) 
+       \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3, a_0, \mathfrak{a}_1 ) \otimes
+       \lambda(\vec{\phi}_{I_1 \backslash 1}) \mathfrak{a}_2$ &
+    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    8$^{th}$ row \\ \hline
+
+  \end{tabular}
+\end{center}
+\end{landscape}
+
+\newpage
+\begin{landscape}
+
+Now, we compute the remaining terms from the ninth row. In the chart below, the left column lists the remaining expressions that don't cancel in the ninth row, and the right column gives the extra term that cancels the expression. 
+
+\begin{center}
+  \begin{tabular}{ p{6.25in} | p{2.5in} }
+    \hline
+    Expression from ninth Row & Cancels with Extra Term \\ \hline
+    %twist after
+    $\phi_1(\lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) [
+      \lambda(\vec{\theta}_{K_3}) \lambda(\vec{\psi}_{J_4}) \lambda(\vec{\phi}_{I_5})
+      \mathfrak{a}_3, a_0, \mathfrak{a}_1])
+      \otimes \lambda(\vec{\phi}_{I_1\backslash 1}) \lambda(\vec{\theta}_{K_2}) 
+      \lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_4}) \mathfrak{a}_2$ &
+    $\phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot
+     \mathcal{B}_{n-1, |J_2|, |K_2|}
+     (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)$ \\ \hline
+
+    $f_0\theta_1( \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) [
+      \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_4})
+      \mathfrak{a}_3, a_0, \mathfrak{a}_1])
+      \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}_{K_1 \backslash 1}) 
+      \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_2$ &
+    $\theta_1 \{\vec{\psi}_{J_1}\} \cdot
+     \mathcal{B}_{n, |J_2|, p-1}
+     (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha)$ \\ \hline
+
+    $f_0h_0\psi_1( \lambda(\vec{\phi}_{I_2}) [
+      \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_4})
+      \mathfrak{a}_3, a_0, \mathfrak{a}_1])
+      \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}_{K_1}) 
+      \lambda(\vec{\psi}_{J_1 \backslash 1}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_2$ & 
+    $\psi_1 \cdot
+     \mathcal{B}_{n, m-1, p}
+     (\vec{\phi} | \vec{\psi}_{\{2,\cdots,m\}} | \vec{\theta} | \alpha)$ \\ \hline
+
+    \hline
+  \end{tabular}
+\end{center}
+\end{landscape}
+
+All of the terms in the table describing the expansion of Equation \ref{eq:prop4_expand} cancel, so we're done.
+\end{proof}

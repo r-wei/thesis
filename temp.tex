@@ -1,0 +1,109 @@
+
+\section{The functors $\lambda^*$}
+Let $\lambda:[n] \to [m]$ be a morphism in $\Lambda$. 
+We will define a functor $\lambda^*$ from the category of 
+dg comodules over $B(m)$ to dg comodules over $B(n)$. 
+It is enough to define $\lambda^*$ for the generators of 
+the cyclic category, i.e., for $\lambda \in \{
+\tau_n, \delta_{j,n}, \sigma_{i,n}\}$ (see Equation 
+\ref{eqn:cyclic_generators}). (We will not worry about 
+relations in $\Lambda$ for now--that will be addressed 
+in the following chapters.)
+
+\subsection{Category-theoretic definition of $\lambda^*$}
+For $\lambda:[n] \to [m]$ in $\Lambda$, we have a given a 
+functor, which we will also call $\lambda$, from 
+$B(n) \to B(m)$ (see \ref{sec:cyclic_B(n)}). Let $C$ be an 
+arbitrary dg comodule over $B(m)$. We define 
+$\lambda^* C$ as follows:
+$$
+\lambda^*C := 
+coker \big( B(n)\otimes C 
+\mathrel{\mathop{\rightrightarrows}^
+{\mathrm{1\otimes \Delta_{C}}}_
+{\mathrm{(1\otimes \lambda \otimes 1)\circ (\Delta_{B(n)}\otimes 1})}}
+B(n) \otimes B(m)\otimes C \big).
+$$
+
+Let $f:C\to D$ be a map of dg comodules over $B(m)$. 
+By the universal property of $\lambda^*C$, we can define a 
+morphism $\lambda^*f:\lambda^*C \to \lambda^*D$ by giving a 
+morphism from $(\lambda^*f)^\prime:B(n) \otimes B(m) \otimes C 
+\to \lambda^*D$ such that the two maps 
+\begin{equation}\label{eqn:coker}
+(\lambda^*f)^\prime \circ (1\otimes \Delta_C), \>
+(\lambda^*f)^\prime \circ (1\otimes \lambda \otimes 1)\circ 
+(\Delta_{B(n)}\otimes 1): 
+B(n) \otimes C \rightrightarrows 
+B(n) \otimes B(m) \otimes C \to \lambda^*D
+\end{equation}
+coincide. We define $(\lambda^*f)^\prime$ as follows:
+$$
+(\lambda^*f)^\prime:
+B(n) \otimes B(m) \otimes C 
+\xrightarrow{1\otimes 1\otimes f}
+B(n) \otimes B(m) \otimes D
+\xrightarrow[projection]{canonical}
+\lambda^*D
+$$
+It's easy to check that this map is well-defined (i.e., 
+that the two maps in Equation \ref{eqn:coker} coincide): 
+Let $b\otimes c$ be an arbitrary element of $B(n)\otimes C$. 
+Then,
+\begin{equation*}
+\begin{split}
+[(\lambda^*f)^\prime \circ (1\otimes \Delta_C)] (b\otimes c) = 
+\Sigma_i b \otimes c^i_{(1)}\otimes fc^i_{(2)}\\
+[(\lambda^*f)^\prime \circ (1\otimes \lambda \otimes 1)\circ 
+(\Delta_{B(n)}\otimes 1)] (b \otimes c) =
+\Sigma_i b^i_{(1)}\otimes \lambda b^i_{(2)} \otimes fc.
+\end{split}
+\end{equation*}
+And the righthand sides are equal in the quotient, $\lambda^*D$,
+via the image of $b\otimes fc \in B(n)\otimes D$. More explicitly,
+\begin{align*}
+(1\otimes \Delta_D) (b\otimes fc) 
+&= [(1\otimes \Delta_D) \circ (1\otimes f)] (b\otimes c) \\
+&= [(1 \otimes 1 \otimes f) \circ (1\otimes \Delta_C)]
+  (b\otimes c) \quad \textrm{(f is a map of comodules)}\\
+&= \Sigma_i b \otimes c^i_{(1)}\otimes fc^i_{(2)}\\
+[(1\otimes \lambda \otimes 1)\circ 
+(\Delta_{B(n)}\otimes 1)] (b \otimes fc)
+&= \Sigma_i b^i_{(1)}\otimes \lambda b^i_{(2)} \otimes fc\\
+\end{align*}
+where is $\Delta(b) = \Sigma_i b^i_{(1)}\otimes b^i_{(2)}$
+is Sweedler notation.
+So, $\lambda^*f$ is well-defined. In summary, we have commuting 
+diagrams:
+\begin{equation}\label{cd:lambda^*f}
+\begin{CD}
+B(n)\otimes B(m)\otimes C  
+@>1\otimes 1\otimes f =\textrm{"lift" of }\lambda^*f>>  
+B(n)\otimes B(m)\otimes D \\
+@V\substack{\textrm{canonical}\\ \textrm{projection}}VV
+@V\substack{\textrm{canonical}\\ \textrm{projection}}VV \\
+\lambda^*C @>\lambda^*f>> \lambda^*D.
+\end{CD}
+\end{equation}
+Finally, it is straightforward to see that $\lambda^*$ 
+is a functor, i.e., that $\lambda^*$ preserves composition
+of morphisms: Let $C \overset{f}{\to} D \overset{g}{\to} E$ be 
+composable morphisms of dg comodules over $B(m)$. The lifts of
+$\lambda^*f$, $\lambda^*g$ and $\lambda^*(g\circ f)$ are 
+$1\otimes 1\otimes f$, $1\otimes 1\otimes g$ and 
+$1\otimes 1\otimes gf$, respectively. The lifts 
+respect composition--$(1\otimes 1\otimes g) \circ 
+(1\otimes 1\otimes f) = 1\otimes 1\otimes gf$--and by 
+the commuting diagrams \ref{cd:lambda^*f}, the 
+functor $\lambda^*$ does as well.
+
+\subsection{Explicit description of $\lambda^*C(m)$}
+In this section, we describe $\lambda^*C(m)$ explicitly as 
+complexes. Recall from \ref{sec:comod_strre} that $C(m)$ is 
+quasi-cofree, and let $T(m)$ denote the cogenerators of 
+$C(m)$.
+
+
+\section{The functors $\lambda_*$}
+\section{Adjunction between $\lambda^*$ and $\lambda_*$}
+\section{Maps $\lambda_!$}

@@ -1,0 +1,69 @@
+\subsection{The functors $\lambda_\#$}
+\label{sec:pf_defn}
+Let $\lambda:B_1 \to B_0$ be a functor 
+between conilpotent dg 
+cocategories. Let $C$ be a 
+conilpotent dg comodule over $B_1$.
+We define $\lambda_\# C$ as follows: 
+for $f \in Obj(B_0)$,
+\begin{align*}
+\lambda_\# C(f) := 
+\big( \bigoplus \limits_{f^\prime \in \lambda^{-1}f}
+C^\bullet(f^\prime),\\
+\phantom{{}\lambda_\# C(f):=\big({}}
+\Delta_{\lambda_\#C}(f):
+\bigoplus \limits_{f^\prime \in \lambda^{-1}f}
+C^\bullet(f^\prime)
+&
+\xrightarrow{\bigoplus \limits_{f^\prime} 
+  \Delta_{C^\bullet}(f^\prime)}
+\bigoplus \limits_{
+  \substack{f^\prime \in \lambda^{-1}f\\h^\prime \in Obj(B_1)}}
+ B_1^\bullet(f^\prime,h^\prime) \otimes C^\bullet(h^\prime) \\
+&
+\xrightarrow{\bigoplus \limits_{h^\prime,f^\prime} \lambda 
+\otimes id_{C^\bullet(h^\prime)}}
+\bigoplus \limits_{h^\prime \in Obj(B_1)}
+  B_0^\bullet(f,\lambda h^\prime)
+  \otimes C^\bullet(h^\prime) \\
+&
+\xrightarrow{include}
+\bigoplus \limits_{h \in Obj(B_0)}
+  B_0^\bullet(f,h) \otimes 
+  (\bigoplus \limits_{h^\prime \in \lambda^{-1}h}
+  C^\bullet(h^\prime))   
+\big).
+\end{align*}
+To check that $\Delta_{\lambda_\#C}$ is well-defined, 
+we need that the image of the first map, 
+$\bigoplus \limits_{f^\prime} 
+  \Delta_{C^\bullet}(f^\prime)$, 
+is a finite sum. This is true since 
+$C$ being conilpotent implies that 
+the image of $\Delta_{C^\bullet}(f^\prime)$ 
+is a finite sum for each $f^\prime \in
+Obj(B_1)$. If $\lambda^{-1}f$ is empty, 
+we set $\lambda_\# C(f) := 0$.
+It is straightforward to check 
+that $(\lambda_\#C, \Delta_{\lambda_\#C})$ 
+is coassociative, conilpotent
+and coaugmented. 
+We will call $\lambda_\#$ 
+``co-restriction of scalars''.
+
+Let $F:C \to D$ be map of dg comodules 
+over $B_1$. We define $\lambda_\# F$ as follows:
+$$
+(\lambda_\# F)_f : 
+\lambda_\# C (f) = 
+\bigoplus \limits_{f^\prime \in \lambda^{-1}f}
+C^\bullet(f^\prime)
+\xrightarrow{\bigoplus \limits_{f^\prime \in \lambda^{-1}f}
+F_{f^\prime}} 
+\bigoplus \limits_{f^\prime \in \lambda^{-1}f}
+D^\bullet(f^\prime)
+= \lambda_\# D (f).
+$$
+It's straightforward to check that $\lambda_\#$ 
+is a functor (i.e., respects composition of 
+morphisms).

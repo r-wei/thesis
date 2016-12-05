@@ -1,0 +1,36 @@
+Big To Do's:
+1) transparent description:
+-homotopies/relations between lambda shrieks; failure of functorial composition on maps of comodules (have functorial composition on comodules as objects)
+-codegeneracies
+
+**notation on computational props
+
+2) infinity categorical description
+- resolution of cyclic category
+
+3) apply cobar and adjunctions
+
+4) define braces and signs (functor on conilp, coaug)
+
+5) background and motivation
+- alg in algs: apply cobar/use MS, get an action of an explicit model of E2
+--------
+Background I need:
+- conilp + counital --> coproduct lands in finite sums (maybe using a cofree adjunction?)
+- cofree comodules over cocategories
+- conilp implies unique counits
+- NOTE: we prove the pb/pf adjunction for hom SETS--do we need more?
+----------
+Edit:
+-fix figure references to label captions
+-check finite vs infinite sums
+- check formulas for consistent notation and indexing
+- check margins
+- include vs input
+http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
+- functor vs dg functor???
+
+List of notation:
+-Lambda
+-sweedler notation
+-ground field k

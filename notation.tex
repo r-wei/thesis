@@ -1,0 +1,69 @@
+\subsection{Bar complexes}
+Let $A$, $B$ be algebras over a field $k$ of characteristic zero. 
+\begin{align*}
+\bm{Bar(C^\bullet(A, B))} 
+&= Bar_0(C^\bullet(A, B)) + \bigoplus_{\substack{n \geq 1}} Bar_n(C^\bullet(A, B)) \\
+&= k \oplus 
+  \bigoplus_{\substack{f_0, \cdots, f_n \\ 
+					   \textrm{maps of algebras}, \\
+						n \geq 1}} 
+  C^\bullet(A, \, _{f_0}B_{f_1}) \otimes C^\bullet(A, \, _{f_1}B_{f_2}) \otimes \cdots \otimes C^\bullet(A, \, _{f_{n-1}}B_{f_n})
+\end{align*}
+where $_{f_i}B_{f_j}$ denotes $B$ as a bimodule over $A$ with left and right module structures given by $f_i$ and $f_j$, respectively.
+
+$\bm{\vec{\phi}}$ denotes a typical element of $Bar(C^\bullet(A, B))$. In other words, $\vec{\phi} = \phi_1\otimes \cdots \otimes \phi_n$ where $\phi_i \in C^\bullet(A,  \, _{f_{i-1}}B_{f_i})$ for $1 \leq i \leq n$. We may also write $\bm{\vec{\phi}_{\{1,\cdots, n\}}}$ as shorthand to keep track of the subscript indices. ($\vec{\phi}_{\{\}} = 1 \in Bar_0(C^\bullet(A, B)) = k$.) When convenient, to reduce the number of unique variables, we denote the degree of $\vec{\phi}$ by $\bm{|\vec{\phi}|} = n$. $\newline$
+
+$Bar(C^\bullet(A, B))$ is a dg coalgebra with the usual coproduct $\Delta$ and differential $d_{bar}$ for bar complexes. Namely, 
+\begin{align*}
+\Delta (\phi_1 \otimes \cdots \otimes \phi_n) 
+= &1 \bigotimes \phi_1 \otimes \cdots \otimes \phi_n + \phi_1 \bigotimes \phi_2 \otimes \cdots \otimes \phi_n + \\
+   &+ \cdots + \phi_1 \otimes \cdots \otimes \phi_i \bigotimes \phi_{i+1} \otimes \cdots \otimes \phi_n + \cdots + \\
+  &+ \phi_1 \otimes \cdots \otimes \phi_{n-1} \bigotimes \phi_n + \phi_1 \otimes \cdots \otimes \phi_n \bigotimes 1
+\end{align*}
+\begin{align*}
+d_{bar} (\phi_1 \otimes \cdots \otimes \phi_n) 
+= & \tilde{\delta}(\phi_1 \otimes \cdots \otimes \phi_n) + b^\prime(\phi_1 \otimes \cdots \otimes \phi_n) \\
+= &\bigoplus \pm \phi_1 \otimes \cdots \otimes \delta(\phi_i) \otimes \cdots \otimes \phi_n + \\
+  &\bigoplus \pm \phi_1 \otimes \cdots \otimes \phi_i\cup \phi_{i+1} \otimes \cdots \otimes \phi_n
+\end{align*}
+where $\delta$ is the Hochschild cochain differential, $\tilde{\delta}$ is the extension of $\delta$ to the bar complex, $\cup$ is the cup product on Hochschild cochains, and $b^\prime$ is the extension of the cup product to the bar complex. $\newline$
+
+
+\subsection{Comodules}
+
+$\bm{(\vec{\phi} | \vec{\psi} | \alpha)}$ denotes a typical element of $Bar(C^\bullet(A_0, A_1)) \otimes Bar(C^\bullet(A_1, A_0)) \otimes C_{-\bullet}(A_0, A_0)$. In other words, ($\vec{\phi} | \vec{\psi} | \alpha$) = $\phi_1\otimes \cdots \otimes \phi_n \otimes \psi_1\otimes \cdots \otimes \psi_m \otimes \alpha$ where $\phi_i \in Bar(C^\bullet(A_0, A_1))$ for $1 \leq i \leq n$, $\psi_j \in Bar(C^\bullet(A_1, A_0))$ for $1 \leq j \leq m$, $\alpha \in C_{-\bullet}(A_0, A_0)$. $\newline$
+
+\subsection{Elements of Hochschild chains}
+Let $a_0 \otimes a_1 \otimes \cdots \otimes a_n$ denote a typical element of $C_{-\bullet}(A,A)$. At times, we wish to feed a portion of $a_0 \otimes a_1 \otimes \cdots \otimes a_n$ to a Hochschild cochain (or other map on chains) without specifying the degree of the cochain. To do this, we will rewrite $a_0 \otimes a_1 \otimes \cdots \otimes a_n = a_0 \otimes \mathfrak{a}_1 \otimes \cdots \otimes \mathfrak{a}_r$ where each $\mathfrak{a}_i = a_{j_i} \otimes a_{j_i+1} \otimes \cdots \otimes a_{j_{i+1}-1}$ and $\mathfrak{a}_i$ is an empty chain if $j_i = j_{i+1}$.
+
+For example, if $\phi \in C^2(A,A)$, then we rewrite $\sum a_0 \otimes a_1 \otimes \cdots a_{i-1} \otimes \phi(a_i)$.
+
+
+\subsection{Maps between bar complexes}
+
+$\bm{\tau}$ denotes the flip map $Bar(C^\bullet(A_0, A_1)) \otimes Bar(C^\bullet(A_1, A_0)) \rightarrow Bar(C^\bullet(A_1, A_0)) \otimes Bar(C^\bullet(A_0, A_1))$, which switches the order of the two bar complexes. $\newline$
+
+$\bm{\Upsilon}$ is a linear map $Bar(C^\bullet(A_0, A_1)) \otimes Bar(C^\bullet(A_1, A_0)) \otimes C_{-\bullet}(A_0, A_0) \rightarrow Bar(C^\bullet(A_1, A_0)) \otimes Bar(C^\bullet(A_0, A_1)) \otimes C_{-\bullet}(A_1, A_1)$. It is defined in the standard way so as to make it a map of comodules extending $\tau$. Explicitly, we define linear maps 
+\begin{align*}
+\upsilon_{n,m}: Bar_n(C^\bullet(A_0, A_1)) \otimes Bar_m(C^\bullet(A_1, A_0)) \otimes C_{-\bullet}(A_0, A_0) \rightarrow C_{-\bullet}(A_1, A_1).
+\end{align*}
+Then, we piece together the $\upsilon_{n,m}$ to define $\Upsilon$:
+\begin{align*}
+\Upsilon(\vec{\phi}_{\{1,\cdots,n\}} | \vec{\psi}_{\{1,\cdots,m\}} | \alpha) 
+&= \sum_{\substack{I_1I_2 = \{1,\cdots,n\} \, \textrm{and} \\ 
+				J_1J_2 = \{1,\cdots,m\} \\
+				\textrm{as ordered sets}}}
+	( \tau( \vec{\phi}_{I_1} | \vec{\psi}_{J_1} ) \, |  \, \upsilon_{|I_2|, |J_2|}( \vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha )) \\	
+&= \sum_{\substack{I_1I_2 = \{1,\cdots,n\} \, \textrm{and} \\ 
+				J_1J_2 = \{1,\cdots,m\} \\
+				\textrm{as ordered sets}}}
+	( \vec{\psi}_{I_1} \, | \vec{\phi}_{J_1} \, |  \, \upsilon_{|I_2|, |J_2|}( \vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha )). \\	
+\end{align*} $\newline$
+
+\subsection{Ordered sets}
+
+Let $I_1$, $I_2$ be ordered sets. The degree of an ordered set, denoted $\bm{|\cdot|}$, is the number of elements the set contains.
+
+$\bm{I_1I_2}$ denotes the concatenation of $I_1$ and $I_2$ as ordered sets. For example, if $I_1 = \{1,2,a\}$ and $I_2 = \{6,B,0\}$ are ordered sets, then $I_1I_2 = \{1,2,a,6,B,0\}$. 
+
+When we write $I_1I_2 = \{1,\cdots,n\}$ as ordered sets, $I_1$ or $I_2$ may be empty. 

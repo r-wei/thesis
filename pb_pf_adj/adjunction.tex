@@ -1,0 +1,258 @@
+\section{Adjunction between $\lambda^*$ and $\lambda_\#$}
+In this section, we define $\lambda_\#$, 
+the left adjoint to $\lambda^*$. 
+More precisely, for any functor, $\lambda:
+B_1 \to B_0$ between 
+conilpotent dg cocategories, 
+we define a functor 
+$\lambda_\#$ from the category of 
+conilpotent dg comodules 
+over $B_1$ to the category of 
+conilpotent dg 
+comodules over $B_0$.
+The adjunction will be used to show 
+that structures we've established 
+for $(B(n), C(n))$ still exist 
+after we pass from cocategories and 
+comodules to categories and modules
+by applying (a categorified) $Cobar(-)$ 
+to $(B(n), C(n))$. If a lesson 
+of this thesis is that working with
+cocategories is more tractable 
+than with categories, then the reader 
+may skip this section or save it until 
+s/he is ready for Chapter (...).
+%
+\input{pb_pf_adj/pushforwards}
+%
+\subsection{Adjunction}
+\begin{prop}\label{prop:adjunction}
+Given a functor between 
+conilpotent dg cocategories, 
+$\lambda: B_1 \to B_0$, let
+\begin{equation*}
+\lambda^*:
+\let\scriptstyle\textstyle
+\substack{
+  \textrm{Category of}\\
+  \textrm{conilpotent}\\
+  \textrm{dg comodules over }B_0}
+\leftrightarrows
+\let\scriptstyle\textstyle
+\substack{
+  \textrm{Category of}\\
+  \textrm{conilpotent}\\
+  \textrm{dg comodules over }B_1}
+: \lambda_\#
+\end{equation*}
+be the functors defined in Sections 
+\ref{sec:pb_defn} and \ref{sec:pf_defn}. Then,
+$\lambda_\#$ is left adjoint to $\lambda^*$.
+\end{prop}
+%
+\begin{rem} \label{rem:adjunction}
+Proposition \ref{prop:adjunction} 
+applies, with the same proof, 
+to any functor between 
+conilpotent dg cocategories.
+It is just a (categorified) co-version of the 
+adjunction between extension of scalars 
+(left) and restriction of scalars (right) 
+for modules over algebras.
+\end{rem}
+%
+\begin{proof}[Proof of Proposition \ref{prop:adjunction}]
+Let $C$ be a conilpotent dg comodule 
+over $B_1$ and $D$ be a dg 
+conilpotent dg comodule over $B_0$.
+We want to show that
+$$
+Hom_{B_1}(C,\, \lambda^*D) = 
+Hom_{B_0}(\lambda_\# C,\, D)
+$$
+as sets.
+
+We will give maps 
+$$
+\Phi: Hom_{B_0}
+(\lambda_\# C,\, D) \leftrightarrows Hom_{B_1}
+(C,\, \lambda^*D): \Phi^{-1}
+$$ 
+satisfying 
+$\Phi \circ \Phi^{-1} = id$ and 
+$\Phi^{-1} \circ \Phi = id$. 
+
+First, we define 
+$\Phi$. Let 
+$F$ be a morphism from $\lambda_\# C$ to $D$. 
+By defintion, for $f \in Obj(B_0)$, we 
+have maps of complexes
+$$
+F_f: 
+\bigoplus \limits_{f^\prime \in \lambda^{-1}f}
+C^\bullet(f^\prime)
+\to D^\bullet(f).
+$$
+Define $\Phi F \in Hom_{B_1}(C,\, \lambda^*D)$ 
+as follows: for $f^\prime \in Obj(B_1)$,
+\begin{equation}\label{eqn:Phi_F}
+\begin{split}
+\Phi F_{f^\prime}:
+C^\bullet(f^\prime)
+&
+\xrightarrow{\Delta_C}
+\bigoplus \limits_{h^\prime \in Obj(B_1)}
+  B_1^\bullet(f^\prime, h^\prime) 
+  \otimes C^\bullet(h^\prime) \\
+&
+\xrightarrow{\bigoplus 
+  \limits_{h^\prime}
+  id_{B_1}\otimes 
+  F_{\lambda h^\prime}|_{h^\prime}}
+\bigoplus \limits_{h^\prime \in Obj(B_1)}
+  B_1^\bullet(f^\prime, h^\prime) 
+  \otimes D^\bullet(\lambda h^\prime) \\
+&
+\xrightarrow{include}
+[B_1 \otimes_\lambda D](f^\prime).
+\end{split}
+\end{equation}
+By the universal property of $\lambda^*D$, 
+this defines a morphism $C \to \lambda^*D$ 
+if the two maps
+$$
+(id_{B_1}\otimes \Delta_D) \circ \Phi F, \;
+(id_{B_1}\otimes \lambda \otimes id_D)\circ 
+  (\Delta_{B_1}\otimes id_D) \circ 
+  \Phi F: 
+C \rightrightarrows
+B_1 \otimes_\lambda B_0\otimes D  
+$$
+coincide. In fact, on $f^\prime \in Obj(B_1)$,
+both maps are equal to:
+\begin{align*}
+C^\bullet(f^\prime)
+& \xrightarrow{\Delta_C}
+\bigoplus \limits_{h^\prime \in Obj(B_1)}
+  B_1^\bullet(f^\prime, h^\prime)
+  \otimes C^\bullet(h^\prime)\\
+& \xrightarrow{\bigoplus \limits_{h^\prime} 
+  id_{B_1} \otimes \Delta_C}
+\bigoplus \limits_{g^\prime, h^\prime \in Obj(B_1)}
+  B_1^\bullet(f^\prime, g^\prime)
+  \otimes B_1^\bullet(g^\prime, h^\prime)
+  \otimes C^\bullet(h^\prime)\\
+& \xrightarrow{\bigoplus \limits_{h^\prime,g^\prime}
+  id_{B_1}\otimes \lambda \otimes 1_{C}}
+\bigoplus \limits_{g^\prime, h^\prime \in Obj(B_1)}
+  B_1^\bullet(f^\prime, g^\prime) \otimes
+  B_0^\bullet(\lambda g^\prime, \lambda h^\prime)
+  \otimes C^\bullet(h^\prime)\\
+& \xrightarrow{\bigoplus \limits_{h^\prime,g^\prime}
+  id_{B_1}\otimes id_{B_0} \otimes 
+  F_{\lambda h^\prime}|_{h^\prime}}
+\bigoplus \limits_{g^\prime, h^\prime \in Obj(B_1)}
+  B_1^\bullet(f^\prime, g^\prime) \otimes
+  B_0^\bullet(\lambda g^\prime, \lambda h^\prime)
+  \otimes D^\bullet(\lambda h^\prime).
+\end{align*}
+This fact follows from $F$ being a map of comodules.
+It's also clear that $\Phi F$ commutes with 
+coproducts and differentials. So, we've 
+shown $\Phi F \in Hom_{B_1}(C,\, \lambda^*D)$.
+
+Second, we define $\Phi^{-1}$. Now, let 
+$F \in Hom_{B_1}(C, \lambda^*D)$. 
+For $f \in Obj(B_0)$, define 
+\begin{align*}
+\Phi^{-1}F_f : 
+\bigoplus \limits_{f^\prime \in \lambda^{-1}f}
+  C^\bullet(f^\prime)
+&\xrightarrow{\bigoplus \limits_{f^\prime} 
+  F_{f^\prime}}
+\bigoplus \limits_{\substack{f^\prime \in \lambda^{-1}f,\\
+  h^\prime \in Obj(B_1)}}
+  B_1^\bullet(f^\prime, h^\prime)
+  \otimes D^\bullet(\lambda h^\prime)\\    
+&\xrightarrow{\bigoplus \limits_{f^\prime, h^\prime}
+  \lambda \otimes id_D}
+\bigoplus \limits_{h \in Obj(B_0)}
+  B_0^\bullet(f, h)
+  \otimes D^\bullet(h) \\
+&\xrightarrow{\bigoplus \limits_h
+  \epsilon_{B_0} \otimes id_D}
+D^\bullet(f).
+\end{align*}
+It's clear that $\Phi^{-1}F$ commutes with the 
+differentials. We will show that
+$\Phi^{-1}F$ is a map of comodules.
+Figure \ref{fig:delta_phi-1} gives a diagram 
+showing that 
+\begin{equation}\label{eq:delta_phi-1}
+\Delta_D \circ \Phi^{-1}F_f = 
+(\bigoplus \limits_{f^\prime, h^\prime, r^\prime}
+  \epsilon_{B_0} \lambda \otimes \lambda 
+  \otimes id_{D}) \circ 
+(\bigoplus \limits_{f^\prime, h^\prime}
+  \Delta_{B_1} \otimes id_D) \circ  
+(\bigoplus \limits_{f^\prime}
+ F_{f^\prime}).
+\end{equation}
+On the other hand, Figure 
+\ref{fig:phi-1_delta} gives a diagram 
+showing that 
+\begin{equation} \label{eq:phi-1_delta}
+(id_{B_1}\otimes 
+\Phi^{-1}F) \circ \Delta_{\lambda_\# C} = 
+(\bigoplus \limits_{f^\prime, h^\prime, r^\prime}
+  \lambda \otimes \epsilon_{B_0} \lambda 
+  \otimes id_{D}) \circ
+(\bigoplus \limits_{f^\prime, h^\prime}
+  \Delta_{B_1} \otimes id_D) \circ  
+(\bigoplus \limits_{f^\prime}
+ F_{f^\prime}).
+\end{equation}
+We see that the righthand sides of 
+Equations \ref{eq:delta_phi-1} and 
+\ref{eq:phi-1_delta} are the same 
+except for the $B_0$ factor on which 
+$\epsilon_{B_0}$ acts. However, in general,
+for $\lambda: B_1 \to B_0$ a map 
+of dg cocategories, we have
+\begin{align*}
+(\lambda \otimes \epsilon_{B_0} \lambda)
+  \circ \Delta_{B_1}
+&=
+(id_{B_0} \otimes \epsilon_{B_0}) \circ
+  \Delta_{B_0} \circ \lambda
+\quad \textrm{($\lambda$ commutes with coproduct)}\\
+&= 
+id_{B_0} \circ \lambda  
+\quad \textrm{(definition of cocategory)}\\
+&= 
+(\epsilon_{B_0} \otimes id_{B_0}) \circ
+  (\Delta_{B_0}) \circ \lambda
+\quad \textrm{(definition of cocategory)}\\
+&=
+(\epsilon_{B_0} \lambda \otimes \lambda)
+  \circ \Delta_{B_1}
+\quad \textrm{($\lambda$ commutes with coproduct).}  
+\end{align*}
+So, $(id_{B_1}\otimes \Phi^{-1}F) \circ 
+\Delta_{\lambda_\# C} = \Delta_D \circ \Phi^{-1}F$, 
+and $\Phi^{-1}F \in Hom_{B_0}(\lambda_\#C, D)$.
+
+For $F: C \to \lambda^*D$ a map of 
+dg comodules and $f^\prime 
+\in B_1$, Figure \ref{fig:phi_phi-1} 
+shows that $\Phi\Phi^{-1}F_{f^\prime}
+ = F_{f^\prime}$.
+For $F: \lambda_\# C \to D$ a map of 
+dg comodules and $f 
+\in B_0$, Figure \ref{fig:phi-1_phi} 
+shows that $\Phi^{-1}\Phi F_f= F_f$. 
+Thus, we have $\Phi\Phi^{-1} = id$ 
+and $\Phi^{-1}\Phi = id$.
+\end{proof}
+%
+\input{pb_pf_adj/adjunction_diagrams}

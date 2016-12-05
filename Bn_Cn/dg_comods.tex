@@ -1,0 +1,313 @@
+\section{Dg comodules: $C(n)$}
+%
+\subsection{Background on dg comodules}
+\begin{defn} A \textbf{dg comodule} $C$ 
+over a dg cocategory $B$ consists
+of the following data:
+\begin{itemize}
+\item for each object $f \in B$, a complex $C^\bullet(f)$, and
+\item maps of complexes
+\begin{equation*}
+\Delta_C(f): C^\bullet(f) \to 
+\prod\limits_{g \in Obj(B)} B^\bullet(f,g) \otimes C^\bullet(g).
+\end{equation*}
+\end{itemize}
+such that the following diagrams 
+for coassociativity and 
+counitality commute:
+$$
+\xymatrixcolsep{5pc}
+\xymatrixrowsep{5pc}
+\xymatrix{
+C^\bullet(f)
+\ar[r]^{\Delta_C(f)}
+\ar[d]_{\Delta_C(f)}
+& \prod \limits_{g \in Obj(B)}
+B^\bullet(f,g) \otimes
+C^\bullet(g)
+\ar[d]^{\prod\limits_g 
+id_{B(f,g)} \otimes \Delta_C(g)}\\
+\prod \limits_{g \in Obj(B)}
+B^\bullet(f,g) \otimes
+C^\bullet(g)
+\ar[r]^{\prod\limits_g 
+\Delta_B(f,g) \otimes id_{C(g)}}
+& \prod \limits_{g, g^\prime \in Obj(B)}
+B^\bullet(f,g) \otimes
+B^\bullet(g,g^\prime) \otimes
+C^\bullet(g^\prime)  
+}
+$$
+$$
+\xymatrixcolsep{5pc}
+\xymatrixrowsep{5pc}
+\xymatrix{
+C^\bullet(f)
+\ar[r]^{\Delta_C(f)}
+\ar[rd]_{id}
+& \prod \limits_{g \in Obj(B)}
+B^\bullet(f,g) \otimes
+C^\bullet(g)
+\ar[d]^{\prod \limits_g
+\epsilon_B(f,g)
+\otimes id_{C(g)}} \\
+%
+& C^\bullet(f).  
+}
+$$
+\end{defn}
+To simplify notation, we will 
+write $\Delta_C$ instead of 
+$\Delta_C(f)$ when the meaning 
+is clear.
+%
+\begin{eg}
+A dg comodule over a dg cocategory $B$ with one object, $*$, is 
+a dg comodule over the counital dg coalgebra $B^\bullet(*,*)$.
+\end{eg}
+%
+\begin{defn} A \textbf{morphism of dg comodules}
+$H: C \to D$
+over a dg category $B$ consists of 
+maps of complexes
+$\big( H_f: C^\bullet(f) \to D^\bullet(f)
+\big)_{f \in Obj(B)}$ such that
+for each $f\in Obj(B)$, the
+following diagram commutes:
+\begin{equation*}
+\begin{CD}
+C^\bullet(f)  @>H_f>>  D^\bullet(f) \\
+@VV\Delta_{C}V  @VV\Delta_{D}V \\
+\prod\limits_{g \in Obj(B)} B^\bullet(f,g) \otimes C^\bullet(g) 
+@>\prod\limits_g id_B \otimes H_g>> 
+\prod\limits_{g \in Obj(B)} B^\bullet(f,g)) \otimes D^\bullet(g).
+\end{CD}
+\end{equation*}
+\end{defn}
+Again, when the meaning is clear, 
+we may write $H$ instead of $H_f$.
+%
+\begin{defn} A \textbf{conilpotent} dg 
+comodule over a dg cocategory $B$ 
+is a dg comodule $(C, \Delta_C)$ 
+over $B$ satisfying: for each 
+$f \in Obj(B)$ and each element 
+$\alpha \in C^\bullet(f)$, there exists 
+$n_\alpha \in \mathbb{N}$ such that 
+$\bar{\Delta}_f^{n_\alpha}(\alpha) = 0$
+where
+\begin{align*}
+\bar{\Delta}_C(f): C^\bullet(f) 
+&\to 
+  \prod \limits_{g \in Obj(B)} 
+  B^\bullet(f,g) \otimes
+  C^\bullet(g)\\
+\alpha
+&\mapsto
+\Delta_B(\alpha) 
+  - \sum \limits_{e_f \in 
+  \epsilon_B(f,f)^{-1}(1)}
+  e_f \otimes f.
+\end{align*}
+\end{defn}
+%
+
+\subsection{Structure of $C(n)$}
+\textbf{Reminder:} In this chapter, we fix algebras $A_0, A_1, \cdots, A_n$.
+$C(n)$ and $B(n)$ are short for $C(A_0 \to A_1 \to \cdots \to A_n \to A_0)$
+and $B(A_0 \to A_1 \to \cdots \to A_n \to A_0)$, respectively.
+\newline
+\newline
+We now give dg comodules $C(n)$ over $B(n)$.
+First, we will describe the graded comodule structure;
+then, we will describe the differentials.
+For an object $f = (f_0, f_1, \cdots, f_n) \in B(n)$, we have
+%
+\begin{equation}\label{eq:C(f)}
+C(n)^\bullet(f) 
+= \bigoplus\limits_{g \in Obj(B(n))} B(n)^\bullet(f,g) \otimes 
+C_{-\bullet}(A_0, _{comp(g)}{A_0}_{id})
+\end{equation}
+%
+where, for $g = (g_0, g_1, \cdots, g_n)$, 
+we write $comp(g) = g_n \circ g_{n-1} \circ \cdots \circ g_0$,
+and $C_\bullet(A,B)$ denotes Hochschild chains.
+We will denote a typical element of $C(n)^\bullet(f)$ 
+as $$\phi_{0,1}\smdots\phi_{0,k_0} | 
+\phi_{1,1}\smdots\phi_{1,k_1} | \dots |
+\phi_{n,1}\smdots\phi_{n,k_n} | \alpha$$
+where $\phi_{0,1}\cdots \phi_{n,k_n}$ is a morphism
+in $B(n)$ (see Section \ref{sec:phi_notation}) and
+$\alpha \in C_{-\bullet}(A_0, _{f_{k_n}\cdots f_{k_0}}{A_0}_{id})$.
+See Figure \ref{fig:phi|alpha} for a picture of 
+a typical element of $C(n)^\bullet(f)$.
+% long form of equation
+% \begin{align*}
+% C^\bullet(f) 
+% = C_{-\bullet}(A_0, _{f_n\cdots f_1 f_0}{A_0}_{id}) \oplus \\
+%   \bigoplus_{\substack{f_{i,j} \textrm{ maps of algebras}, \\
+% 					   \textrm{and } f_{r,0} = f_r, \\
+% 					   0\leq r\leq n}} 
+% & C^\bullet(A_0, \, _{f_{0,0}}{A_1}_{f_{0,1}}) \otimes 
+%   C^\bullet(A_0, \, _{f_{0,1}}{A_1}_{f_{0,2}}) \otimes \cdots \otimes 
+%   C^\bullet(A_0, \, _{f_{0,k_0-1}}{A_1}_{f_{0,k_0}}) \otimes \\ \otimes
+% & C^\bullet(A_1, \, _{f_{1,0}}{A_2}_{f_{1,1}}) \otimes 
+%   C^\bullet(A_1, \, _{f_{1,1}}{A_2}_{f_{1,2}}) \otimes \cdots \otimes 
+%   C^\bullet(A_1, \, _{f_{1,k_1-1}}{A_2}_{f_{1,k_1}}) \otimes \\ \otimes
+% & \cdots \otimes \\ \otimes
+% & C^\bullet(A_n, \, _{f_{n,0}}{A_0}_{f_{n,1}}) \otimes 
+%   C^\bullet(A_n, \, _{f_{n,1}}{A_0}_{f_{n,2}}) \otimes \cdots \otimes 
+%   C^\bullet(A_n, \, _{f_{n,k_n-1}}{A_0}_{f_{n,k_n}}) \otimes \\ \otimes
+% & C_{-\bullet}(A_0, _{f_{n,k_n}\cdots f_{1, k_1} f_{0, k_0}}{A_0}_{id})
+% \end{align*}
+\begin{figure}
+\centerline{\xymatrix{
+A_0 \ar@/^5pc/[r]^{f_{0,0}} 
+\ar@/^2pc/[r]^{\bm{\big\Downarrow \phi_{0,1}}}_{f_{0,1}} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_{0,k_0}}}
+\ar@/_9pc/[rrrrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+& A_1 \ar@/^5pc/[r]^{f_{1,0}} 
+\ar@/^2pc/[r]^{\bm{\big\Downarrow \phi_{1,1}}}_{f_{1,1}} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_{1,k_1}}}
+& A_2 \ar@{.>}@/^5pc/[r] 
+\ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \vdots}} 
+\ar@{.>}@/_2pc/[r]
+& \cdots \ar@{.>}@/^5pc/[r] 
+\ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \vdots}} 
+\ar@{.>}@/_2pc/[r]
+& A_n \ar@/^5pc/[r]^{f_{n,0}} 
+\ar@/^2pc/[r]^{\bm{\big\Downarrow \phi_{n,1}}}_{f_{n,1}} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_{n,k_n}}}
+& A_0 
+}}
+\caption{Pictoral representation of an element of
+$C(n)^\bullet(f)$ where 
+$f = (f_0 = f_{0,0}, f_1 = f_{1,0}, \cdots, f_n = f_{n,0})$, 
+$\phi_{i,j} \in C^\bullet(A_i, _{f_{j-1}}{A_{i+1}}_{f_j})$, and 
+$\alpha \in C_{-\bullet}(A_0, _{f_n\cdots f_1 f_0}{A_0}_{id})$}
+ \label{fig:phi|alpha}
+\end{figure}
+%
+\subsubsection{Comodule structure}\label{sec:comod_strre}
+The comodule maps on $C(n)^\bullet(f)$ are given by the
+cocomposition maps in $B(n)$: 
+%
+\begin{equation*}
+\begin{CD}
+C(n)^\bullet(f) @>\Delta_C>>
+\bigoplus\limits_{h \in Obj(B(n))} B(n)^\bullet(f,h) \otimes C(n)^\bullet(h) \\
+@|  @| \\
+\bigoplus\limits_{g \in Obj(B(n))} B(n)^\bullet(f,g) \otimes C_{-\bullet}(A_0, _g{A_0}_{id})
+@>\Delta_{B(n)}\otimes 1_{C_{-\bullet}}>>
+\bigoplus\limits_{g,h\in Obj(B(n))} \substack{B(n)^\bullet(f,h)\otimes B(n)^\bullet(h,g) \\ \otimes 
+C_{-\bullet}(A_0, _g{A_0}_{id})}
+\end{CD} 
+\end{equation*}
+%
+Because $\Delta_{C(n)}$ is induced by 
+$\Delta_{B(n)}$, we have that $\Delta_{C(n)}$ 
+satisfies coassocitivity and counitality 
+and is conilpotent. 
+
+$C(n)$ is quasi-cofree 
+(i.e., cofree as a comodule) in the sense that 
+a morphism to $C(n)$ is determined by projections
+to its Hochschild-chains component.
+More precisely, there is a one-to-one correspondence
+\begin{equation}\label{eq:quasicofree}
+\bigg\{ \let\scriptstyle\textstyle
+\substack{\textrm{maps of comodules}\\
+  D \to C(n)\textrm{ over } B(n)}
+\bigg\}
+\overset{1:1}\longleftrightarrow
+\bigg\{ \bigg( \let\scriptstyle\textstyle
+\substack{\textrm{maps of graded vector spaces}\\
+  D^\bullet(f) \to C_{-\bullet}(A_0, _f{A_0}_{id})}
+\bigg)_{f \in Obj(B(n))} \bigg\}.
+\end{equation}
+%
+\begin{defn}\label{def:cogenerators}
+We will call elements of 
+$T(A_0 \to \smdots A_n \to A_0)(f) :=
+C_{-\bullet}(A_0, _f{A_0}_{id})$ 
+the \textbf{cogenerators} of 
+$C(A_0 \to \smdots A_n \to A_0)(f)$. 
+More generally, we will refer to 
+the set $T(A_0 \to \smdots A_n \to A_0) 
+= \{T(A_0 \to \smdots A_n \to A_0)(f) | 
+f \in Obj(B(A_0 \to \smdots A_n \to A_0))\}$ 
+as the \textbf{cogenerators} of 
+$C(A_0 \to \smdots A_n \to A_0)$. When we 
+have fixed a sequence of algebras, 
+$A_0, \smdots A_n$, we will 
+use $T(n)$ to denote 
+$T(A_0 \to \smdots A_n \to A_0)$.
+\end{defn}
+%
+\subsubsection{Differential}
+The differential $d_{C(n)}(f)$ on $C(n)^\bullet(f)$ is: 
+%
+\begin{equation} \label{eq:C(n)_differential}
+d_{C(n)}(f) = 
+\sum\limits_{g \in Obj(B(n))} 
+(d_{B(n)} \otimes id_{C_{-\bullet}}
++ id_{ B(n)}\otimes b_g)
++ \mathcal{I}
+\end{equation}
+%
+where $d_{B(n)}$ is the differential on $B(n)$, 
+$b_g$ is the Hochschild-chain differential on 
+$C_{-\bullet}(A_0, _g{A_0}_{id})$, 
+and $\mathcal{I}$ is a term that captures the action of cochains on chains 
+described by the equations below:
+%
+\begin{equation}\label{eq:action_term}
+\begin{split}
+\mathcal{I} 
+&= 
+(id_{B(n)} \otimes \eta_{C(n)})
+  \circ \Delta_{C(n)}\\
+\eta_{C(n)}(
+\phi_{0,1}\smdots\phi_{0,k_0} | \dots |
+\phi_{n,1}\smdots\phi_{n,k_n} | \alpha)
+&= 
+\iota_{C(0)}( \pi_{B(0)}( 
+(\phi_{0,1}\smdots \phi_{0,k_0}) \bullet \dots \bullet
+(\phi_{n,1}\smdots \phi_{n,k_n})), \alpha)\\
+\bullet
+&= 
+\textrm{brace operation on Hochschild cochains see ...}\\
+\pi_{B(0)}: 
+B(0)^\bullet
+(f_{n,1}\smdots f_{1,1} f_{0,1}, 
+f_{n,k_n}\smdots f_{1,k_1} f_{0,k_0})
+&\xrightarrow[component]{project\;onto}
+C^\bullet(A_0, _{f_{n,1}\smdots f_{0,1}}{A_0}_{f_{n,k_n}\smdots f_{0,k_0}})\\
+\iota_{C(0)}: C^p(A, _fA_g) \bigotimes C_{-q}(A, _gA_h) 
+&\longrightarrow 
+C_{-(q-p)}(A, _fA_h) \\
+\phi \bigotimes a_0\otimes \dots \otimes a_q 
+&\mapsto 
+\phi(a_{q-p+1},\dots,a_q)\cdot a_0 
+\otimes a_1 \otimes \dots \otimes a_{q-p}.
+\end{split}
+\end{equation}
+%
+Given Equation \ref{eq:C(n)_differential}, 
+it's easy to check that we can promote 
+Equation \ref{eq:quasicofree} to a dg statement:
+%
+\begin{equation*}
+\bigg\{ \let\scriptstyle\textstyle
+\substack{\textrm{maps of dg comodules}\\
+  D \to C(n)\textrm{ over }B(n)} 
+\bigg\}
+\overset{1:1}{\longleftrightarrow}
+\bigg\{ \bigg( \let\scriptstyle\textstyle
+\substack{\textrm{maps of complexes}\\
+  D^\bullet(f) \to C_{-\bullet}(A_0, _f{A_0}_{id})}
+\bigg)_{f \in Obj(B(n))} \bigg\}.
+\end{equation*}
+%
+\subsection{differential on $C(n)$--needs signs, 
+reference $\bullet$ on cochains defined somewhere else}

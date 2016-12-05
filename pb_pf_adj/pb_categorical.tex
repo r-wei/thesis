@@ -1,0 +1,311 @@
+\subsection{Category-theoretic definition of $\lambda^*$}
+\label{sec:pb_defn}
+Let $\lambda$ be as above, and let $C$ 
+be a conilpotent dg 
+comodule over $B_0$. We define 
+$\lambda^* C$ as follows:
+\begin{equation} \label{eq:pb_defn}
+\lambda^*C := 
+ker \big( B_1\otimes_\lambda C 
+\mathrel{\mathop{\rightrightarrows}^
+{\mathrm{id_{B_1}\otimes \Delta_{C}}}_
+{\mathrm{(id_{B_1}\otimes \lambda \otimes id_C)
+  \circ (\Delta_{B_1}\otimes id_C})}}
+B_1 \otimes_\lambda B_0\otimes C \big)
+\end{equation}
+where $B_1\otimes_\lambda C$ and 
+$B_1\otimes_\lambda B_0 \otimes C$ are dg comodules
+over $B_1$ defined below. 
+For $f \in Obj(B_1)$,
+\begin{align*}
+[B_1 \otimes_\lambda C](f) 
+:&= 
+\big(
+\bigoplus \limits_{h \in Obj(B_1)} B_1^\bullet(f, h) 
+\otimes C^\bullet(\lambda h), 
+\Delta(f) = 
+\bigoplus \limits_{h} \Delta_{B_1(f, h)} 
+\otimes id_{C(\lambda h)}
+\big) \\
+[B_1 \otimes_\lambda B_0 \otimes C](f) 
+:&= 
+\big(
+\bigoplus \limits_{\substack{h_1 \in Obj(B_1),\\ h_2 \in Obj(B_0)}}
+B_1^\bullet(f, h_1) \otimes 
+B_0^\bullet(\lambda h_1, h_2) \otimes
+C^\bullet(h_2), \\
+& \phantom{{}:=\big( {}}
+\Delta(f) = 
+\bigoplus \limits_{h_1,\,h_2} \Delta_{B_1(f, h_1)} 
+\otimes id_{B_0(\lambda h_1, h_2)} 
+\otimes id_{C(h_2)}
+\big).
+\end{align*}
+The names of the maps in Equation \ref{eq:pb_defn} 
+are also meant to be suggestive. In full detail, 
+for $f \in Obj(B_1)$,
+$$
+{[id_{B_1}\otimes \Delta_{C}]}(f) 
+:=
+\bigoplus \limits_{h} id_{B_1(f, h)} \otimes \Delta_C(\lambda h)
+$$
+and 
+\begin{align*}
+[B_1 \otimes_\lambda C](f)
+&\xrightarrow{
+{[\Delta_{B_1}\otimes id_C]}(f) :=
+\bigoplus \limits_{h} \Delta_{B_1}(f, h) 
+  \otimes id_{C(\lambda h)}}
+%
+\bigoplus \limits_{h_1,h_2 \in Obj(B_1)}
+B_1(f, h_1) \otimes B_1(h_1, h_2) 
+\otimes C(\lambda h_2) \\
+%
+&\xrightarrow{
+{[id_{B_1}\otimes \lambda \otimes id_C]}(f) := 
+\bigoplus \limits_{h_1,\,h_2} id_{B_1(f, h_1)} \otimes \lambda(h_1,h_2)
+\otimes id_{C(\lambda h)}}
+[B_1 \otimes_\lambda B_0 \otimes C](f). 
+\end{align*}
+That the kernel is well-defined follows formally from the 
+abelianness of the category of chain complexes, but it is also 
+easy to check that the induced differentials from 
+$[B_1\otimes_\lambda C](f)$ 
+on the kernel are well-defined. 
+Since $\Delta_{\lambda^*C}$ is 
+induced by $\Delta_{B_1}$, we have
+that $\Delta_{\lambda^*C}$ also satisfies 
+coassociativity, counitality and 
+conilpotency.
+
+Next, we will define $\lambda^*$ on morphisms.
+Let $F:C\to D$ be a map of conilpotent 
+dg comodules over $B_0$. 
+By the universal property of $\lambda^*D$, we can define a 
+morphism $\lambda^*F:\lambda^*C \to \lambda^*D$ by giving a 
+morphism from $(\lambda^*F)^\prime:\lambda^*C \to 
+B_1 \otimes_\lambda D$ such that the two maps 
+\begin{equation}\label{eqn:coker}
+(id_{B_1}\otimes \Delta_D) \circ (\lambda^*F)^\prime, \>
+(id_{B_1}\otimes \lambda \otimes id_D)\circ 
+(\Delta_{B_1}\otimes id_D) \circ (\lambda^*F)^\prime: 
+\lambda^*C \to B_1 \otimes_\lambda D 
+\rightrightarrows
+B_1 \otimes_\lambda B_0 \otimes D
+\end{equation}
+coincide. We define $(\lambda^*F)^\prime$ as follows:
+$$
+(\lambda^*F)^\prime:
+\lambda^*C
+\xrightarrow[inclusion]{canonical}
+B_1 \otimes_\lambda C 
+\xrightarrow{id_{B_1}\otimes F}
+B_1 \otimes_\lambda D
+$$
+It's easy to check that the two maps in Equation 
+\ref{eqn:coker} coincide: 
+Let $b\otimes c$ be an arbitrary element of $\lambda^*C(f)
+\hookrightarrow [B_1\otimes_\lambda C](f)$. 
+Then,
+\begin{align*}
+[(id_{B_1}\otimes \Delta_D) \circ (\lambda^*F)^\prime] (b\otimes c) 
+&= \sum \limits_{(Fc)} b \otimes (Fc)_{(1)} \otimes (Fc)_{(2)} \\
+&= \sum \limits_{(c)} b \otimes Fc_{(1)} \otimes Fc_{(2)} 
+\quad \textrm{(F is a map of comodules)}\\
+&= [(id_{B_1}\otimes F \otimes F) \circ (id_{B_1}\otimes \Delta_C)] 
+(b\otimes c) \\
+&= [(id_{B_1}\otimes F\otimes F) \circ 
+(id_{B_1}\otimes \lambda \otimes id_C)\circ 
+(\Delta_{B_1}\otimes id_C)] (b\otimes c)\\
+&\quad \textrm{($b\otimes c$ is in the kernel)}\\
+&= \sum \limits_{(b)} b_{(1)}\otimes \lambda b_{(2)} \otimes Fc \\
+&= [(id_{B_1}\otimes \lambda \otimes id_D)\circ 
+(\Delta_{B_1}\otimes id_D) \circ (\lambda^*F)^\prime] 
+(b \otimes c).
+\end{align*}
+So, $\lambda^*F$ is well-defined. In summary, we have commuting 
+diagrams:
+\begin{equation}\label{cd:lambda^*f}
+\begin{CD}
+\lambda^*C
+@>\substack{\textrm{canonical}\\ \textrm{inclusion}}>>
+B_1\otimes_\lambda C \\
+@V\lambda^*FVV 
+@VVid_{B_1}\otimes F = \textrm{ map inducing } \lambda^*FV \\
+\lambda^*D
+@>\substack{\textrm{canonical}\\ \textrm{inclusion}}>>
+B_1\otimes_\lambda D
+\end{CD}
+\end{equation}
+Finally, it is straightforward to see that $\lambda^*$ 
+is a functor, i.e., that $\lambda^*$ preserves composition
+of morphisms: Let $C \overset{F}{\to} D \overset{G}{\to} E$ be 
+composable morphisms of dg comodules over $B_0$. 
+The maps inducing 
+$\lambda^*F$, $\lambda^*G$ and $\lambda^*(G\circ F)$ are 
+$id_{B_1}\otimes F$, $id_{B_1}\otimes G$ and 
+$id_{B_1}\otimes GF$, respectively. The inducing maps
+respect composition--$(id_{B_1}\otimes G) \circ 
+(id_{B_1}\otimes F) = id_{B_1}\otimes GF$--and by 
+the commuting diagrams \ref{cd:lambda^*f}, the 
+functor $\lambda^*$ does as well.
+%
+\begin{prop} \label{prop:pbs_compose}
+Let $F:B_2 \to B_1$ and $G: B_1 \to B_0$ 
+be functors between dg cocategories $B_2$, $B_1$ and 
+$B_0$. Let $M$ be a dg comodule over $B_0$. Then,
+$$
+(GF)^*M \cong F^*G^*M.
+$$
+\end{prop}
+%
+\begin{proof}
+We will prove the proposition by showing that 
+$F^*G^*M$ satisfies the universal property of 
+$(GF)^*M$. First, let $N$ be a dg comodule over $B_2$ 
+and $H: N \to B_2 \otimes_{GF} M$ be a map of 
+dg comodules such that the two maps 
+\begin{equation}\label{eq:H_reln}
+(id_{B_2} \otimes GF \otimes id_M) \circ 
+(\Delta_{B_2}\otimes id_M) \circ H, \>
+(id_{B_2} \otimes \Delta_M) \circ H: 
+N \to B_2 \otimes_{GF} M
+\rightrightarrows 
+B_2 \otimes_{GF} \otimes B_0 \otimes M
+\end{equation}
+coincide. We will show that $H$ determines a 
+map of dg comodules $\tilde{H}: N \to F^*G^*M$. 
+Let $x \in Obj(B_2)$. Define 
+\begin{align*}
+H^\prime_x: N(x)
+&\xrightarrow{H_x}
+\bigoplus \limits_{y \in Obj(B_2)}
+  B_2(x,y) \otimes M(GFy)\\
+&\xrightarrow{F \otimes id_M}
+\bigoplus \limits_{y \in Obj(B_2)}
+  B_1(Fx,Fy) \otimes M(GFy)\\
+&\subset
+[B_1 \otimes_G M](Fx).  
+\end{align*}
+The image of $H^\prime_x$ lands in 
+$G^*M(Fx)$, a subcomplex of 
+$[B_1 \otimes_G M](Fx)$; checking 
+this is straightforward using the 
+universal property of $G^*M$, the 
+fact that $F$ commutes with the 
+coproducts, and Equation \ref{eq:H_reln}. 
+So, for 
+each $x \in Obj(B_2)$, we have a map  
+of complexes $H^\prime_x: N(x) \to 
+G^*M(Fx)$. Now define $\tilde{H}$ as 
+follows:
+\begin{align*}
+\tilde{H}_x: N(x) 
+&\xrightarrow{\Delta_N}
+\prod \limits_{y \in Obj(B_2)}
+  B_2(x,y) \otimes N(y)\\
+&\xrightarrow{\prod id_{B_2} \otimes H^\prime_y}  
+\prod \limits_{y \in Obj(B_2)}
+  B_2(x,y) \otimes G^*M(Fy)\\
+&\subset
+[B_2 \otimes_F G^*M](x).
+\end{align*}
+Showing that $\tilde{H}$ lands in 
+$G^*F^*M$, a subcomodule of 
+$[B_2 \otimes_F G^*M]$, is also 
+straightforward; we only need that 
+$F$ and $H$ commute with the appropriate 
+coproducts, and that the cocomposition 
+on $B_2$ is coassociative. So, for each 
+$x \in Obj(B_2)$, we have a map 
+$\tilde{H}_x: N(x) \to G^*F^*M(x)$. 
+It's clear that $\tilde{H}$ is a map 
+of dg comodules since all of the maps in 
+the composition of $\tilde{H}$ are maps 
+of dg comodules.
+
+Now, let $\tilde{H}: N \to F^*G^*M$ 
+be a map of dg comodules over $B_2$. 
+We will show 
+that $\tilde{H}$ determines a map of dg 
+comodules $H: N \to B_2 \otimes_GF M$ 
+satisfying Equation \ref{eq:H_reln}. 
+For $x \in Obj(B_2)$, let $H$ be 
+defined as follows:
+\begin{align*}
+H_x: N(x)
+&\xrightarrow{\tilde{H}_x}
+F^*G^*M(x)\\
+&\xrightarrow[inclusion]{canonical}
+\bigoplus \limits_{\substack{
+	y \in Obj(B_2)\\
+	z_1 \in Obj(B_1)}}
+  B_2(x,y) \otimes B_1(Fy, z_1) \otimes 
+  M(Gz_1)\\
+&\xrightarrow{id_{B_2} \otimes \epsilon_{B_1} 
+   \otimes id_M}  
+\bigoplus \limits_{y \in Obj(B_2)}
+  B_2(x,y) \otimes M(GFy).
+\end{align*}
+The universal property of $G^*M$ implies 
+that $(id_{B_2} \otimes \Delta_M) \circ H$ 
+is equal to:
+\begin{align*}
+N(x)
+&\xrightarrow{\tilde{H}_x} 
+\bigoplus \limits_{\substack{
+	y \in Obj(B_2)\\
+	z_1 \in Obj(B_1)}}
+  B_2(x,y) \otimes B_1(Fy, z_1) \otimes 
+  M(Gz_1)\\
+&\xrightarrow[(id_{B_2} \otimes \Delta_{B_1} 
+  \otimes id_M)]{(id_{B_2} \otimes id_{B_1}
+  \otimes G \otimes id_M)\circ}
+\bigoplus \limits_{\substack{
+	y \in Obj(B_2)\\
+	y_1, z_1 \in Obj(B_1)}}
+  B_2(x,y) \otimes B_1(Fy, y_1) \otimes 
+  B_0(Gy_1, Gz_1) \otimes M(Gz_1) \\
+&\xrightarrow{id_{B_2} \otimes \epsilon_{B_1}
+  \otimes id_{B_0} \otimes id_M}
+\bigoplus \limits_{\substack{
+	y \in Obj(B_2)\\
+	z_1 \in Obj(B_1)}}
+  B_2(x,y) \otimes B_0(GFy, Gz_1) \otimes M(Gz_1).   
+\end{align*}
+On the other hand, the universal property 
+of $F^*$ implies that $(id_{B_2} \otimes GF 
+\otimes id_M) \circ (\Delta_{B_2}\otimes id_M) 
+\circ H$ is equal to:
+\begin{align*}
+N(x)
+&\xrightarrow{\tilde{H}_x} 
+\bigoplus \limits_{\substack{
+	y \in Obj(B_2)\\
+	z_1 \in Obj(B_1)}}
+  B_2(x,y) \otimes B_1(Fy, z_1) \otimes 
+  M(Gz_1)\\
+&\xrightarrow[(id_{B_2} \otimes \Delta_{B_1} 
+  \otimes id_M)]{(id_{B_2} \otimes G
+  \otimes id_{B_1} \otimes id_M)\circ}
+\bigoplus \limits_{\substack{
+	y \in Obj(B_2)\\
+	y_1, z_1 \in Obj(B_1)}}
+  B_2(x,y) \otimes B_0(GFy,Gy_1) \otimes
+  B_1(y_1, z_1) \otimes M(Gz_1) \\
+&\xrightarrow{id_{B_2} \otimes id_{B_0} 
+  \otimes \epsilon_{B_1} \otimes id_M}
+\bigoplus \limits_{\substack{
+	y \in Obj(B_2)\\
+	z_1 \in Obj(B_1)}}
+  B_2(x,y) \otimes B_0(GFy, Gz_1) \otimes M(Gz_1).   
+\end{align*}
+So, the difference between the two maps 
+in Equation \ref{eq:H_reln} comes down 
+to the difference between 
+$(\epsilon_{B_1} \otimes G) \circ \Delta_{B_1}$ 
+and $(G \otimes \epsilon_{B_1}) \circ \Delta_{B_1}$. 
+However, by the counitality of $B_1$, both of 
+these maps are equal to $G$. So, $H$ satisfies 
+Equation \ref{eq:H_reln}.
+\end{proof}

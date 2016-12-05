@@ -1,0 +1,290 @@
+\section{Dg cocategories: $B(n)$}\label{sec:B(n)}
+%
+\subsection{Background on dg cocategories}
+\begin{defn} A \textbf{dg cocategory} is a 
+cocategory enriched over chain complexes. 
+More explicitly, a dg cocategory $B$ consists 
+of the following data:
+\begin{itemize}
+\item A collection of objects 
+  denoted $Obj(B)$;
+\item For each pair of objects, $x,z \in 
+  Obj(B)$, a complex $B^\bullet(x,z)$ and 
+  a morphism of complexes
+  $$
+  \Delta_B(x,z): B^\bullet(x,z) \to 
+  \prod \limits_{y \in Obj(B)}
+  B^\bullet(x,y) \otimes
+  B^\bullet(y,z)
+  $$
+  such that the following diagrams 
+  commute (coassociativity):
+  $$
+  \xymatrixcolsep{5pc}
+  \xymatrixrowsep{5pc}
+  \xymatrix{
+  B^\bullet(x,z)
+  \ar[r]^{\Delta_B(x,z)}
+  \ar[d]_{\Delta_B(x,z)}
+  & \prod \limits_{y \in Obj(B)}
+    B^\bullet(x,y) \otimes
+    B^\bullet(y,z)
+  \ar[d]^{\prod\limits_y 
+    id_{B(x,y)} \otimes \Delta_B(y,z)}\\
+  \prod \limits_{y \in Obj(B)}
+    B^\bullet(x,y) \otimes
+    B^\bullet(y,z)
+  \ar[r]^{\prod\limits_y 
+    \Delta_B(x,y) \otimes id_{B(y,z)}}
+  & \prod \limits_{y, y^\prime \in Obj(B)}
+    B^\bullet(x,y) \otimes
+    B^\bullet(y,y^\prime) \otimes
+    B^\bullet(y^\prime,z)  
+  }
+  $$
+\item For each pair of objects, $x,z \in
+  Obj(B)$, a morphism of complexes
+  $$
+  \epsilon_B(x,z): B^\bullet(x,z) \to k
+  $$
+  where $k$ is the ground field considered 
+  as a chain complex concentrated in degree 
+  0 and $\epsilon_B(x,z) = 0$ if $x\neq z$, 
+  such that the following diagrams commute 
+  (counitality):
+  $$
+  \xymatrixcolsep{5pc}
+  \xymatrixrowsep{5pc}
+  \xymatrix{
+  B^\bullet(x,z)
+  \ar[r]^{\Delta_B(x,z)}
+  \ar[d]_{\Delta_B(x,z)}
+  \ar[rd]_{id}
+  & \prod \limits_{y \in Obj(B)} 
+    B^\bullet(x,y) \otimes
+    B^\bullet(y,z)
+  \ar[d]^{\prod \limits_y
+    \epsilon_B(x,y)
+    \otimes id_{B(y,z)}} \\
+  %
+  \prod \limits_{y \in Obj(B)} 
+    B^\bullet(x,y) \otimes
+    B^\bullet(y,z)
+  \ar[r]_{\prod \limits_y
+    id_{B(x,y)} \otimes 
+    \epsilon_B(y,z)}
+  & B^\bullet(x,z).  
+  }
+  $$
+\end{itemize}
+\end{defn}
+We will denote a dg cocategory with its 
+cocomposition and counit as $(B, \Delta_B, 
+\epsilon_B)$. To make the notation more 
+readable, when the meaning is clear, 
+we will omit references to the 
+objects and write $\Delta_B$ instead of 
+$\Delta_B(x,z)$, $\epsilon_B$ instead of 
+$\epsilon_B(x,z)$, and for the differentials 
+on morphisms, $d_B$ instead of $d_B(x,z)$.
+%
+\begin{defn} A \textbf{functor} $F: A \to B$ 
+between two dg cocategories is a functor 
+between the cocategories satisfying 
+$d_B\circ F(f) = F\circ d_A(f)$ for all 
+morphisms $f$ in $A$.
+\end{defn}
+%
+\begin{defn} A \textbf{conilpotent} dg 
+cocategory is a dg cocategory $(B, 
+\Delta_B, \epsilon_B)$ satisfying: for each 
+morphism $f:x\to y$ in $B$, there exists 
+$n_f \in \mathbb{N}$ such that 
+$\bar{\Delta}_B^{n_f}(f) = 0$
+where
+\begin{align*}
+\bar{\Delta}_B(x,z): B^\bullet(x,z) 
+&\to 
+  \prod \limits_{y \in Obj(B)} 
+  B^\bullet(x,y) \otimes
+  B^\bullet(y,z)\\
+f
+&\mapsto
+\Delta_B(f)
+- \sum \limits_{e_x \in 
+  \epsilon_B(x,x)^{-1}(1)}
+  e_x \otimes f
+- \sum \limits_{e_z \in 
+  \epsilon_B(z,z)^{-1}(1)}
+  f \otimes e_z. 
+\end{align*}
+\end{defn}
+%
+\textbf{Fact (needs reference?):} 
+If $B$ is a conilpotent dg cocategory, 
+then for all $x \in Obj(B)$, 
+$\epsilon_B(x,x)^{-1}(1)$ has exactly 
+one element, which we will denote $e_x$.
+%
+\subsection{Structure of $B(n)$}
+For each sequence of algebras, 
+$A_0, A_1, \cdots, A_n$, 
+we will define a conilpotent dg cocategory, 
+$B(A_0 \to A_1 \to \cdots \to A_n \to A_0)$. 
+In this chapter, we fix the sequence of 
+algebras, and abbreviate 
+$$
+B(n):= B(A_0 \to A_1 \to \cdots \to A_n \to A_0).
+$$
+%
+\subsubsection{Objects}
+$B(n)$ has objects tuples $(f_0, f_1, \cdots, f_n)$ where $f_i : A_i \to A_{i+1}$, $0 \leq i < n$,
+and $f_n: A_n \to A_0$ are maps of algebras. We can picture an object in $B(n)$ as follows:
+
+\begin{equation*}
+\xymatrix{
+A_0 \ar[r]^{f_0}
+& A_1 \ar[r]^{f_1}
+& A_2 \ar[r]^{f_2}
+& \cdots \ar[r]^{f_{n-1}}
+& A_n \ar[r]^{f_n}
+& A_0
+}
+\end{equation*}
+
+\subsubsection{Morphisms}
+The complex of morphisms in $B(n)$ between two objects, 
+$(f_0, f_1, \cdots, f_n)$ and $(g_0, g_1, \cdots, g_n)$, is 
+%
+\begin{equation*}
+Bar(C^\bullet(A_0, _{f_0}{A_1}_{g_0})) \otimes Bar(C^\bullet(A_1, _{f_1}{A_2}_{g_1})) \otimes \cdots
+\otimes Bar(C^\bullet(A_n, _{f_n}{A_0}_{g_n}))
+\end{equation*}
+%
+where 
+%
+\begin{align*}
+Bar(C^\bullet(A, _fB_g)) 
+&= Bar_0(C^\bullet(A, _fB_g)) \oplus 
+  \bigoplus_{\substack{m \geq 1}} 
+    Bar_m(C^{>0}(A, _fB_g)) \\
+&= k \oplus 
+  \bigoplus_{\substack{
+  h_0 = f, \\
+  h_m = g, \\
+  h_1, \dots, h_{m-1}\\ 
+	\textrm{algebra maps}, \\
+	m \geq 1}} 
+  C^{>0}(A, \, _{h_0}B_{h_1}) \otimes 
+  C^{>0}(A, \, _{h_1}B_{h_2}) 
+  \otimes \dots \otimes 
+  C^{>0}(A, \, _{h_{m-1}}B_{h_m}).
+\end{align*}
+%
+$C^\bullet(A, _{h_i}B_{h_j})$ denotes the Hochschild cochain complex, and
+$_{h_i}B_{h_j}$ denotes $B$ as a bimodule over $A$ with left and right module structures 
+given by $h_i$ and $h_j$, respectively. 
+The differential in $Bar(C^\bullet(A, _fB_g))$  is the usual one for bar complexes: 
+$d_{Bar} = \delta + b^\prime$ where 
+$\delta$ is the extension of the Hochschild cochain differential to the bar complex, 
+and $b^\prime = \sum_{i=0}^{n-1} (-1)^{i}b_i$ with
+$b_i =$ the cup product on Hochschild cochains between the $i^{th}$ and $i+1^{th}$ terms.
+See Figure \ref{fig:phi} for a pictoral representation of a single morphism in $B(n)$.
+%
+\begin{figure}
+\centerline{\xymatrix{
+A_0 \ar@/^5pc/[r]^{f_{0,0}} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_{0,1}}_{f_{0,1}} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_{0,k_0-1}\\ \\}}
+\ar@/_5pc/[r]^{\substack{\phi_{0,k_0} \\ \big\Downarrow}}_{f_{0,k_0}}
+& A_1 \ar@/^5pc/[r]^{f_{1,0}} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_{1,1}}_{f_{1,1}} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_{1,k_1-1}\\ \\}}
+\ar@/_5pc/[r]^{\substack{\phi_{1,k_1} \\ \big\Downarrow}}_{f_{1,k_1}}
+& A_2 \ar@{.>}@/^5pc/[r] 
+\ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \vdots}} 
+\ar@{.>}@/_2pc/[r]
+\ar@{.>}@/_5pc/[r]
+& \cdots \ar@{.>}@/^5pc/[r] 
+\ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \vdots}} 
+\ar@{.>}@/_2pc/[r]
+\ar@{.>}@/_5pc/[r]
+& A_n \ar@/^5pc/[r]^{f_{n,0}} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_{n,1}}_{f_{n,1}} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_{n,k_n-1}\\ \\}}
+\ar@/_5pc/[r]^{\substack{\phi_{n,k_n} \\ \big\Downarrow}}_{f_{n,k_n}}
+& A_0 
+}}
+\caption{Pictoral representation of a single morphism in $B(n)$
+from object $(f_{0,0}, f_{1,0}, \cdots, f_{n,0})$ to object 
+$(f_{0,k_0}, f_{1,k_1}, \cdots, f_{n,k_n})$ where
+$\phi_{i,j} \in C^{>0}(A_i, _{f_{j-1}}{A_{i+1}}_{f_j})$}
+ \label{fig:phi}
+\end{figure}
+
+\subsubsection{Aside on notation} \label{sec:phi_notation}
+When referring to an arbitrary morphism in $B(n)$,
+we will assume it is a morphism from object $(f_{0,0}, f_{1,0}, \cdots, f_{n,0})$ 
+to object $(f_{0,k_0}, f_{1,k_1}, \cdots, f_{n,k_n})$.
+We will denote the morphism 
+$$\phi_{0,1}\smdots\phi_{0,k_0} | 
+\phi_{1,1}\smdots\phi_{1,k_1} | \dots |
+\phi_{n,1}\smdots\phi_{n,k_n}$$ 
+where $\phi_{i,j} \in C^{>0}(A_i, _{f_{j-1}}{A_{i+1}}_{f_j})$. 
+(See also Figure \ref{fig:phi}.)
+%
+\subsubsection{Counit}
+Define
+\begin{align*}
+\epsilon_{B(n)}((f_{0,0},\smdots,f_{n,0}), 
+  (f_{0,k_0},\smdots,f_{n,k_n}))
+&: 
+B(n)^\bullet((f_{0,0},\smdots,f_{n,0}), 
+  (f_{0,k_0},\smdots,f_{n,k_n}))\\
+&= 
+Bar(C^\bullet(A_0, _{f_{0,0}}{A_1}_{f_{0,k_0}})) 
+  \otimes \cdots \otimes 
+  Bar(C^\bullet(A_0, _{f_{n,0}}{A_1}_{f_{n,k_n}}))\\
+&\xrightarrow{project}
+Bar_0(C^\bullet(A_0, _{f_{0,0}}{A_1}_{f_{0,k_0}})) 
+  \otimes \cdots \otimes 
+  Bar_0(C^\bullet(A_0, _{f_{n,0}}{A_1}_{f_{n,k_n}}))\\
+&\cong k.
+\end{align*}
+%
+\subsubsection{Cocomposition}
+We have a coassociative map of complexes
+%
+\begin{align*}
+\Delta_{A, _fB_g}: Bar(C^\bullet(A, _fB_g)) 
+&\to \bigoplus\limits_{h: A \to B} Bar(C^\bullet(A, _fB_h)) \otimes Bar(C^\bullet(A, _hB_g)) \\
+\phi_1 \cdots \phi_k 
+&\mapsto \sum\limits_{1\leq i \leq k-1} 
+\phi_1 \cdots \phi_i \otimes 
+  \phi_{i+1} \cdots \phi_k\\
+&\phantom{{}\mapsto \sum{}}
+  + e_f\otimes \phi_1 \dots \phi_k + 
+  \phi_1 \dots \phi_k \otimes e_g  
+\end{align*}
+%
+where 
+$e_f = 1$ in $Bar_0(C^\bullet(A, _fB_f)) \cong k$.
+Extend $\Delta_{A, _fB_g}$ to a 
+cocomposition on $B(n)$ by taking
+$$
+\Delta_{B(n)}((f_{0,0},\smdots,f_{n,0}), 
+  (f_{0,k_0},\smdots,f_{n,k_n})) :=
+\Delta_{A_0, _{f_{0,0}}{A_1}_{f_{0,k_0}}} 
+\otimes \dots \otimes
+\Delta_{A_0, _{f_{n,0}}{A_1}_{f_{n,k_n}}}.
+$$
+%
+It's clear from the definitions that
+$(B(n), \Delta_{B(n)}, \epsilon_{B(n)})$ 
+satisfy the diagrams needed to form a dg cocategory. 
+We also see that $B(n)$ is conilpotent: 
+$$
+\bar{\Delta}_{B(n)}^{min(k_0,\smdots,k_n)}
+(\phi_{0,1}\smdots\phi_{0,k_0}|\smdots|
+\phi_{n,1}\smdots\phi_{n,k_n}) = 0.
+$$

@@ -1,0 +1,228 @@
+% \begin{figure} \label{fig:upsilon}
+% \centerline{\xymatrix{
+% A_0 \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% \ar@/_4pc/[rr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+% & A_1 \ar@/^5pc/[r]^{g_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+% & A_0
+% }
+% $\overset{\Upsilon}\longrightarrow$
+% \xymatrix{
+% A_1 \ar@/^5pc/[r]^{g_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+% \ar@/_4pc/[rr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+% & A_0 \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% & A_1
+% }}
+% \caption{A picture of the domain and target of $\Upsilon$}
+% \end{figure}
+
+\begin{prop}
+\label{prop:c1}
+Let $A_0, A_1$ be algebras. 
+Let $(\vec{\phi} | \vec{\psi} | \alpha) = 
+(\phi_1\smdots\phi_n | \psi_1\smdots\psi_m| \alpha)$ 
+denote 
+the element of $C(A_0 \to A_1 \to A_0)(g_0f_0)$ 
+pictured below (see Section \ref{sec:comod_strre} 
+to interpret the picture): 
+%
+\begin{figure}[H]
+\centerline{\xymatrix{
+A_0 \ar@/^5pc/[r]^{f_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+\ar@/_4pc/[rr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+& A_1 \ar@/^5pc/[r]^{g_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+& A_0
+}}
+\end{figure}
+%
+Define a map of vector spaces 
+$$
+\upsilon^{f_0, g_0}: C(A_0 \to A_1 \to A_0)(g_0f_0) 
+\longrightarrow C(A_1 \to A_0 \to A_1)(f_0g_0)
+$$ 
+as follows: 
+\begin{align*}
+\upsilon_{n,m}^{f_0,g_0} 
+(\vec{\phi} | \vec{\psi} | \alpha) = 
+& \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \\
+                          \textrm{as ordered sets}}}
+  \phi_1(\lambda(\vec{\psi})\lambda(\vec{\phi_{I_2}})\cdot \mathfrak{a}_3, a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\phi_{I_1}}) \cdot \mathfrak{a}_2 \\
+&\phantom{{}move{}}
+\bigg( + f_0a_0 \otimes \lambda(\vec{\phi}) \mathfrak{a}_1 
+  \; \; \; \; if \; \; m = 0 \bigg).
+\end{align*}
+Recall from Example \ref{eg:pb5} that 
+$C(A_1 \to A_0 \to A_1) \cong 
+\hat{\tau}_1^*C(A_1 \to A_0 \to A_0)$ 
+as complexes where $\hat{\tau}_1: 
+B(A_0 \to A_1 \to A_0) 
+\longrightarrow B(A_1 \to A_0 \to A_1)$. 
+Using the comodule structure 
+on $\hat{\tau}_1^*C(A_1 \to A_0 \to A_0)$, 
+we can lift $\{\upsilon^{f_0,g_0}| 
+(f_0, g_0) \in Obj(B(A_0 \to A_1 \to A_0))\}$ 
+to a map $\Upsilon$
+of comodules over 
+$B(A_0 \to A_1 \to A_0)$ in the standard way
+(see Equation \ref{eq:colift}).
+
+Then, $\Upsilon: C(A_0 \to A_1 \to A_0)
+\to \hat{\tau}^*C(A_1 \to A_0 \to A_1)$ 
+is a map of dg comodules over 
+$B(A_0 \to A_1 \to A_0)$.
+\end{prop}
+%
+\begin{proof}
+We must show: (1) $\Upsilon$ is a map of comodules, and 
+(2) $\Upsilon$ commutes with the differentials.
+
+(1) This proof is standard for cofree comodules. 
+Let ($\vec{\phi} | \vec{\psi} | \alpha$) be as 
+in the statement of the proposition. We want to 
+show that $\Upsilon$ commutes with the coproducts. 
+On one hand,
+\begin{align*}
+&\phantom{{}={}}
+[(id_B \otimes \Upsilon) \circ 
+  \Delta_{C(A_0 \to A_1 \to A_0)}] 
+  ( \vec{\phi} | \vec{\psi} | \alpha ) \\
+&= [id_B \otimes \Upsilon]
+	\big( \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
+						  J_1J_2 = \{1,2,\cdots,m\} \\
+				          \textrm{as ordered sets}}} 
+    (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha) \, \big) \\
+&= \sum_{\substack{I_1I_2I_3 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
+				   J_1J_2J_3 = \{1,2,\cdots,m\} \\
+				   \textrm{as ordered sets}}} 
+    (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
+    (\vec{\phi}_{I_2} | \vec{\psi}_{J_2}) \otimes 
+    \upsilon_{|I_3|,|J_3|}(\vec{\phi}_{I_3} | \vec{\psi}_{J_3} | \alpha) \\
+\end{align*}
+
+On the other hand,
+\begin{align*}
+&\phantom{{}={}}
+[\Delta_{\hat{\tau}^*C(A_1 \to A_0 \to A_1)} 
+  \circ \Upsilon ]
+  ( \vec{\phi} | \vec{\psi} | \alpha ) \\
+&= \Delta_{\hat{\tau}^*C(A_1 \to A_0 \to A_1)}
+	\big( \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
+						  J_1J_2 = \{1,2,\cdots,m\} \\
+				          \textrm{as ordered sets}}}
+	(\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
+    \upsilon_{|I_2|,|J_2|}(\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha) \, \big)\\
+&= \sum_{\substack{I_1I_2I_3 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
+				   J_1J_2J_3 = \{1,2,\cdots,m\} \\
+				   \textrm{as ordered sets}}} 
+    (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
+    (\vec{\phi}_{I_2} | \vec{\psi}_{J_2}) \otimes 
+    \upsilon_{|I_3|,|J_3|}(\vec{\phi}_{I_3} | \vec{\psi}_{J_3} | \alpha).   				          
+\end{align*}
+Clearly $(id_B \otimes \Upsilon) \circ 
+\Delta_{C(A_0 \to A_1 \to A_0)} = 
+\Delta_{\hat{\tau}^*C(A_1 \to A_0 \to A_1)} 
+\circ \Upsilon$.
+
+(2) We will show that $\Upsilon$ commutes with 
+the differentials by direct computation. Since 
+$\Upsilon$ is a map of cofree comodules, we only 
+need to check that $\pi_1 \circ D(\Upsilon) = 0$ 
+where $D(\Upsilon)$ is the differential applied 
+to $\Upsilon$ as a linear map between complexes 
+and $\pi_1$ denotes projection of a comodule 
+onto its cogenerators. More explicitly, we want 
+to check that
+\begin{equation} \label{eq:upsilon}
+\begin{aligned}
+&\upsilon_{n, m} ( \tilde{\delta}(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
+\upsilon_{n, m} ( \vec{\phi} | \tilde{\delta}(\vec{\psi}) | \alpha ) \; + 
+\upsilon_{n-1, m} ( b^\prime(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
+\upsilon_{n, m-1} ( \vec{\phi} | b^\prime(\vec{\psi}) | \alpha ) \; + \\
+&\upsilon_{n, m} ( \vec{\phi} | \vec{\psi} | b(\alpha) ) \; + 
+b \circ \upsilon_{n, m} ( \vec{\phi} | \vec{\psi} | \alpha ) \; + \\
+&\upsilon_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \iota(\psi_{m} \{\vec{\phi}_{I_2}\}, \alpha )) \; + 
+\upsilon_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \iota(\phi_{n},\alpha)) \; + \\
+&\iota(\phi_1 \{ \psi_{J_1}\}, \upsilon_{\vec{\phi}|-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha )) \; + 
+\iota(\psi_1, \upsilon_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, |\vec{\psi}\}} | \alpha)) \\ 
+&= 0.
+\end{aligned}
+\end{equation}
+$\tilde{\delta}$ is the extension of the Hochschild 
+cochain differential to the bar complex, 
+and $b^\prime = \sum_{i=0}^{n-1} (-1)^{i}b_i$ with
+$b_i =$ the cup product on Hochschild cochains 
+between the $i^{th}$ and $i+1^{th}$ terms, $b$ is 
+the Hochschild chains differential, $\iota$ is 
+defined in Equation \ref{eq:action_term}, and 
+the braces $\cdot \{ \cdot \}$ are defined in ....
+In Equation \ref{eq:upsilon}, we will call the 
+terms in the first two rows the ``standard terms'', 
+and the terms in the second two rows the 
+``extra terms''.
+
+Following the logic of Lemma [number], we compute the sum of the standard terms. In the chart below, the leftmost column lists the expressions that don't cancel in the sum of the standard terms, the middle column gives the standard term from which the expression comes, and the rightmost column gives the term (extra or standard) that cancels the expression. 
+\newpage
+\begin{landscape}
+\begin{center}
+  \begin{tabular}{ p{3.25in} | p{2in} | p{2.5in} }
+    \hline
+    Expression & Comes from Standard Term & Cancelling Term \\ \hline
+    
+    \breakcell{$f_0\psi_1(\lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3 ) \phi_1(\lambda(\vec{\psi}_{\{2,\cdots, m\}} \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_4, a_0, \mathfrak{a}_1)$ \\ $\otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
+    $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ & 
+    $f_0 \psi_1 \cdot \upsilon_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha)$ \\ \hline
+
+    \breakcell{$\phi_1( \lambda(\vec{\psi}_{\{1,\cdots, m-1\}}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3, \psi_{m} ( \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_4) \cdot a_0, \mathfrak{a}_1 )$ \\ $\otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
+    $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
+    $\upsilon_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha )$ \\ \hline
+
+    \breakcell{$\phi_1( \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3, g_m \phi_n(\mathfrak{a}_4) \cdot a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
+    $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
+    $\upsilon_{n-1, m}(\vec{\phi}_{\{1, \cdots, n-1\}} | \vec{\psi} | g_m \phi_{n} \cdot \alpha )$ \\ \hline
+
+    \breakcell{$\phi_1( \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2) \cdot f_1(a_0) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_1$} &
+    $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
+    $\phi_1 \cdot \upsilon_{n-1, 0}(\vec{\phi}_{\{2, \cdots, n\}} | \vec{\psi} |\alpha )$ \\ \hline
+
+    \breakcell{$f_0a_0 \cdot \phi_1(\mathfrak{a}_1) \otimes \lambda(\vec{\phi}_{\{1,\cdots,n-1\}}) \mathfrak{a}_2$} &
+    \breakcell{$\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ \\ if $\vec{\psi} = \emptyset$} & 
+    \breakcell{$b \circ \upsilon_{n, m} (\vec{\phi} | \vec{\psi} | \alpha)$ \\ if $\vec{\psi} = \emptyset$} \\ \hline
+
+    \breakcell{$f_0 g_m \phi_n(\mathfrak{a}_2) f_0a_0 \otimes \lambda(\vec{\phi}_{\{1,\cdots,n-1\}}) \mathfrak{a}_1$} &
+    \breakcell{$b \circ \upsilon_{n, m} (\vec{\phi} | \vec{\psi} | \alpha)$ \\ if $\vec{\psi} = \emptyset$} &
+    \breakcell{$\upsilon_{n-1, m}(\vec{\phi}_{\{1, \cdots, n-1\}} | \vec{\psi} | g_m \phi_{n} \cdot \alpha )$ \\ if $\vec{\psi} = \emptyset$} \\ \hline
+
+    \breakcell{$\phi_1(\lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_4, a_0, \mathfrak{a}_1) \cdot \phi_2(\mathfrak{a}_2) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_3$} &
+    $b \circ \upsilon_{n, m} (\vec{\phi} | \vec{\psi} | \alpha)$ &
+    $\upsilon_{n-1, m}(\phi_1 \cup \phi_2 \phi_3 \cdots \phi_n | \vec{\psi} | \alpha)$ \\ \hline
+    
+    \breakcell{$\phi_1(\lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3) \phi_2(\lambda(\vec{\psi}_{J_2} \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3, a_0, \mathfrak{a}_1)$ \\ $\otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
+    $\upsilon_{n-1, m}(\phi_1 \cup \phi_2 \phi_3 \cdots \phi_n | \vec{\psi} | \alpha)$ &
+     $\phi_1 \{ \vec{\psi}_{J_1} \} \cdot \upsilon_{n-1, |J_2|}(\vec{\phi}_{\{2, \cdots, n\}} | \vec{\psi}_{J_2} |\alpha )$\\ \hline
+
+    \breakcell{$f_0 \psi_1(\lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2) \cdot f_0a_0 \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_1$} &  
+    \breakcell{$f_0 \psi_1 \cdot \upsilon_{n, 0}(\vec{\phi} | 1 | \alpha)$ \\ if $\vec{\psi} = \psi_1$} &
+    \breakcell{$ \upsilon_{|I_1|, 0} (\vec{\phi}_{I_1} | 1 | \psi_1 \{ \vec{\phi}_{I_2} \} \cdot \alpha )$ \\ if $\vec{\psi} = \psi_1$} \\ \hline
+    \hline
+  \end{tabular}
+\end{center}
+(Technically, the last term in the middle column is not a standard term, but we include it in the table for convenience.)
+\end{landscape}
+All of the terms in the table describing the expansion of equation \ref{eq:upsilon} cancel, so $\Upsilon$ is a map of complexes.
+\end{proof}
+
+Notation:
+- signs: hochschild cochain differential, extention of delta to bar, b, b-prime
+- lemma
+

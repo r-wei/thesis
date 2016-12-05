@@ -1,0 +1,215 @@
+\begin{landscape}
+\begin{figure}
+\centerline{\xymatrixrowsep{5pc}
+\xymatrix{
+\bigoplus \limits_{f^\prime \in \lambda^{-1}f}
+  C^\bullet(f^\prime)
+\ar@[red][d]^{\bigoplus \limits_{f^\prime} F_{f^\prime}}\\
+%
+\bigoplus \limits_{\substack{
+  f^\prime \in \lambda^{-1}f\\
+  h^\prime \in Obj(B_1)}}
+  B_1^\bullet(f^\prime, h^\prime)
+  \otimes D^\bullet(\lambda h^\prime)
+\ar@[red][r]^{\bigoplus \limits_{f^\prime, h^\prime} 
+  \lambda \otimes id_{D}}  
+\ar@/_/[d]_{\bigoplus \limits_{f^\prime, h^\prime, r^\prime}
+  \substack{
+  (\Delta_{B_1} \otimes id_D) \circ \\
+  (id_{B_1} \otimes \lambda \otimes id_D)}}
+\ar@/^/[d]^{\bigoplus \limits_{f^\prime, h^\prime} 
+  id_{B_1} \otimes \Delta_{D}}
+& \bigoplus \limits_{h \in Obj(B_0)}
+  B_0^\bullet(f,h) \otimes D^\bullet(h)
+\ar@[red][r]^{\bigoplus \limits_h 
+  \epsilon_{B_0} \otimes id_D} 
+& D^\bullet(f)
+\ar@[red][d]^{\Delta_D} \\
+%
+\bigoplus \limits{\substack{
+  f^\prime \in \lambda^{-1}f,\\
+  h^\prime \in Obj(B_1),\\
+  r \in Obj(B_0)}}
+  B_0^\bullet(f^\prime, h^\prime) \otimes 
+  B_1^\bullet(\lambda h^\prime, r) 
+  \otimes D^\bullet(r)
+\ar[rr]_{\bigoplus \limits_{f^\prime, h^\prime, r}
+  \epsilon_{B_0} \lambda \otimes id_{B_1} 
+  \otimes id_D}
+& & \bigoplus \limits_{h \in Obj(B_0)}
+  B_0^\bullet(f,h) \otimes D^\bullet(h) 
+}}
+\caption{Commuting diagram 
+involving $\Delta_D \circ 
+\Phi^{-1}F$ = composition 
+of red arrows}
+  \label{fig:delta_phi-1}
+The fact that $F: C \to \lambda^*D$ and 
+the universal property of $\lambda^*D$ 
+imply that the diagram commutes.  
+\end{figure}
+%
+\begin{figure}
+\centerline{\xymatrixrowsep{5pc}
+\xymatrix{
+\bigoplus \limits_{f^\prime \in \lambda^{-1}f}
+  C^\bullet(f^\prime)
+\ar[d]^{\bigoplus \limits_{f^\prime} F_{f^\prime}}
+\ar@[red][r]^{\bigoplus \limits_{f^\prime} \Delta_C}
+& \bigoplus \limits_{\substack{
+  f^\prime \in \lambda^{-1}f\\
+  h^\prime \in Obj(B_1)}}
+  B_1^\bullet(f^\prime, h^\prime)
+  \otimes C^\bullet(h^\prime)
+\ar@[red][r]^{\bigoplus \limits_{f^\prime, h^\prime} 
+  \lambda \otimes id_{C}}  
+\ar[d]^{\bigoplus \limits_{f^\prime, h^\prime}
+  id_{B_1} \otimes 
+  F_{\lambda h^\prime}|_{h^\prime}}
+& \bigoplus \limits_{h^\prime \in Obj(B_1)}
+  B_0^\bullet(f,\lambda h^\prime) 
+  \otimes C^\bullet(h^\prime)
+\ar@[red][d]^{\bigoplus \limits_{h^\prime}
+  id_{B_0} \otimes 
+  F_{\lambda h^\prime}|_{h^\prime}}\\
+%  
+\bigoplus \limits{\substack{
+  f^\prime \in \lambda^{-1}f,\\
+  r^\prime \in Obj(B_1)}}
+  B_1^\bullet(f^\prime, r^\prime) 
+  \otimes D^\bullet(\lambda r^\prime)
+\ar[r]^{\substack{\Delta_{\lambda^*D} =\\
+  \bigoplus \limits_{f^\prime, r^\prime}
+  \Delta_{B_1} \otimes id_D}}
+& \bigoplus \limits{\substack{
+  f^\prime \in \lambda^{-1}f,\\
+  h^\prime, r^\prime \in Obj(B_1)}}
+  B_1^\bullet(f^\prime, h^\prime) \otimes
+  B_1^\bullet(h^\prime, r^\prime) 
+  \otimes D^\bullet(\lambda r^\prime)
+\ar[r]^{\bigoplus 
+  \limits_{f^\prime, h^\prime, r^\prime}
+  \lambda \otimes id_{B_0} \otimes id_D}
+& \bigoplus \limits_{h^\prime, r^\prime 
+  \in Obj(B_1)}
+  B_0^\bullet(f,\lambda h^\prime) \otimes
+  B_1^\bullet(h^\prime, r^\prime)
+  \otimes D^\bullet(\lambda r^\prime)  
+\ar@[red][d]_{\bigoplus \limits_{h^\prime, r^\prime}
+  id_{B_0} \otimes 
+  \epsilon_{B_0} \lambda \otimes id_{D}}\\
+%
+& & \bigoplus \limits_{h\in Obj(B_0)}
+  B_0^\bullet(f,h) \otimes 
+  D^\bullet(h)
+}}
+\caption{Commuting diagram
+involving $(id_{B_1}\otimes 
+\Phi^{-1}F) \circ \Delta_{\lambda_\# C}$
+= composition of red arrows}
+ \label{fig:phi-id_delta}
+The fact that $F$ respects coproducts  
+implies that the left square commutes. 
+\end{figure}
+%
+\begin{figure}
+\centerline{\xymatrixrowsep{5pc}
+\xymatrix{
+C^\bullet(f^\prime)
+\ar@[red][r]^{\Delta_C}
+\ar[d]^{F_{f^\prime}}
+& \bigoplus \limits_{g^\prime \in Obj(B_1)}
+  B_1^\bullet(f^\prime, g^\prime)
+  \otimes C^\bullet(g^\prime)
+\ar@[red][d]^{\bigoplus \limits_{g^\prime}
+  id_{B_1}\otimes F_{g^\prime}}\\
+%
+\bigoplus \limits_{h^\prime \in Obj(B_1)}  
+  B_1^\bullet(f^\prime, h^\prime)
+  \otimes D^\bullet(\lambda h^\prime)
+\ar[r]^{\Delta_{\lambda^* D} = \bigoplus
+  \limits_{h^\prime} \Delta_{B_1} \otimes id_D}
+\ar@/_3pc/[rr]^{id}  
+& \bigoplus \limits_{g^\prime, h^\prime \in Obj(B_1)}
+  B_1^\bullet(f^\prime, g^\prime)
+  \otimes B_1^\bullet(g^\prime, h^\prime)
+  \otimes D^\bullet(\lambda h^\prime)
+\ar@[red][r]^{\bigoplus \limits_{g^\prime, h^\prime}
+  id_{B_1} \otimes 
+  (\epsilon_{B_0}\lambda = \epsilon_{B_1})
+  \otimes id_D}
+& \bigoplus \limits_{g^\prime \in Obj(B_1)}
+  B_1^\bullet(f^\prime, g^\prime)
+  \otimes D^\bullet(\lambda g^\prime)
+}}
+\caption{Commuting diagram 
+involving $\Phi\Phi^{-1}F_{f^\prime}$
+= composition of red arrows}
+  \label{fig:phi_phi-1}
+The square commutes because $F$ 
+respects coproducts; 
+the composition of the bottom row 
+of horizontal arrows is equal to 
+the identity because $\lambda_\#D$ 
+satisfies counitality.
+\end{figure}
+%
+\begin{figure}
+\centerline{
+\xymatrixrowsep{5pc}
+\xymatrixcolsep{5pc}
+\xymatrix{
+\bigoplus \limits_{f^\prime \in \lambda^{-1}f}
+  C^\bullet(f^\prime)
+\ar@[red][r]^{\bigoplus \limits_{f^\prime}
+  \Delta_C}
+\ar[dd]_{F_f}
+& \bigoplus \limits_{\substack{
+  f^\prime \in \lambda^{-1}f,\\
+  g^\prime \in Obj(B_1)}}
+  B_1^\bullet(f^\prime, g^\prime)
+  \otimes C^\bullet(g^\prime)
+\ar@[red][r]^{\bigoplus \limits_{
+  f^\prime, g^\prime} 
+  id_{B_1} \otimes 
+  F_{\lambda g^\prime}|_{g^\prime}}
+\ar[d]^{\bigoplus \limits_{
+  f^\prime, g^\prime} 
+  \lambda \otimes id_C}
+& \bigoplus \limits_{\substack{
+  f^\prime \in \lambda^{-1}f,\\
+  g^\prime \in Obj(B_1)}} 
+  B_1^\bullet(f^\prime, g^\prime)
+  \otimes D\bullet(\lambda g^\prime)
+\ar@[red][d]^{\bigoplus \limits_{
+  f^\prime, g^\prime} 
+  \lambda \otimes id_D}\\
+%
+& \bigoplus \limits_{g^\prime \in Obj(B_1)}
+  B_0^\bullet(f, \lambda g^\prime)
+  \otimes C^\bullet(g^\prime)
+\ar[r]^{\bigoplus \limits_{g^\prime}
+  id_{B_0} \otimes 
+  F_{\lambda g^\prime}|_{g^\prime}}
+& \bigoplus \limits_{g \in Obj(B_0)}
+  B_0^\bullet(f, g)
+  \otimes D^\bullet(g)
+\ar@[red][r]^{\bigoplus \limits_g
+  \epsilon_{B_0} \otimes id_D}
+& D^\bullet(f)\\
+%
+D^\bullet(f)
+\ar[rru]_{\Delta_D}  
+\ar@/_3pc/[rrru]_{id}
+}}
+\caption{Commuting diagram 
+involving $\Phi^{-1}\Phi F_f$
+= composition of red arrows}
+  \label{fig:phi-id_phi}
+The concave pentagon on the left 
+side commutes because $F$ 
+respects coproducts; the triangle in the 
+bottom right corner commutes 
+because $D$ satisfies counitality.
+\end{figure}
+\end{landscape}

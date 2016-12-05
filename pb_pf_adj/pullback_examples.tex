@@ -1,0 +1,322 @@
+\section{Pullbacks of dg comodules--examples}
+%
+\begin{eg}[Another definition of C(1)] \label{eg:pb}
+Using $F$ and $G$ from Proposition 
+\ref{prop:compute_pb}, we can induce 
+differentials on $B(\mathcal{A}) \otimes_{\hat{\lambda}} T$ from
+$\hat{\lambda}^*C$. We will compute this differential 
+for a particular choice of $\lambda$. 
+Let $\lambda = \delta_{0,1} \in \Lambda([1], [0])$. 
+Fix algebras $A_0$ and $A_1$, and set 
+\begin{align*}
+\hat{\lambda}: B(1) 
+&:= B(A_0 \to A_1 \to A_0) \to 
+  B(A_0 \to A_0) =: B(0)\\
+C(1) 
+&:= C(A_0 \to A_1 \to A_0)\\
+C(0) 
+&:= C(A_0 \to A_0)
+\end{align*}
+($\hat{\lambda}$ is given by braces, 
+see \ref{sec:def_G}.)
+
+Note that 
+$\hat{\delta}_{0,1}^* C(0) \cong
+[B(1) \otimes_{\hat{\lambda}} 
+  T(0)](f_{0,0},f_{1,0}) \cong
+C(1)(f_{0,0},f_{1,0})$ 
+as comodules where 
+$(f_{0,0},f_{1,0}) \in Obj(B(1))$. 
+Let 
+$\phi_{0,1} \smdots \phi_{0,k_0} |
+\phi_{1,1} \smdots \phi_{1,k_1} |
+t$ be a typical element of 
+$[B(1) \otimes_{\hat{\lambda}} 
+  T(0)](f_{0,0},f_{1,0})$
+(see \ref{fig:phi|alpha} for notational 
+conventions). Then,
+\begin{align*}
+& \phantom{{}={}}
+d_{B(1) \otimes_{\hat{\lambda}} T(0)}
+(\phi_{0,1} \smdots \phi_{0,k_0} |
+\phi_{1,1} \smdots \phi_{1,k_1} | t)\\
+&=
+Fd_{\hat{\lambda}^*C(0)}G
+(\phi_{0,1} \smdots \phi_{0,k_0} |
+\phi_{1,1} \smdots \phi_{1,k_1} | t) \\
+&=
+[F \circ (d_{B(1)}\otimes id_{C(0)} + 
+  id_{B(1)} \otimes d_{C(0)})] \\
+& \phantom{{}=  {}}
+\big( \sum \limits_{\substack{1 \leq r_0 \leq k_0+1 \\ 
+1 \leq r_1 \leq k_1+1}}
+(\phi_{0,1} \smdots \phi_{0,r_0-1} |
+\phi_{1,1} \smdots \phi_{1,r_1-1} ) \otimes 
+((\phi_{0,r_0}\smdots \phi_{0,k_0}) \bullet 
+(\phi_{1,r_1}\smdots \phi_{1,k_1}) | t) \big) \\
+&= 
+d_{C(1)(f_{0,0},f_{1,0})}
+(\phi_{0,1} \smdots \phi_{0,k_0} |
+\phi_{1,1} \smdots \phi_{1,k_1} | t)
+\end{align*}
+where the last equality holds by looking at which 
+terms from $d_{B(1)}\otimes id_{C(0)} + 
+id_{B(1)} \otimes d_{C(0)}$ 
+are non-zero after projecting to cogenerators, and 
+seeing that those are the same terms as in 
+$d_{C(1)}$. So, $\hat{\delta}_{0,1}^*C(0) \cong C(1)$ as 
+dg comodules. 
+\end{eg}
+%
+\begin{eg}[Another definition of $C(n)$] 
+  \label{eg:pb2}
+Let $\lambda = \delta_{0,n} \in 
+\Lambda([n],[n-1])$. Fix algebras 
+$A_0, \dots A_n$, and set
+\begin{align*}
+\hat{\lambda}: B(n)
+&:= B(A_0 \to A_1 \to \dots \to A_n \to A_0) 
+  \to B(A_0 \to A_2 \to A_3 \to \dots \to A_n \to A_0) 
+  =: B(n^\prime)\\
+C(n) 
+&:= C(A_0 \to A_1 \to \dots \to A_n \to A_0)\\
+C(n^\prime) 
+&:= C(A_0 \to A_2 \to A_3 \to \dots \to A_n \to A_0)
+\end{align*}
+($\hat{\lambda}$ is given by bracing the 
+first and second terms, see \ref{sec:def_G}. 
+We choose the notation $n^\prime$ instead of $n-1$ 
+since, for the algebras fixed above, 
+$B(n-1)$ would denote 
+$B(A_0 \to A_1 \to A_2 \to \dots \to A_{n-1} \to A_0)$.)
+
+Example \ref{eg:pb} shows
+\begin{equation} \label{eq:base_case}
+C(1) \cong \hat{\delta}_{0,1}^*C(0)
+\end{equation}
+as dg comodules. Given Equation 
+\ref{eq:base_case} as a base 
+case, we can show by induction that 
+$$
+C(n) \cong \hat{\delta}_{0,n}^*\dots\hat{\delta}_{0,1}^*C(0)
+$$ 
+as dg comodules. Suppose that 
+$C(W_0 \to \dots \to W_{n-1} \to W_0) 
+\cong \hat{\delta}_{0,n-1}^* \dots \hat{\delta}_{0,1}^*
+C(W_0 \to W_0)$ for any 
+choice of algebras $W_0, \dots W_{n-1}$.
+(inductive hypothesis). Then, as 
+comodules, we know
+\begin{align*}
+\hat{\delta}_{0,n}^*\dots\hat{\delta}_{0,1}^*C(0)
+& \cong
+  \hat{\delta}_{0,n}^*C(n^\prime)
+  \quad \textrm{(inductive hypothesis applied to algebras } 
+  A_0, A_2,\dots,A_n)\\
+& \cong 
+  B(n) \otimes_{\hat{\delta}_{0,n}} T(n^\prime)
+  \quad \textrm{(Proposition 
+  \ref{prop:compute_pb})}\\
+& \cong 
+  B(n) \otimes_{\hat{\delta}_{0,n}} T(0)
+  \quad \textrm{(Definition of $T$)} \\
+& \cong 
+  C(n)
+  \quad \textrm{(Definition of $C(n)$)}
+\end{align*}
+where $T(n)$ are the cogenerators of 
+$C(n)$ (see Definition 
+\ref{def:cogenerators}).
+
+To show that the differentials coincide, 
+we compute 
+\begin{align*}
+& \phantom{{}={}}
+Fd_{\hat{\delta}_{0,n}^*\dots\hat{\delta}_{0,1}^*C(0)}G
+  (\phi_{0,1} \smdots \phi_{0,k_0} | \smdots |
+  \phi_{n,1} \smdots \phi_{n,k_n} | t) \\
+&=
+[F \circ (d_{B(n)}\otimes 
+  id_{\hat{\delta}_{0,n-1}^*\dots\hat{\delta}_{0,1}^*C(0)} + 
+  id_{B(n)} \otimes 
+  d_{\hat{\delta}_{0,n-1}^*\dots\hat{\delta}_{0,1}^*C(0)})] \\
+& \phantom{{}=  {}}
+\big( \sum \limits_{\substack{1 \leq j \leq n\\
+  1 \leq r_j \leq k_j+1}}
+  (\phi_{0,1} \smdots \phi_{0,r_0-1} | \smdots |
+  \phi_{n,1} \smdots \phi_{n,r_1-1} ) \otimes \\
+&\phantom{{}= \big( \sum \sum {}}
+  ((\phi_{0,r_0}\smdots \phi_{0,k_0}) \bullet 
+  (\phi_{1,r_1}\smdots \phi_{1,k_1}) |
+  \phi_{2,r_1}\smdots \phi_{2,k_2} | \smdots |
+  \phi_{n,r_1}\smdots \phi_{n,k_n} | t) \big) \\
+&=
+[F \circ (d_{B(n)}\otimes id_{C(n^\prime)} + 
+  id_{B(n)} \otimes d_{C(n^\prime)})] \\
+& \phantom{{}=  {}}
+\big( \sum \limits_{\substack{1 \leq j \leq n\\
+  1 \leq r_j \leq k_j+1}}
+  (\phi_{0,1} \smdots \phi_{0,r_0-1} | \smdots |
+  \phi_{n,1} \smdots \phi_{n,r_1-1}) \otimes \\
+&\phantom{{}= \big( \sum \sum {}}
+  ((\phi_{0,r_0}\smdots \phi_{0,k_0}) \bullet 
+  (\phi_{1,r_1}\smdots \phi_{1,k_1}) |
+  \phi_{2,r_1}\smdots \phi_{2,k_2} | \smdots |
+  \phi_{n,r_1}\smdots \phi_{n,k_n} | t) \big)
+\end{align*}
+where the last equality holds by the 
+inductive hypothesis. The terms from 
+$d_{B(n)}\otimes id_{C(n^\prime)} + 
+id_{B(n)} \otimes d_{C(n^\prime)}$ that
+are non-zero after projecting to cogenerators 
+are exactly the terms in $d_{C(n)}$. 
+So, $C(n) \cong \hat{\delta}_{0,n}^*\dots
+\hat{\delta}_{0,1}^*C(0)$ as dg comodules. 
+\end{eg}
+%
+\begin{eg}[Yet another description of C(n)] 
+\label{eg:pb3}
+Fix algebras $A_0, \dots A_n$, $n>0$ 
+and choose a sequence of coboundaries 
+$\delta_{i_1,1}, \dots, \delta_{i_n,n}$ with 
+$0 \leq i_j \leq j-1$, $1 \leq j \leq n$. 
+Then,
+$$
+\delta_{i_1,1} \circ \dots \circ \delta_{i_n,n} 
+= \delta_{0,1} \circ \dots \circ \delta_{0,n}
+= \textrm{unique map in } \Delta([n],[0])
+  \subset \Lambda([n],[0]).
+$$
+This implies that, as functors 
+on categories of comodules, 
+\begin{align*}
+\hat{\delta}_{i_n,n}^* \dots \hat{\delta}_{i_1,1}^*
+&=
+\widehat{(\delta_{i_1,1} \circ \dots \circ 
+  \delta_{i_n,n})}^*
+  \quad \textrm{(Proposition \ref{prop:pbs_compose})}\\
+&= 
+\widehat{(\delta_{0,1} \circ \dots \circ 
+  \delta_{0,n})}^*
+  \quad \textrm{(Computation above)}\\
+&= 
+\hat{\delta}_{0,n}^* \dots \hat{\delta}_{0,1}^* 
+  \quad \textrm{(Proposition \ref{prop:pbs_compose}).} 
+\end{align*}
+Since braces are associative, the 
+differentials on $\hat{\delta}_{i_n,n}^* 
+\dots \hat{\delta}_{i_1,1}^*C(0)$ and 
+$\hat{\delta}_{0,n}^* 
+\dots \hat{\delta}_{0,1}^*C(0)$ 
+coincide. So, $\hat{\delta}_{i_n,n}^* 
+\dots \hat{\delta}_{i_1,1}^*C(0)
+\cong \hat{\delta}_{0,n}^* 
+\dots \hat{\delta}_{0,1}^*C(0)$ 
+as dg comodules.
+\end{eg}
+%
+\begin{eg}[Pullbacks along codegeneracies]
+\label{eg:pb4}
+Fix algebras $A_0, \dots, A_n$ and let 
+$\sigma_{i,n} \in \Lambda([n],[n+1])$, 
+$1 \leq i \leq n+1$ be a generating 
+codegeneracy (see Appendix 
+\ref{chap:lambda}). Set
+$$
+\hat{\sigma}_{i,n}: B(n) \to 
+B(n^\prime)
+$$
+where 
+\begin{align*}
+B(n) 
+&:= 
+B(A_0 \to \dots \to A_n \to A_0)\\
+B(n^\prime) 
+&:= 
+\begin{cases}
+  B(A_0 \to \dots \to A_i \to A_i 
+    \to \dots A_n \to A_0)
+  & 1 \leq i \leq n \\
+  B(A_0 \to \dots \to A_n \to A_0 \to A_0)
+  & i = n+1
+\end{cases}\\
+C(n) 
+&:= 
+C(A_0 \to \dots \to A_n \to A_0)\\
+C(n^\prime) 
+&:= 
+\begin{cases}
+  C(A_0 \to \dots \to A_i \to A_i 
+    \to \dots A_n \to A_0)
+  & 1 \leq i \leq n \\
+  C(A_0 \to \dots \to A_n \to A_0 \to A_0)
+  & i = n+1.
+\end{cases}
+\end{align*}
+From Proposition \ref{prop:compute_pb}, we 
+know that $\hat{\sigma}_{i,n}^*C(n^\prime) 
+\cong B(n) \otimes_{\hat{\sigma}_{i,n}} 
+T(n^\prime) \cong C(n)$ as comodules.
+To show that the differentials coincide, 
+we compute 
+\begin{align*}
+& \phantom{{}={}}
+Fd_{\hat{\sigma}_{i,n}^*C(n^\prime)}G
+  (\phi_{0,1} \smdots \phi_{0,k_0} | \smdots |
+  \phi_{n,1} \smdots \phi_{n,k_n} | t) \\
+&=
+[F \circ (d_{B(n)}\otimes 
+  id_{\hat{\sigma}_{i,n}^*C(n^\prime)} + 
+  id_{B(n)} \otimes 
+  d_{\hat{\sigma}_{i,n}^*C(n^\prime)})] \\
+& \phantom{{}=  {}}
+\big( \sum \limits_{\substack{1 \leq j \leq n\\
+  1 \leq r_j \leq k_j+1}}
+  (\phi_{0,1} \smdots \phi_{0,r_0-1} | \smdots |
+  \phi_{n,1} \smdots \phi_{n,r_1-1} ) \otimes \\
+&\phantom{{}= \big( \sum \sum {}}
+  (\phi_{0,r_0}\smdots \phi_{0,k_0}| \smdots |
+  \phi_{0,r_{i-1}}\smdots \phi_{0,k_{i-1}}| 1 |
+  \phi_{0,r_i}\smdots \phi_{0,k_i}| \smdots |
+  \phi_{n,r_1}\smdots \phi_{n,k_n} | t) \big).
+\end{align*}
+Since 1 is a unit for braces, the terms from 
+$d_{B(n)} \otimes id_{\hat{\sigma}_{i,n}^*C(n^\prime)} 
++ id_{B(n)} \otimes d_{\hat{\sigma}_{i,n}^*C(n^\prime)}$ 
+thatare non-zero after projecting to cogenerators 
+are exactly the terms in $d_{C(n)}$. 
+So, $\hat{\sigma}_{i,n}^*C(n^\prime) \cong C(n)$ 
+as dg comodules.
+\end{eg}
+%
+\begin{eg}[Pullbacks along rotations]
+\label{eg:pb5}
+Fix algebras $A_0, \dots, A_n$ and let 
+$\tau_n \in \Lambda([n],[n])$ 
+be a generating rotation (see Appendix 
+\ref{chap:lambda}). Set
+$$
+\hat{\tau}_n: B(n) \to 
+B(n^\prime)
+$$
+where 
+\begin{align*}
+B(n) &:= 
+B(A_0 \to \dots \to A_n \to A_0)\\
+B(n^\prime) &:= 
+B(A_n \to A_0 \to \dots \to A_{n-1} \to A_n)\\
+C(n) &:= 
+C(A_0 \to \dots \to A_n \to A_0)\\
+C(n^\prime) &:= 
+C(A_n \to A_0 \to \dots \to A_{n-1} \to A_n).
+\end{align*}
+From Proposition \ref{prop:compute_pb}, we 
+know that $\hat{\tau}_n^*C(n^\prime) 
+\cong B(n) \otimes_{\hat{\tau}_n} 
+T(n^\prime)$ as comodules. Unpacking the 
+righthand side, we see that $B(n) 
+\otimes_{\hat{\tau}_n} T(n^\prime) 
+\cong C(n^\prime)$ as complexes--the 
+isomorphism is given by $\hat{\tau}_n 
+\otimes id_{T}$.
+\end{eg}

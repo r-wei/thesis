@@ -1,0 +1,182 @@
+\subsection{Explicit description of 
+$\hat{\lambda}^*C(\mathcal{A}^\prime)$}
+Let $\lambda$ be a morphism in $\Lambda$. 
+Recall that from Section \ref{sec:def_G}
+that we have a functor $\hat{\lambda}: 
+B(\mathcal{A}) \to B(\mathcal{A}^\prime)$. 
+Applying the constructions in 
+Section \ref{sec:pb_defn} to
+$\hat{\lambda}$, we get a functor 
+$\hat{\lambda}^*$ from the 
+category of conilpotent 
+dg comodules over $B(\mathcal{A}^\prime)$ 
+to the category 
+of conilpotent dg comodules 
+over $B(\mathcal{A})$. 
+Below, we compute explicitly the complexes 
+$[\hat{\lambda}^*C(\mathcal{A}^\prime)](f)$ 
+for $f \in Obj(B(\mathcal{A}))$.
+%
+\begin{prop}\label{prop:compute_pb}
+Fix $f_0 \in Obj(B(\mathcal{A}))$. As comodules,
+\begin{equation}\label{eq:compute_pb}
+[\hat{\lambda}^*C(\mathcal{A}^\prime)](f_0) \cong 
+[B(\mathcal{A}) \otimes_{\hat{\lambda}} T(\mathcal{A}^\prime)](f_0) := 
+\bigoplus \limits_{h \in Obj(B(\mathcal{A}))}
+B(\mathcal{A})(f_0, h) \otimes T(\mathcal{A}^\prime)(\hat{\lambda} h)
+\end{equation}
+where $T(\mathcal{A}^\prime)(\hat{\lambda} h)$ are the cogenerators of 
+$C(\mathcal{A}^\prime)(\hat{\lambda} h)$ 
+(see Section \ref{def:cogenerators}).
+\end{prop}
+%
+\begin{rem}
+Proposition \ref{prop:compute_pb} holds 
+for any quasi-cofree comodule over 
+$B(\mathcal{A}^\prime)$. The proof is the same.
+\end{rem}
+%
+\begin{proof}[Proof of Proposition \ref{prop:compute_pb}]
+To simplify notation in this proof, 
+we will drop all references to $f_0$ and,
+when unambiguous, references to $\mathcal{A}^\prime$. 
+In other words, in this proof only,
+\begin{align*}
+C := C(\mathcal{A}^\prime) 
+&\textrm{ will denote } C(\mathcal{A}^\prime)(f_0), \\
+\hat{\lambda}^*C := \hat{\lambda}^*C(\mathcal{A}^\prime) 
+&\textrm{ will denote } [\hat{\lambda}^*C(\mathcal{A}^\prime)](f_0), \\
+B(\mathcal{A}) \otimes_{\hat{\lambda}} T 
+&\textrm{ will denote } [B(\mathcal{A}) \otimes_{\hat{\lambda}} T(\mathcal{A}^\prime)](f_0), \\
+B(\mathcal{A}) \otimes_{\hat{\lambda}} C 
+&\textrm{ will denote } [B(\mathcal{A}) \otimes_{\hat{\lambda}} C(\mathcal{A}^\prime)](f_0), \\
+B(\mathcal{A}) \otimes_{\hat{\lambda}} B(\mathcal{A}^\prime) \otimes C 
+&\textrm{ will denote } 
+[B(\mathcal{A}) \otimes_{\hat{\lambda}} B(\mathcal{A}^\prime) \otimes C(\mathcal{A}^\prime)](f_0).
+\end{align*}
+%
+To prove the proposition, 
+we will give maps
+$$
+F: \hat{\lambda}^*C \rightleftarrows B(\mathcal{A}) \otimes_{\hat{\lambda}} T:G
+$$
+and show that $F\circ G = id_{B(\mathcal{A}) \otimes_{\hat{\lambda}} T}$ 
+and $G \circ F = id_{\hat{\lambda}^*C}$.
+We define $F$ as follows: 
+$$
+F:\hat{\lambda}^*C 
+\xrightarrow[inclusion]{canonical}
+B(\mathcal{A}) \otimes_{\hat{\lambda}} C
+\xrightarrow[cogenerators]{project\;onto}
+B(\mathcal{A}) \otimes_{\hat{\lambda}} T.
+$$
+To define $G$, we will give a map 
+$G^\prime: B(\mathcal{A}) \otimes_{\hat{\lambda}} T \to 
+B(\mathcal{A}) \otimes_{\hat{\lambda}} C$, and show that the image of 
+$G^\prime$ lands in $\hat{\lambda}^*C$. We define 
+$G^\prime$ as follows:
+$$
+G^\prime(b \otimes t) = 
+\sum \limits_{(b)} b_{(1)} \otimes \hat{\lambda} b_{(2)} \cdot t
+$$
+where $b \otimes t \in B(\mathcal{A}) \otimes_{\hat{\lambda}} T$ and $\hat{\lambda} 
+b_{(2)} \cdot t$ are elements of $C(\mathcal{A}^\prime)(\hat{\lambda} h)$ 
+written in terms of cogenerators.
+
+To prove that the image of $G^\prime$ lands in 
+$\hat{\lambda}^*C$, we need to show that the two maps 
+$$
+(id_{B(\mathcal{A})}\otimes \Delta_{C}) \circ G^\prime, \>
+(id_{B(\mathcal{A})}\otimes \hat{\lambda} \otimes id_C)\circ 
+(\Delta_{B(\mathcal{A})}\otimes id_C) \circ G^\prime: 
+B(\mathcal{A}) \otimes_{\hat{\lambda}} T
+\to B(\mathcal{A}) \otimes_{\hat{\lambda}} C
+\rightrightarrows
+B(\mathcal{A}) \otimes_{\hat{\lambda}} B(\mathcal{A}^\prime) \otimes C
+$$
+coincide. We have
+\begin{align*}
+[(1\otimes \Delta_{C}) \circ G^\prime](b \otimes t) 
+&= 
+\sum \limits_{(b),\, (\hat{\lambda} b)} b_{(1)} \otimes 
+(\hat{\lambda} b_{(2)})_{(1)} \otimes 
+(\hat{\lambda} b_{(2)})_{(2)} \cdot t \\
+&= 
+\sum \limits_{(b)} b_{(1)} \otimes 
+\hat{\lambda} b_{(2)} \otimes 
+\hat{\lambda} b_{(3)} \cdot t \\
+&= 
+[(id_{B(\mathcal{A})}\otimes \hat{\lambda} \otimes id_C)\circ 
+(\Delta_{B(\mathcal{A})}\otimes id_C) \circ G^\prime]
+(b\otimes t)
+\end{align*}
+where the second equality holds since $\hat{\lambda}$ 
+is a map of cocategories
+and $\Delta_{B(\mathcal{A})}$ is coassociative.
+
+It's clear from the definitions that $F$ and $G$ are 
+maps of comodules and that 
+$F\circ G = id_{B(\mathcal{A})\otimes_{\hat{\lambda}} T}$. All that remains 
+is to show that $G \circ F = id_{\hat{\lambda}^*C}$. 
+Let $\kappa = \Sigma_i b_i \otimes \beta_i \cdot t_i$ be an 
+arbitrary element of $\hat{\lambda}^*C \hookrightarrow 
+B(\mathcal{A}) \otimes_{\hat{\lambda}} C$ where $\beta_i \cdot t_i$ are elements 
+of $C(\mathcal{A}^\prime)(\hat{\lambda} h)$ written in terms of cogenerators. 
+Then, 
+\begin{equation*}
+GF(\kappa) = 
+GF(\Sigma_i b_i \otimes \beta_i \cdot t_i) = 
+\sum \limits_{\substack{i, \\ \beta_i = 1, \\ (b_i)}} 
+{b_i}_{(1)} \otimes \hat{\lambda} {b_i}_{(2)} 
+\cdot t_i.
+\end{equation*}
+We can divide the terms in $\kappa$ into two groups: 
+(a) terms in which $\beta_i = 1 \in k$ and (b) terms in which $\beta_i
+\neq 1 \in k$. Likewise, we can divide the terms in 
+$GF(\kappa)$ into (a) terms in which $\hat{\lambda} {b_i}_{(2)} = 1$ 
+and (b) terms in which $\hat{\lambda} {b_i}_{(2)} \neq 1$. 
+From the definitions of $F$ and $G$, it's clear that 
+the Group A terms in $\kappa$ are exactly the Group A 
+terms in $GF(\kappa)$. 
+
+To show that the Group B terms 
+are the same, let $b_i \otimes \beta_i \cdot t_i$ be 
+an arbitrary Group B term in $\kappa$.
+Then, there is a term $b_i \otimes \beta_i \otimes t_i$ 
+in $(id_{B(\mathcal{A})} \otimes \Delta_{C}) \kappa$. Since 
+$(id_{B(\mathcal{A})} \otimes \Delta_{C}) \kappa = 
+(id_{B(\mathcal{A})} \otimes \hat{\lambda} \otimes id_C) \circ 
+(\Delta_{B(\mathcal{A})} \otimes id_C) \kappa$, 
+there must be a Group A term, $b_{j_i} \otimes t_{j_i}$, 
+in $\kappa$ such that $b_i \otimes \beta_i \otimes t_i$ 
+is one of the terms in the sum 
+$[(id_{B(\mathcal{A})} \otimes \hat{\lambda} \otimes id_C) \circ 
+(\Delta_{B(\mathcal{A})} \otimes id_C)] (b_{j_i} \otimes t_{j_i}) = 
+\sum \limits_{(b_{j_i})} {b_{j_i}}_{(1)} \otimes 
+\hat{\lambda} {b_{j_i}}_{(2)} \otimes t_{j_i}$. Thus, 
+$b_i \otimes \beta_i \cdot t_i$ is a Group B term in 
+$GF(\kappa)$. 
+
+Now let ${b_i}_{(1)} \otimes \hat{\lambda} {b_i}_{(2)} 
+\cdot t_i$ be an arbitrary Group B term in $GF(\kappa)$. 
+Then, ${b_i}_{(1)} \otimes \hat{\lambda} {b_i}_{(2)} \otimes t_i$ 
+is a term in 
+$(id_{B(\mathcal{A})} \otimes \hat{\lambda} \otimes id_C) \circ 
+(\Delta_{B(\mathcal{A})} \otimes id_C) \kappa = 
+(id_{B(\mathcal{A})} \otimes \Delta_{C}) \kappa 
+$. So, there is a Group B term, $b_{j_i} \otimes 
+\beta_{j_i} \cdot t_{j_i}$, in $\kappa$ such that 
+${b_i}_{(1)} \otimes \hat{\lambda} {b_i}_{(2)} 
+\otimes t_i$ is one of the terms in the sum 
+$(id_{B(\mathcal{A})} \otimes \Delta_{C}) 
+(b_{j_i} \otimes \beta_{j_i} \cdot t_{j_i}) = 
+\sum \limits_{(\beta_{j_i})}
+b_{j_i} \otimes {\beta_{j_i}}_{(1)} 
+\otimes {\beta_{j_i}}_{(2)} \cdot t_{j_i}$. 
+Since $t_i$ is a cogenerator, the only term in the sum 
+that could be equal to ${b_i}_{(1)} \otimes 
+\hat{\lambda} {b_i}_{(2)} \otimes t_i$ is 
+$b_{j_i} \otimes \beta_{j_i} \otimes t_{j_i}$. 
+Thus, ${b_i}_{(1)} \otimes \hat{\lambda} {b_i}_{(2)} 
+\cdot t_i$ is a Group B term in $\kappa$.
+\end{proof}

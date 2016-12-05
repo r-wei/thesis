@@ -1,0 +1,174 @@
+\section{Maps $\lambda_!$}
+In this section, for $\lambda \in 
+\{ \textrm{generating 
+morphisms in }\Lambda \}$ 
+(see Appendix \ref{chap:lambda}),
+we give maps $\lambda_!: 
+C(\mathcal{A}) \to 
+\hat{\lambda}^*C(\mathcal{A}^\prime)$ 
+of dg comodules 
+over $B(\mathcal{A})$. Showing that the 
+$\lambda_!$ satisfy cyclic relations 
+up to homotopy is the 
+computational heart of this thesis, 
+and will be done in the next chapter. 
+For now, we introduce the $\lambda_!$'s.
+
+$\newline$
+Fix algebras $A_0, \dots A_{n+1}$. Let 
+$B(n) := B(A_0 \to \dots \to A_n \to A_0)$, 
+$C(n) := C(A_0 \to \dots \to A_n \to A_0)$ 
+for this choice of algebras.
+%
+\subsection{Generating coboundaries 
+  ${\delta_{j,n}}_!$ for $n \in \mathbb{N}$, 
+  $0 \leq j < n$}
+From Example \ref{eg:pb3}, we know that $C(n) \cong 
+\hat{\delta}_{j,n}^*C(A_0 \to \smdots \to A_j 
+\longrightarrow A_{j+2} \to \smdots \to A_n \to A_0)$. 
+So, define
+$\delta_{j,n!}:C(n)
+\xrightarrow{id} C(n) \cong 
+\hat{\delta}_{j,n}^*C(A_0 \to \smdots \to A_j 
+\longrightarrow A_{j+2} \to \smdots \to A_n \to A_0)$ 
+for $0 \leq j < n$.
+%
+\subsection{Generating codegeneracies 
+  ${\sigma_{i,n}}_!$ for $n \in \mathbb{N}$, 
+  $1 \leq i \leq n+1$}
+From Example \ref{eg:pb4}, we know that $C(n) 
+\cong \hat{\sigma}_{i,n}^*C(A_0 \to \smdots \to A_i 
+\to A_i \to \smdots \to A_n \to A_0)$. 
+So, define
+$\sigma_{i,n!}:C(n)
+\xrightarrow{id} C(n) \cong 
+\hat{\sigma}_{i,n}^*C(A_0 \to \smdots \to A_i 
+\to A_i \to \smdots \to A_n \to A_0)$ 
+for $1 \leq i \leq n+1$.
+%
+\subsection{Generating rotations ${\tau_n}_!$}
+\subsubsection{$n=0$}
+Let ${\tau_0}_! = id: C(0) \to 
+\hat{\tau}_0^*C(0) = \hat{id}^*C(0) = C(0)$.
+%
+\subsubsection{$n=1$}
+We want to define a map of dg comodules over 
+$B(1):= B(A_0 \to A_1 \to A_0)$
+$$
+{\tau_1}_!: 
+C(1):= C(A_0 \to A_1 \to A_0) \to 
+\hat{\tau}_1^*C(A_1 \to A_0 \to A_1).
+$$
+Example \ref{eg:pb5} describes the structure of 
+$\hat{\tau}_1^*C(A_1 \to A_0 \to A_1)$. 
+$\hat{\tau}_1^*C(A_1 \to A_0 \to A_1)$ is quasi-cofree 
+over $B(1)$, so we can define ${\tau_1}_!$ by 
+giving maps from $C(1)$ to the cogenerators of 
+$\hat{\tau}_1^*C(A_1 \to A_0 \to A_1)$ and 
+checking that the corresponding map of comodules 
+commutes with the differentials. 
+
+More explicitly, 
+for $f = (f_{0,0}, f_{1,0}) \in Obj(B(1))$, we will 
+give $k$-linear maps
+\begin{align*}
+\upsilon^f: C(1)^\bullet(f) 
+& \to 
+C_{-\bullet}(A_1, _{f_{0,0}f_{1,0}} {A_1}_{id})\\
+(\phi_{0,1}\smdots \phi_{0,n_0}|
+ \phi_{1,1}\smdots \phi_{0,n_1}| \alpha )
+&\mapsto
+\upsilon^f_{n_0,n_1}(\phi_{0,1}\smdots \phi_{0,n_0}|
+ \phi_{1,1}\smdots \phi_{1,n_1}| \alpha ).
+\end{align*}
+Then, we lift $\{\upsilon_f | f \in Obj(B(1))\}$ 
+to a map of comodules in the standard way: 
+\begin{equation}
+\label{eq:colift}
+{\tau_{1!}}_f 
+  (\phi_{0,1}\smdots \phi_{0,n_0}|
+  \phi_{1,1}\smdots \phi_{1,n_1}| \alpha )
+= \sum \limits_{\substack{
+    0 \leq k_0 \leq n_0\\
+    0 \leq k_1 \leq n_1}}
+\phi_{0,1}\smdots \phi_{0,k_1}|\phi_{1,1} \smdots \phi_{1,k_0}|
+\upsilon^{f_{0,k_1}, f_{1,k_0}}_{n_0-k_0,n_1-k_1} 
+  (\phi_{0,k_0+1}\smdots \phi_{0,n_0}|
+  \phi_{1,k_1+1}\smdots \phi_{1,n_1}| \alpha )
+\end{equation}
+(see Figure \ref{fig:phi|alpha} for notation). 
+Finally, we will check by direct computation that 
+${\tau_1}_!$ defined as such commutes with the 
+differentials. To make the exposition smooth, 
+all of this is done in Appendix Proposition 
+\ref{prop:c1}.
+
+\subsubsection{$n>1$}
+For $n>1$, we define ${\tau_n}_!$ by 
+pulling back ${\tau_1}_!$ along $\delta_{0,*}$'s 
+as follows:
+\begin{align*}
+{\tau_n}_!: C(n) 
+&\cong 
+(\widehat{\delta_{0,2}\circ\dots\circ\delta_{0,n}})^*
+  C(A_0 \to A_n \to A_0)\\
+&\xrightarrow{
+  (\widehat{\delta_{0,2}\circ\dots\circ\delta_{0,n}})^*
+  {\tau_1}_!}
+(\widehat{\delta_{0,2}\circ\dots\circ\delta_{0,n}})^*
+  \hat{\tau}_1^*C(A_n \to A_0 \to A_n)\\
+&\cong
+(\widehat{\tau_1\circ\delta_{0,2}\circ\dots\circ
+  \delta_{0,n}})^*C(A_n \to A_0 \to A_n)\\
+&\cong
+(\widehat{\delta_{1,2}\circ\dots\circ\delta_{1,n}
+  \circ \tau_n})^*C(A_n \to A_0 \to A_n)\\
+&\cong
+\hat{\tau}_n^*
+  (\widehat{\delta_{1,2}\circ\dots\circ\delta_{1,n}})^*
+  C(A_n \to A_0 \to A_n)\\
+&\cong 
+\hat{\tau}_n^*C(A_n \to A_0 \to \smdots \to A_{n-1} \to A_n).  
+\end{align*}
+
+\subsection{Extra coboundary 
+  ${\delta_{n,n}}_!$ for 
+  $n \in \mathbb{N}$}
+In $\Lambda$, we have $\delta_{n,n} = 
+\delta_{0,n}\tau_n$, so we define 
+\begin{align*}
+{{\delta}_{n,n}}_! : C(n)
+& \xrightarrow{{\tau_n}_!}
+\hat{\tau}_n^*
+  C(A_n \to A_0 \to \smdots \to A_{n-1} \to A_n)\\
+& \xrightarrow{\hat{\tau}_n^*{\delta_{0,n}}_!}
+\hat{\tau}_n^*\hat{\delta}_{0,n}^*
+  C(A_n \to A_1 \to \smdots \to A_{n-1} \to A_n) \\
+&\cong
+(\widehat{\delta_{0,n}\tau_n})^*
+  C(A_n \to A_1 \to \smdots \to A_{n-1} \to A_n)\\
+&\cong
+\hat{\delta}_{n,n}^*
+C(A_n \to A_1 \to \smdots \to A_{n-1} \to A_n).
+\end{align*}
+
+\subsection{Extra codegeneracy 
+  ${\sigma_{0,n}}_!$ for 
+  $n \in \mathbb{N}$}
+In $\Lambda$, we have $\sigma_{0,n} = 
+\tau_{n+1} \sigma_{n+1,n}$, so we define 
+\begin{align*}
+{{\sigma}_{0,n}}_! : C(n)
+& \xrightarrow{\sigma_{n+1,n!} = id}
+\hat{\sigma}_{n+1,n}^*
+  C(A_0 \to \smdots \to A_n \to A_0 \to A_0)\\
+& \xrightarrow{\hat{\sigma}_{n+1,n}^*\tau_{n+1!}}
+\hat{\sigma}_{n+1,n}^*\hat{\tau}_{n+1}^*
+  C(A_0 \to A_0 \to \smdots \to A_n \to A_0) \\
+&\cong
+(\widehat{\tau_{n+1} \sigma_{n+1,n}})^*
+  C(A_0 \to A_0 \to \smdots \to A_n \to A_0)\\
+&\cong
+\hat{\sigma}_{0,n}^*
+C(A_0 \to A_0 \to \smdots \to A_n \to A_0).
+\end{align*}

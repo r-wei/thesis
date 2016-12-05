@@ -1,0 +1,222 @@
+\documentclass[12pt]{nuthesis}	
+
+\usepackage{bm} 	%bold in any mode
+\usepackage{amscd}        % For writing commutative diagrams.
+\usepackage{eucal}        % Euler fonts.
+\usepackage{verbatim}     % Quotations
+\usepackage{amsthm}	  % newtheorems
+\usepackage{lscape} % landscape
+\usepackage{amssymb} % arrows
+\usepackage{mathtools} %extensible arrows; underbrace
+\usepackage[all]{xy} %diagrams
+\usepackage{color} %colored arrows
+\usepackage{float} %figures appear here [H]
+
+%%%%%%%%%%%%%%%%%%%%%%% Some Math support %%%%%%%%%%%%%%%%%%%%
+
+%% \theoremstyle{plain} %% This is the default
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{ax}{Axiom}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\newtheorem*{notation}{Notation}
+\theoremstyle{example}
+\newtheorem{eg}{Example}[section]
+\newcommand{\breakcell}[2][c]{% break cell in tabular
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\newcommand \smdots{\makebox[1em][c]{.\hfil.\hfil.}} %small \dots
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DATA OF AUTHOR AND DISSERTATION %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Ann Rebecca Wei}
+
+\title{Title of the Dissertation}
+
+%\degree{DOCTOR OF PHILOSOPHY}  % Default: DOCTOR OF PHILOSOPHY
+
+%\field{Mathematics}            % Default: Mathematics
+
+%\graduationmonth{June}         % The default is June or December
+                                % depending on current date.
+
+%\graduationyear{2003}          % Default: current year.
+
+
+				% Use \includeonly to select the 
+\includeonly{notation, 
+appendices/lambda, appendices/computations, 
+Bn_Cn/motivation, Bn_Cn/dg_cocats, Bn_Cn/dg_comods,
+pb_pf_adj/cyclic_object_Bn, pb_pf_adj/motivation, 
+pb_pf_adj/pullbacks, pb_pf_adj/pullback_examples,
+pb_pf_adj/adjunction, pb_pf_adj/maps_lambda_shriek}	% chapters to include if you are 
+				% using the \include command below.
+				% This way you can latex only a the 
+				% part you are working on, which 
+				% is faster than latexing the entire 
+				% thesis. 
+
+
+\begin{document}
+
+%	
+%	THE BODY OF YOUR THESIS STARTS HERE
+%
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Some initial stuff %
+%%%%%%%%%%%%%%%%%%%%%%
+
+\frontmatter		% Preliminary pages start here.
+
+\maketitle		% Produces the title page.
+
+%\copyrightpage		% Creates the copyright page.
+
+
+\abstract		% Abstract.
+
+This is the abstract.
+
+\acknowledgements	% Acknowledgements (optional).
+
+Text for acknowledgments.
+
+%\preface		% Preface (optional).
+
+
+%% A few more optional pages (uncomment if needed)
+%
+\listofabbreviations 
+
+This is the list of abbreviations (optional).
+
+%\glossary
+%
+%This is the glossary (optional).
+%
+%\nomenclature
+%
+%This is the nomenclature (optional).
+%
+%% Note that the dedication text must be passed as an argument
+%% of the \dedication command
+%\dedication{This is the dedication (optional).}
+%
+
+\clearpage\phantomsection % needed for the hyperlinks to work correctly
+\tableofcontents	% Table of Contents will be automatically
+			% generated and placed here.
+
+\clearpage\phantomsection % needed for the hyperlinks to work correctly
+\listoftables		% List of Tables and List of Figures will be placed
+
+\clearpage\phantomsection % needed for the hyperlinks to work correctly
+\listoffigures		% here, if applicable (optional).
+
+
+
+\mainmatter             % Actual text starts here.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Actual text starts here %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% If there is an introduction it must be the first chapter
+
+% \chapter{Introduction or Title of First Chapter}	% The first chapter.
+% 				% \chapter command is of the form
+% 				% \chapter[..]{..} or \chapter{..} where
+% 	... text ...		% {chapter heading} and [entry in table of
+% 				% contents].
+
+
+
+% \section{First section of chapter 1}
+% 				% IMPORTANT: If your chapter heading consists
+% 				% of more than one lines, it will be auto-
+% 	... text ...		% matically broken into separate lines.
+% 				% However, if you don't like the way LaTeX
+% 				% breaks the chapter heading into lines, use
+% \section{Another section}	% `\newheadline' command to break lines.
+% 				% Never use \\ in sectional (e.g., chapter,
+% 	... text ...		% section, subsection) headings.
+
+% \chapter{Title of Second Chapter}	% Chapter 2.
+
+
+\chapter{$B(n)$ and $C(n)$}
+	\include{Bn_Cn/motivation}
+	\include{Bn_Cn/dg_cocats}
+	\include{Bn_Cn/dg_comods}
+\chapter{Pullbacks, Pushforwards and Adjunctions}
+	\include{pb_pf_adj/cyclic_object_Bn}
+	\include{pb_pf_adj/motivation}
+	\include{pb_pf_adj/pullbacks}
+	\include{pb_pf_adj/pullback_examples}
+	\include{pb_pf_adj/adjunction}
+	\include{pb_pf_adj/maps_lambda_shriek}
+
+
+\chapter{A homotopically cyclic object in (dg cocategories, dg comodules)}
+	\section{$\Lambda_\infty$, a resolution of the cyclic category}
+	\section{Coordinate-free version, a sheaf}
+
+\chapter{A homotopically cyclic object in $\infty$-categories in dg categories
+with a trace functor}
+	\section{Taking Cobar(-)}
+
+
+% The command \includeonly above allows to include a selected 
+% set of chapters only.
+
+% Uncomment the 'singlespace' environment and '\bibsep' command
+% if needed - some bibliographic styles overide the definition
+% of 'thebibliography' in nuthesis.cls
+%
+\begin{singlespace}
+%\bibsep 12pt
+\clearpage\phantomsection % needed for hyperlikns to work correctly
+\begin{thebibliography}{xxx}
+
+\bibitem{label1} A bibliographic item.  A bibliographic item.  A
+bibliographic item.  A bibliographic item.
+\bibitem{label2} Another bibliographic item.  
+\bibitem{label3} Yet another bibliographic item.  
+% The usages of \bibitem and \cite{..} are 
+% explained in Section 4.3 (page 73) of % LaTeX manual.
+% Or you may use BibTeX.
+\end{thebibliography}
+\end{singlespace}
+
+% (The following suggested by Francisco Iacobelli - 5/11/2010)
+% In case, you want to use BibTeX, you should replace (or comment)
+% the bibliography environment.
+% Instead uncomment the following 3 lines and replace <bib file>
+% with your .bib file:
+% \renewcommand\refname{\begin{centering}References\end{centering}}
+% \bibliography{<bib file>}
+% \bibliographystyle{acm} %or another suitable style.
+
+
+
+\appendix		% Appendix begins here (optional).
+
+%\appendices	        % If more than one appendix chapters,
+				% use appendices instead of appendix
+\include{appendices/lambda}
+\include{appendices/computations}
+
+\chapter{Notation}	% First appendix chapter, i.e., Appendix A.
+	\include{notation}
+
+
+
+\end{document}
+
