@@ -1,0 +1,56 @@
+\section{Homotopies}
+Here, we will show that the maps 
+of dg comodules given in Section 
+\ref{sec:shriek_maps} satisfy the 
+relations in $\Lambda$ (Equation 
+\ref{eqn:cyclic_relations}) up to 
+homotopy. More precisely, we will 
+show that
+\begin{equation}
+\label{eq:strict}
+\begin{split}
+\hat{\delta}_{j,n}^*(\delta_{i,n-1!}) \circ \delta_{j,n!} 
+&= 
+\hat{\delta}_{i,n}^*(\delta_{j-1,n-1!}) \circ \delta_{i,n!} 
+  \quad 1 \leq i \leq j \leq n-1 \\
+\hat{\sigma}_{j,n}^*(\sigma_{i,n+1!}) \circ \sigma_{j,n!} 
+&= 
+\hat{\sigma}_{i,n}^*(\sigma_{j+1,n+1!}) \circ \sigma_{i,n!}
+  \quad 1 \leq i < j \leq n+1 \\
+\hat{\sigma}_{i,n}^*(\delta_{j,n+1!}) \circ \sigma_{i,n!} 
+&= 
+  \begin{cases}
+    \hat{\delta}_{j-1,n}^*(\sigma_{i,n-1!}) \circ \delta_{j-1,n!} 
+      & 0 \leq i < j \leq n-1\\
+    id & j = i, i-1, 0 \leq j \leq n\\
+    \hat{\delta}_{j,n}^*(\sigma_{i-1,n-1!}) \circ \delta_{j,n!} 
+      & \quad 0 \leq j < i \leq n
+   \end{cases}\\
+\hat{\sigma}_{i,n}^*(\tau_{n+1!}) \circ \sigma_{i,n!} 
+&= 
+\hat{\tau}_n^*(\sigma_{i+1,n!}) \circ \tau_{n!}
+  \quad 1 \leq i \leq n\\
+\hat{\delta}_{i,n}^*(\tau_{n-1!}) \circ \delta_{i,n!} 
+&= 
+\hat{\tau}_n^*(\delta_{i+1,n!}) \circ \tau_{n!}
+  \quad 0 \leq i \leq n-1
+\end{split}
+\end{equation}
+and 
+\begin{equation}
+\begin{split}  
+\hat{\tau}_{n+1}^*(\hat{\sigma}_{n+1,n}^*(\tau_{n+1!})) \circ 
+  \hat{\sigma}_{n+1,n}^*(\tau_{n+1!}) \circ
+  \sigma_{n+1,n!} 
+&\simeq 
+\hat{\tau}_n^*(\sigma_{1,n!}) \circ \tau_{n!} \\
+\hat{\tau}_n^{*2}(\delta_{0,n!}) \circ 
+  \hat{\tau}_n^*(\tau_{n!}) \circ \tau_{n!} 
+&\simeq 
+\hat{\delta}_{n-1,n}^*(\tau_{n-1!}) \circ \delta_{n-1,n!}. 
+\end{split}
+\end{equation}
+All of the $\sigma_!$'s and $\delta_!$'s in Equation 
+\ref{eq:strict} are identity maps, so it's clear that 
+the top three equations in Equation \ref{eq:strict} 
+hold. 
