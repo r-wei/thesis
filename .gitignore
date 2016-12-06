@@ -3,5 +3,6 @@
 *.lot
 *.out
 *.toc
+*.log
 *~
 *.Rhistory

@@ -1,0 +1,64 @@
+\section{Motivation of this chapter}
+In Section \ref{sec:cyclic_B(n)}, we gave a 
+sheafy-cyclic object in dg cocategories. 
+We would like to extend that construction 
+to a sheafy-cyclic object in the 
+category of dg cocategories with a dg 
+comodule. Namely, we would like to give 
+a functor from $\chi$ to $\mathcal{D}$ 
+where $\mathcal{D}$ is as follows:
+\begin{align*}
+Obj(\mathcal{D}) 
+&= 
+\{(B,C) |
+  \textrm{B is a dg cocategory, 
+  C is a dg comodule over B}\} \\
+\mathcal{D}((B_1, C_1), (B_0, C_0))  
+&= 
+\{(f, f_!) | f:B_1 \to B_0 
+  \textrm{ is a functor,}\\
+& \phantom{{}=[(f, f_!)]{}}  
+  f_!:C_1 \to f^*C_0 
+  \textrm{ is a map of dg comodules over }
+  B_1\}
+\end{align*}
+\begin{align*}  
+\mathcal{D}((B_2, C_2), (B_1, C_1)) \times  
+\mathcal{D}((B_1, C_1), (B_0, C_0))
+&\xrightarrow{composition}
+\mathcal{D}((B_2, C_2), (B_0, C_0))\\
+(f,f_!) \times (g, g_!)
+&\mapsto
+(gf, f^*(g_!)\circ f_!)
+\end{align*}
+(Proposition \ref{prop:pbs_compose} implies 
+that composition in $\mathcal{D}$ is 
+associative.)
+
+In Section \ref{sec:shriek_maps}, we 
+gave maps $\lambda_!: C(\mathcal{A}) 
+\to \hat{\lambda}^*C(\mathcal{A}^\prime)$ 
+for $\mathcal{A}, \mathcal{A}^\prime \in 
+Obj(\chi)$ and $\lambda$ a generating 
+morphism in $\Lambda$ that induces a 
+morphism in $\chi(\mathcal{A}, 
+\mathcal{A}^\prime)$. Ideally, these 
+$\lambda_!$ would give a functor 
+$\chi \to \mathcal{D}$, but 
+unfortunately, they only respect 
+composition up to homotopy. Fortunately, 
+most of the compositions are respected 
+and, for the ones that are not, we 
+have explicit homotopies. Our homotopies 
+will commute with the original 
+$\lambda_!$'s so that no higher homotopies 
+are needed.
+
+In this chapter, we will show which compositions 
+are respected on the nose and which ones 
+need homotopies. We will then give these homotopies 
+and show that no higher homotopies are 
+needed. This chapter is the computational 
+heart of this thesis. The next chapter will 
+repackage this ``functor up to homotopy'' 
+in more abstract terms.

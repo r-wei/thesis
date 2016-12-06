@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.17)  5 DEC 2016 16:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.17)  5 DEC 2016 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -460,8 +460,8 @@ Package amsthm Warning: Unknown theoremstyle `example' on input line 28.
 (./Bn_Cn/dg_comods.aux) (./pb_pf_adj/cyclic_object_Bn.aux)
 (./pb_pf_adj/motivation.aux) (./pb_pf_adj/pullbacks.aux)
 (./pb_pf_adj/pullback_examples.aux) (./pb_pf_adj/adjunction.aux)
-(./pb_pf_adj/maps_lambda_shriek.aux) (./appendices/lambda.aux)
-(./appendices/computations.aux
+(./pb_pf_adj/maps_lambda_shriek.aux) (./homotopies/motivation.aux)
+(./appendices/lambda.aux) (./appendices/computations.aux
 
 LaTeX Warning: Label `fig:upsilon' multiply defined.
 
@@ -471,31 +471,31 @@ LaTeX Warning: Label `fig:upsilon' multiply defined.
 ) (./notation.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Try loading font information for U+msa on input line 61.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+LaTeX Font Info:    Try loading font information for U+msb on input line 61.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring OFF on input line 66.
+Package hyperref Info: Link coloring OFF on input line 61.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -505,9 +505,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count132
 )
-LaTeX Info: Redefining \ref on input line 66.
-LaTeX Info: Redefining \pageref on input line 66.
-LaTeX Info: Redefining \nameref on input line 66.
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write4
@@ -547,7 +547,7 @@ Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@height=\dimen166
 \Gin@req@width=\dimen167
 )
-Package xypdf Info: Line width: 0.47998pt on input line 66.
+Package xypdf Info: Line width: 0.47998pt on input line 61.
  [1
 
 
@@ -614,19 +614,19 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 Chapter 1
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 154.
+(hyperref)                removing `math shift' on input line 117.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 154.
+(hyperref)                removing `math shift' on input line 117.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 154.
+(hyperref)                removing `math shift' on input line 117.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 154.
+(hyperref)                removing `math shift' on input line 117.
 
 [9
 
@@ -974,7 +974,7 @@ Underfull \vbox (badness 3209) has occurred while \output is active []
 
 
 ]
-Overfull \hbox (76.87222pt too wide) detected at line 98
+Overfull \hbox (76.87222pt too wide) detected at line 99
 [][][][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^^[][]^^^[]\OMS/cmsy/m/n/12 j\OML/cm
 m/m/it/12 ^^^[][]^^^[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 \OT1/cmr/m/n/12 ) = [
 ] \OML/cmm/m/it/12 ^^^[][]^^^[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ^^^[][]^^^[]\
@@ -992,50 +992,40 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [54])
 [55]
 Chapter 3
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 168.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Lambda' on input line 168.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 168.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\infty' on input line 168.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 168.
-
 [56
 
 
 
 ]
+\openout2 = `homotopies/motivation.aux'.
+
+ (./homotopies/motivation.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57
+
+]
+[58]
 Chapter 4
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 172.
+(hyperref)                removing `math shift' on input line 134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\infty' on input line 172.
+(hyperref)                removing `\infty' on input line 134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 172.
+(hyperref)                removing `math shift' on input line 134.
 
-[57
+[59
+
 
 
 ]
 References
-[58
+[60
 
 
 
@@ -1059,12 +1049,12 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59
+ [61
 
 
 
 ])
-[60]
+[62]
 \openout2 = `appendices/computations.aux'.
 
  (./appendices/computations.tex
@@ -1077,17 +1067,17 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61
+ [63
 
 
 
 
 ]
-[62]
+[64]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63]
-[64]
+ [65]
+[66]
 Overfull \hbox (4.22289pt too wide) in paragraph at lines 186--186
 [][]| 
  []
@@ -1100,14 +1090,14 @@ Overfull \hbox (11.93248pt too wide) in paragraph at lines 178--219
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65
+ [67
 
 ]
-[66]) (./appendices/computational_prop_2.tex <xymatrix 3x1 371> <xymatrix 3x1
+[68]) (./appendices/computational_prop_2.tex <xymatrix 3x1 371> <xymatrix 3x1
 371>
-Underfull \vbox (badness 4403) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67pdfTeX warning (ext4): destination with the same identifier (name{figure.B.
+ [69pdfTeX warning (ext4): destination with the same identifier (name{figure.B.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1115,19 +1105,19 @@ Underfull \vbox (badness 4403) has occurred while \output is active []
 l.55 \end{equation}
                    
 
-] [68]
+] [70]
 Overfull \hbox (11.93248pt too wide) in paragraph at lines 65--91
  [] 
  []
 
-[69
+[71
 
 ]
 Overfull \hbox (74.2025pt too wide) in paragraph at lines 101--116
  [] 
  []
 
-[70
+[72
 
 
 ]) (./appendices/computational_prop_3.tex
@@ -1136,18 +1126,18 @@ Overfull \hbox (37.24345pt too wide) in paragraph at lines 24--24
  []
 
 ) (./appendices/computational_prop_4.tex <xymatrix 4x1 526> <xymatrix 4x1 526>
-[71
+[73
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [72pdfTeX warning (ext4): destination with the same identifier (name{figure.B.
+ [74pdfTeX warning (ext4): destination with the same identifier (name{figure.B.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.90 \end{equation}
-                   ] [73]
+                   ] [75]
 Underfull \hbox (badness 4366) in paragraph at lines 102--102
 []\OT1/cmr/m/n/12 Comes from Stan-dard
  []
@@ -1221,13 +1211,13 @@ Overfull \hbox (11.93248pt too wide) in paragraph at lines 100--186
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [74
+ [76
 
 ]
 Overfull \vbox (34.89938pt too high) has occurred while \output is active []
 
 
-[75]
+[77]
 Underfull \hbox (badness 10000) in paragraph at lines 204--206
 []$\OML/cmm/m/it/12 ^^^[]\OMS/cmsy/m/n/12 f[]gf[]g ^^A
  []
@@ -1237,7 +1227,7 @@ Overfull \hbox (74.2025pt too wide) in paragraph at lines 195--228
  [] 
  []
 
-[76
+[78
 
 
 ]) (./appendices/computational_prop_5.tex <xymatrix 4x1 526> <xymatrix 4x1
@@ -1246,7 +1236,7 @@ Overfull \hbox (35.72937pt too wide) detected at line 56
 [] []
  []
 
-[77pdfTeX warning (ext4): destination with the same identifier (name{figure.B.3
+[79pdfTeX warning (ext4): destination with the same identifier (name{figure.B.3
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1254,9 +1244,9 @@ Overfull \hbox (35.72937pt too wide) detected at line 56
 l.67 \end{align*}
                  
 
-])) [78]
+])) [80]
 Appendix C
-[79
+[81
 
 
 
@@ -1276,7 +1266,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [80
+ [82
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 28--30
@@ -1309,7 +1299,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
 Underfull \vbox (badness 1540) has occurred while \output is active []
 
- [81]
+ [83]
 Overfull \hbox (16.89034pt too wide) in paragraph at lines 46--47
 []$\OT1/cmr/bx/sc/12 ^^G$ \OT1/cmr/m/n/12 is a lin-ear map $\OML/cmm/m/it/12 Ba
 r\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[]; A[
@@ -1327,19 +1317,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-[82]) [83]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 221.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 221.
+[84]) [85]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
  (./thesis.aux (./Bn_Cn/motivation.aux) (./Bn_Cn/dg_cocats.aux)
 (./Bn_Cn/dg_comods.aux) (./pb_pf_adj/cyclic_object_Bn.aux)
 (./pb_pf_adj/motivation.aux) (./pb_pf_adj/pullbacks.aux)
 (./pb_pf_adj/pullback_examples.aux) (./pb_pf_adj/adjunction.aux)
-(./pb_pf_adj/maps_lambda_shriek.aux) (./appendices/lambda.aux)
-(./appendices/computations.aux) (./notation.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 221.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 221.
+(./pb_pf_adj/maps_lambda_shriek.aux) (./homotopies/motivation.aux)
+(./appendices/lambda.aux) (./appendices/computations.aux) (./notation.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 422CAEF91B8575A231B966797EE66B1C;1809.
+(rerunfilecheck)             Checksum: BBFF32C2A0CF5F5C193C03825450D9C2;1722.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1350,13 +1340,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 221.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
  ) 
 Here is how much of TeX's memory you used:
- 10436 strings out of 495028
- 143005 string characters out of 6181496
- 308299 words of memory out of 5000000
- 12984 multiletter control sequences out of 15000+600000
+ 10444 strings out of 495028
+ 143187 string characters out of 6181496
+ 307783 words of memory out of 5000000
+ 12985 multiletter control sequences out of 15000+600000
  22881 words of font info for 90 fonts, out of 8000000 for 9000
  175 hyphenation exceptions out of 8191
  40i,25n,33p,3251b,898s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1387,10 +1377,10 @@ ic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /xypic/xyatip10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyb
 tip10.pfb>
-Output written on thesis.pdf (83 pages, 428637 bytes).
+Output written on thesis.pdf (85 pages, 430893 bytes).
 PDF statistics:
- 832 PDF objects out of 1000 (max. 8388607)
- 691 compressed objects within 7 object streams
+ 838 PDF objects out of 1000 (max. 8388607)
+ 695 compressed objects within 7 object streams
  199 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 193 words of extra memory for PDF output out of 10000 (max. 10000000)
 
