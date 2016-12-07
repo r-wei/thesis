@@ -25,34 +25,29 @@
 
 \begin{prop}
 \label{prop:c1}
-Let $A_0, A_1$ be algebras. 
-Let $(\vec{\phi} | \vec{\psi} | \alpha) = 
-(\phi_1\smdots\phi_n | \psi_1\smdots\psi_m| \alpha)$ 
-denote 
-the element of $C(A_0 \to A_1 \to A_0)(g_0f_0)$ 
-pictured below (see Section \ref{sec:comod_strre} 
-to interpret the picture): 
-%
-\begin{figure}[H]
-\centerline{\xymatrix{
-A_0 \ar@/^5pc/[r]^{f_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
-\ar@/_4pc/[rr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
-& A_1 \ar@/^5pc/[r]^{g_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
-& A_0
-}}
-\end{figure}
-%
-Define a map of vector spaces 
+Let $\hat{\tau}_1: 
+B(A_0 \to A_1 \to A_0) 
+\longrightarrow B(A_1 \to A_0 \to A_1)$ 
+be as defined in Section 
+\ref{sec:cyclic_B(n)}.
+Recall from Example \ref{eg:pb5} that 
+$\hat{\tau}_1^*C(A_1 \to A_0 \to A_0)
+\cong C(A_1 \to A_0 \to A_1)$ 
+as complexes. Define a map 
 $$
-\upsilon^{f_0, g_0}: C(A_0 \to A_1 \to A_0)(g_0f_0) 
-\longrightarrow C(A_1 \to A_0 \to A_1)(f_0g_0)
-$$ 
-as follows: 
+\Upsilon_{A_0,A_1}: C(A_0 \to A_1 \to A_0)
+\to \hat{\tau}_1^*C(A_1 \to A_0 \to A_1)
+$$
+of comodules over 
+$B(A_0 \to A_1 \to A_0)$ as follows:
 \begin{align*}
+\upsilon^{f_0, g_0}: C(A_0 \to A_1 \to A_0)(g_0f_0) 
+&\to
+\hat{\tau}_1^*C(A_1 \to A_0 \to A_1)(f_0g_0)
+\cong 
+C(A_1 \to A_0 \to A_1)(f_0g_0)\\
+&\xrightarrow[cogenerators]{\textrm{project onto}}
+C_{-\bullet}(A_1, _{f_0g_0}{A_1}_{id})\\
 \upsilon_{n,m}^{f_0,g_0} 
 (\vec{\phi} | \vec{\psi} | \alpha) = 
 & \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \\
@@ -62,22 +57,7 @@ as follows:
 \bigg( + f_0a_0 \otimes \lambda(\vec{\phi}) \mathfrak{a}_1 
   \; \; \; \; if \; \; m = 0 \bigg).
 \end{align*}
-Recall from Example \ref{eg:pb5} that 
-$C(A_1 \to A_0 \to A_1) \cong 
-\hat{\tau}_1^*C(A_1 \to A_0 \to A_0)$ 
-as complexes where $\hat{\tau}_1: 
-B(A_0 \to A_1 \to A_0) 
-\longrightarrow B(A_1 \to A_0 \to A_1)$. 
-Using the comodule structure 
-on $\hat{\tau}_1^*C(A_1 \to A_0 \to A_0)$, 
-we can lift $\{\upsilon^{f_0,g_0}| 
-(f_0, g_0) \in Obj(B(A_0 \to A_1 \to A_0))\}$ 
-to a map $\Upsilon$
-of comodules over 
-$B(A_0 \to A_1 \to A_0)$ in the standard way
-(see Equation \ref{eq:colift}).
-
-Then, $\Upsilon: C(A_0 \to A_1 \to A_0)
+Then, $\Upsilon_{A_0,A_1}: C(A_0 \to A_1 \to A_0)
 \to \hat{\tau}^*C(A_1 \to A_0 \to A_1)$ 
 is a map of dg comodules over 
 $B(A_0 \to A_1 \to A_0)$.
@@ -85,7 +65,9 @@ $B(A_0 \to A_1 \to A_0)$.
 %
 \begin{proof}
 We must show: (1) $\Upsilon$ is a map of comodules, and 
-(2) $\Upsilon$ commutes with the differentials.
+(2) $\Upsilon$ commutes with the differentials. (In this 
+proof, we drop the subscripts and write 
+$\Upsilon := \Upsilon_{A_0, A_1}$.)
 
 (1) This proof is standard for cofree comodules. 
 Let ($\vec{\phi} | \vec{\psi} | \alpha$) be as 
@@ -151,21 +133,13 @@ to check that
 \upsilon_{n, m-1} ( \vec{\phi} | b^\prime(\vec{\psi}) | \alpha ) \; + \\
 &\upsilon_{n, m} ( \vec{\phi} | \vec{\psi} | b(\alpha) ) \; + 
 b \circ \upsilon_{n, m} ( \vec{\phi} | \vec{\psi} | \alpha ) \; + \\
-&\upsilon_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \iota(\psi_{m} \{\vec{\phi}_{I_2}\}, \alpha )) \; + 
-\upsilon_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \iota(\phi_{n},\alpha)) \; + \\
-&\iota(\phi_1 \{ \psi_{J_1}\}, \upsilon_{\vec{\phi}|-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha )) \; + 
-\iota(\psi_1, \upsilon_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, |\vec{\psi}\}} | \alpha)) \\ 
+&\upsilon_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\} \cdot \alpha ) \; + 
+\upsilon_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \phi_{n}\cdot \alpha) \; + \\
+&\phi_1 \{ \psi_{J_1}\}\cdot \upsilon_{\vec{\phi}|-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha ) \; + 
+\psi_1\cdot \upsilon_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, |\vec{\psi}\}} | \alpha) \\ 
 &= 0.
 \end{aligned}
 \end{equation}
-$\tilde{\delta}$ is the extension of the Hochschild 
-cochain differential to the bar complex, 
-and $b^\prime = \sum_{i=0}^{n-1} (-1)^{i}b_i$ with
-$b_i =$ the cup product on Hochschild cochains 
-between the $i^{th}$ and $i+1^{th}$ terms, $b$ is 
-the Hochschild chains differential, $\iota$ is 
-defined in Equation \ref{eq:action_term}, and 
-the braces $\cdot \{ \cdot \}$ are defined in ....
 In Equation \ref{eq:upsilon}, we will call the 
 terms in the first two rows the ``standard terms'', 
 and the terms in the second two rows the 

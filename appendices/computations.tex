@@ -2,8 +2,98 @@
 In this appendix, we give the 
 computational propositions 
 needed to establish the 
-homotopically cyclic structure 
-on dg comodules. 
+homotopically sheafy-cyclic structure 
+on dg comodules. All the comodules we work 
+with will be cofree, 
+and we will define maps into them by 
+giving maps into cogenerators 
+(see Equation \ref{eq:quasicofree}).
+
+\section{Computational notation}
+For this section's propositions, we 
+establish the following notation:
+\begin{align*}
+A_0, A_1 
+&\textrm{ fixed algebras}\\
+(\vec{\phi} | \vec{\psi} | \alpha) 
+&:= 
+(\phi_1\smdots\phi_n | \psi_1\smdots\psi_m| \alpha)\\
+&= 
+\xymatrix{
+A_0 \ar@/^5pc/[r]^{f_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+\ar@/_4pc/[rr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+& A_1 \ar@/^5pc/[r]^{g_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+& A_0
+}
+\in C(A_0 \to A_1 \to A_0)(g_0f_0)\\
+\vec{\phi}_{\{i_1, i_2,\smdots, i_k\}}
+&:= 
+\phi_{i_1}\phi_{i_2}\smdots\phi_{i_k}
+ \quad \textrm{ where $\{i_1, i_2,\smdots, i_k\}$ 
+ is an ordered subset of $\{1,\smdots,n\}$}\\
+\vec{\phi}_{\{\}}
+&:= 
+1 \in k \cong Bar_0(C^\bullet(A_0, A_1))\\
+\vec{\psi}_{\{\}}
+&:= 
+1 \in k \cong Bar_0(C^\bullet(A_1, A_0))\\
+|I| 
+&:=
+\textrm{number of elements in a set $I$}\\
+I_1I_2 
+&:= 
+\textrm{concatenation as ordered sets 
+of possibly-empty sets $I_1$ and $I_2$}\\
+\tilde{\delta} 
+&:= 
+\substack{\textrm{extension of the Hochschild 
+cochain differential}\\\textrm{to a differential on 
+a bar complex}}\\
+b^\prime 
+&:= 
+\sum_{i=0}^{r-1} (-1)^{i}b_i, 
+  \textrm{ for appropriate r}\\
+b_i 
+&:= \textrm{cup product on Hochschild cochains 
+between the $i^{th}$ and $i+1^{th}$ terms}\\
+b
+&:=
+\textrm{Hochschild chains differential}
+%\lambda()
+% , $\iota$ is 
+% defined in Equation \ref{eq:action_term}, and 
+% the braces $\cdot \{ \cdot \}$ are defined in ....
+\end{align*}
+%
+\subsection{Notation for elements of Hochschild chains}
+Let $a_0 \otimes a_1 \otimes \cdots \otimes a_n$ 
+denote a typical element of $C_{-\bullet}(A,A)$ where 
+$A$ is some algebra. At times, we wish to feed a portion 
+of $a_0 \otimes a_1 \otimes \smdots \otimes a_n$ to a 
+Hochschild cochain (or other map on chains) without 
+specifying the degree of the cochain. To do this, 
+we will rewrite $a_0 \otimes a_1 \otimes \smdots \otimes a_n 
+= a_0 \otimes \mathfrak{a}_1 \otimes \smdots \otimes \mathfrak{a}_r$ 
+where each $\mathfrak{a}_i = a_{j_i} \otimes a_{j_i+1} \otimes 
+\smdots \otimes a_{j_{i+1}-1}$ and $\mathfrak{a}_i$ 
+is an empty chain if $j_i = j_{i+1}$.
+
+For example, if $\phi \in C^2(A,A)$, then we 
+rewrite 
+$$
+\sum \limits_{1\leq i \leq n-1} 
+a_0 \otimes a_1 \otimes \smdots a_{i-1} \otimes 
+\phi(a_i, a_{i+1}) \otimes a_{i+2} \otimes \smdots \otimes a_n
+=
+\sum
+a_0 \otimes \mathfrak{a}_1 \otimes \phi(\mathfrak{a}_2)
+\otimes \mathfrak{a}_3.
+$$
+%
 \input{appendices/computational_prop_1}
 \input{appendices/computational_prop_2}
 \input{appendices/computational_prop_3}

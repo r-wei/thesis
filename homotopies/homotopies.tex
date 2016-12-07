@@ -207,3 +207,61 @@ show that Equation
 \ref{eq:weak_delta} implies Equation 
 \ref{eq:weak_tau}, and Equation \ref{eq:weak_tau} 
 implies Equation \ref{eq:weak_sigma}.
+
+\subsubsection{Showing Equation \ref{eq:weak_delta} holds}
+For $n=1$, eliminating the identity 
+maps reduces Equation \ref{eq:weak_delta} to:
+\begin{align*} 
+\hat{\tau}_1^*(\tau_{1!}) \circ \tau_{1!} 
+\simeq id.
+\end{align*}
+We prove the above in Appendix Proposition 
+\ref{prop:c2}. (In the appendix, 
+$\tau_{1!} = \Upsilon_{A_0,A_1}$, 
+$\hat{\tau}_1^*(\tau_{1!}) = \Upsilon_{A_1,A_0}$, 
+and the homotopy is denoted $B$.)
+
+For $n=2$, eliminating the identity 
+maps reduces Equation \ref{eq:weak_delta} to:
+\begin{align*} 
+\hat{\tau}_1^*(\tau_{1!}) \circ \tau_{1!} 
+\simeq id.
+\end{align*}
+We prove the above in Appendix Proposition 
+\ref{prop:c4}. (In the appendix,...)
+
+Now, we will reduce Equation 
+\ref{eq:weak_delta} for $n\geq 2$ to the case 
+$n=2$. We have
+\begin{align*}
+\hat{\tau}_n^{*2}(\delta_{0,n!}) \circ 
+  \hat{\tau}_n^*(\tau_{n!}) \circ \tau_{n!}   
+&=  
+\hat{\tau}_n^{*2}(\delta_{0,n!}) \circ 
+  \hat{\tau}_n^*(
+  (\widehat{\delta_{0,2}\smdots\delta_{0,n}})^*(\tau_{1!})) 
+  \circ \tau_{n!} \\
+&=   
+\hat{\tau}_n^{*2}(\delta_{0,n!}) \circ 
+  (\widehat{\delta_{0,2}\smdots\delta_{0,n}\tau_n})^*(\tau_{1!}) 
+  \circ \tau_{n!} \\
+&=
+\hat{\tau}_n^{*2}(\delta_{0,n!}) \circ 
+  (\widehat{\delta_{0,2}\tau_2\delta_{0,3}\smdots\delta_{0,n}})^*(\tau_{1!}) 
+  \circ \tau_{n!} \\
+\hat{\tau}_n^{*2}(\delta_{0,n!}) \circ 
+  \hat{\tau}_n^*(\tau_{n!}) \circ \tau_{n!}   
+\simeq 
+\hat{\delta}_{n-1,n}^*(\tau_{n-1!}) \circ \delta_{n-1,n!}
+\end{align*}
+%
+\subsubsection{Showing Equation \ref{eq:weak_tau} holds}
+We prove this by induction on $n$. For $n=1$, 
+Equation \ref{eq:weak_tau} is the same as 
+Equation \ref{eq:weak_delta}, which we 
+established in the previous section. Now, 
+assume that Equation \ref{eq:weak_tau} holds 
+for $N=n-1$. We want to show that Equation 
+\ref{eq:weak_tau} holds for $N=n$.
+%
+\subsubsection{Showing Equation \ref{eq:weak_sigma} holds}

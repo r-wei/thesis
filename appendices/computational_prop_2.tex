@@ -1,42 +1,52 @@
-\begin{figure} \label{fig:upsilon}
-\centerline{\xymatrix{
-A_0 \ar@/^5pc/[r]^{f_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
-\ar@/_4pc/[rr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
-& A_1 \ar@/^5pc/[r]^{g_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
-& A_0
-}
-$\overset{B}\longrightarrow$
-\xymatrix{
-A_0 \ar@/^5pc/[r]^{f_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
-\ar@/_4pc/[rr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
-& A_1 \ar@/^5pc/[r]^{g_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
-& A_0
-}}
-\caption{A picture of the domain and target of $B$}
-\end{figure}
+% \begin{figure} \label{fig:upsilon}
+% \centerline{\xymatrix{
+% A_0 \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% \ar@/_4pc/[rr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+% & A_1 \ar@/^5pc/[r]^{g_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+% & A_0
+% }
+% $\overset{B}\longrightarrow$
+% \xymatrix{
+% A_0 \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% \ar@/_4pc/[rr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+% & A_1 \ar@/^5pc/[r]^{g_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+% & A_0
+% }}
+% \caption{A picture of the domain and target of $B$}
+% \end{figure}
 
 \begin{prop}
-$D(B) = \Upsilon^2 - Id$ where
+\label{prop:c2}
+Let 
+$B:C(A_0 \to A_1 \to A_0)
+\longrightarrow C(A_0 \to A_1 \to A_0)$ 
+be the map of cofree comodules defined by 
+the following maps to cogenerators:
 \begin{align*}
 B_{n, m} (\vec{\phi} | \vec{\psi} | \alpha) 
-= 1 \otimes \lambda(\psi)\lambda(\phi) \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1                          
+= 1 \otimes \lambda(\psi)\lambda(\phi) \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1.
 \end{align*}
+Then, $D(B) = \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id$ where
+$\Upsilon$ is defined in Proposition 
+\ref{prop:c1}.
 \end{prop}
 
 \begin{proof}
-We must show: (1) $B$ is a map of comodules, and (2) $D(B) = \Upsilon^2 - Id$.
-
-(1) This proof is standard for cofree comodules. 
-
-(2) We show that $D(B) = \Upsilon^2 - Id$ by direct computation. Since all of the maps are maps of cofree comodules, we only need to check that $\pi_1(D(B) - \Upsilon^2 - Id) = 0$ where $\pi_1$ denotes projection of the comodule onto its degree-1 component, (i.e., $\pi_1: Bar(C^\bullet(A_0, A_1)) \otimes Bar(C^\bullet(A_1, A_0)) \otimes C_{-\bullet}(A_0, A_0) \rightarrow C_{-\bullet}(A_0, A_0)$). More explicitly, we want to check that
+We prove the statement by direct computation. 
+Since all of the maps are maps of cofree comodules, 
+we only need to check that $\pi_1(D(B) - 
+\Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id) = 0$ 
+where $\pi_1$ denotes projection of the comodule 
+onto cogenerators. More explicitly, for an element 
+$(\vec{\phi}|\vec{\psi}|\alpha)$, we want to check that
 \begin{equation} \label{eq:upsilon_homotopy}
 \begin{aligned}
 &B_{n, m} ( \tilde{\delta}(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
@@ -54,9 +64,9 @@ B_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \phi_{n} \cdot \alph
 \end{aligned}
 \end{equation}
 
-We will call the terms in the first two rows the ``standard terms'' in the computaion of $D(B)$, and the terms in the second two rows the ``extra terms'' in the computation of $D(B)$. The fifth row is $\pi_1(\Upsilon^2 - Id)$. 
+We will call the terms in the first two rows the ``standard terms'' in the computaion of $D(B)$, and the terms in the second two rows the ``extra terms'' in the computation of $D(B)$. The fifth row is $\pi_1(\Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id)$. 
 
-Following the logic of Lemma [number], we compute the sum of the standard terms. In the chart below, the leftmost column lists the expressions that don't cancel in the sum of the standard terms, the middle column gives the standard term from which the expression comes, and the rightmost column gives the extra term that cancels the expression. 
+We compute the sum of the standard terms. In the chart below, the leftmost column lists the expressions that don't cancel in the sum of the standard terms, the middle column gives the standard term from which the expression comes, and the rightmost column gives the extra term that cancels the expression. 
 
 \newpage
 
@@ -116,5 +126,5 @@ Now, we compute the remaining terms from the fifth row. In the chart below, the 
 \end{center}
 \end{landscape}
 
-All of the terms in the table describing the expansion of equation \ref{eq:upsilon_homotopy} cancel, so $D(B) = \Upsilon^2 - Id$.
+All of the terms in the table describing the expansion of equation \ref{eq:upsilon_homotopy} cancel, so $D(B) = \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id$.
 \end{proof}

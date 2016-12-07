@@ -215,15 +215,40 @@ a morphism to $C(n)$ is determined by projections
 to its Hochschild-chains component.
 More precisely, there is a one-to-one correspondence
 \begin{equation}\label{eq:quasicofree}
+\begin{split}
 \bigg\{ \let\scriptstyle\textstyle
 \substack{\textrm{maps of comodules}\\
   D \to C(n)\textrm{ over } B(n)}
 \bigg\}
-\overset{1:1}\longleftrightarrow
+&\overset{1:1}\longleftrightarrow
 \bigg\{ \bigg( \let\scriptstyle\textstyle
 \substack{\textrm{maps of graded vector spaces}\\
   D^\bullet(f) \to C_{-\bullet}(A_0, _f{A_0}_{id})}
-\bigg)_{f \in Obj(B(n))} \bigg\}.
+\bigg)_{f \in Obj(B(n))} \bigg\}\\
+\bigg( F:D\to C(n) \bigg)
+&\mapsto
+\bigg( \substack{\begin{split}
+  D(f) 
+  &\xrightarrow{F_f} C(n)(f) \\
+  &\xrightarrow{project}
+  C_{-\bullet}(A_0, _f{A_0}_{id})
+  \end{split}} 
+  \bigg)_f\\
+\begin{pmatrix}
+  D(f)
+  &\xrightarrow{\Delta_D}
+  \bigoplus \limits_{g \in Obj(B(n))}
+  B(n)(f,g) \otimes D(g)\\
+  &\xrightarrow{\oplus_g id_B \otimes F_g}
+  \oplus_g
+  B(n)(f,g) \otimes C_{-\bullet}(A_0, _g{A_0}_{id})\\
+  &\cong C(n)(f)
+  \end{pmatrix} _f
+&\leftmapsto  
+\bigg( D(f) \to
+  C_{-\bullet}(A_0, _f{A_0}_{id})
+  \bigg)_f\\
+\end{split}
 \end{equation}
 %
 \begin{defn}\label{def:cogenerators}
@@ -243,6 +268,8 @@ $A_0, \smdots A_n$, we will
 use $T(n)$ to denote 
 $T(A_0 \to \smdots A_n \to A_0)$.
 \end{defn}
+%
+
 %
 \subsubsection{Differential}
 The differential $d_{C(n)}(f)$ on $C(n)^\bullet(f)$ is: 
