@@ -1,55 +1,76 @@
-\begin{figure} \label{fig:upsilon}
-\centerline{\xymatrix{
-A_0 \ar@/^5pc/[r]^{f_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
-\ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
-& A_1 \ar@/^5pc/[r]^{g_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
-& A_2 \ar@/^5pc/[r]^{h_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
-& A_0
-}
-$\overset{\mathcal{B}}\longrightarrow$
-\xymatrix{
-A_2 \ar@/^5pc/[r]^{h_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
-\ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
-& A_0 \ar@/^5pc/[r]^{f_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
-& A_1 \ar@/^5pc/[r]^{g_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
-& A_2
-}}
-\caption{A picture of the domain and target of $\mathcal{B}$}
-\end{figure}
-
-
-\begin{prop}
-\begin{equation} \label{eq:prop4}
-D(\mathcal{B}) = \tau^{2*}({\delta_0}_!) \circ (\delta_0 \tau)^*(\Upsilon) \circ \delta_0^*(\Upsilon) 
-   - \delta_1^*(\Upsilon) \circ {\delta_1}_!.
-\end{equation} where
+% \begin{figure} \label{fig:upsilon}
+% \centerline{\xymatrix{
+% A_0 \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% \ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+% & A_1 \ar@/^5pc/[r]^{g_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+% & A_2 \ar@/^5pc/[r]^{h_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
+% & A_0
+% }
+% $\overset{\mathcal{B}}\longrightarrow$
+% \xymatrix{
+% A_2 \ar@/^5pc/[r]^{h_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
+% \ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+% & A_0 \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% & A_1 \ar@/^5pc/[r]^{g_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+% & A_2
+% }}
+% \caption{A picture of the domain and target of $\mathcal{B}$}
+% \end{figure}
+%
+\begin{prop} \label{prop:c4}
+Let 
+$$
+\mathcal{B}: C(A_0 \to A_1 \to A_2 \to A_0)
+\to \hat{\tau}_2^{*2}C(A_1 \to A_2 \to A_0 \to A_1)
+$$ 
+be a map of comodules over 
+$B(A_0 \to A_1 \to A_2 \to A_0)$ 
+determined by the following maps to 
+cogenerators:
 \begin{align*}
+\mathcal{B}^{f_0, g_0,h_0}: 
+  C(A_0 \to A_1 \to A_0)(h_0g_0f_0) 
+&\to
+\hat{\tau}_2^{*2}C(A_1 \to A_2 \to A_0 \to A_1)
+  (f_0h_0g_0)\\
+&\xrightarrow[cogenerators]{\textrm{project onto}}
+C_{-\bullet}(A_1, _{f_0h_0g_0}{A_1}_{id})\\
 \mathcal{B}_{n, m, p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha) 
 = & \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \\
                           \textrm{as ordered sets}}}
   1 \otimes \lambda(\vec{\phi}_{I_1})\big( \lambda(\vec{\theta}) \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2})
-  \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1 \big)                          
+  \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1 \big)               
 \end{align*}
+Then, 
+\begin{equation} \label{eq:prop4}
+D(\mathcal{B}) = 
+  \Upsilon_{A_2\bullet A_0, A_1} \circ
+  \Upsilon_{A_0\bullet A_1, A_2} 
+   - \Upsilon_{A_0, A_1\bullet A_2}.
+\end{equation}
 \end{prop}
 
 \begin{proof}
-We must show: (1) $\mathcal{B}$ is a map of comodules, and (2) Equation \ref{eq:prop4} holds.
-
-(1) This proof is standard for cofree comodules. 
-
-(2) We show that Equation \ref{eq:prop4} holds by direct computation. Since all of the maps are maps of cofree comodules, we only need to check that $\pi_1($Equation \ref{eq:prop4}$)$ holds where $\pi_1$ denotes projection of the comodule onto its degree-1 component, (i.e., $\pi_1: Bar(C^\bullet(A_1, A_2)) \otimes Bar(C^\bullet(A_2, A_0)) \otimes Bar(C^\bullet(A_0, A_1)) \otimes C_{-\bullet}(A_1, A_1) \rightarrow C_{-\bullet}(A_1, A_1)$). More explicitly, we want to check that
+We will show that Equation \ref{eq:prop4} 
+holds by direct computation. Since all of 
+the maps are maps of cofree comodules, we 
+only need to check that $\pi_1($
+Equation \ref{eq:prop4}$)$ holds where 
+$\pi_1$ denotes projection of the comodule 
+onto cogenerators. More explicitly, we 
+want to check that
 \begin{equation} \label{eq:prop4_expand}
 \begin{aligned}
 %hochschild cochain delta
@@ -88,13 +109,24 @@ b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha 
 =0.
 \end{aligned}
 \end{equation}
+In Equation \ref{eq:prop4_expand} above, 
+we call the terms in rows 1-3 the 
+``standard terms'' in the computation of 
+$D(\mathcal{B})$, and the terms in rows 
+4-7 the ``extra terms'' in the computation 
+of $D(\mathcal{B})$. The terms in rows 8-9 
+are $\pi_1$ of the righthand side of Equation 
+\ref{eq:prop4}; we will call these the 
+``8$^{th}$- and 9$^{th}$-row terms''.
 
-We will call the terms in rows 1-3 the ``standard terms'' in the computaion of $D(\mathcal{B})$, and the terms in rows 4-7 the ``extra terms'' in the computation of $D(\mathcal{B})$. The terms in rows 8-9 are $\pi_1$ of the righthand side of Equation \ref{eq:prop4}; we will call these the ``8$^{th}$- and 9$^{th}$-row terms''.
-
-Following the logic of Lemma [number], we compute the sum of the standard terms. In the chart below, the leftmost column lists the expressions that don't cancel in the sum of the standard terms, the middle column gives the standard term from which the expression comes, and the rightmost column gives the term that cancels the expression. 
-
+We compute the sum of the standard terms. 
+In the chart below, the leftmost column lists 
+the expressions that don't cancel in the sum 
+of the standard terms, the middle column gives 
+the standard term from which the expression comes, 
+and the rightmost column gives the term that 
+cancels the expression. 
 \newpage
-
 \begin{landscape}
 \begin{center}
   \begin{tabular}{ p{3.25in} | p{1.75in} | p{2.75in} }

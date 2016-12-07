@@ -93,9 +93,57 @@ a_0 \otimes a_1 \otimes \smdots a_{i-1} \otimes
 a_0 \otimes \mathfrak{a}_1 \otimes \phi(\mathfrak{a}_2)
 \otimes \mathfrak{a}_3.
 $$
-%
+
+\section{Computational Propositions}
 \input{appendices/computational_prop_1}
 \input{appendices/computational_prop_2}
 \input{appendices/computational_prop_3}
+
+\section{More notation}
+For the next two propositions, we will need 
+some more notation. Set
+\begin{align*}
+A_0, A_1, A_2
+&\textrm{ fixed algebras}\\
+(\vec{\phi} | \vec{\psi} | \vec{\theta}| \alpha) 
+&:= 
+(\phi_1\smdots\phi_n | \psi_1\smdots\psi_m| 
+  \theta_1 \smdots \theta_r|\alpha)\\
+&= 
+\xymatrix{
+A_0 \ar@/^5pc/[r]^{f_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+\ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+& A_1 \ar@/^5pc/[r]^{g_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+& A_2 \ar@/^5pc/[r]^{h_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
+& A_0
+}\\
+&\in 
+C(A_0 \to A_1 \to A_2 \to A_0)(h_0g_0f_0)\\
+\Upsilon_{A_0\bullet A_1, A_2}:
+  C(A_0 \to A_1 \to A_2 \to A_0) 
+&\to
+\hat{\tau}_2^*C(A_2 \to A_0 \to A_1 \to A_2)
+  \quad \textrm{ map of dg comodules}\\
+(\vec{\phi} | \vec{\psi} | \vec{\theta}| \alpha) 
+&\mapsto 
+\Upsilon_{A_0,A_2}
+  (\vec{\phi} \bullet \vec{\psi} | \vec{\theta}| \alpha)\\
+\Upsilon_{A_0,A_1\bullet A_2}:
+  C(A_0 \to A_1 \to A_2 \to A_0) 
+&\to
+\hat{\tau}_2^{*2}C(A_1 \to A_2 \to A_0 \to A_1)
+  \quad \textrm{ map of dg comodules}\\
+(\vec{\phi} | \vec{\psi} | \vec{\theta}| \alpha) 
+&\mapsto 
+\Upsilon_{A_0,A_1}
+  (\vec{\phi}|\vec{\psi} \bullet \vec{\theta}| \alpha)\\
+\end{align*}
+
 \input{appendices/computational_prop_4}
 \input{appendices/computational_prop_5}
