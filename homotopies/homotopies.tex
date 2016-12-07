@@ -201,13 +201,6 @@ $$
 is the identity map.
 % 
 \subsection{Showing Equations \ref{eq:weak} hold}
-First, we will show that Equation 
-\ref{eq:weak_delta} holds. Then, we will 
-show that Equation 
-\ref{eq:weak_delta} implies Equation 
-\ref{eq:weak_tau}, and Equation \ref{eq:weak_tau} 
-implies Equation \ref{eq:weak_sigma}.
-
 \subsubsection{Showing Equation \ref{eq:weak_delta} holds}
 For $n=1$, eliminating the identity 
 maps reduces Equation \ref{eq:weak_delta} to:
@@ -302,7 +295,82 @@ Equation \ref{eq:weak_tau} is the same as
 Equation \ref{eq:weak_delta}, which we 
 established in the previous section. Now, 
 assume that Equation \ref{eq:weak_tau} holds 
-for $N=n-1$. We want to show that Equation 
-\ref{eq:weak_tau} holds for $N=n$.
+for $N=n-1$. We show that Equation 
+\ref{eq:weak_tau} holds for $N=n$ below:
+\begin{align*}
+\hat{\tau}_n^{*n}(\tau_{n!}) \circ \smdots 
+  \circ \hat{\tau}_n^*(\tau_{n!}) \circ \tau_{n!}
+&= 
+\hat{\tau}_n^{*n-1}(
+  \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}) \circ
+  \hat{\tau}_n^{*n-2}\tau_{n!}\circ
+  \smdots \circ \tau_{n!}\\
+&\simeq 
+\hat{\tau}_n^{*n-1}(
+  \hat{\delta}_{n-1,n}^*\tau_{n-1!}) \circ
+  \hat{\tau}_n^{*n-2}\tau_{n!}\circ
+  \smdots \circ \tau_{n!}
+  \quad \quad \textrm{(Equation \ref{eq:weak_delta})}\\ 
+&= 
+(\widehat{\tau_{n-1}^{n-1}\delta_{0,n}})^*
+  \tau_{n-1!} \circ \big(
+  \hat{\tau}_n^{*n-2} \hat{\delta}_{n-2,n}^*
+  \tau_{n-1!}\circ \smdots \circ 
+  \hat{\tau}_n^* \hat{\delta}_{1,n}^* \tau_{n-1!} 
+  \circ \hat{\delta}_{0,n}^* \tau_{n-1!} 
+  \big)\\
+&= 
+(\widehat{\tau_{n-1}^{n-1}\delta_{0,n}})^*
+  \tau_{n-1!} \circ \hat{\delta}_{0,n}^* \big(
+  \hat{\tau}_{n-1}^{*n-2} \tau_{n-1!}\circ \smdots \circ 
+  \hat{\tau}_{n-1}^* \tau_{n-1!} 
+  \circ \tau_{n-1!} \big)  \\
+&= 
+\hat{\delta}_{0,n}^* \big(
+  \hat{\tau}_{n-1}^{*n-1} \tau_{n-1!} \circ 
+  \smdots \circ \tau_{n-1!} \big)  \\ 
+&\simeq 
+\hat{\delta}_{0,n}^* \big(
+  id \big)
+  \quad \quad \quad 
+  \textrm{(Inductive hypothesis)}\\
+&= id.
+\end{align*}
 %
 \subsubsection{Showing Equation \ref{eq:weak_sigma} holds}
+By manipulating morphisms in $\Lambda$, 
+we have
+\begin{align*}
+\textrm{Righthand side of Equation \ref{eq:weak_sigma}}
+&= 
+\hat{\tau}_n^{*n+1}\tau_{n!} \circ 
+  \hat{\tau}_n^{*n}\tau_{n!} \circ 
+  \smdots \circ 
+  \hat{\tau}_n^*\tau_{n!} \circ
+  \hat{\tau}_n^{*n+1} id \circ 
+  \tau_{n!}\\
+&= 
+\tau_{n!} \circ \big(
+  \hat{\tau}_n^{*n}\tau_{n!} \circ 
+  \smdots \circ 
+  \hat{\tau}_n^*\tau_{n!} \circ
+  \tau_{n!} \big)\\
+&\simeq
+\tau_{n!} \circ \big(id)
+  \quad \textrm{Equation \ref{eq:weak_tau}.}\\  
+\end{align*}
+On the other hand, we have 
+\begin{align*}
+\textrm{Lefthand side of Equation \ref{eq:weak_sigma}}
+&=
+\hat{\sigma}_{n,n}^*(\tau_{n+1!}) \circ id\\
+&=
+\hat{\sigma}_{n,n}^*(
+  \hat{\delta}_{n,n+1}^*(\tau_{n+1!}))\\
+&=
+(\widehat{\delta_{n,n+1}\sigma_{n,n}})^*
+  (\tau_{n!})\\  
+&=
+id^*(\tau_{n!}).   
+\end{align*}
+So, Equation \ref{eq:weak_sigma} holds.
