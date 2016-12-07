@@ -23,7 +23,7 @@ for this choice of algebras.
 %
 \subsection{Generating coboundaries 
   ${\delta_{j,n}}_!$ for $n \in \mathbb{N}$, 
-  $0 \leq j < n$}
+  $0 \leq j \leq n-1$}
 From Example \ref{eg:pb3}, we know that $C(n) \cong 
 \hat{\delta}_{j,n}^*C(A_0 \to \smdots \to A_j 
 \longrightarrow A_{j+2} \to \smdots \to A_n \to A_0)$. 
@@ -36,7 +36,7 @@ for $0 \leq j < n$.
 %
 \subsection{Generating codegeneracies 
   ${\sigma_{i,n}}_!$ for $n \in \mathbb{N}$, 
-  $1 \leq i \leq n+1$}
+  $0 \leq i \leq n$}
 From Example \ref{eg:pb4}, we know that $C(n) 
 \cong \hat{\sigma}_{i,n}^*C(A_0 \to \smdots \to A_i 
 \to A_i \to \smdots \to A_n \to A_0)$. 
@@ -154,22 +154,27 @@ C(A_n \to A_1 \to \smdots \to A_{n-1} \to A_n).
 \end{align*}
 
 \subsection{Extra codegeneracy 
-  ${\sigma_{0,n}}_!$ for 
+  ${\sigma_{n+1,n}}_!$ for 
   $n \in \mathbb{N}$}
-In $\Lambda$, we have $\sigma_{0,n} = 
-\tau_{n+1} \sigma_{n+1,n}$, so we define 
+In $\Lambda$, we have $\sigma_{n+1,n} = 
+\tau_{n+1}^{n+1} \sigma_{0,n}$, so we define 
 \begin{align*}
-{{\sigma}_{0,n}}_! : C(n)
-& \xrightarrow{\sigma_{n+1,n!} = id}
-\hat{\sigma}_{n+1,n}^*
-  C(A_0 \to \smdots \to A_n \to A_0 \to A_0)\\
-& \xrightarrow{\hat{\sigma}_{n+1,n}^*\tau_{n+1!}}
-\hat{\sigma}_{n+1,n}^*\hat{\tau}_{n+1}^*
-  C(A_0 \to A_0 \to \smdots \to A_n \to A_0) \\
-&\cong
-(\widehat{\tau_{n+1} \sigma_{n+1,n}})^*
-  C(A_0 \to A_0 \to \smdots \to A_n \to A_0)\\
-&\cong
+{{\sigma}_{n+1,n}}_! : C(n)
+& \xrightarrow{\sigma_{0,n!} = id}
 \hat{\sigma}_{0,n}^*
-C(A_0 \to A_0 \to \smdots \to A_n \to A_0).
+  C(A_0 \to A_0 \to \smdots \to A_n \to A_0)\\
+& \xrightarrow{\hat{\sigma}_{0,n}^*(\tau_{n+1!})}
+\hat{\sigma}_{0,n}^*\hat{\tau}_{n+1}^*
+  C(A_n \to A_0 \to A_0 \to \smdots \to A_n) \\
+& \to \dots \\
+& \xrightarrow{\hat{\sigma}_{0,n}^*
+  \hat{\tau}_{n+1}^{*n}(\tau_{n+1!})}
+  \hat{\sigma}_{0,n}^*\hat{\tau}_{n+1}^{*n+1}
+  C(A_0 \to \smdots \to A_n \to A_0 \to A_0) \\
+&\cong
+(\widehat{\tau_{n+1}^{n+1} \sigma_{0,n}})^*
+  C(A_0 \to \smdots \to A_n \to A_0 \to A_0)\\
+&\cong
+\hat{\sigma}_{n+1,n}^*
+C(A_0 \to \smdots \to A_n \to A_0 \to A_0).
 \end{align*}

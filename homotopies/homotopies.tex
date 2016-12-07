@@ -6,37 +6,46 @@ relations in $\Lambda$ (Equation
 \ref{eqn:cyclic_relations}) up to 
 homotopy. More precisely, we will 
 show that
-\begin{equation}
-\label{eq:strict}
-\begin{split}
+\begin{subequations}\label{eq:strict}
+\begin{align}
+\begin{split}\label{eq:strict_1}
 \hat{\delta}_{j,n}^*(\delta_{i,n-1!}) \circ \delta_{j,n!} 
 &= 
 \hat{\delta}_{i,n}^*(\delta_{j-1,n-1!}) \circ \delta_{i,n!} 
-  \quad 1 \leq i < j \leq n-1 \\
+  \quad 0 \leq i < j \leq n-1 \\
 \hat{\sigma}_{j,n}^*(\sigma_{i,n+1!}) \circ \sigma_{j,n!} 
 &= 
 \hat{\sigma}_{i,n}^*(\sigma_{j+1,n+1!}) \circ \sigma_{i,n!}
-  \quad 1 \leq i \leq j \leq n+1 \\
+  \quad 0 \leq i \leq j \leq n \\
 \hat{\sigma}_{i,n}^*(\delta_{j,n+1!}) \circ \sigma_{i,n!} 
 &= 
   \begin{cases}
     \hat{\delta}_{j-1,n}^*(\sigma_{i,n-1!}) \circ \delta_{j-1,n!} 
-      & 1 \leq i < j \leq n\\
-    id & j = i, i-1, 
-      1 \leq i \leq n+1, 0 \leq j \leq n\\
+      & 0 \leq i < j \leq n\\
+    id & j = i, i-1\\
     \hat{\delta}_{j,n}^*(\sigma_{i-1,n-1!}) \circ \delta_{j,n!} 
-      & \quad 0 \leq j < i-1 \leq n
-   \end{cases}\\
+      & \quad 0 \leq j < i-1 \leq n-1
+   \end{cases}
+\end{split}\\
+\begin{split}\label{eq:strict_2}
 \hat{\sigma}_{i,n}^*(\tau_{n+1!}) \circ \sigma_{i,n!} 
 &= 
 \hat{\tau}_n^*(\sigma_{i+1,n!}) \circ \tau_{n!}
-  \quad 1 \leq i \leq n\\
-\hat{\delta}_{i,n}^*(\tau_{n-1!}) \circ \delta_{i,n!} 
+  \quad 0 \leq i \leq n-1\\
+\hat{\delta}_{j,n}^*(\tau_{n-1!}) \circ \delta_{j,n!} 
 &= 
-\hat{\tau}_n^*(\delta_{i+1,n!}) \circ \tau_{n!}
-  \quad 0 \leq i \leq n-1
-\end{split}
-\end{equation}
+\hat{\tau}_n^*(\delta_{j+1,n!}) \circ \tau_{n!}
+  \quad 0 \leq j \leq n-1
+\end{split}\\
+\begin{split}\label{eq:strict_3}
+(\widehat{\tau_{1}\sigma_{0,0}})^*
+  (\delta_{0,1!}) \circ
+  \hat{\sigma}_{0,0}^*(\tau_{1!}) \circ 
+  \sigma_{0,0!}
+= id
+\end{split} 
+\end{align}
+\end{subequations}
 and 
 \begin{subequations} \label{eq:weak}
 \begin{equation} \label{eq:weak_delta}
@@ -45,31 +54,30 @@ and
 \simeq 
 \hat{\delta}_{n-1,n}^*(\tau_{n-1!}) \circ \delta_{n-1,n!}
 \end{equation}
-\begin{equation} \label{eq:weak_sigma}
-\hat{\tau}_{n+1}^*(\hat{\sigma}_{n+1,n}^*(\tau_{n+1!})) \circ 
-  \hat{\sigma}_{n+1,n}^*(\tau_{n+1!}) \circ
-  \sigma_{n+1,n!} 
-\simeq 
-\hat{\tau}_n^*(\sigma_{1,n!}) \circ \tau_{n!}
-\end{equation}
 \begin{equation} \label{eq:weak_tau}
 \hat{\tau}_n^{*n}(\tau_{n!}) \circ \smdots 
   \circ \hat{\tau}_n^*(\tau_{n!}) \circ \tau_{n!}
 \simeq id
 \end{equation}
-\begin{equation}
-\hat{\sigma}_{n+1,n}^*(\hat{\tau}_{n+1}^*(\delta_{0,n+1!})) 
-  \circ \hat{\sigma}_{n+1,n}^*(\tau_{n+1!}) 
-  \circ \sigma_{n+1,n!} 
-= id
+\begin{equation} \label{eq:weak_sigma}
+\hat{\sigma}_{n,n}^*(\tau_{n+1!}) \circ \sigma_{n,n!}
+\simeq
+(\widehat{\tau_{n+1}^n\sigma_{0,n}\tau_{n}})^*(\tau_{n+1!})
+  \circ \smdots \circ 
+  (\widehat{\tau_{n+1}\sigma_{0,n}\tau_{n}})^*(\tau_{n+1!}) \circ
+  (\widehat{\sigma_{0,n}\tau_{n}})^*(\tau_{n+1!}) \circ
+  \hat{\tau}_n^*(\sigma_{0,n!}) \circ \tau_{n!}
 \end{equation}
 \end{subequations}
-
+%
 \subsection{Showing Equations \ref{eq:strict} hold}
+Equation \ref{eq:strict_1} has three relations. 
 All of the $\sigma_!$'s and $\delta_!$'s in Equation 
-\ref{eq:strict} are identity maps, so it's clear that 
-the top three relations in Equation \ref{eq:strict} 
-hold. To show the fourth relation holds, we have
+\ref{eq:strict_1} are identity maps, so it's clear that 
+these relations hold.
+
+Equation \ref{eq:strict_2} has two relations. 
+To show that the first one holds, we have
 \begin{align*}
 \hat{\sigma}_{i,n}^*(\tau_{n+1!}) \circ \sigma_{i,n!} 
 &= 
@@ -93,30 +101,109 @@ hold. To show the fourth relation holds, we have
 &= 
 \hat{\tau}_n^*(\sigma_{i+1,n!}) \circ \tau_{n!}.
 \end{align*}
-To show that the fifth relation holds, the 
+To show that the second relation holds, the 
 reasoning is the same as above. We have
 \begin{align*}
-\hat{\delta}_{i,n}^*(\tau_{n-1!}) \circ \delta_{i,n!} 
+\hat{\delta}_{j,n}^*(\tau_{n-1!}) \circ \delta_{j,n!} 
 &= 
-\hat{\delta}_{i,n}^*
+\hat{\delta}_{j,n}^*
   ((\widehat{\delta_{0,2}\smdots\delta_{0,n-1}})^*
-  (\tau_{1!})) \circ \delta_{i,n!} \\
+  (\tau_{1!})) \circ \delta_{j,n!} \\
 &=
-(\widehat{\delta_{0,2}\smdots\delta_{0,n-1}\delta_{i,n}})^*
-  (\tau_{1!}) \circ \delta_{i,n!} \\
+(\widehat{\delta_{0,2}\smdots\delta_{0,n-1}\delta_{j,n}})^*
+  (\tau_{1!}) \circ \delta_{j,n!} \\
 &=
-\tau_{n!} \circ \delta_{i,n!}\\
+\tau_{n!} \circ \delta_{j,n!}\\
 &= 
 \tau_{n!} \circ id   
   = id \circ \tau_{n!}\\
 &=
-\hat{\tau}_n^*(\delta_{i+1,n!}) \circ \tau_{n!}.
+\hat{\tau}_n^*(\delta_{j+1,n!}) \circ \tau_{n!}. 
 \end{align*} 
-%
+
+Equation \ref{eq:strict_3} has one relation. 
+The only map in this relation that is not 
+defined to be an identity map is $\hat{\sigma}_{0,0}^*
+(\tau_{1!})$. We will compute this map and 
+show that it is also an identity. 
+Let $(\phi_{0,1}\smdots \phi_{0,k_0}|\alpha)
+\in C(A_0 \to A_0)$ (see Figure \ref{fig:phi|alpha} 
+for notation). By Proposition \ref{prop:compute_pb},
+\begin{align*}
+C(A_0 \to A_0)
+&\xrightarrow{\cong} 
+\hat{\sigma}_{0,0}^*C(A_0 \to A_0 \to A_0)\\
+(\phi_{0,1}\smdots \phi_{0,k_0}|\alpha)
+&\mapsto
+\sum \limits_{0 \leq r_0 \leq k_0}
+  (\phi_{0,1}\smdots \phi_{0,r_0}) \otimes 
+  (1 | \phi_{0,r_0+1}\smdots \phi_{0,k_0}|\alpha).
+\end{align*}
+Applying $\hat{\sigma}_{0,0}^*(\tau_{1!})$
+to the righthand side, we have
+\begin{align*}
+\hat{\sigma}_{0,0}^*C(A_0 \to A_0 \to A_0)
+&\xrightarrow{\hat{\sigma}_{0,0}^*(\tau_{1!})}
+\hat{\sigma}_{0,0}^*\hat{\tau}_1^*C(A_0 \to A_0 \to A_0)\\
+\sum \limits_{0 \leq r_0 \leq k_0}
+  (\phi_{0,1}\smdots \phi_{0,r_0}) \otimes 
+  (1 | \phi_{0,r_0+1}\smdots \phi_{0,k_0}|\alpha)
+&\mapsto
+\sum \limits_{0 \leq r_0 \leq s_0 \leq k_0}
+  (\phi_{0,1}\smdots \phi_{0,r_0}) \otimes \\
+&\phantom{{}\mapsto \sum{}}  
+  (\phi_{0,r_0+1}\smdots \phi_{0,s_0}|1|
+  \tau_1(1|\phi_{0,s_0+1}\smdots\phi_{0,k_0}|\alpha)).
+\end{align*}
+The righthand side above is equal to
+\begin{align*}
+&\phantom{{}={}}
+\sum \limits_{0 \leq r_0 \leq s_0 \leq k_0}
+  (\phi_{0,1}\smdots \phi_{0,r_0}) \otimes 
+  (\phi_{0,r_0+1}\smdots \phi_{0,s_0}|1|
+  \tau_1(1|\phi_{0,s_0+1}\smdots\phi_{0,k_0}|\alpha))\\
+&=  
+\sum \limits_{0 \leq r_0 \leq s_0 \leq k_0}
+  (\phi_{0,1}\smdots \phi_{0,r_0}) \otimes 
+  (\phi_{0,r_0+1}\smdots \phi_{0,s_0}|1|
+  \upsilon_{0,k_0-s_0}(1|\phi_{0,s_0+1}\smdots\phi_{0,k_0}|\alpha))\\
+&\phantom{{}=\sum\sum{}}  
+  \quad \textrm{(see Proposition \ref{prop:c1} for }
+  \upsilon_{\cdot,\cdot})\\
+&=  
+\sum \limits_{0 \leq r_0 \leq k_0}
+  (\phi_{0,1}\smdots \phi_{0,r_0}) \otimes 
+  (\phi_{0,r_0+1}\smdots \phi_{0,k_0}|1|\alpha)
+  \quad \quad (\upsilon_{0,>0}=0)\\
+&\in
+\hat{\sigma}_{0,0}^*\hat{\tau}_1^*C(A_0 \to A_0 \to A_0).
+\end{align*}
+Finally, applying Proposition 
+\ref{prop:compute_pb} again, we have
+\begin{align*}
+\hat{\sigma}_{0,0}^*\hat{\tau}_1^*C(A_0 \to A_0 \to A_0)
+&\xrightarrow[\cong]{\textrm{project onto cogenerators}} 
+C(A_0 \to A_0)\\
+\sum \limits_{0 \leq r_0 \leq k_0}
+  (\phi_{0,1}\smdots \phi_{0,r_0}) \otimes 
+  (\phi_{0,r_0+1}\smdots \phi_{0,k_0}|1|\alpha)
+&\mapsto
+(\phi_{0,1}\smdots \phi_{0,k_0}|\alpha).
+\end{align*}
+So, we've shown 
+$$
+C(A_0 \to A_0) \cong 
+\hat{\sigma}_{0,0}^*C(A_0 \to A_0 \to A_0)
+\xrightarrow{\hat{\sigma}_{0,0}^*(\tau_{1!})}
+\hat{\sigma}_{0,0}^*\hat{\tau}_1^*C(A_0 \to A_0 \to A_0)
+\cong C(A_0 \to A_0)
+$$
+is the identity map.
+% 
 \subsection{Showing Equations \ref{eq:weak} hold}
 First, we will show that Equation 
-\ref{eq:weak_delta} holds. By similar 
-reasoning, Equation \ref{eq:weak_sigma} holds. 
-Finally, we will show that Equation 
+\ref{eq:weak_delta} holds. Then, we will 
+show that Equation 
 \ref{eq:weak_delta} implies Equation 
-\ref{eq:weak_tau}
+\ref{eq:weak_tau}, and Equation \ref{eq:weak_tau} 
+implies Equation \ref{eq:weak_sigma}.

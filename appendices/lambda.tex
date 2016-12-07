@@ -10,7 +10,7 @@ and generating morphisms:
 \begin{split}
 \textrm{rotations } \tau_n:[n] \to [n], \\ 
 \textrm{coboundaries } \delta_{j,n}: [n] \to [n-1], 0 \leq j \leq n-1, \\ 
-\textrm{codegeneracies } \sigma_{i,n}:[n] \to [n+1], 1 \leq i \leq n+1
+\textrm{codegeneracies } \sigma_{i,n}:[n] \to [n+1], 0 \leq i \leq n
 \end{split}
 \end{equation}
 subject to relations:
@@ -19,23 +19,23 @@ subject to relations:
 \delta_{i,n-1} \delta_{j,n} &= \delta_{j-1,n-1} \delta_{i,n} 
   \quad 0 \leq i < j \leq n-1 \\
 \sigma_{i,n+1} \sigma_{j,n} &= \sigma_{j+1,n+1} \sigma_{i,n}
-  \quad 1 \leq i \leq j \leq n+1 \\
+  \quad 0 \leq i \leq j \leq n \\
 \delta_{j,n+1}\sigma_{i,n} &= 
   \begin{cases}
     \sigma_{i,n-1}\delta_{j-1,n} 
-      & 1 \leq i < j \leq n\\
-    id & j = i, i-1, 
-      1 \leq i \leq n+1, 0 \leq j \leq n\\
+      & 0 \leq i < j \leq n\\
+    id & j = i, i-1 \\
     \sigma_{i-1,n-1}\delta_{j,n} 
-      & \quad 0 \leq j < i-1 \leq n
+      & \quad 0 \leq j < i-1 \leq n-1
    \end{cases}\\
 \tau_{n+1}\sigma_{i,n} &= \sigma_{i+1,n}\tau_n
-  \quad 1 \leq i \leq n\\   
-\tau_{n-1}\delta_{i,n} &= \delta_{i+1,n}\tau_n
-  \quad 0 \leq i \leq n-1\\  
+  \quad 0 \leq i \leq n-1\\   
+\tau_{n-1}\delta_{j,n} &= \delta_{j+1,n}\tau_n
+  \quad 0 \leq j \leq n-1\\  
 \tau_{n}^{n+1} &= id \\
-\delta_{0,n+1}\tau_{n+1}\sigma_{n+1,n} &= id\\
-\tau_{n+1}^2 \sigma_{n+1,n} &= \sigma_{1,n} \tau_n \\
+\delta_{0,1}\tau_1\sigma_{0,0} &= id\\
+\tau_{n+1} \sigma_{n,n} &= 
+  \tau_{n+1}^{n+1} \sigma_{0,n} \tau_n\\
 \delta_{0,n}\tau_n^2 &= \tau_{n-1}\delta_{n-1,n}. 
 \end{split}
 \end{equation}
@@ -65,11 +65,9 @@ subject to relations:
 % \end{split}
 % \end{equation}
 
-Some definitions of $\Lambda$ include an extra 
+Some presentations of $\Lambda$ include an extra 
 coboundary $\delta_{n,n}$ and codegeneracy 
-$\sigma_{0,n}$ even though the morphisms we have given 
-are sufficient to generate $\Lambda$. However, 
-we will still refer to these extra 
-morphisms, and in terms of our generators, they are 
+$\sigma_{n+1,n}$. 
+In terms of our generators, they are 
 $\delta_{n,n} := \delta_{0,n}\tau_n$ and 
-$\sigma_{0,n} := \tau_{n+1} \sigma_{n+1,n}$.
+$\sigma_{n+1,n} := \tau_{n+1}^{n+1} \sigma_{0,n}$.
