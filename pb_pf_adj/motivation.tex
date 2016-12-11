@@ -1,31 +1,35 @@
 \section{Motivation of this chapter}
 We would like to extend the sheafy-cyclic 
-structure in \ref{sec:cyclic_B(n)} from 
+structure in Section \ref{sec:cyclic_B(n)} from 
 $B(\mathcal{A})$ to the pair $(B(\mathcal{A}), 
 C(\mathcal{A}))$ where $\mathcal{A} = 
 (A_0 \to \smdots \to A_n \to A_0) \in Obj(\chi)$. 
 However, this presents some complications 
-as $C(\mathcal{A})$ and $C(\mathcal{A^\prime})$ 
+as $C(\mathcal{A})$ and $C(\lambda \mathcal{A})$ 
 are comodules over different 
-cocategories. Instead, we will use 
+cocategories (where $\lambda$ is a morphism 
+in $\Lambda$ inducing a morphism in $\chi$ 
+with source $\mathcal{A}$). 
+Instead, we will use 
 the functors $\hat{\lambda}: B(\mathcal{A}) 
-\to B(\mathcal{A}^\prime)$ from Section 
+\to B(\lambda \mathcal{A})$ from Section 
 \ref{sec:def_G} to
-define pullbacks $\hat{\lambda}^*C(\mathcal{A}^\prime)$ 
+define pullbacks $\hat{\lambda}^*
+C(\lambda \mathcal{A})$ 
 and maps $\lambda_!: C(\mathcal{A}) 
-\to \hat{\lambda}^*C(\mathcal{A}^\prime)$ 
+\to \hat{\lambda}^*C(\lambda \mathcal{A})$ 
 of dg comodules over $B(\mathcal{A})$. 
 
 First, we will define functors $\hat{\lambda}^*$ 
 from the category of 
-conilpotent dg comodules over $B(\mathcal{A})$ 
+conilpotent dg comodules over $B(\lambda \mathcal{A})$ 
 to the category of conilpotent dg comodules 
-over $B(\mathcal{A}^\prime)$. 
+over $B(\mathcal{A})$. 
 Second, we will give $\hat{\lambda}_\#$, the left adjoint 
 to $\hat{\lambda}^*$. Finally, we will 
 give explicit maps of dg comodules 
 $\lambda_!: C(\mathcal{A}) \to 
-\hat{\lambda}^*C(\mathcal{A}^\prime)$, 
+\hat{\lambda}^*C(\lambda \mathcal{A})$, 
 and apply the adjunction 
 to these maps. The following chapter will formalize 
 the relations between the $\lambda_!$'s.

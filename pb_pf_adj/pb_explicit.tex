@@ -1,58 +1,63 @@
 \subsection{Explicit description of 
 $\hat{\lambda}^*C(\mathcal{A}^\prime)$}
-Let $\lambda$ be a morphism in $\Lambda$. 
+Let $\lambda$ be a morphism in $\Lambda$ 
+that induces a morphism in $\chi$ with source 
+$\mathcal{A} \in Obj(\chi)$. 
 Recall that from Section \ref{sec:def_G}
 that we have a functor $\hat{\lambda}: 
-B(\mathcal{A}) \to B(\mathcal{A}^\prime)$. 
+B(\mathcal{A}) \to B(\lambda \mathcal{A})$. 
 Applying the constructions in 
 Section \ref{sec:pb_defn} to
 $\hat{\lambda}$, we get a functor 
 $\hat{\lambda}^*$ from the 
 category of conilpotent 
-dg comodules over $B(\mathcal{A}^\prime)$ 
+dg comodules over $B(\lambda \mathcal{A})$ 
 to the category 
 of conilpotent dg comodules 
 over $B(\mathcal{A})$. 
 Below, we compute explicitly the complexes 
-$[\hat{\lambda}^*C(\mathcal{A}^\prime)](f)$ 
+$[\hat{\lambda}^*C(\lambda \mathcal{A})](f)$ 
 for $f \in Obj(B(\mathcal{A}))$.
 %
 \begin{prop}\label{prop:compute_pb}
+Let $\lambda$ be a morphism in $\Lambda$ 
+that induces a morphism in $\chi$ with source 
+$\mathcal{A} \in Obj(\chi)$. 
 Fix $f_0 \in Obj(B(\mathcal{A}))$. As comodules,
 \begin{equation}\label{eq:compute_pb}
-[\hat{\lambda}^*C(\mathcal{A}^\prime)](f_0) \cong 
-[B(\mathcal{A}) \otimes_{\hat{\lambda}} T(\mathcal{A}^\prime)](f_0) := 
+[\hat{\lambda}^*C(\lambda \mathcal{A})](f_0) \cong 
+[B(\mathcal{A}) \otimes_{\hat{\lambda}} T(\lambda \mathcal{A})](f_0) := 
 \bigoplus \limits_{h \in Obj(B(\mathcal{A}))}
-B(\mathcal{A})(f_0, h) \otimes T(\mathcal{A}^\prime)(\hat{\lambda} h)
+B(\mathcal{A})(f_0, h) \otimes T(\lambda \mathcal{A})(\hat{\lambda} h)
 \end{equation}
-where $T(\mathcal{A}^\prime)(\hat{\lambda} h)$ are the cogenerators of 
-$C(\mathcal{A}^\prime)(\hat{\lambda} h)$ 
+where $T(\lambda \mathcal{A})(\hat{\lambda} h)$ are the cogenerators of 
+$C(\lambda \mathcal{A})(\hat{\lambda} h)$ 
 (see Section \ref{def:cogenerators}).
 \end{prop}
 %
 \begin{rem}
 Proposition \ref{prop:compute_pb} holds 
 for any quasi-cofree comodule over 
-$B(\mathcal{A}^\prime)$. The proof is the same.
+$B(\lambda \mathcal{A})$. The proof is the same.
 \end{rem}
 %
 \begin{proof}[Proof of Proposition \ref{prop:compute_pb}]
 To simplify notation in this proof, 
 we will drop all references to $f_0$ and,
-when unambiguous, references to $\mathcal{A}^\prime$. 
+when unambiguous, references to $\lambda \mathcal{A}$. 
 In other words, in this proof only,
 \begin{align*}
-C := C(\mathcal{A}^\prime) 
-&\textrm{ will denote } C(\mathcal{A}^\prime)(f_0), \\
-\hat{\lambda}^*C := \hat{\lambda}^*C(\mathcal{A}^\prime) 
-&\textrm{ will denote } [\hat{\lambda}^*C(\mathcal{A}^\prime)](f_0), \\
+C := C(\lambda \mathcal{A}) 
+&\textrm{ will denote } C(\lambda \mathcal{A})(f_0), \\
+\hat{\lambda}^*C := \hat{\lambda}^*C(\lambda \mathcal{A}) 
+&\textrm{ will denote } [\hat{\lambda}^*C(\lambda \mathcal{A})](f_0), \\
 B(\mathcal{A}) \otimes_{\hat{\lambda}} T 
-&\textrm{ will denote } [B(\mathcal{A}) \otimes_{\hat{\lambda}} T(\mathcal{A}^\prime)](f_0), \\
+&\textrm{ will denote } [B(\mathcal{A}) \otimes_{\hat{\lambda}} T(\lambda \mathcal{A})](f_0), \\
 B(\mathcal{A}) \otimes_{\hat{\lambda}} C 
-&\textrm{ will denote } [B(\mathcal{A}) \otimes_{\hat{\lambda}} C(\mathcal{A}^\prime)](f_0), \\
-B(\mathcal{A}) \otimes_{\hat{\lambda}} B(\mathcal{A}^\prime) \otimes C 
+&\textrm{ will denote } [B(\mathcal{A}) \otimes_{\hat{\lambda}} C(\lambda \mathcal{A})](f_0), \\
+B(\mathcal{A}) \otimes_{\hat{\lambda}} B(\lambda \mathcal{A}) \otimes C 
 &\textrm{ will denote } 
-[B(\mathcal{A}) \otimes_{\hat{\lambda}} B(\mathcal{A}^\prime) \otimes C(\mathcal{A}^\prime)](f_0).
+[B(\mathcal{A}) \otimes_{\hat{\lambda}} B(\lambda \mathcal{A}) \otimes C(\lambda \mathcal{A})](f_0).
 \end{align*}
 %
 To prove the proposition, 
@@ -80,7 +85,7 @@ G^\prime(b \otimes t) =
 \sum \limits_{(b)} b_{(1)} \otimes \hat{\lambda} b_{(2)} \cdot t
 $$
 where $b \otimes t \in B(\mathcal{A}) \otimes_{\hat{\lambda}} T$ and $\hat{\lambda} 
-b_{(2)} \cdot t$ are elements of $C(\mathcal{A}^\prime)(\hat{\lambda} h)$ 
+b_{(2)} \cdot t$ are elements of $C(\lambda \mathcal{A})(\hat{\lambda} h)$ 
 written in terms of cogenerators.
 
 To prove that the image of $G^\prime$ lands in 
@@ -92,7 +97,7 @@ $$
 B(\mathcal{A}) \otimes_{\hat{\lambda}} T
 \to B(\mathcal{A}) \otimes_{\hat{\lambda}} C
 \rightrightarrows
-B(\mathcal{A}) \otimes_{\hat{\lambda}} B(\mathcal{A}^\prime) \otimes C
+B(\mathcal{A}) \otimes_{\hat{\lambda}} B(\lambda \mathcal{A}) \otimes C
 $$
 coincide. We have
 \begin{align*}
@@ -121,7 +126,7 @@ is to show that $G \circ F = id_{\hat{\lambda}^*C}$.
 Let $\kappa = \Sigma_i b_i \otimes \beta_i \cdot t_i$ be an 
 arbitrary element of $\hat{\lambda}^*C \hookrightarrow 
 B(\mathcal{A}) \otimes_{\hat{\lambda}} C$ where $\beta_i \cdot t_i$ are elements 
-of $C(\mathcal{A}^\prime)(\hat{\lambda} h)$ written in terms of cogenerators. 
+of $C(\lambda \mathcal{A})(\hat{\lambda} h)$ written in terms of cogenerators. 
 Then, 
 \begin{equation*}
 GF(\kappa) = 

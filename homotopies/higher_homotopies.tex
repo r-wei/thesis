@@ -63,23 +63,24 @@ the only need for higher homotopies
 will arise from the following 
 situation: For $n\geq2$, 
 We have two maps of dg comodules
-$$
+\begin{equation}
+\label{eq:two_maps}
 \xymatrixrowsep{5pc}
 \xymatrix{
 C(A_0 \to \smdots \to A_n \to A_0) 
  \ar@/^1pc/[d]^{\substack{
    (\widehat{\delta_{n-2,n-1}\delta_{n-1,n}})^*
    \tau_{n-2!}\\\\\\
-   \textrm{``brace together the last 3 algebras,}\\
+   \textrm{$``$brace together the last 3 algebras,}\\
    \textrm{then apply $\tau_{n-2!}$ once''}}}
  \ar@/_1pc/[d]_{\substack{
    \hat{\tau}_n^{*2} \tau_{n!}\circ
    \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}\\\\\\
-   \textrm{``apply $\tau_{n!}$ 3 times''}}}\\
+   \textrm{$``$apply $\tau_{n!}$ 3 times''}}}\\
 C(A_{n-2} \to A_{n-1} \to A_n \to 
 A_0 \to \smdots \to A_{n-2}).
 }
-$$
+\end{equation}
 These two maps are homotopic via 
 two homotopies: 
 $\hat{\delta}_{n-1,n}^*
@@ -96,17 +97,16 @@ two homotopies were different, then
 their difference would be closed and
 we would desire a higher homotopy (i.e., 
 a degree -2 map of comodules) between 
-them. However, we will establish that 
-higher homotopies are not necessary 
-by showing that the two homotopies 
-are the same.
+them. However, we will show that these 
+two homotopies are the same, so that 
+no higher homotopies are needed.
 %
 \begin{figure}
 \xymatrixrowsep{3pc}
 \xymatrixcolsep{5pc}
 \centerline{\xymatrix{
 \underset{\substack{\\\\
-  \textrm{``brace together $A_{n-2}, A_{n-1}, A_n$,}\\
+  \textrm{$``$brace together $A_{n-2}, A_{n-1}, A_n$,}\\
   \textrm{then apply $\tau_{n-2!}$''}
          }}
          {(\widehat{\delta_{n-2,n-1}
@@ -117,7 +117,7 @@ are the same.
          \hat{\delta}_{n-2,n}^*\sigma_!
          }}
 & \underset{\substack{ \\\\
-    \textrm{``brace together $A_{n-1}, A_n$ and apply $\tau_{n-1!}$,}\\
+    \textrm{$``$brace together $A_{n-1}, A_n$ and apply $\tau_{n-1!}$,}\\
     \textrm{then apply $\tau_{n!}$''}
            }}
            {\hat{\tau}_n^{*2}\tau_{n!} \circ 
@@ -127,7 +127,7 @@ are the same.
           \tau_n^{*2}\tau_{n!} \circ \sigma_!
          }}\\
 \underset{\substack{\\\\
-          \textrm{``apply $\tau_{n!}$,}\\
+          \textrm{$``$apply $\tau_{n!}$,}\\
           \textrm{then brace together $A_{n-1}, A_{n-2}$ and apply $\tau_{n-1!}$''}
          }}
          {(\widehat{\delta_{n-1,n}\tau_n})^* 
@@ -135,7 +135,7 @@ are the same.
          }
   \ar[r]^{\hat{\tau}_n^*\sigma_! \circ \tau_{n!}}
 & \underset{\substack{\\\\
-  \textrm{``apply $\tau_{n!}$ three times''}
+  \textrm{$``$apply $\tau_{n!}$ three times''}
   }}
   {\hat{\tau}_n^{*2} \tau_{n!}\circ
    \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}}\\
@@ -149,7 +149,8 @@ arrows are chain homotopies}
 \label{fig:two_homotopies}
 \end{figure}
 
-For $n=1$, the situation reduces to: 
+For $n=1$, the situation in Equation 
+\ref{eq:two_maps} reduces to: 
 We have two maps of dg comodules
 $$
 \xymatrix{

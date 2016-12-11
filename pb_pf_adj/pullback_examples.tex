@@ -18,7 +18,7 @@ C(0)
 &:= C(A_0 \to A_0)
 \end{align*}
 ($\hat{\lambda}$ is given by braces, 
-see \ref{sec:def_G}.)
+see Section \ref{sec:def_G}.)
 
 Note that 
 $\hat{\delta}_{0,1}^* C(0) \cong
@@ -76,26 +76,19 @@ $A_0, \dots A_n$, and set
 \begin{align*}
 \hat{\lambda}: B(n)
 &:= B(A_0 \to A_1 \to \dots \to A_n \to A_0) 
-  \to B(A_0 \to A_2 \to A_3 \to \dots \to A_n \to A_0) 
-  =: B(n^\prime)\\
+  \to B(A_0 \to A_2 \to A_3 \to \dots \to A_n \to A_0)\\
 C(n) 
-&:= C(A_0 \to A_1 \to \dots \to A_n \to A_0)\\
-C(n^\prime) 
-&:= C(A_0 \to A_2 \to A_3 \to \dots \to A_n \to A_0)
+&:= C(A_0 \to A_1 \to \dots \to A_n \to A_0)
 \end{align*}
 ($\hat{\lambda}$ is given by bracing the 
-first and second terms, see \ref{sec:def_G}. 
-We choose the notation $n^\prime$ instead of $n-1$ 
-since, for the algebras fixed above, 
-$B(n-1)$ would denote 
-$B(A_0 \to A_1 \to A_2 \to \dots \to A_{n-1} \to A_0)$.)
+first and second terms, see Section \ref{sec:def_G}.)
 
 Example \ref{eg:pb} shows
 \begin{equation} \label{eq:base_case}
 C(1) \cong \hat{\delta}_{0,1}^*C(0)
 \end{equation}
 as dg comodules. Given Equation 
-\ref{eq:base_case} as a base 
+\ref{eq:base_case} above as a base 
 case, we can show by induction that 
 $$
 C(n) \cong \hat{\delta}_{0,n}^*\dots\hat{\delta}_{0,1}^*C(0)
@@ -110,15 +103,17 @@ comodules, we know
 \begin{align*}
 \hat{\delta}_{0,n}^*\dots\hat{\delta}_{0,1}^*C(0)
 & \cong
-  \hat{\delta}_{0,n}^*C(n^\prime)
+  \hat{\delta}_{0,n}^*C(A_0 \to A_2 \to \smdots \to A_n \to A_0)
   \quad \textrm{(inductive hypothesis applied to algebras } 
   A_0, A_2,\dots,A_n)\\
 & \cong 
-  B(n) \otimes_{\hat{\delta}_{0,n}} T(n^\prime)
+  B(n) \otimes_{\hat{\delta}_{0,n}} 
+  T(A_0 \to A_2 \to \smdots \to A_n \to A_0)
   \quad \textrm{(Proposition 
   \ref{prop:compute_pb})}\\
 & \cong 
-  B(n) \otimes_{\hat{\delta}_{0,n}} T(0)
+  B(n) \otimes_{\hat{\delta}_{0,n}} 
+  T(A_0 \to A_0)
   \quad \textrm{(Definition of $T$)} \\
 & \cong 
   C(n)
@@ -151,8 +146,10 @@ Fd_{\hat{\delta}_{0,n}^*\dots\hat{\delta}_{0,1}^*C(0)}G
   \phi_{2,r_1}\smdots \phi_{2,k_2} | \smdots |
   \phi_{n,r_1}\smdots \phi_{n,k_n} | t) \big) \\
 &=
-[F \circ (d_{B(n)}\otimes id_{C(n^\prime)} + 
-  id_{B(n)} \otimes d_{C(n^\prime)})] \\
+[F \circ (d_{B(n)}\otimes 
+  id_{C(A_0 \to A_2 \to \smdots \to A_n \to A_0)} + 
+  id_{B(n)} \otimes 
+  d_{C(A_0 \to A_2 \to \smdots \to A_n \to A_0)})] \\
 & \phantom{{}=  {}}
 \big( \sum \limits_{\substack{1 \leq j \leq n\\
   1 \leq r_j \leq k_j+1}}
@@ -166,8 +163,10 @@ Fd_{\hat{\delta}_{0,n}^*\dots\hat{\delta}_{0,1}^*C(0)}G
 \end{align*}
 where the last equality holds by the 
 inductive hypothesis. The terms from 
-$d_{B(n)}\otimes id_{C(n^\prime)} + 
-id_{B(n)} \otimes d_{C(n^\prime)}$ that
+$d_{B(n)}\otimes id_{C(A_0 \to A_2 \to 
+\smdots \to A_n \to A_0)} + 
+id_{B(n)} \otimes d_{C(A_0 \to A_2 \to 
+\smdots \to A_n \to A_0)}$ that
 are non-zero after projecting to cogenerators 
 are exactly the terms in $d_{C(n)}$. 
 So, $C(n) \cong \hat{\delta}_{0,n}^*\dots
@@ -176,10 +175,10 @@ So, $C(n) \cong \hat{\delta}_{0,n}^*\dots
 %
 \begin{eg}[Yet another description of C(n)] 
 \label{eg:pb3}
-Fix algebras $A_0, \dots A_n$, $n>0$ 
-and choose a sequence of coboundaries 
+Choose a sequence of generating coboundaries 
 $\delta_{i_1,1}, \dots, \delta_{i_n,n}$ with 
-$0 \leq i_j \leq j-1$, $1 \leq j \leq n$. 
+$0 \leq i_j \leq j-1$, $1 \leq j \leq n$, 
+$n>0$. 
 Then,
 $$
 \delta_{i_1,1} \circ \dots \circ \delta_{i_n,n} 
@@ -205,13 +204,13 @@ on categories of comodules,
 \end{align*}
 Since braces are associative, the 
 differentials on $\hat{\delta}_{i_n,n}^* 
-\dots \hat{\delta}_{i_1,1}^*C(0)$ and 
+\dots \hat{\delta}_{i_1,1}^*C(A_0 \to A_0)$ and 
 $\hat{\delta}_{0,n}^* 
-\dots \hat{\delta}_{0,1}^*C(0)$ 
+\dots \hat{\delta}_{0,1}^*C(A_0 \to A_0)$ 
 coincide. So, $\hat{\delta}_{i_n,n}^* 
-\dots \hat{\delta}_{i_1,1}^*C(0)
+\dots \hat{\delta}_{i_1,1}^*C(A_0 \to A_0)
 \cong \hat{\delta}_{0,n}^* 
-\dots \hat{\delta}_{0,1}^*C(0)$ 
+\dots \hat{\delta}_{0,1}^*C(A_0 \to A_0)$ 
 as dg comodules.
 \end{eg}
 %
@@ -219,56 +218,39 @@ as dg comodules.
 \label{eg:pb4}
 Fix algebras $A_0, \dots, A_n$ and let 
 $\sigma_{i,n} \in \Lambda([n],[n+1])$, 
-$1 \leq i \leq n+1$ be a generating 
-codegeneracy (see Appendix 
-\ref{chap:lambda}). Set
-$$
-\hat{\sigma}_{i,n}: B(n) \to 
-B(n^\prime)
-$$
-where 
+$0 \leq i \leq n$ be a generating 
+codegeneracy. Set
 \begin{align*}
-B(n) 
+\hat{\sigma}_{i,n}: B(n)
 &:= 
-B(A_0 \to \dots \to A_n \to A_0)\\
-B(n^\prime) 
-&:= 
-\begin{cases}
-  B(A_0 \to \dots \to A_i \to A_i 
-    \to \dots A_n \to A_0)
-  & 1 \leq i \leq n \\
-  B(A_0 \to \dots \to A_n \to A_0 \to A_0)
-  & i = n+1
-\end{cases}\\
+B(A_0 \to \smdots \to A_n \to A_0) \to 
+B(A_0 \to \dots \to A_i \to A_i 
+    \to \dots A_n \to A_0)\\
 C(n) 
 &:= 
-C(A_0 \to \dots \to A_n \to A_0)\\
-C(n^\prime) 
-&:= 
-\begin{cases}
-  C(A_0 \to \dots \to A_i \to A_i 
-    \to \dots A_n \to A_0)
-  & 1 \leq i \leq n \\
-  C(A_0 \to \dots \to A_n \to A_0 \to A_0)
-  & i = n+1.
-\end{cases}
+C(A_0 \to \dots \to A_n \to A_0)\\    
 \end{align*}
 From Proposition \ref{prop:compute_pb}, we 
-know that $\hat{\sigma}_{i,n}^*C(n^\prime) 
+know that $\hat{\sigma}_{i,n}^*
+C(A_0 \to \dots \to A_i \to A_i \to \dots A_n \to A_0) 
 \cong B(n) \otimes_{\hat{\sigma}_{i,n}} 
-T(n^\prime) \cong C(n)$ as comodules.
+T(A_0 \to \dots \to A_i \to A_i \to \dots A_n \to A_0) 
+\cong C(n)$ as comodules.
 To show that the differentials coincide, 
 we compute 
 \begin{align*}
 & \phantom{{}={}}
-Fd_{\hat{\sigma}_{i,n}^*C(n^\prime)}G
+Fd_{\hat{\sigma}_{i,n}^*
+  C(A_0 \to \dots \to A_i \to A_i \to \dots A_n \to A_0)}G
   (\phi_{0,1} \smdots \phi_{0,k_0} | \smdots |
   \phi_{n,1} \smdots \phi_{n,k_n} | t) \\
 &=
 [F \circ (d_{B(n)}\otimes 
-  id_{\hat{\sigma}_{i,n}^*C(n^\prime)} + 
+  id_{\hat{\sigma}_{i,n}^*
+  C(A_0 \to \dots \to A_i \to A_i \to \dots A_n \to A_0)} + 
   id_{B(n)} \otimes 
-  d_{\hat{\sigma}_{i,n}^*C(n^\prime)})] \\
+  d_{\hat{\sigma}_{i,n}^*
+  C(A_0 \to \dots \to A_i \to A_i \to \dots A_n \to A_0)})] \\
 & \phantom{{}=  {}}
 \big( \sum \limits_{\substack{1 \leq j \leq n\\
   1 \leq r_j \leq k_j+1}}
@@ -281,11 +263,15 @@ Fd_{\hat{\sigma}_{i,n}^*C(n^\prime)}G
   \phi_{n,r_1}\smdots \phi_{n,k_n} | t) \big).
 \end{align*}
 Since 1 is a unit for braces, the terms from 
-$d_{B(n)} \otimes id_{\hat{\sigma}_{i,n}^*C(n^\prime)} 
-+ id_{B(n)} \otimes d_{\hat{\sigma}_{i,n}^*C(n^\prime)}$ 
-thatare non-zero after projecting to cogenerators 
+$d_{B(n)} \otimes id_{\hat{\sigma}_{i,n}^*
+C(A_0 \to \dots \to A_i \to A_i \to \dots A_n \to A_0)} 
++ id_{B(n)} \otimes d_{\hat{\sigma}_{i,n}^*
+C(A_0 \to \dots \to A_i \to A_i \to \dots A_n \to A_0)}$ 
+that are non-zero after projecting to cogenerators 
 are exactly the terms in $d_{C(n)}$. 
-So, $\hat{\sigma}_{i,n}^*C(n^\prime) \cong C(n)$ 
+So, $\hat{\sigma}_{i,n}^*
+C(A_0 \to \dots \to A_i \to A_i \to \dots A_n \to A_0) 
+\cong C(n)$ 
 as dg comodules.
 \end{eg}
 %
@@ -293,30 +279,25 @@ as dg comodules.
 \label{eg:pb5}
 Fix algebras $A_0, \dots, A_n$ and let 
 $\tau_n \in \Lambda([n],[n])$ 
-be a generating rotation (see Appendix 
-\ref{chap:lambda}). Set
-$$
-\hat{\tau}_n: B(n) \to 
-B(n^\prime)
-$$
-where 
+be a generating rotation. Set
 \begin{align*}
-B(n) &:= 
-B(A_0 \to \dots \to A_n \to A_0)\\
-B(n^\prime) &:= 
-B(A_n \to A_0 \to \dots \to A_{n-1} \to A_n)\\
+\hat{\tau}_n: B(n) 
+&:= B(A_0 \to \smdots \to A_n \to A_0) \to 
+B(A_n \to A_0 \to \smdots \to A_n)\\
 C(n) &:= 
-C(A_0 \to \dots \to A_n \to A_0)\\
-C(n^\prime) &:= 
-C(A_n \to A_0 \to \dots \to A_{n-1} \to A_n).
+C(A_0 \to \dots \to A_n \to A_0)
 \end{align*}
 From Proposition \ref{prop:compute_pb}, we 
-know that $\hat{\tau}_n^*C(n^\prime) 
+know that $\hat{\tau}_n^*
+C(A_n \to A_0 \to \smdots \to A_n) 
 \cong B(n) \otimes_{\hat{\tau}_n} 
-T(n^\prime)$ as comodules. Unpacking the 
+T(A_n \to A_0 \to \smdots \to A_n)$ 
+as comodules. Unpacking the 
 righthand side, we see that $B(n) 
-\otimes_{\hat{\tau}_n} T(n^\prime) 
-\cong C(n^\prime)$ as complexes--the 
+\otimes_{\hat{\tau}_n} 
+T(A_n \to A_0 \to \smdots \to A_n) 
+\cong C(A_n \to A_0 \to \smdots \to A_n)$ 
+as complexes--the 
 isomorphism is given by $\hat{\tau}_n 
 \otimes id_{T}$.
 \end{eg}
