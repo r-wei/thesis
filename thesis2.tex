@@ -39,24 +39,23 @@
 % DATA OF AUTHOR AND DISSERTATION %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\author{Ann Rebecca Wei}
+%\author{Ann Rebecca Wei}
 
-\title{Title of the Dissertation}
+%\title{Title of the Dissertation}
 
 %\degree{DOCTOR OF PHILOSOPHY}  % Default: DOCTOR OF PHILOSOPHY
 
 %\field{Mathematics}            % Default: Mathematics
 
-\graduationmonth{March}         % The default is June or December
+%\graduationmonth{June}         % The default is June or December
                                 % depending on current date.
 
 %\graduationyear{2003}          % Default: current year.
 
 
 % Use \includeonly to select the 
-\includeonly{notation, bibliography, 
+\includeonly{notation, 
 appendices/lambda, appendices/computations, 
-appendices/hochschild, 
 Bn_Cn/motivation, Bn_Cn/dg_cocats, Bn_Cn/dg_comods,
 pb_pf_adj/cyclic_object_Bn, pb_pf_adj/motivation, 
 pb_pf_adj/pullbacks, pb_pf_adj/pullback_examples,
@@ -69,36 +68,46 @@ homotopies/higher_homotopies}
 % Some initial stuff %
 %%%%%%%%%%%%%%%%%%%%%%
 
-\frontmatter		% Preliminary pages start here.
-\maketitle		% Produces the title page.
+%\frontmatter		% Preliminary pages start here.
+
+%\maketitle		% Produces the title page.
+
 %\copyrightpage		% Creates the copyright page.
 
-\abstract		% Abstract.
-This is the abstract.
 
-\acknowledgements	% Acknowledgements (optional).
-Text for acknowledgments.
+%\abstract		% Abstract.
+
+%This is the abstract.
+
+%\acknowledgements	% Acknowledgements (optional).
+
+%Text for acknowledgments.
 
 %\preface		% Preface (optional).
 
-% \listofabbreviations 
-% This is the list of abbreviations (optional).
+%% A few more optional pages (uncomment if needed)
+%
+%\listofabbreviations 
+
+%This is the list of abbreviations (optional).
 
 %\glossary
+%
 %This is the glossary (optional).
 %
 %\nomenclature
+%
 %This is the nomenclature (optional).
 %
 %% Note that the dedication text must be passed as an argument
 %% of the \dedication command
 %\dedication{This is the dedication (optional).}
 %
+
 \clearpage\phantomsection % needed for the hyperlinks to work correctly
 \tableofcontents	% Table of Contents will be automatically
 			% generated and placed here.
 
-%list of tables and figures are not optional...
 %\clearpage\phantomsection % needed for the hyperlinks to work correctly
 %\listoftables		% List of Tables and List of Figures will be placed
 
@@ -127,25 +136,57 @@ Text for acknowledgments.
 	\include{homotopies/motivation}
 	\include{homotopies/homotopies}
 	\include{homotopies/higher_homotopies}
-	\section{abstract framework for homotopically cyclic}
-	\section{Take Cobar}
-		A homotopically cyclic object in $\infty$-categories in dg categories
-with a trace functor
+	\section{A functor $\chi_\infty \to \mathcal{D}_\infty$}
+		Not yet written
+	\section{Take Cobar}		
+		Not yet written
+		%A homotopically cyclic object in $\infty$-categories in dg categorieswith a trace functor
+
+
+% The command \includeonly above allows to include a selected 
+% set of chapters only.
 
 % Uncomment the 'singlespace' environment and '\bibsep' command
 % if needed - some bibliographic styles overide the definition
 % of 'thebibliography' in nuthesis.cls
-\begin{singlespace}
-%\bibsep 12pt
-\clearpage\phantomsection % needed for hyperlikns to work correctly
-\include{bibliography}
-\end{singlespace}
+%
+% \begin{singlespace}
+% %\bibsep 12pt
+% \clearpage\phantomsection % needed for hyperlikns to work correctly
+% \begin{thebibliography}{xxx}
+
+% \bibitem{label1} A bibliographic item.  A bibliographic item.  A
+% bibliographic item.  A bibliographic item.
+% \bibitem{label2} Another bibliographic item.  
+% \bibitem{label3} Yet another bibliographic item.  
+% % The usages of \bibitem and \cite{..} are 
+% % explained in Section 4.3 (page 73) of % LaTeX manual.
+% % Or you may use BibTeX.
+% \end{thebibliography}
+% \end{singlespace}
+
+% (The following suggested by Francisco Iacobelli - 5/11/2010)
+% In case, you want to use BibTeX, you should replace (or comment)
+% the bibliography environment.
+% Instead uncomment the following 3 lines and replace <bib file>
+% with your .bib file:
+% \renewcommand\refname{\begin{centering}References\end{centering}}
+% \bibliography{<bib file>}
+% \bibliographystyle{acm} %or another suitable style.
+
+
 
 \appendix		% Appendix begins here (optional).
-%\appendices	% If more than one appendix chapters
+
+%\appendices	        % If more than one appendix chapters,
+				% use appendices instead of appendix
 \include{appendices/lambda}
 \include{appendices/computations}
-\include{appendices/hochschild}
+
+%\chapter{Notation}	% First appendix chapter, i.e., Appendix A.
+	%\include{notation}
+
+
 
 \end{document}
 

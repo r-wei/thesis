@@ -1,0 +1,209 @@
+\chapter{Background on Hochschild chains and cochains}
+In this section, we give some known 
+constructions on Hochschild chains and 
+cochains for the reader's convenience. 
+%
+\section{Standard constructions and notation}
+Let $k$ be a field of characteristic zero, 
+$A$ a flat unital $k$-algebra, and $M$ be an 
+$A$-$A$-bimodule. Then, we can take 
+$(C_\bullet(A,M), b)$, the 
+(reduced or standard) Hochschild chain 
+complex of $A$ 
+with coefficients in $M$ (see Reference 
+\cite{T}, Equation 2.1). When $M = B$ is also 
+an algebra over $k$ with left and right 
+module structure given by two maps of algebras 
+$f:A \to B$ and $g:A \to B$, respectively, 
+we may write $C_\bullet(A,_fB_g)$ to clarify 
+the module structure.
+
+Let $k, A, M$ be as above. We can also 
+take $(C^\bullet(A,M), \delta)$, the 
+(reduced) Hochschild cochain complex of $A$ 
+with coefficients in $M$ (see Reference 
+\cite{T}, Equation 2.12). When $M=B$ is 
+an algebra, $(C^\bullet(A,B), \delta, \cup)$ 
+is a dga where the cup product $\cup$ is 
+given in Reference \cite{T}, Equation 2.14.
+
+\subsection{Bar complexes}
+% \tilde{\delta} 
+% &:= 
+% \substack{\textrm{extension of the Hochschild 
+% cochain differential}\\\textrm{to a differential on 
+% a bar complex}}\\
+% b^\prime 
+% &:= 
+% \sum_{i=0}^{r-1} (-1)^{i}b_i, 
+%   \textrm{ for appropriate r}\\
+% b_i 
+% &:= \textrm{cup product on Hochschild cochains 
+% between the $i^{th}$ and $i+1^{th}$ terms}\\
+
+%\lambda()
+% , $\iota$ is 
+% defined in Equation \ref{eq:action_term}, and 
+% the braces $\cdot \{ \cdot \}$ are defined in ....
+
+
+
+\section{Brace operation on Hochschild cochains}
+\label{sec:def_braces}
+Fix algebras $A_0, A_1$ and maps of algebras 
+$f_0,f_n: A_0 \rightrightarrows A_1$, 
+$A_0 \leftleftarrows A_1: g_0, g_m$. We will 
+define a map of complexes 
+\begin{align*}
+&\phantom{{}={}}
+C(A_0 \to A_1 \to A_0)((f_0,g_0), (f_n,g_m))\\
+&:=
+\Big( \bigoplus \limits_{\substack{
+  i \in \mathbb{N}\\
+  f_1,\smdots,f_i \textrm{ maps of algebras}\\
+  f_{i+1} = f_n}}
+  C^\bullet(A_0, _{f_0}{A_1}_{f_1}) \otimes \smdots \otimes 
+  C^\bullet(A_0, _{f_i}{A_1}_{f_{i+1}}) \Big) \otimes \\
+&\phantom{{}={}}  
+\Big( \bigoplus \limits_{\substack{
+	j \in \mathbb{N}\\
+	g_1,\smdots,g_j \textrm{ maps of algebras}\\
+	g_{j+1} = g_m}}
+  C^\bullet(A_1, _{g_0}{A_0}_{g_1}) \otimes \smdots \otimes 
+  C^\bullet(A_1, _{g_j}{A_0}_{g_{j+1}}) \Big)\\
+&\phantom{{}moveovermoveovermoveover{}}
+  \Big\downarrow -\bullet -\\
+&\phantom{{}={}}
+C(A_0 \to A_0)(g_0f_0, g_mf_n)\\
+&:=
+\bigoplus \limits_{\substack{
+  i \in \mathbb{N}\\
+  h_1,\smdots,h_i \textrm{ maps of algebras}\\
+  h_{i+1} = g_mf_n}}
+  C^\bullet(A_0, _{g_0f_0}{A_0}_{h_1}) \otimes \smdots \otimes 
+  C^\bullet(A_0, _{h_i}{A_0}_{h_{i+1}}).
+\end{align*}
+First, for 
+$$
+(\phi_1\smdots\phi_n | 1) = 
+\xymatrix{
+A_0 
+\ar@/^5pc/[r]^{f_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+& A_0 
+\ar@/^2pc/[r]^{}^{id}_{\big\Downarrow 1}
+\ar@/_2pc/[r]_{id}
+& A_0
+}
+\quad \textrm{and} \quad
+(1|\phi_1\smdots\phi_n) = 
+\xymatrix{
+A_0
+\ar@/^2pc/[r]^{}^{id}_{\big\Downarrow 1}
+\ar@/_2pc/[r]_{id}
+& A_0 
+\ar@/^5pc/[r]^{f_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+& A_0,
+}$$
+define $(\phi_1\smdots\phi_n | 1) 
+\overset{\bullet}{\mapsto} 
+(\phi_1\smdots\phi_n) \bullet 1 = 
+(\phi_1\smdots\phi_n)$ and 
+$(1| \phi_1\smdots\phi_n) 
+\overset{\bullet}{\mapsto} 
+1 \bullet (\phi_1\smdots\phi_n) = 
+(\phi_1\smdots\phi_n)$.
+Then, for $n,m\geq 1$, let 
+$$
+(\phi_1\smdots\phi_n | \psi_1\smdots\psi_m)
+=
+\xymatrix{
+A_0 \ar@/^5pc/[r]^{f_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+& A_1 \ar@/^5pc/[r]^{g_0} 
+\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+& A_0
+}
+$$
+and define $(\phi_1\smdots\phi_n) \bullet
+(\psi_1\smdots\psi_m) \in C(A_0 \to A_0)
+(g_0f_0, g_mf_n)$ as follows:
+\begin{align*}
+&\phantom{{}={}}
+(\phi_1\smdots\phi_n) \bullet
+(\psi_1\smdots\psi_m)\\
+&= 
+\sum \limits_{
+  0 \leq i_1 \leq \smdots
+  \leq i_{2m} \leq n
+}
+  g_0\phi_1 \otimes \smdots \otimes g_0\phi_{i_1} \otimes 
+  \psi_1\{\phi_{i_1+1}\smdots \phi_{i_2}\} \otimes\\
+&\phantom{{}move{}}  
+  \otimes g_1\phi_{i_2+1} \otimes \smdots \otimes g_1\phi_{i_3} 
+  \otimes \psi_2\{\phi_{i_3+1}\smdots \phi_{i_4}\} \otimes \\
+&\phantom{{}move{}}    
+  \otimes \dots \otimes
+  \psi_m\{\phi_{i_{2m-1}+1}\smdots \phi_{i_{2m}}\} \otimes \\
+&\phantom{{}move{}}    
+  \otimes g_m\phi_{i_{2m}+1} \otimes \smdots \otimes g_m\phi_n \\
+&= \sum  
+\xymatrix{
+A_0 
+\ar@/^14pc/[rrrrrrrrrr]^{g_0f_0}_{\big\Downarrow g_0\phi_1}
+\ar@{.>}@/^12pc/[rrrrrrrrrr]_{\substack{
+  g_0f_1\\ \vdots\\\\g_0f_{i_1-1}}} 
+\ar@{.>}@/^8pc/[rrrrrrrrrr]
+\ar@{.>}@/^6pc/[rrrrrrrrrr]^{\big\Downarrow g_0\phi_{i_1}}_{g_0f_{i_1}}
+\ar@{.>}@/^3pc/[rrrrrrrrrr]^{\big\Downarrow 
+  \psi_1\{\phi_{i_1+1}\smdots \phi_{i_2}\}}_{\substack{
+  g_1f_{i_2}\\ \vdots \\\\ g_{m-1}f_{i_{2m-1}}}}
+\ar@{.>}@/_1pc/[rrrrrrrrrr]
+\ar@{.>}@/_3pc/[rrrrrrrrrr]^{\big\Downarrow 
+ \psi_m\{\phi_{i_{2m-1}+1}\smdots \phi_{i_{2m}}\}}_{g_m
+ f_{i_{2m}}}
+\ar@{.>}@/_6pc/[rrrrrrrrrr]^{\big\Downarrow g_m
+  \phi_{i_{2m}+1}}_{\substack{
+  g_mf_{i_{2m}+1}\\ \vdots\\\\g_mf_{n-1} }} 
+\ar@{.>}@/_10pc/[rrrrrrrrrr]_{\big\Downarrow g_m\phi_n}
+\ar@/_12pc/[rrrrrrrrrr]_{g_mf_n}
+&&&&&&&&&& A_0  
+}
+\end{align*}
+where $\psi_j\{\phi_{i_r+1}\smdots \phi_{i_r+s}\}
+\in C^\bullet(A_0, _{g_{j-1}f_{i_r}} {A_0}_{g_jf_{i_r+s}})$ 
+is the following cochain: 
+\begin{align*}
+&\phantom{{}={}}
+\psi_j\{\phi_{i_r+1}\smdots \phi_{i_r+s}\}
+  (b_0 \otimes a_1 \otimes \smdots \otimes a_p)\\
+&= 
+\sum \limits_{
+  0 \leq k_1 \leq \smdots \leq k_{2s} \leq p}
+\psi_j \Bigg( b_0, f_{i_r}a_1, \smdots, f_{i_r}a_{k_1},
+  \phi_{i_r+1}(a_{k_1+1}, \smdots, a_{k_2}),\\
+&\phantom{{}moveovermoveover{}}  
+  f_{i_r+1}a_{k_2+1}, \smdots, f_{i_r+1}a_{k_3},
+  \phi_{i_r+2}(a_{k_3+1}, \smdots, a_{k_4}), \\
+&\phantom{{}moveovermoveover{}}   
+  ,\smdots, 
+  \phi_{i_r+s}(a_{k_{2s-1}}, \smdots, a_{k_{2s}}), \\
+&\phantom{{}moveovermoveover{}} 
+  f_{i_r+s}a_{k_{2s}+1}, \smdots, f_{i_r+s}a_p \Bigg)
+\end{align*}
+for $b_0 \in A_1$, $a_1,\smdots,a_p \in A_0$, 
+$\psi_j \in C^\bullet(A_1, _{g_{j-1}}{A_0}_{g_j})$, 
+$\phi_i \in C^\bullet(A_), _{f_{i-1}}{A_1}_{f_i})$.
+% -reduced hochschild chains
+% -reference for braces and signs
+% -lambda(\vec\phi) notation
+
+
+% -computational props:
+% - dot notation = iota notation
+% - lambda(\phi) notation
