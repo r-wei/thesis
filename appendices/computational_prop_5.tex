@@ -1,70 +1,95 @@
-\begin{figure} \label{fig:upsilon}
-\centerline{\xymatrix{
-A_0 \ar@/^5pc/[r]^{f_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
-\ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
-& A_1 \ar@/^5pc/[r]^{g_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
-& A_2 \ar@/^5pc/[r]^{h_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
-& A_0
-}
-$\overset{[d_0^* \Upsilon, \mathcal{B}]}\longrightarrow$
-\xymatrix{
-A_0 \ar@/^5pc/[r]^{f_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
-\ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
-& A_1 \ar@/^5pc/[r]^{g_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
-& A_2 \ar@/^5pc/[r]^{h_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
-& A_0
-}}
-\caption{A picture of the domain and target of $[d_0^* \Upsilon, \mathcal{B}]$}
-\end{figure}
+% \begin{figure} \label{fig:upsilon}
+% \centerline{\xymatrix{
+% A_0 \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% \ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+% & A_1 \ar@/^5pc/[r]^{g_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+% & A_2 \ar@/^5pc/[r]^{h_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
+% & A_0
+% }
+% $\overset{[d_0^* \Upsilon, \mathcal{B}]}\longrightarrow$
+% \xymatrix{
+% A_0 \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% \ar@/_5pc/[rrr]_{id}^{\substack{\alpha \\ \\ \\ \\ }}
+% & A_1 \ar@/^5pc/[r]^{g_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+% & A_2 \ar@/^5pc/[r]^{h_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \theta_1}_{h_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
+% & A_0
+% }}
+% \caption{A picture of the domain and target of $[d_0^* \Upsilon, \mathcal{B}]$}
+% \end{figure}
 
 \begin{prop}
-$[d_0^* \Upsilon, \mathcal{B}] = 0$.
+\label{prop:c5}
+Let $\Upsilon$ and $\mathcal{B}$ be as 
+defined in the previous propositions. 
+Then, $[\Upsilon, \mathcal{B}] := 
+\Upsilon_{A_1\bullet A_2, A_0} 
+\mathcal{B}_{A_0,A_1,A_2} - 
+\mathcal{B}_{A_2, A_0, A_1} 
+\Upsilon_{A_0 \bullet A_1, A_2} = 0$. 
+(Note that $[\Upsilon, \mathcal{B}]$ is 
+a map from $C(A_0 \to A_1 \to A_2 \to A_0)$ 
+to itself.)
 \end{prop}
-
+%
 \begin{proof}
-We show the proposition by direct computation. Since all of the maps are maps of cofree comodules, we only need to check that $\pi_1([d_0^* \Upsilon, \mathcal{B}]) = 0$ where $\pi_1$ denotes projection of the comodule onto its degree-1 component, (i.e., $\pi_1: Bar(C^\bullet(A_0, A_1)) \otimes Bar(C^\bullet(A_1, A_2)) \otimes Bar(C^\bullet(A_2, A_0)) \otimes C_{-\bullet}(A_0, A_0) \rightarrow C_{-\bullet}(A_0, A_0)$). We check this directly.
-
+We show the proposition by direct computation. 
+Since all of the maps are maps of cofree 
+comodules, we only need to check that 
+$\pi_1([\Upsilon, \mathcal{B}]) = 0$ where 
+$\pi_1$ denotes projection of the comodule 
+onto cogenerators. We check this directly.
+%
 \begin{equation*}
 \begin{aligned}
-\pi_1 \circ d_0^* \Upsilon \circ \mathcal{B} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha ) 
+\pi_1 \circ \Upsilon_{A_1\bullet A_2, A_0} 
+  \mathcal{B}_{A_0,A_1,A_2} 
+  (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha ) 
 &= \upsilon_{|K_1| \leq * \leq |K_1|+|J_1|, |I_1|} (
    \vec{\psi}_{J_1} \bullet \vec{\theta}_{K_1} | 
    \vec{\phi}_{I_1} | 
-   \mathcal{B}_{|I_2|, |J_2|, |K_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)) \\
+   \mathcal{B}_{|I_2|, |J_2|, |K_2|} (
+   \vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)) \\
 &= \upsilon_{|K_1| \leq * \leq |K_1|+|J_1|, |I_1|} (
    \vec{\psi}_{J_1} \bullet \vec{\theta}_{K_1} | 
    \vec{\phi}_{I_1} |
    1 \otimes \lambda(\vec{\phi}_{I_2})[
-     \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3})
+     \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) 
+     \lambda(\vec{\phi}_{I_3}) 
      \mathfrak{a}_2, a_0, \mathfrak{a}_1] \\
-&= 1 \otimes \lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_1})[
-     \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_2})
+&= 1 \otimes \lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) 
+  \lambda(\vec{\phi}_{I_1})[
+     \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) 
+     \lambda(\vec{\phi}_{I_2})
      \mathfrak{a}_2, a_0, \mathfrak{a}_1]    
 \end{aligned}
 \end{equation*}
-
+%
 \begin{align*}
-\pi_1 \circ \mathcal{B} \circ d_0^* \Upsilon (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha ) 
+\pi_1 \circ \mathcal{B}_{A_2, A_0, A_1} 
+  \Upsilon_{A_0 \bullet A_1, A_2} 
+  (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha ) 
 &= B_{|K_1|, |I_1|, |J_1|} 
    (\vec{\theta}_{K_1} | \vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
    \upsilon_{|J_2| \leq * \leq |I_2|+|J_2|, |K_2|} 
    (\vec{\phi}_{I_2} \bullet \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)) \\
-&= 1 \otimes \lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_1})[
-     \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_2})
+&= 1 \otimes \lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) 
+  \lambda(\vec{\phi}_{I_1})[
+     \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) 
+     \lambda(\vec{\phi}_{I_2})
      \mathfrak{a}_2, a_0, \mathfrak{a}_1]  
 \end{align*}
-
-It's clear that $\pi_1 \circ d_0^* \Upsilon \circ \mathcal{B} =  \pi_1 \circ \mathcal{B} \circ d_0^* \Upsilon$.
+%
+It's clear that $\pi_1([\Upsilon, \mathcal{B}]) = 0$.
 \end{proof}

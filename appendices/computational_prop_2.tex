@@ -26,7 +26,7 @@
 \begin{prop}
 \label{prop:c2}
 Let 
-$B:C(A_0 \to A_1 \to A_0)
+$B_{A_0,A_1} = B:C(A_0 \to A_1 \to A_0)
 \longrightarrow C(A_0 \to A_1 \to A_0)$ 
 be the map of cofree comodules defined by 
 the following maps to cogenerators:
@@ -35,7 +35,7 @@ the following maps to cogenerators:
 B_{n, m} (\vec{\phi} | \vec{\psi} | \alpha) 
 = 1 \otimes \lambda(\psi)\lambda(\phi) \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1.
 \end{equation}
-Then, $D(B) = \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id$ where
+Then, $D(B_{A_0,A_1}) = \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id$ where
 $\Upsilon$ is defined in Proposition 
 \ref{prop:c1}.
 \end{prop}
@@ -43,7 +43,7 @@ $\Upsilon$ is defined in Proposition
 \begin{proof}
 We prove the statement by direct computation. 
 Since all of the maps are maps of cofree comodules, 
-we only need to check that $\pi_1(D(B) - 
+we only need to check that $\pi_1(D(B_{A_0,A_1}) - 
 \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id) = 0$ 
 where $\pi_1$ denotes projection of the comodule 
 onto cogenerators. More explicitly, for an element 
@@ -65,7 +65,7 @@ B_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \phi_{n} \cdot \alph
 \end{aligned}
 \end{equation}
 
-We will call the terms in the first two rows the ``standard terms'' in the computaion of $D(B)$, and the terms in the second two rows the ``extra terms'' in the computation of $D(B)$. The fifth row is $\pi_1(\Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id)$. 
+We will call the terms in the first two rows the ``standard terms'' in the computaion of $D(B_{A_0,A_1})$, and the terms in the second two rows the ``extra terms'' in the computation of $D(B_{A_0,A_1})$. The fifth row is $\pi_1(\Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id)$. 
 
 We compute the sum of the standard terms. In the chart below, the leftmost column lists the expressions that don't cancel in the sum of the standard terms, the middle column gives the standard term from which the expression comes, and the rightmost column gives the extra term that cancels the expression. 
 
@@ -127,5 +127,5 @@ Now, we compute the remaining terms from the fifth row. In the chart below, the 
 \end{center}
 \end{landscape}
 
-All of the terms in the table describing the expansion of equation \ref{eq:upsilon_homotopy} cancel, so $D(B) = \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id$.
+All of the terms in the table describing the expansion of equation \ref{eq:upsilon_homotopy} cancel, so $D(B_{A_0,A_1}) = \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id$.
 \end{proof}

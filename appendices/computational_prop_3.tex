@@ -1,27 +1,73 @@
 \begin{prop}
-$[\Upsilon, B] = 0$.
+\label{prop:c3}
+Let $\Upsilon_{A_0,A_1}: 
+C(A_0 \to A_1 \to A_0) \longrightarrow
+C(A_1 \to A_0 \to A_1)$ and 
+$B_{A_0,A_1}:C(A_0 \to A_1 \to A_0) 
+\longrightarrow C(A_0 \to A_1 \to A_0)$ 
+be the maps defined in Propositions 
+\ref{prop:c1} and \ref{prop:c2} above. 
+Then, $[\Upsilon, B] := 
+\Upsilon_{A_0,A_1} B_{A_0,A_1} - 
+B_{A_1,A_0}\Upsilon_{A_0,A_1} = 0$.
 \end{prop}
-
+%
 \begin{proof}
-We show that $[\Upsilon, B] = 0$ by direct computation. Since all of the maps are maps of cofree comodules, we only need to check that $\pi_1([\Upsilon, B]) = 0$ where $\pi_1$ denotes projection of the comodule onto its degree-1 component, (i.e., $\pi_1: Bar(C^\bullet(A_0, A_1)) \otimes Bar(C^\bullet(A_1, A_0)) \otimes C_{-\bullet}(A_0, A_0) \rightarrow C_{-\bullet}(A_0, A_0)$). We check this directly.
-
+We show that $[\Upsilon, B] = 0$ by direct 
+computation. Since all of the maps are maps 
+of cofree comodules, we only need to check 
+that $\pi_1([\Upsilon, B]) = 0$ where 
+$\pi_1$ denotes projection of the comodule 
+onto cogenerators. We check this directly.
+%
 \begin{equation*}
 \begin{aligned}
-\pi_1 \circ \Upsilon \circ B (\vec{\phi} | \vec{\psi} | \alpha ) 
-&= \upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | B_{|I_2|, |J_2|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \alpha)) \\
-&= \upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 1 \otimes \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2, a_0, \mathfrak{a}_1) \\
-&= 1 \otimes \lambda(\vec{\phi}_{I_1}) \big( \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2, a_0, \mathfrak{a}_1 \big)
+\pi_1 \circ \Upsilon_{A_0,A_1} \circ B_{A_0,A_1} 
+  (\vec{\phi} | \vec{\psi} | \alpha ) 
+&= \upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
+  B_{|I_2|, |J_2|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \alpha)) \\
+&= \upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
+  1 \otimes \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_2}) 
+  \mathfrak{a}_2, a_0, \mathfrak{a}_1) \\
+&= 1 \otimes \lambda(\vec{\phi}_{I_1}) \big( 
+  \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) 
+  \mathfrak{a}_2, a_0, \mathfrak{a}_1 \big)
 \end{aligned}
 \end{equation*}
-
+%
 \begin{align*}
-\pi_1 \circ B \circ \Upsilon (\vec{\phi} | \vec{\psi} | \alpha ) 
-&= B_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \alpha)) \\
-&= B_{|J_1|, |I_1|} \big(\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \phi_{|I_1|+1} (\lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3, a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) \mathfrak{a}_2 \; + \\
-&\hphantom{{}=B_{|J_1|, |I_1|} \big(\vec{\psi}_{J_1} | \vec{\phi}_{I_1} |} + a_0 \otimes \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) \mathfrak{a}_1 \; \; \; \text{if }\vec{\psi}_{J_2} = \emptyset \big) \\
-&= 1 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3 \otimes \phi_{|I_1|+1} (\lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_4}) \mathfrak{a}_4, a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) \mathfrak{a}_2 \; + \\
-&\hphantom{{}==} + 1 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_2 \otimes a_0 \otimes \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_1
+\pi_1 \circ B_{A_1,A_0} \circ \Upsilon_{A_0,A_1} 
+  (\vec{\phi} | \vec{\psi} | \alpha ) 
+&= B_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | 
+  \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \alpha)) \\
+&= B_{|J_1|, |I_1|} \big(\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \phi_{|I_1|+1} (
+  \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) 
+  \mathfrak{a}_3, a_0, \mathfrak{a}_1) \otimes 
+  \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) 
+  \mathfrak{a}_2 \; + \\
+&\hphantom{{}moveovermoveover{}} 
+  + a_0 \otimes \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) 
+  \mathfrak{a}_1 \; \; \; 
+  \text{if }J_2 = \emptyset \big) \\
+&= 1 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}_{J_1}) 
+  \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3 \otimes 
+  \phi_{|I_1|+1} (\lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_4}) 
+  \mathfrak{a}_4, a_0, \mathfrak{a}_1) \otimes 
+  \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) 
+  \mathfrak{a}_2 \; + \\
+&\hphantom{{}==} 
+  + 1 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}) 
+  \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_2 \otimes 
+  a_0 \otimes \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_1
 \end{align*}
-
-It's clear that $\pi_1 \circ \Upsilon \circ B =  \pi_1 \circ B \circ \Upsilon$. The final expansion of $\pi_1 \circ \Upsilon \circ B$ is the sum of the two terms in the final expansion of $\pi_1 \circ B \circ \Upsilon$, (i.e., the sum of terms in which one of the $\phi$'s contains $a_0$ and the terms in which none of the $\phi$'s contains $a_0$).
+%
+It's clear that $\pi_1 \circ \Upsilon_{A_0,A_1} 
+\circ B_{A_0,A_1} =  \pi_1 \circ B_{A_1,A_0} 
+\circ \Upsilon_{A_0,A_1}$: The final expansion of 
+$\pi_1 \circ \Upsilon_{A_0,A_1} \circ B_{A_0,A_1}$ 
+is the sum of the two terms in the final expansion 
+of $\pi_1 \circ B_{A_1,A_0} \circ \Upsilon_{A_0,A_1}$, 
+which is the sum of terms in which one of 
+the $\phi$'s contains $a_0$ and the terms in which 
+none of the $\phi$'s contains $a_0$).
 \end{proof}

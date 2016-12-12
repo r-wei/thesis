@@ -83,14 +83,11 @@ A_0 \to \smdots \to A_{n-2}).
 \end{equation}
 These two maps are homotopic via 
 two homotopies: 
-$\hat{\delta}_{n-1,n}^*
-\sigma_{A_0 \to \smdots \to A_{n-1}\to A_0!}
-+ \tau_n^{*2}\tau_{n!} \circ 
-\sigma_{A_0 \to \smdots \to A_n\to A_0!}$ 
+$\hat{\delta}_{n-1,n}^*\sigma_!
++ \tau_n^{*2}\tau_{n!} \circ \sigma_!$ 
 and 
-$\hat{\delta}_{n-2,n}^*
-\sigma_{A_0 \to \smdots \to A_{n-2}\to A_0 \to A_0!} +
-\hat{\tau}_n^*\sigma_{A_n \to A_0 \smdots \to A_n!}
+$\hat{\delta}_{n-2,n}^*\sigma_! +
+\hat{\tau}_n^*\sigma_!
 \circ \tau_{n!}$ (see Figure 
 \ref{fig:two_homotopies}). If the 
 two homotopies were different, then 
@@ -99,46 +96,72 @@ we would desire a higher homotopy (i.e.,
 a degree -2 map of comodules) between 
 them. However, we will show the 
 two homotopies are the same, so that 
-no higher homotopies are needed.
+no higher homotopies are needed. 
+
+First, we show that $\hat{\delta}_{n-1,n}^*
+\sigma_! = \hat{\delta}_{n-2,n}^*\sigma_!$. 
+We have
+\begin{align*}
+\hat{\delta}_{n-1,n}^*\sigma_!
+=
+\mathcal{B}_{A_0 \bullet \smdots \bullet A_{n-2},
+  A_{n-1}\bullet A_n}
+= \mathcal{B}_{A_0 \bullet \smdots \bullet A_{n-1},A_n} 
+= \hat{\delta}_{n-2,n}^*\sigma_!
+\end{align*}
+where the second equality holds by definition 
+of $\mathcal{B}$ in Appendix Equation 
+\ref{eq:def_sigma2}.
+
+Second, we show that $\tau_n^{*2}\tau_{n!} 
+\circ \sigma_! = \hat{\tau}_n^*\sigma_!
+\circ \tau_{n!}$ in Appendix Proposition 
+\ref{prop:c5}. In the appendix, $\tau_n^{*2}
+\tau_{n!} \circ \sigma_! = \Upsilon_{A_1\bullet A_2,A_0} 
+\mathcal{B}_{A_0,A_1,A_2}$ and $\hat{\tau}_n^*
+\sigma_!\circ \tau_{n!} = \mathcal{B}_{A_2,A_0,A_1} 
+\Upsilon_{A_0 \bullet A_1, A_2}$.
 %
-\begin{figure}[H]
-\xymatrixrowsep{3pc}
-\xymatrixcolsep{5pc}
+\begin{figure}%[H]
 \centerline{\xymatrix{
 \underset{\substack{\\\\
   \textrm{$``$brace together $A_{n-2}, A_{n-1}, A_n$,}\\
-  \textrm{then apply $\tau_{n-2!}$''}
-         }}
-         {(\widehat{\delta_{n-2,n-1}
-         \delta_{n-1,n}})^*\tau_{n-2!}
-         }
- \ar[r]^{\hat{\delta}_{n-1,n}^*\sigma_!}
- \ar[d]_{\substack{\\\\\\
-         \hat{\delta}_{n-2,n}^*\sigma_!
-         }}
-& \underset{\substack{ \\\\
-    \textrm{$``$brace together $A_{n-1}, A_n$ and apply $\tau_{n-1!}$,}\\
-    \textrm{then apply $\tau_{n!}$''}
-           }}
-           {\hat{\tau}_n^{*2}\tau_{n!} \circ 
-            \hat{\delta}_{n-1,n}^*\tau_{n-1!}
-           } 
-  \ar[d]^{\substack{\\\\\\
-          \tau_n^{*2}\tau_{n!} \circ \sigma_!
-         }}\\
-\underset{\substack{\\\\
-          \textrm{$``$apply $\tau_{n!}$,}\\
-          \textrm{then brace together $A_{n-1}, A_{n-2}$ and apply $\tau_{n-1!}$''}
-         }}
-         {(\widehat{\delta_{n-1,n}\tau_n})^* 
-         \tau_{n-1!} \circ \tau_{n!}
-         }
-  \ar[r]^{\hat{\tau}_n^*\sigma_! \circ \tau_{n!}}
+  \textrm{then apply $\tau_{n-2!}$''}}}
+  {(\widehat{\delta_{n-2,n-1}
+   \delta_{n-1,n}})^*\tau_{n-2!}}
+\ar[r]^{\cong}
+\ar[d]_{\cong}   
+& \hat{\delta}_{n-1,n}^*(
+  \hat{\delta}_{n-2,n-1}^*\tau_{n-2!})   
+\ar[r]^{\hat{\delta}_{n-1,n}^*\sigma_!}
+& \hat{\delta}_{n-1,n}^*(
+  \hat{\tau}_{n-1}^*\tau_{n-1!} \circ \tau_{n-1!})
+\ar[d]^{\cong}  \\
+(\widehat{\delta_{n-2,n-1}\delta_{n-2,n}})^*
+  \tau_{n-2!}  
+\ar[d]_{\hat{\delta}_{n-2,n}^*\sigma_!}
+&& \underset{\substack{ \\\\
+    \textrm{$``$brace together $A_{n-1}, A_n$}\\
+    \textrm{and apply $\tau_{n-1!}$,}\\
+    \textrm{then apply $\tau_{n!}$''}}}
+    {\hat{\tau}_n^{*2}\tau_{n!} \circ 
+    \hat{\delta}_{n-1,n}^*\tau_{n-1!}} 
+\ar[d]^{\substack{\\\\\\\\
+        \tau_n^{*2}\tau_{n!} \circ \sigma_!}}\\
+\hat{\delta}_{n-2,n}^*(
+  \hat{\tau}_{n-1}^*\tau_{n-1!} \circ \tau_{n-1!})
+\ar[r]_{\cong}                   
 & \underset{\substack{\\\\
-  \textrm{$``$apply $\tau_{n!}$ three times''}
-  }}
-  {\hat{\tau}_n^{*2} \tau_{n!}\circ
-   \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}}\\
+          \textrm{$``$apply $\tau_{n!}$,}\\
+          \textrm{then brace together $A_{n-1}, A_{n-2}$}\\
+          \textrm{and apply $\tau_{n-1!}$''}}}
+         {\hat{\tau}_n^*(\hat{\delta}_{n-1,n}^*
+          \tau_{n-1!}) \circ \tau_{n!}}
+\ar[r]^{\hat{\tau}_n^*\sigma_! \circ \tau_{n!}}
+& \underset{\substack{\\\\
+    \textrm{$``$apply $\tau_{n!}$ three times''}}}
+    {\hat{\tau}_n^{*2} \tau_{n!}\circ
+     \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}}
 }}
 \caption{Two homotopies between 
 $(\widehat{\delta_{n-2,n-1}\delta_{n-1,n}})^*
@@ -168,10 +191,16 @@ and
 $\sigma_{A_1 \to A_0 \to A_1!} \circ \tau_{1!}$ 
 (see Figure \ref{fig:two_homotopies_1}; 
 for clarity, here, we indicate the sources 
-of the $\sigma_!$'s). Again, we will 
-show that these two homotopies are the same. 
+of the $\sigma_!$'s). We show that these two 
+homotopies are the same in Appendix Proposition 
+\ref{prop:c3}, so no higher homotopies are 
+needed. In the appendix, $\tau_{1!} \circ 
+\sigma_{A_0 \to A_1 \to A_0!} = \Upsilon_{A_0,A_1} 
+\circ B_{A_0,A_1}$ and 
+$\sigma_{A_1 \to A_0 \to A_1!} \circ 
+\tau_{1!} = B_{A_1,A_0} \circ \Upsilon_{A_0,A_1}$.
 %
-\begin{figure}[H]
+\begin{figure}%[H]
 \xymatrixrowsep{4pc}
 \centerline{\xymatrix{
 id \circ \tau_{1!} = \tau_{1!} = \tau_{1!} \circ id
