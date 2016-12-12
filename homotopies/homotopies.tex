@@ -70,8 +70,64 @@ and
 \end{equation}
 \end{subequations}
 %
-\subsection{A note about composition of $\lambda_!$'s}
+\subsection{Aside on composing $\lambda_!$'s}
+In this section and the next, we will use 
+the following convention for composing 
+$\lambda_!$'s, which we first illustrate with 
+an example. Suppose we have 3 composable 
+generating morphisms in $\Lambda$: 
+$\lambda_1 \in \Lambda([m],[n])$, 
+$\lambda_2 \in \Lambda([n],[p])$, and 
+$\lambda_3 \in \Lambda([p],[q])$. 
+Fix a sequence of algebras $A_0, \smdots, A_m$. 
+We can construct the following 
+composition of morphisms of dg 
+comodules over $B(\mathcal{A}):=
+B(A_0 \to \smdots \to A_m \to A_0)$:
+\begin{align*}
+C(\mathcal{A})
+\xrightarrow{\lambda_{1, \mathcal{A}!}}
+%
+\hat{\lambda}_1^*C(\lambda_1\mathcal{A})
+\xrightarrow{\hat{\lambda}_1^*
+  \lambda_{2, \lambda_1\mathcal{A}!}}
+%
+\hat{\lambda}_1^*\hat{\lambda}_2^*C(\lambda_2\lambda_1\mathcal{A})
+\xrightarrow{\hat{\lambda}_1^*\hat{\lambda}_2^*
+  \lambda_{3, \lambda_2\lambda_1\mathcal{A}!}}
+%
+\hat{\lambda}_1^*\hat{\lambda}_2^*\hat{\lambda}_3^*
+  C(\lambda_3\lambda_2\lambda_1\mathcal{A}).
+\end{align*}
+To simplify the notation, we will write 
+$$
+\hat{\lambda}_1^*\hat{\lambda}_2^*\lambda_{3!} 
+\circ \hat{\lambda}_1^*\lambda_{2!} 
+\circ \lambda_{1!}
+\quad \textrm{instead of} \quad
+\hat{\lambda}_1^*\hat{\lambda}_2^*
+  \lambda_{3, \lambda_2\lambda_1\mathcal{A}!} 
+\circ \hat{\lambda}_1^*\lambda_{2, \lambda_1\mathcal{A}!} 
+\circ \lambda_{1, \mathcal{A}!}.
+$$
 
+More generally, when the reader sees 
+$\hat{\lambda}_1^* \smdots \hat{\lambda}_{r-1}^*
+\lambda_{r!} \circ \smdots \circ 
+\hat{\lambda}_1^*\lambda_{2!} 
+\circ \lambda_{1!}$
+for a sequence of composable generating morphisms 
+$\lambda_r \circ \smdots \circ \lambda_1$ in $\Lambda$, 
+s/he may decode this notation by choosing a sequence 
+of algebras $A_0, \smdots, A_{m=\textrm{source of }
+\lambda_1}$, setting $\mathcal{A} = (A_0 \to \smdots 
+\to A_m \to A_0)$, and letting the composition of 
+$\lambda_!$'s denote
+$\hat{\lambda}_1^* \smdots \hat{\lambda}_{r-1}^*
+  \lambda_{r, \lambda_{r-1} \smdots \lambda_1 \mathcal{A}!} 
+\circ \smdots \circ  
+\hat{\lambda}_1^*\lambda_{2, \lambda_1\mathcal{A}!} 
+\circ \lambda_{1, \mathcal{A}!}$.
 %
 \subsection{Showing Equations \ref{eq:strict} hold}
 Equation \ref{eq:strict_1} has three relations. 
