@@ -89,32 +89,32 @@ C(\mathcal{A})
 \xrightarrow{\lambda_{1, \mathcal{A}!}}
 %
 \hat{\lambda}_1^*C(\lambda_1\mathcal{A})
-\xrightarrow{\hat{\lambda}_1^*
-  \lambda_{2, \lambda_1\mathcal{A}!}}
+\xrightarrow{\hat{\lambda}_1^*(
+  \lambda_{2, \lambda_1\mathcal{A}!})}
 %
 \hat{\lambda}_1^*\hat{\lambda}_2^*C(\lambda_2\lambda_1\mathcal{A})
 \xrightarrow{\hat{\lambda}_1^*\hat{\lambda}_2^*
-  \lambda_{3, \lambda_2\lambda_1\mathcal{A}!}}
+  (\lambda_{3, \lambda_2\lambda_1\mathcal{A}!})}
 %
 \hat{\lambda}_1^*\hat{\lambda}_2^*\hat{\lambda}_3^*
   C(\lambda_3\lambda_2\lambda_1\mathcal{A}).
 \end{align*}
 To simplify the notation, we will write 
 $$
-\hat{\lambda}_1^*\hat{\lambda}_2^*\lambda_{3!} 
-\circ \hat{\lambda}_1^*\lambda_{2!} 
+\hat{\lambda}_1^*\hat{\lambda}_2^*(\lambda_{3!}) 
+\circ \hat{\lambda}_1^*(\lambda_{2!})
 \circ \lambda_{1!}
 \quad \textrm{instead of} \quad
 \hat{\lambda}_1^*\hat{\lambda}_2^*
-  \lambda_{3, \lambda_2\lambda_1\mathcal{A}!} 
-\circ \hat{\lambda}_1^*\lambda_{2, \lambda_1\mathcal{A}!} 
+  (\lambda_{3, \lambda_2\lambda_1\mathcal{A}!}) 
+\circ \hat{\lambda}_1^*(\lambda_{2, \lambda_1\mathcal{A}!}) 
 \circ \lambda_{1, \mathcal{A}!}.
 $$
 
 More generally, when the reader sees 
 $\hat{\lambda}_1^* \smdots \hat{\lambda}_{r-1}^*
-\lambda_{r!} \circ \smdots \circ 
-\hat{\lambda}_1^*\lambda_{2!} 
+(\lambda_{r!}) \circ \smdots \circ 
+\hat{\lambda}_1^*(\lambda_{2!}) 
 \circ \lambda_{1!}$
 for a sequence of composable generating morphisms 
 $\lambda_r \circ \smdots \circ \lambda_1$ in $\Lambda$, 
@@ -124,12 +124,12 @@ of algebras $A_0, \smdots, A_{m=\textrm{source of }
 \to A_m \to A_0)$, and letting the composition of 
 $\lambda_!$'s denote
 $\hat{\lambda}_1^* \smdots \hat{\lambda}_{r-1}^*
-  \lambda_{r, \lambda_{r-1} \smdots \lambda_1 \mathcal{A}!} 
+  (\lambda_{r, \lambda_{r-1} \smdots \lambda_1 \mathcal{A}!}) 
 \circ \smdots \circ  
-\hat{\lambda}_1^*\lambda_{2, \lambda_1\mathcal{A}!} 
+\hat{\lambda}_1^*(\lambda_{2, \lambda_1\mathcal{A}!}) 
 \circ \lambda_{1, \mathcal{A}!}$.
 %
-\subsection{Showing Equations \ref{eq:strict} hold}
+\subsection{Strict relations: showing Equations \ref{eq:strict} hold}
 Equation \ref{eq:strict_1} has three relations. 
 All of the $\sigma_!$'s and $\delta_!$'s in Equation 
 \ref{eq:strict_1} are identity maps, so it's clear that 
@@ -259,7 +259,7 @@ C(A_0 \to A_0) \cong
 $$
 is the identity map.
 % 
-\subsection{Showing Equations \ref{eq:weak} hold}
+\subsection{Weak relations: showing Equations \ref{eq:weak} hold}
 \subsubsection{Showing Equation \ref{eq:weak_delta} holds}
 For $n=1$, eliminating the identity 
 maps reduces Equation \ref{eq:weak_delta} to:

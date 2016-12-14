@@ -1,11 +1,11 @@
 \section{Pullbacks of dg comodules--examples}
 %
 \begin{eg}[Another definition of C(1)] \label{eg:pb}
-Using $F$ and $G$ from Proposition 
-\ref{prop:compute_pb}, we can induce 
-differentials on $B(\mathcal{A}) \otimes_{\hat{\lambda}} T$ from
-$\hat{\lambda}^*C$. We will compute this differential 
-for a particular choice of $\lambda$. 
+% Using $F$ and $G$ from Proposition 
+% \ref{prop:compute_pb}, we can induce 
+% differentials on $B(\mathcal{A}) \otimes_{\hat{\lambda}} T$ from
+% $\hat{\lambda}^*C$. We will compute this differential 
+% for a particular choice of $\lambda$. 
 Let $\lambda = \delta_{0,1} \in \Lambda([1], [0])$. 
 Fix algebras $A_0$ and $A_1$, and set 
 \begin{align*}
@@ -20,30 +20,31 @@ C(0)
 ($\hat{\lambda}$ is given by braces, 
 see Section \ref{sec:def_G}.)
 
-Note that 
-$\hat{\delta}_{0,1}^* C(0) \cong
-[B(1) \otimes_{\hat{\lambda}} 
-  T(0)](f_{0,0},f_{1,0}) \cong
-C(1)(f_{0,0},f_{1,0})$ 
-as comodules where 
-$(f_{0,0},f_{1,0}) \in Obj(B(1))$. 
+From Proposition \ref{prop:compute_pb}, we 
+have $\hat{\delta}_{0,1}^* C(0) \cong
+[B(1) \otimes_{\hat{\delta}_{0,1}} T(0)]$ 
+as comodules. We will use the isomorphisms 
+$F$ and $G$ in Proposition \ref{prop:compute_pb} 
+to induce a differential on 
+$[B(1) \otimes_{\hat{\delta}_{0,1}} T(0)]$ 
+from $\hat{\delta}_{0,1}^* C(0)$.
 Let 
 $\phi_{0,1} \smdots \phi_{0,k_0} |
 \phi_{1,1} \smdots \phi_{1,k_1} |
-t$ be a typical element of 
-$[B(1) \otimes_{\hat{\lambda}} 
+\alpha$ be a typical element of 
+$[B(1) \otimes_{\hat{\delta}_{0,1}} 
   T(0)](f_{0,0},f_{1,0})$
-(see \ref{fig:phi|alpha} for notational 
-conventions). Then,
+(see Figure \ref{fig:phi|alpha} for 
+notational conventions). Then,
 \begin{align*}
 & \phantom{{}={}}
-d_{B(1) \otimes_{\hat{\lambda}} T(0)}
+d_{induced}
 (\phi_{0,1} \smdots \phi_{0,k_0} |
-\phi_{1,1} \smdots \phi_{1,k_1} | t)\\
+\phi_{1,1} \smdots \phi_{1,k_1} |\alpha)\\
 &=
-Fd_{\hat{\lambda}^*C(0)}G
+Fd_{\hat{\hat{\delta}_{0,1}}^*C(0)}G
 (\phi_{0,1} \smdots \phi_{0,k_0} |
-\phi_{1,1} \smdots \phi_{1,k_1} | t) \\
+\phi_{1,1} \smdots \phi_{1,k_1} |\alpha) \\
 &=
 [F \circ (d_{B(1)}\otimes id_{C(0)} + 
   id_{B(1)} \otimes d_{C(0)})] \\
@@ -53,11 +54,11 @@ Fd_{\hat{\lambda}^*C(0)}G
 (\phi_{0,1} \smdots \phi_{0,r_0-1} |
 \phi_{1,1} \smdots \phi_{1,r_1-1} ) \otimes 
 ((\phi_{0,r_0}\smdots \phi_{0,k_0}) \bullet 
-(\phi_{1,r_1}\smdots \phi_{1,k_1}) | t) \big) \\
+(\phi_{1,r_1}\smdots \phi_{1,k_1}) |\alpha) \big) \\
 &= 
 d_{C(1)(f_{0,0},f_{1,0})}
 (\phi_{0,1} \smdots \phi_{0,k_0} |
-\phi_{1,1} \smdots \phi_{1,k_1} | t)
+\phi_{1,1} \smdots \phi_{1,k_1} |\alpha)
 \end{align*}
 where the last equality holds by looking at which 
 terms from $d_{B(1)}\otimes id_{C(0)} + 

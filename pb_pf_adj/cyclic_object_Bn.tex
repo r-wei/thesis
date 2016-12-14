@@ -1,6 +1,8 @@
 \section{A sheafy-cyclic object in dg cocategories}\label{sec:cyclic_B(n)}
 We would like to say that we have a functor 
-from $\Lambda$ to the category of dg 
+from Connes cyclic category $\Lambda$ 
+(see Appendix \ref{chap:lambda} for 
+generators and relations) to the category of dg 
 cocategories where $[n] \mapsto B(n)$, 
 but defining $B(n)$ involved choosing a 
 sequence of algebras $A_0, \dots, A_n$. 
@@ -19,13 +21,8 @@ X(\tau_n): \mathcal{A}
   &\mapsto (A_n \to A_0 \to \smdots \to A_{n-1} \to A_n)\\
 X(\delta_{j,n}): \mathcal{A}
   &\mapsto 
-  \begin{cases}
-    (A_0 \to \smdots \to A_j\longrightarrow A_{j+2} 
-      \to \smdots \to A_n \to A_0) 
-    & 0 \leq j \leq n-2\\
-    (A_0 \to \smdots \to A_{n-1}\longrightarrow A_0)
-    & j = n-1
-  \end{cases}\\
+    (A_0 \to \smdots \to A_j\longrightarrow A_{j+2 
+    \textrm{ (mod n+1)}} \to \smdots \to A_n \to A_0) \\
 X(\sigma_{i,n}): \mathcal{A}
   &\mapsto 
   \begin{cases}
@@ -36,9 +33,7 @@ X(\sigma_{i,n}): \mathcal{A}
     & i=n+1	
   \end{cases}	   
 \end{align*}
-(See Appendix \ref{chap:lambda} for 
-notation on morphisms in $\Lambda$.) It's 
-straightforward to 
+It's straightforward to 
 check that $X$ respects composition of morphisms. 
 Now, let $\chi$ be the category with objects given by
 diagrams $A_0 \to \smdots \to A_n \to A_0$ 
@@ -72,14 +67,15 @@ about the source and target when needed.
 %
 \subsection{Definition of $\mathcal{G}$}
 \label{sec:def_G}
-Now, we will define $\mathcal{G}$. 
-Recall the dg cocategories defined in Section
-\ref{sec:B(n)}. (See Section \ref{sec:phi_notation} 
-the notation of morphisms in $B(n)$). On objects, 
-$$
+Now, we will define $\mathcal{G}$. On objects, 
+\begin{align*}
 \mathcal{G}: (A_0 \to \smdots \to A_n \to A_0)
-  \mapsto B(A_0 \to \smdots \to A_n \to A_0)
-$$
+&\mapsto 
+B(A_0 \to \smdots \to A_n \to A_0)\\
+&\phantom{{}\mapsto{}}
+\textrm{(see Section \ref{sec:B(n)} for 
+definition of $B(\cdot)$)}
+\end{align*}
 On generating morphisms in $\chi$, set $\mathcal{A} = 
 (A_0 \to \smdots \to A_n \to A_0) \in Obj(\chi)$, and 
 define 
@@ -101,7 +97,7 @@ define
   &\mapsto 
   \begin{cases}
   B(\mathcal{A}) \longrightarrow 
-  B(A_0 \to \smdots \to A_j\to A_{j+2} 
+  B(A_0 \to \smdots \to A_j\to A_{j+2 \textrm{ (mod n+1)}} 
       \to \smdots \to A_0) \\
   \textrm{objects: } (f_0,f_1, \smdots, f_n) \mapsto 
   (f_0, \smdots,f_{j+1}\circ f_j, \smdots, f_n) \\
@@ -153,8 +149,10 @@ define
 \end{align*}
 It's straightforward to check that $\mathcal{G}$ is a 
 functor (i.e., that composition of morphisms and the relations 
-are preserved). The only facts we need are that braces $\bullet$ 
-are associative and that $1 \bullet (\phi_0 \smdots \phi_k) = 
+are preserved). The only facts we need are that $\bullet$ is 
+an associative map of complexes and that 
+$1 \bullet (\phi_0 \smdots \phi_k) = 
 (\phi_0 \smdots \phi_k) \bullet 1 = (\phi_0 \smdots \phi_k)$ 
 where the 1's are in the degree 0 components of
-$Bar(C^\bullet(A_i, A_i))$ for the appropriate $A_i$.
+$Bar(C^\bullet(A_i, A_i))$ for the appropriate $A_i$ 
+(see Appendix Section \ref{sec:def_braces}).

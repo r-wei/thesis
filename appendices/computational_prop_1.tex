@@ -39,13 +39,14 @@ $$
 \to \hat{\tau}_1^*C(A_1 \to A_0 \to A_1)
 $$
 of comodules over 
-$B(A_0 \to A_1 \to A_0)$ as follows:
+$B(A_0 \to A_1 \to A_0)$ by mapping into 
+cogenerators as follows:
 \begin{align*}
-\upsilon^{f_0, g_0}: C(A_0 \to A_1 \to A_0)(g_0f_0) 
+\upsilon^{f_0, g_0}: C(A_0 \to A_1 \to A_0)(f_0,g_0) 
 &\to
-\hat{\tau}_1^*C(A_1 \to A_0 \to A_1)(f_0g_0)
+\hat{\tau}_1^*C(A_1 \to A_0 \to A_1)(g_0,f_0)
 \cong 
-C(A_1 \to A_0 \to A_1)(f_0g_0)\\
+C(A_1 \to A_0 \to A_1)(g_0,f_0)\\
 &\xrightarrow[cogenerators]{\textrm{project onto}}
 C_{-\bullet}(A_1, _{f_0g_0}{A_1}_{id})\\
 \upsilon_{n,m}^{f_0,g_0} 
@@ -145,10 +146,22 @@ terms in the first two rows the ``standard terms'',
 and the terms in the second two rows the 
 ``extra terms''.
 
-We compute the sum of the standard terms. In the chart below, the leftmost column lists the expressions that don't cancel in the sum of the standard terms, the middle column gives the standard term from which the expression comes, and the rightmost column gives the term (extra or standard) that cancels the expression. 
-\newpage
+We compute the sum of the standard terms. 
+In Table \ref{table:t1}, the leftmost column 
+lists the expressions that don't cancel in 
+the sum of the standard terms, the middle 
+column gives the standard term from which 
+the expression comes, and the rightmost 
+column gives the term (extra or standard) 
+that cancels the expression. 
+
+All of the terms in Table \ref{table:t1} 
+cancel, so $\Upsilon$ is a map of complexes.
+\end{proof}
+%
 \begin{landscape}
 \begin{center}
+\begin{table}
   \begin{tabular}{ p{3.25in} | p{2in} | p{2.5in} }
     \hline
     Expression & Comes from Standard Term & Cancelling Term \\ \hline
@@ -190,8 +203,9 @@ We compute the sum of the standard terms. In the chart below, the leftmost colum
     \breakcell{$ \upsilon_{|I_1|, 0} (\vec{\phi}_{I_1} | 1 | \psi_1 \{ \vec{\phi}_{I_2} \} \cdot \alpha )$ \\ if $\vec{\psi} = \psi_1$} \\ \hline
     \hline
   \end{tabular}
-\end{center}
+\caption{Expansion of terms in Equation \ref{eq:upsilon}}
+\label{table:t1}
 (Technically, the last term in the middle column is not a standard term, but we include it in the table for convenience.)
+\end{table}
+\end{center}
 \end{landscape}
-All of the terms in the table describing the expansion of equation \ref{eq:upsilon} cancel, so $\Upsilon$ is a map of complexes.
-\end{proof}

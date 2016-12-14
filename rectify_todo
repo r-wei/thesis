@@ -1,0 +1,8 @@
+1) Lambda, D={dgcocat, dgcomod}, E={dgcat, dgmod} 
+as A-infinity categories
+
+2) Cobar--morphism of dg categories (=dg functor)? of A-infinity categories (= A-infinity functor)?
+
+3) We have an A-infinity functor Lambda to D
+
+4) Check hypotheses needed for applying Remarks A.27 and A.28--seems ok

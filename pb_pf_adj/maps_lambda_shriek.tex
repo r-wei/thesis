@@ -7,7 +7,7 @@ C(\mathcal{A}) \to
 of dg comodules 
 over $B(\mathcal{A})$ where 
 $\lambda$ is a generating morphism 
-in $\Lambda$ (see Appendix \ref{chap:lambda}) 
+in $\Lambda$ 
 that induces a morphsim in $\chi$ 
 with source $\mathcal{A} \in Obj(\chi)$. 
 Showing that the 
@@ -22,7 +22,7 @@ $\lambda_{\mathcal{A}!}$ instead of
 $\lambda_!$, but we will be clear 
 about the source when needed. 
 In this section, we 
-fix algebras $A_0, \smdots A_{n+1}$ and set 
+fix algebras $A_0, \smdots, A_n$ and set 
 $B(n) := B(A_0 \to \smdots \to A_n \to A_0)$, 
 $C(n) := C(A_0 \to \smdots \to A_n \to A_0)$. 
 We define maps $\lambda_!: 
@@ -142,50 +142,50 @@ as follows:
 &\cong 
 \hat{\tau}_n^*C(A_n \to A_0 \to \smdots \to A_n).  
 \end{align*}
-%
-\subsection{Extra coboundary 
-  ${\delta_{n,n}}_!$ for 
-  $n \in \mathbb{N}$}
-In $\Lambda$, we have $\delta_{n,n} = 
-\delta_{0,n}\tau_n$, so we define 
-\begin{align*}
-{{\delta}_{n,n}}_! : C(n)
-& \xrightarrow{{\tau_n}_!}
-\hat{\tau}_n^*
-  C(A_n \to A_0 \to \smdots \to A_n)\\
-& \xrightarrow{\hat{\tau}_n^*{\delta_{0,n}}_!}
-\hat{\tau}_n^*\hat{\delta}_{0,n}^*
-  C(A_n \longrightarrow A_1 \to \smdots \to A_n) \\
-&\cong
-(\widehat{\delta_{0,n}\tau_n})^*
-  C(A_n \longrightarrow A_1 \to \smdots \to A_n)\\
-&\cong
-\hat{\delta}_{n,n}^*
-C(A_n \longrightarrow A_1 \to \smdots \to A_n).
-\end{align*}
-%
-\subsection{Extra codegeneracy 
-  ${\sigma_{n+1,n}}_!$ for 
-  $n \in \mathbb{N}$}
-In $\Lambda$, we have $\sigma_{n+1,n} = 
-\tau_{n+1}^{n+1} \sigma_{0,n}$, so we define 
-\begin{align*}
-{{\sigma}_{n+1,n}}_! : C(n)
-& \xrightarrow{\sigma_{0,n!} = id}
-\hat{\sigma}_{0,n}^*
-  C(A_0 \to A_0 \to \smdots \to A_n \to A_0)\\
-& \xrightarrow{\hat{\sigma}_{0,n}^*(\tau_{n+1!})}
-\hat{\sigma}_{0,n}^*\hat{\tau}_{n+1}^*
-  C(A_n \to A_0 \to A_0 \to \smdots \to A_n) \\
-& \to \smdots \\
-& \xrightarrow{\hat{\sigma}_{0,n}^*
-  \hat{\tau}_{n+1}^{*n}(\tau_{n+1!})}
-  \hat{\sigma}_{0,n}^*\hat{\tau}_{n+1}^{*n+1}
-  C(A_0 \to \smdots \to A_n \to A_0 \to A_0) \\
-&\cong
-(\widehat{\tau_{n+1}^{n+1} \sigma_{0,n}})^*
-  C(A_0 \to \smdots \to A_n \to A_0 \to A_0)\\
-&\cong
-\hat{\sigma}_{n+1,n}^*
-C(A_0 \to \smdots \to A_n \to A_0 \to A_0).
-\end{align*}
+% %
+% \subsection{Extra coboundary 
+%   ${\delta_{n,n}}_!$ for 
+%   $n \in \mathbb{N}$}
+% In $\Lambda$, we have $\delta_{n,n} = 
+% \delta_{0,n}\tau_n$, so we define 
+% \begin{align*}
+% {{\delta}_{n,n}}_! : C(n)
+% & \xrightarrow{{\tau_n}_!}
+% \hat{\tau}_n^*
+%   C(A_n \to A_0 \to \smdots \to A_n)\\
+% & \xrightarrow{\hat{\tau}_n^*{\delta_{0,n}}_!}
+% \hat{\tau}_n^*\hat{\delta}_{0,n}^*
+%   C(A_n \longrightarrow A_1 \to \smdots \to A_n) \\
+% &\cong
+% (\widehat{\delta_{0,n}\tau_n})^*
+%   C(A_n \longrightarrow A_1 \to \smdots \to A_n)\\
+% &\cong
+% \hat{\delta}_{n,n}^*
+% C(A_n \longrightarrow A_1 \to \smdots \to A_n).
+% \end{align*}
+% %
+% \subsection{Extra codegeneracy 
+%   ${\sigma_{n+1,n}}_!$ for 
+%   $n \in \mathbb{N}$}
+% In $\Lambda$, we have $\sigma_{n+1,n} = 
+% \tau_{n+1}^{n+1} \sigma_{0,n}$, so we define 
+% \begin{align*}
+% {{\sigma}_{n+1,n}}_! : C(n)
+% & \xrightarrow{\sigma_{0,n!} = id}
+% \hat{\sigma}_{0,n}^*
+%   C(A_0 \to A_0 \to \smdots \to A_n \to A_0)\\
+% & \xrightarrow{\hat{\sigma}_{0,n}^*(\tau_{n+1!})}
+% \hat{\sigma}_{0,n}^*\hat{\tau}_{n+1}^*
+%   C(A_n \to A_0 \to A_0 \to \smdots \to A_n) \\
+% & \to \smdots \\
+% & \xrightarrow{\hat{\sigma}_{0,n}^*
+%   \hat{\tau}_{n+1}^{*n}(\tau_{n+1!})}
+%   \hat{\sigma}_{0,n}^*\hat{\tau}_{n+1}^{*n+1}
+%   C(A_0 \to \smdots \to A_n \to A_0 \to A_0) \\
+% &\cong
+% (\widehat{\tau_{n+1}^{n+1} \sigma_{0,n}})^*
+%   C(A_0 \to \smdots \to A_n \to A_0 \to A_0)\\
+% &\cong
+% \hat{\sigma}_{n+1,n}^*
+% C(A_0 \to \smdots \to A_n \to A_0 \to A_0).
+% \end{align*}

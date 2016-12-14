@@ -67,12 +67,30 @@ B_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \phi_{n} \cdot \alph
 
 We will call the terms in the first two rows the ``standard terms'' in the computaion of $D(B_{A_0,A_1})$, and the terms in the second two rows the ``extra terms'' in the computation of $D(B_{A_0,A_1})$. The fifth row is $\pi_1(\Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id)$. 
 
-We compute the sum of the standard terms. In the chart below, the leftmost column lists the expressions that don't cancel in the sum of the standard terms, the middle column gives the standard term from which the expression comes, and the rightmost column gives the extra term that cancels the expression. 
+We compute the sum of the standard terms. 
+In Table \ref{table:t21}, the leftmost column 
+lists the expressions that don't cancel in the 
+sum of the standard terms, the middle column 
+gives the standard term from which the expression 
+comes, and the rightmost column gives the extra 
+term that cancels the expression. 
+Table \ref{table:t22} lists the remaining terms 
+from the fifth row that are not already listed in 
+Table \ref{table:t21}. In Table \ref{table:t22}, 
+the left column lists the remaining expressions 
+that don't cancel in the fifth row, and the 
+right column gives the extra term that cancels 
+the expression.
 
-\newpage
-
+All of the terms in the tables describing the 
+expansion of equation \ref{eq:upsilon_homotopy} 
+cancel, so $D(B_{A_0,A_1}) = \Upsilon_{A_1,A_0}
+\Upsilon_{A_0,A_1} - id$.
+\end{proof}
+%
 \begin{landscape}
 \begin{center}
+\begin{table}
   \begin{tabular}{ p{3.25in} | p{2in} | p{2.5in} }
     \hline
     Expression & Comes from Standard Term & Cancels with Extra Term \\ \hline
@@ -99,15 +117,17 @@ We compute the sum of the standard terms. In the chart below, the leftmost colum
 
     \hline
   \end{tabular}
-\end{center}
+\caption{Expansion of $``$standard terms'' in 
+Equation \ref{eq:upsilon_homotopy} and the 
+$``$extra terms'' that cancel them}
+\label{table:t21}  
 (Technically, the last term in the right column is not an extra term, but we include it in the table for convenience.)
-\end{landscape}
-
-\newpage
-\begin{landscape}
-
-Now, we compute the remaining terms from the fifth row. In the chart below, the left column lists the remaining expressions that don't cancel in the fifth row, and the right column gives the extra term that cancels the expression. 
-
+\end{table} 
+\end{center}
+%
+$\newline
+\newline$
+\begin{table}
 \begin{center}
   \begin{tabular}{ p{6.25in} | p{2.5in} }
     \hline
@@ -125,7 +145,9 @@ Now, we compute the remaining terms from the fifth row. In the chart below, the 
     \hline
   \end{tabular}
 \end{center}
+\caption{Expansion of remaining $``$fifth-row terms'' in 
+Equation \ref{eq:upsilon_homotopy} and the 
+$``$extra terms'' that cancel them}
+\label{table:t22}
+\end{table}
 \end{landscape}
-
-All of the terms in the table describing the expansion of equation \ref{eq:upsilon_homotopy} cancel, so $D(B_{A_0,A_1}) = \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id$.
-\end{proof}

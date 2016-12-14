@@ -124,15 +124,27 @@ are $\pi_1$ of the righthand side of Equation
 ``8$^{th}$- and 9$^{th}$-row terms''.
 
 We compute the sum of the standard terms. 
-In the chart below, the leftmost column lists 
+In Table \ref{table:t41}, the leftmost column lists 
 the expressions that don't cancel in the sum 
 of the standard terms, the middle column gives 
 the standard term from which the expression comes, 
 and the rightmost column gives the term that 
-cancels the expression. 
-\newpage
+cancels the expression. Table \ref{table:t42} 
+lists the remaining ninth row terms that aren't 
+already listed in Table \ref{table:t41}. In 
+Table \ref{table:t42}, the left column lists 
+the remaining expressions that don't cancel in 
+the ninth row, and the right column gives 
+the extra term that cancels the expression. 
+
+All of the terms in the tables describing 
+the expansion of Equation \ref{eq:prop4_expand} 
+cancel, so we're done.
+\end{proof}
+%
 \begin{landscape}
 \begin{center}
+\begin{table}
   \begin{tabular}{ p{3.25in} | p{1.75in} | p{2.75in} }
     \hline
     Expression & Comes from Standard Term & Cancelling Term \\ \hline
@@ -219,15 +231,16 @@ cancels the expression.
     8$^{th}$ row \\ \hline
 
   \end{tabular}
+\caption{Expansion of $``$standard terms'' in 
+Equation \ref{eq:prop4_expand} and the 
+terms that cancel them}
+\label{table:t41}
+\end{table}  
 \end{center}
-\end{landscape}
-
-\newpage
-\begin{landscape}
-
-Now, we compute the remaining terms from the ninth row. In the chart below, the left column lists the remaining expressions that don't cancel in the ninth row, and the right column gives the extra term that cancels the expression. 
-
+%
+%
 \begin{center}
+\begin{table}
   \begin{tabular}{ p{6.25in} | p{2.5in} }
     \hline
     Expression from ninth Row & Cancels with Extra Term \\ \hline
@@ -261,8 +274,10 @@ Now, we compute the remaining terms from the ninth row. In the chart below, the 
 
     \hline
   \end{tabular}
+\caption{Expansion of remaining $``$ninth row terms'' in 
+Equation \ref{eq:prop4_expand} and the $``$extra terms''
+that cancel them}
+\label{table:t42}
+\end{table}  
 \end{center}
 \end{landscape}
-
-All of the terms in the table describing the expansion of Equation \ref{eq:prop4_expand} cancel, so we're done.
-\end{proof}
