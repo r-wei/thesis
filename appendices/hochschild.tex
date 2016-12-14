@@ -45,32 +45,59 @@ C_{-(q-p)}(A, _fA_h) \\
 \otimes a_1 \otimes \dots \otimes a_{q-p}.
 \end{align*}
 
-% \tilde{\delta} 
-% &:= 
-% \substack{\textrm{extension of the Hochschild 
-% cochain differential}\\\textrm{to a differential on 
-% a bar complex}}\\
-% b^\prime 
-% &:= 
-% \sum_{i=0}^{r-1} (-1)^{i}b_i, 
-%   \textrm{ for appropriate r}\\
-% b_i 
-% &:= \textrm{cup product on Hochschild cochains 
-% between the $i^{th}$ and $i+1^{th}$ terms}\\
-
-%\lambda()
-% , $\iota$ is 
-% defined in Equation \ref{eq:action_term}, and 
-% the braces $\cdot \{ \cdot \}$ are defined in ....
-
-
-
+Finally, we have a $``$Lie derivative like'' 
+operation of Hochschild cochains and chains. 
+Fix an algebra $A$ and let 
+$(\phi_1\smdots \phi_n|\alpha) \in C(A \to A)(f_0)$ 
+(see Equation \ref{eq:C(f)}) be the following 
+element
+\begin{align*}
+(\phi_1\smdots \phi_n|\alpha)
+= 
+\xymatrix{
+A \ar@/^5pc/[rrr]^{f_0} 
+\ar@/^2pc/[rrr]^{\bm{\big\Downarrow \phi_1}}_{f_1} 
+\ar@/_2pc/[rrr]^{\substack{\vdots\\ f_{n-1}}}
+\ar@/_4pc/[rrr]^{\bm{\big\Downarrow \phi_n}}_{f_n}
+\ar@/_7pc/[rrr]_{id}^{\substack{\bm{\alpha}\\}}
+&&& A
+}
+\end{align*}
+We have a map of complexes 
+\begin{align*}
+C(A \to A)(f_0)
+&\to
+C_{-\bullet}(A, _{f_0}A)\\
+(\phi_1\smdots \phi_n|
+  a_1 \otimes \smdots \otimes a_p)
+&\mapsto
+\lambda(\phi_1\smdots \phi_n)\cdot 
+  (a_1 \otimes \smdots \otimes a_p)\\
+&:=
+\sum \limits_{0 \leq i_1 \leq \smdots \leq i_{2n} \leq p}
+(-1)^{\sum \limits_{\substack{
+  j \textrm{ odd}\\
+  j \geq 1}}
+  i_j(|\phi_{i_{\frac{j+1}{2}}}| + 1)} \cdot\\ 
+&\phantom{{}moveovermov{}}  
+\cdot f_0a_1 \otimes \smdots \otimes f_0a_{i_1} \otimes 
+\phi_1(a_{i_1+1}, \smdots, a_{i_2}) \otimes \\
+&\phantom{{}moveovermove{}}
+\otimes f_1a_{i_2+1} \otimes \smdots \otimes f_1a_{i_3} \otimes 
+\phi_2(a_{i_3+1}, \smdots, a_{i_4}) \otimes \\
+&\phantom{{}moveovermove{}}
+\otimes \smdots \otimes
+\phi_n(a_{i_{2n-1}+1}, \smdots, a_{i_{2n}}) \otimes
+f_na_{i_{2n}+1} \otimes \smdots \otimes f_na_p.
+\end{align*}
+%
+%
 \section{Brace operation on Hochschild cochains}
 \label{sec:def_braces}
 Fix algebras $A_0, A_1$ and maps of algebras 
 $f_0,f_n: A_0 \rightrightarrows A_1$, 
 $A_0 \leftleftarrows A_1: g_0, g_m$. We will 
-define a map of complexes 
+define a map of complexes called \textbf{braces}
 \begin{align*}
 &\phantom{{}={}}
 C(A_0 \to A_1 \to A_0)((f_0,g_0), (f_n,g_m))\\
@@ -151,25 +178,70 @@ and define $(\phi_1\smdots\phi_n) \bullet
 (\psi_1\smdots\psi_m) \in C(A_0 \to A_0)
 (g_0f_0, g_mf_n)$ as follows:
 \begin{align*}
-&\phantom{{}={}}
 (\phi_1\smdots\phi_n) \bullet
-(\psi_1\smdots\psi_m)\\
+(\psi_1\smdots\psi_m)
 &= 
 \sum \limits_{
   0 \leq i_1 \leq \smdots
   \leq i_{2m} \leq n
-}
-  g_0\phi_1 \otimes \smdots \otimes g_0\phi_{i_1} \otimes 
+} 
+(-1)^{\sum \limits_{\substack{
+  T \textrm{ odd}\\T \geq 1}}
+  \big( (\sum \limits_{t \leq i_T}
+    |\phi_t|+1) (|\psi_{\frac{T+1}{2}}|+1)
+  \big)}\cdot \\
+&\phantom{{}moveovermov{}}    
+  \cdot g_0\phi_1 \otimes \smdots \otimes g_0\phi_{i_1} \otimes 
   \psi_1\{\phi_{i_1+1}\smdots \phi_{i_2}\} \otimes\\
-&\phantom{{}move{}}  
+&\phantom{{}moveovermove{}}  
   \otimes g_1\phi_{i_2+1} \otimes \smdots \otimes g_1\phi_{i_3} 
   \otimes \psi_2\{\phi_{i_3+1}\smdots \phi_{i_4}\} \otimes \\
-&\phantom{{}move{}}    
+&\phantom{{}moveovermove{}} 
   \otimes \dots \otimes
   \psi_m\{\phi_{i_{2m-1}+1}\smdots \phi_{i_{2m}}\} \otimes \\
-&\phantom{{}move{}}    
+&\phantom{{}moveovermove{}} 
   \otimes g_m\phi_{i_{2m}+1} \otimes \smdots \otimes g_m\phi_n \\
-&= \sum  
+\psi_j\{\phi_{i_r+1}\smdots \phi_{i_r+s}\}
+&\in 
+C^\bullet(A_0, _{g_{j-1}f_{i_r}} {A_0}_{g_jf_{i_r+s}}) \\
+\psi_j\{\phi_{i_r+1}\smdots \phi_{i_r+s}\}
+&(a_1 \otimes \smdots \otimes a_p)\\
+&= 
+\sum \limits_{
+  0 \leq k_1 \leq \smdots \leq k_{2s} \leq p}
+(-1)^{\sum \limits_{\substack{
+  j \textrm{ odd}\\
+  j \geq 1}}
+  k_j(|\phi_{i_r + \frac{j-1}{2}}| + 1)} \cdot\\ 
+&\phantom{{}moveovermo{}}  
+\cdot \psi_j \Bigg( f_{i_r}a_1, \smdots, f_{i_r}a_{k_1},
+  \phi_{i_r+1}(a_{k_1+1}, \smdots, a_{k_2}),\\
+&\phantom{{}moveovermoveover{}}  
+  f_{i_r+1}a_{k_2+1}, \smdots, f_{i_r+1}a_{k_3},
+  \phi_{i_r+2}(a_{k_3+1}, \smdots, a_{k_4}), \\
+&\phantom{{}moveovermoveover{}}   
+  ,\smdots, 
+  \phi_{i_r+s}(a_{k_{2s-1}}, \smdots, a_{k_{2s}}), \\
+&\phantom{{}moveovermoveover{}} 
+  f_{i_r+s}a_{k_{2s}+1}, \smdots, f_{i_r+s}a_p \Bigg).
+\end{align*}
+%
+We follow the sign convention in 
+Reference \cite{T} (Equation 2.25 and 
+Section 4.7.2). In $(\phi_1\smdots\phi_n) 
+\bullet (\psi_1\smdots\psi_m)$, moving 
+$\phi_i$ past $\psi_j$ introduces a factor of 
+$(-1)^{(|\phi_i|+1)(|\psi_j|+1)}$. Braces 
+are unital, associative maps of complexes 
+(see Reference \cite{T}, Proposition 4.7.2). 
+It's also straightforward to check that 
+$\lambda(\psi_1\smdots \psi_m)
+\lambda(\phi_1 \smdots \phi_n) = 
+\lambda((\phi_1\smdots \phi_n) \bullet
+(\psi_1 \smdots \psi_m))$.
+%\
+\begin{figure}
+$\sum \pm
 \xymatrix{
 A_0 
 \ar@/^14pc/[rrrrrrrrrr]^{g_0f_0}_{\big\Downarrow g_0\phi_1}
@@ -190,37 +262,8 @@ A_0
 \ar@{.>}@/_10pc/[rrrrrrrrrr]_{\big\Downarrow g_m\phi_n}
 \ar@/_12pc/[rrrrrrrrrr]_{g_mf_n}
 &&&&&&&&&& A_0  
-}
-\end{align*}
-where $\psi_j\{\phi_{i_r+1}\smdots \phi_{i_r+s}\}
-\in C^\bullet(A_0, _{g_{j-1}f_{i_r}} {A_0}_{g_jf_{i_r+s}})$ 
-is the following cochain: 
-\begin{align*}
-&\phantom{{}={}}
-\psi_j\{\phi_{i_r+1}\smdots \phi_{i_r+s}\}
-  (b_0 \otimes a_1 \otimes \smdots \otimes a_p)\\
-&= 
-\sum \limits_{
-  0 \leq k_1 \leq \smdots \leq k_{2s} \leq p}
-\psi_j \Bigg( b_0, f_{i_r}a_1, \smdots, f_{i_r}a_{k_1},
-  \phi_{i_r+1}(a_{k_1+1}, \smdots, a_{k_2}),\\
-&\phantom{{}moveovermoveover{}}  
-  f_{i_r+1}a_{k_2+1}, \smdots, f_{i_r+1}a_{k_3},
-  \phi_{i_r+2}(a_{k_3+1}, \smdots, a_{k_4}), \\
-&\phantom{{}moveovermoveover{}}   
-  ,\smdots, 
-  \phi_{i_r+s}(a_{k_{2s-1}}, \smdots, a_{k_{2s}}), \\
-&\phantom{{}moveovermoveover{}} 
-  f_{i_r+s}a_{k_{2s}+1}, \smdots, f_{i_r+s}a_p \Bigg)
-\end{align*}
-for $b_0 \in A_1$, $a_1,\smdots,a_p \in A_0$, 
-$\psi_j \in C^\bullet(A_1, _{g_{j-1}}{A_0}_{g_j})$, 
-$\phi_i \in C^\bullet(A_), _{f_{i-1}}{A_1}_{f_i})$.
-% -reduced hochschild chains
-% -reference for braces and signs
-% -lambda(\vec\phi) notation
-
-
-% -computational props:
-% - dot notation = iota notation
-% - lambda(\phi) notation
+}$
+\caption{Picture of the terms in 
+$(\phi_1\dots\phi_n) \bullet (\psi_1\dots\psi_m)$}
+\label{fig:braces}
+\end{figure}
