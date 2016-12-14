@@ -1,4 +1,5 @@
 \chapter{Background on Hochschild chains and cochains}
+\label{chap:hochschild}
 In this section, we give some known 
 constructions on Hochschild chains and 
 cochains for the reader's convenience. 
@@ -15,19 +16,35 @@ with coefficients in $M$ (see Reference
 an algebra over $k$ with left and right 
 module structure given by two maps of algebras 
 $f:A \to B$ and $g:A \to B$, respectively, 
-we may write $C_\bullet(A,_fB_g)$ to clarify 
+we may write $_fB_g$ to clarify 
 the module structure.
 
 Let $k, A, M$ be as above. We can also 
 take $(C^\bullet(A,M), \delta)$, the 
 (reduced) Hochschild cochain complex of $A$ 
 with coefficients in $M$ (see Reference 
-\cite{T}, Equation 2.12). When $M=B$ is 
+\cite{T}, Equations 2.12-13, 2.19-21). When $M=B$ is 
 an algebra, $(C^\bullet(A,B), \delta, \cup)$ 
 is a dga where the cup product $\cup$ is 
 given in Reference \cite{T}, Equation 2.14.
 
-\subsection{Bar complexes}
+Let $f,g,h:A \to A$ be maps of algebras. 
+We have a contraction operation of Hochschild 
+cochains and chains, which is a map of complexes:
+\begin{align*}
+\iota: C^p(A, _fA_g) \bigotimes C_{-q}(A, _gA_h) 
+&\longrightarrow 
+C_{-(q-p)}(A, _fA_h) \\
+\phi \bigotimes a_0\otimes \dots \otimes a_q 
+&\mapsto 
+\iota(\phi, a_0\otimes \dots \otimes a_q)
+:= \phi \cdot (a_0\otimes \dots \otimes a_q) :=\\
+&:=
+(-1)^{p(q+1)}
+\phi(a_{q-p+1},\dots,a_q)\cdot a_0 
+\otimes a_1 \otimes \dots \otimes a_{q-p}.
+\end{align*}
+
 % \tilde{\delta} 
 % &:= 
 % \substack{\textrm{extension of the Hochschild 

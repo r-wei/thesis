@@ -131,10 +131,12 @@ C_{-\bullet}(A_0, _{comp(g)}{A_0}_{id})
 %
 where, for $g = (g_0, g_1, \cdots, g_n)$, 
 we write $comp(g) = g_n \circ g_{n-1} \circ \cdots \circ g_0$,
-and $C_\bullet(A,B)$ denotes Hochschild chains.
+and $(C_\bullet(A,B),\; _gb)$ is the 
+Hochschild chain complex 
+(see Appendix \ref{chap:hochschild}).
 We will denote a typical element of $C(n)^\bullet(f)$ 
 as $$\phi_{0,1}\smdots\phi_{0,k_0} | 
-\phi_{1,1}\smdots\phi_{1,k_1} | \dots |
+\phi_{1,1}\smdots\phi_{1,k_1} | \smdots |
 \phi_{n,1}\smdots\phi_{n,k_n} | \alpha$$
 where $\phi_{0,1}\cdots \phi_{n,k_n}$ is a morphism
 in $B(n)$ (see Section \ref{sec:phi_notation}) and
@@ -180,11 +182,12 @@ A_0 \ar@/^5pc/[r]^{f_{0,0}}
 \ar@/_2pc/[r]^{\substack{\vdots\\ f_{n,k_n}}}
 & A_0 
 }}
-\caption{Pictoral representation of an element of
-$C(n)^\bullet(f)$ where 
-$f = (f_0 = f_{0,0}, f_1 = f_{1,0}, \cdots, f_n = f_{n,0})$, 
-$\phi_{i,j} \in C^\bullet(A_i, _{f_{j-1}}{A_{i+1}}_{f_j})$, and 
-$\alpha \in C_{-\bullet}(A_0, _{f_n\cdots f_1 f_0}{A_0}_{id})$}
+\caption{Picture of an element of $C(n)^\bullet(f)$ 
+where $f = (f_{0,0}, f_{1,0}, \cdots, f_{n,0})$, 
+$\phi_{i,j} \in C^\bullet(A_i, _{f_{j-1}}
+{A_{i+1 \textrm{ (mod n+1)}}}_{f_j})$, and 
+$\alpha \in C_{-\bullet}(A_0, _{f_n\cdots f_1 f_0}
+{A_0}_{id})$}
  \label{fig:phi|alpha}
 \end{figure}
 %
@@ -198,7 +201,7 @@ C(n)^\bullet(f) @>\Delta_C>>
 \bigoplus\limits_{h \in Obj(B(n))} B(n)^\bullet(f,h) \otimes C(n)^\bullet(h) \\
 @|  @| \\
 \bigoplus\limits_{g \in Obj(B(n))} B(n)^\bullet(f,g) \otimes C_{-\bullet}(A_0, _g{A_0}_{id})
-@>\Delta_{B(n)}\otimes 1_{C_{-\bullet}}>>
+@>\Delta_{B(n)}\otimes id_{C_{-\bullet}}>>
 \bigoplus\limits_{g,h\in Obj(B(n))} \substack{B(n)^\bullet(f,h)\otimes B(n)^\bullet(h,g) \\ \otimes 
 C_{-\bullet}(A_0, _g{A_0}_{id})}
 \end{CD} 
@@ -209,8 +212,7 @@ $\Delta_{B(n)}$, we have that $\Delta_{C(n)}$
 satisfies coassocitivity and counitality 
 and is conilpotent. 
 
-$C(n)$ is quasi-cofree 
-(i.e., cofree as a comodule) in the sense that 
+$C(n)$ cofree as a comodule in the sense that 
 a morphism to $C(n)$ is determined by projections
 to its Hochschild-chains component.
 More precisely, there is a one-to-one correspondence
@@ -253,40 +255,53 @@ More precisely, there is a one-to-one correspondence
 %
 \begin{defn}\label{def:cogenerators}
 We will call elements of 
-$T(A_0 \to \smdots A_n \to A_0)(f) :=
+$T(A_0 \to \smdots \to A_n \to A_0)(f) :=
 C_{-\bullet}(A_0, _f{A_0}_{id})$ 
 the \textbf{cogenerators} of 
 $C(A_0 \to \smdots A_n \to A_0)(f)$. 
 More generally, we will refer to 
-the set $T(A_0 \to \smdots A_n \to A_0) 
-= \{T(A_0 \to \smdots A_n \to A_0)(f) | 
-f \in Obj(B(A_0 \to \smdots A_n \to A_0))\}$ 
+the set $T(A_0 \to \smdots \to A_n \to A_0) 
+= \{T(A_0 \to \smdots \to A_n \to A_0)(f) | 
+f \in Obj(B(A_0 \to \smdots \to A_n \to A_0))\}$ 
 as the \textbf{cogenerators} of 
-$C(A_0 \to \smdots A_n \to A_0)$. When we 
+$C(A_0 \to \smdots \to A_n \to A_0)$. When we 
 have fixed a sequence of algebras, 
 $A_0, \smdots A_n$, we will 
 use $T(n)$ to denote 
-$T(A_0 \to \smdots A_n \to A_0)$.
+$T(A_0 \to \smdots \to A_n \to A_0)$.
 \end{defn}
 %
 
 %
 \subsubsection{Differential}
-The differential $d_{C(n)}(f)$ on $C(n)^\bullet(f)$ is: 
+The differential $d_{C(n)}$ on $C(n)$ is: 
 %
-\begin{equation} \label{eq:C(n)_differential}
-d_{C(n)}(f) = 
-\sum\limits_{g \in Obj(B(n))} 
-(d_{B(n)} \otimes id_{C_{-\bullet}}
-+ id_{ B(n)}\otimes b_g)
-+ \mathcal{I}
+\begin{equation} 
+\label{eq:C(n)_differential}
+\begin{split}
+d_{C(n)} &= 
+\tilde{d}_{B(n)} + \tilde{b} + \mathcal{I}\\
+%
+\tilde{d}_{B(n)} \big(
+\phi_{0,1}\smdots\phi_{0,k_0} | \smdots |
+\phi_{n,1}\smdots\phi_{n,k_n} | \alpha \big) 
+&=
+d_{B(n)}( \phi_{0,1}\smdots | 
+\smdots | \smdots\phi_{n,k_n} ) | \alpha\\
+%
+\tilde{b} \big(
+\phi_{0,1}\smdots\phi_{0,k_0} | \smdots |
+\phi_{n,1}\smdots\phi_{n,k_n} | \alpha \big) 
+&=
+(-1)^{\sum \limits_{i,j}|\phi_{i,j}|+1}
+\phi_{0,1}\smdots | \smdots | \smdots 
+\phi_{n,k_n} | [_{f_{n,k_n}\smdots f_{0,k_0}}
+b](\alpha)
+\end{split}
 \end{equation}
 %
 where $d_{B(n)}$ is the differential on $B(n)$, 
-$b_g$ is the Hochschild-chain differential on 
-$C_{-\bullet}(A_0, _g{A_0}_{id})$, 
-and $\mathcal{I}$ is a term that captures the action of cochains on chains 
-described by the equations below:
+and $\mathcal{I}$ is a term that captures an action of cochains on chains described by the equations below:
 %
 \begin{equation}\label{eq:action_term}
 \begin{split}
@@ -311,13 +326,10 @@ B(0)^\bullet
 f_{n,k_n}\smdots f_{1,k_1} f_{0,k_0})
 &\xrightarrow[component]{project\;onto}
 C^\bullet(A_0, _{f_{n,1}\smdots f_{0,1}}{A_0}_{f_{n,k_n}\smdots f_{0,k_0}})\\
-\iota_{C(0)}: C^p(A, _fA_g) \bigotimes C_{-q}(A, _gA_h) 
-&\longrightarrow 
-C_{-(q-p)}(A, _fA_h) \\
-\phi \bigotimes a_0\otimes \dots \otimes a_q 
-&\mapsto 
-\phi(a_{q-p+1},\dots,a_q)\cdot a_0 
-\otimes a_1 \otimes \dots \otimes a_{q-p}.
+\iota
+&=
+\textrm{contraction operation, 
+see Section \ref{chap:hochschild}}
 \end{split}
 \end{equation}
 %

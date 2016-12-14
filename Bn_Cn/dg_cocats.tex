@@ -138,8 +138,7 @@ B(n):= B(A_0 \to A_1 \to \cdots \to A_n \to A_0).
 $$
 %
 \subsubsection{Objects}
-$B(n)$ has objects tuples $(f_0, f_1, \cdots, f_n)$ where $f_i : A_i \to A_{i+1}$, $0 \leq i < n$,
-and $f_n: A_n \to A_0$ are maps of algebras. We can picture an object in $B(n)$ as follows:
+$B(n)$ has objects tuples $(f_0, f_1, \cdots, f_n)$ where $f_i : A_i \to A_{i+1 \textrm{ (mod n+1)}}$, $0 \leq i \leq n$, are maps of algebras. We can picture an object in $B(n)$ as follows:
 
 \begin{equation*}
 \xymatrix{
@@ -153,43 +152,68 @@ A_0 \ar[r]^{f_0}
 \end{equation*}
 
 \subsubsection{Morphisms}
-The complex of morphisms in $B(n)$ between two objects, 
-$(f_0, f_1, \cdots, f_n)$ and $(g_0, g_1, \cdots, g_n)$, is 
+The graded vector space of morphisms in 
+$B(n)$ between two objects, 
+$(f_0, \smdots, f_n)$ and 
+$(g_0, \smdots, g_n)$, is 
 %
 \begin{equation*}
 Bar(C^\bullet(A_0, _{f_0}{A_1}_{g_0})) \otimes Bar(C^\bullet(A_1, _{f_1}{A_2}_{g_1})) \otimes \cdots
 \otimes Bar(C^\bullet(A_n, _{f_n}{A_0}_{g_n}))
 \end{equation*}
 %
-where 
+where $Bar(C^\bullet(A, _fB_g))$ is 
+the following complex: 
 %
 \begin{align*}
 Bar(C^\bullet(A, _fB_g)) 
-&= Bar_0(C^\bullet(A, _fB_g)) \oplus 
+&:= Bar_0(C^\bullet(A, _fB_g)) \oplus 
   \bigoplus_{\substack{m \geq 1}} 
-    Bar_m(C^{>0}(A, _fB_g)) \\
-&= k \oplus 
-  \bigoplus_{\substack{
+    Bar_m(C^\bullet(A, _fB_g)) \\
+Bar_0(C^\bullet(A, _fB_g))    
+&:= k\\ 
+Bar_m(C^\bullet(A, _fB_g))
+&:= 
+  \bigoplus \limits_{\substack{
   h_0 = f, \\
   h_m = g, \\
   h_1, \dots, h_{m-1}\\ 
-	\textrm{algebra maps}, \\
-	m \geq 1}} 
-  C^{>0}(A, \, _{h_0}B_{h_1}) \otimes 
-  C^{>0}(A, \, _{h_1}B_{h_2}) 
+	\textrm{algebra maps}}} 
+  C^\bullet(A, \, _{h_0}B_{h_1})[1] \otimes 
+  C^\bullet(A, \, _{h_1}B_{h_2})[1] 
   \otimes \dots \otimes 
-  C^{>0}(A, \, _{h_{m-1}}B_{h_m}).
+  C^\bullet(A, \, _{h_{m-1}}B_{h_m})[1]\\
+(C^\bullet(A, _{h_i}B_{h_j}), \;
+  _{h_i}\delta_{h_j})
+&=
+\textrm{Hochschild cochain complex, 
+see Appendix \ref{chap:hochschild}}
 \end{align*}
-%
-$C^\bullet(A, _{h_i}B_{h_j})$ denotes the Hochschild cochain complex, and
-$_{h_i}B_{h_j}$ denotes $B$ as a bimodule over $A$ with left and right module structures 
-given by $h_i$ and $h_j$, respectively. 
-The differential in $Bar(C^\bullet(A, _fB_g))$  is the usual one for bar complexes: 
-$d_{Bar} = \delta + b^\prime$ where 
-$\delta$ is the extension of the Hochschild cochain differential to the bar complex, 
-and $b^\prime = \sum_{i=0}^{n-1} (-1)^{i}b_i$ with
-$b_i =$ the cup product on Hochschild cochains between the $i^{th}$ and $i+1^{th}$ terms.
-See Figure \ref{fig:phi} for a pictoral representation of a single morphism in $B(n)$.
+\begin{align*}
+d_{Bar(C^\bullet(A, _fB_g))} 
+&= 
+\tilde{\delta} + b^\prime\\
+\tilde{\delta}(\phi_1 \otimes \smdots \otimes \phi_m)
+&=
+\sum \limits_{1 \leq i \leq m}
+  (-1)^{1+ \sum \limits_{j<i} |\phi_i|+1}
+  \phi_1 \otimes \smdots \otimes 
+  [_{h_{i-1}}\delta_{h_i}](\phi_i)
+  \otimes \smdots \otimes \phi_m\\
+b^\prime(\phi_1 \otimes \smdots \otimes \phi_m)
+&=
+\sum \limits_{1 \leq i \leq m-1}
+  (-1)^{\sum \limits_{j\leq i} |\phi_i|+1}
+  \phi_1 \otimes \smdots \otimes 
+  \phi_i \cup \phi_{i+1}
+  \otimes \smdots \otimes \phi_m\\  
+\cup
+&= 
+\textrm{cup product on Hochschild cochains, 
+see Appendix \ref{chap:hochschild}.}  
+\end{align*}
+(This sign convention is consistent with 
+Reference \cite{T}, Section 4.6.)
 %
 \begin{figure}
 \centerline{\xymatrix{
@@ -215,13 +239,13 @@ A_0 \ar@/^5pc/[r]^{f_{0,0}}
 \ar@/_5pc/[r]^{\substack{\phi_{n,k_n} \\ \big\Downarrow}}_{f_{n,k_n}}
 & A_0 
 }}
-\caption{Pictoral representation of a single morphism in $B(n)$
-from object $(f_{0,0}, f_{1,0}, \cdots, f_{n,0})$ to object 
+\caption{A morphism in $B(n)$
+from $(f_{0,0}, f_{1,0}, \cdots, f_{n,0})$ to  
 $(f_{0,k_0}, f_{1,k_1}, \cdots, f_{n,k_n})$ where
-$\phi_{i,j} \in C^{>0}(A_i, _{f_{j-1}}{A_{i+1}}_{f_j})$}
+$\phi_{i,j} \in C^\bullet(A_i, _{f_{j-1}}{A_{i+1 \textrm{ (mod n+1)}}}_{f_j})$}
  \label{fig:phi}
 \end{figure}
-
+%
 \subsubsection{Aside on notation} \label{sec:phi_notation}
 When referring to an arbitrary morphism in $B(n)$,
 we will assume it is a morphism from object $(f_{0,0}, f_{1,0}, \cdots, f_{n,0})$ 
@@ -230,26 +254,48 @@ We will denote the morphism
 $$\phi_{0,1}\smdots\phi_{0,k_0} | 
 \phi_{1,1}\smdots\phi_{1,k_1} | \dots |
 \phi_{n,1}\smdots\phi_{n,k_n}$$ 
-where $\phi_{i,j} \in C^{>0}(A_i, _{f_{j-1}}{A_{i+1}}_{f_j})$. 
-(See also Figure \ref{fig:phi}.)
+where $\phi_{i,j} \in C^\bullet(A_i, _{f_{j-1}}
+{A_{i+1 \textrm{ (mod n+1)}}}_{f_j})$. 
+See Figure \ref{fig:phi} for a picture of 
+this morphism.
+%
+\subsubsection{Differential on $B(n)$}
+Putting everything together, 
+the differential on \newline $B(n)(
+(f_{0,0}, \smdots, f_{n,0}), 
+(f_{0,k_0}, \smdots, f_{n,k_n}))$ is
+\begin{align*}
+&\phantom{{}={}}
+d_{B(n)} \big(
+  \phi_{0,1}\smdots\phi_{0,k_0} | \smdots |
+  \phi_{n,1}\smdots\phi_{n,k_n} \big)\\
+&= 
+\sum \limits_{0 \leq i \leq n}
+  (-1)^{\sum \limits_{p<i;q}
+  |\phi_{p,q}|+1}
+  \phi_{0,1}\smdots | \smdots |
+  d_{Bar(C^\bullet(A_i, A_{i+1}))} 
+  (\phi_{i,1}\smdots\phi_{i,k_i}) | \smdots |
+  \smdots\phi_{n,k_n} 
+\end{align*}
 %
 \subsubsection{Counit}
 Define
 \begin{align*}
-\epsilon_{B(n)}((f_{0,0},\smdots,f_{n,0}), 
-  (f_{0,k_0},\smdots,f_{n,k_n}))
-&: 
-B(n)^\bullet((f_{0,0},\smdots,f_{n,0}), 
-  (f_{0,k_0},\smdots,f_{n,k_n}))\\
-&= 
+\epsilon_{B(n)}((f_{0,0},&\smdots,f_{n,0}), 
+  (f_{0,k_0},\smdots,f_{n,k_n})):
+B(n)((f_{0,0},\smdots,f_{n,0}), 
+  (f_{0,k_0},\smdots,f_{n,k_n})) =\\
+&=
 Bar(C^\bullet(A_0, _{f_{0,0}}{A_1}_{f_{0,k_0}})) 
   \otimes \cdots \otimes 
-  Bar(C^\bullet(A_0, _{f_{n,0}}{A_1}_{f_{n,k_n}}))\\
+  Bar(C^\bullet(A_0, _{f_{n,0}}{A_1}_{f_{n,k_n}}))
+  \to \\
 &\xrightarrow{project}
-Bar_0(C^\bullet(A_0, _{f_{0,0}}{A_1}_{f_{0,k_0}})) 
+  Bar_0(C^\bullet(A_0, _{f_{0,0}}{A_1}_{f_{0,k_0}})) 
   \otimes \cdots \otimes 
-  Bar_0(C^\bullet(A_0, _{f_{n,0}}{A_1}_{f_{n,k_n}}))\\
-&\cong k.
+  Bar_0(C^\bullet(A_0, _{f_{n,0}}{A_1}_{f_{n,k_n}}))
+\cong k.
 \end{align*}
 %
 \subsubsection{Cocomposition}
@@ -270,13 +316,28 @@ We have a coassociative map of complexes
 where 
 $e_f = 1$ in $Bar_0(C^\bullet(A, _fB_f)) \cong k$.
 Extend $\Delta_{A, _fB_g}$ to a 
-cocomposition on $B(n)$ by taking
+cocomposition on $B(n)$ by taking 
+(up to signs)
 $$
 \Delta_{B(n)}((f_{0,0},\smdots,f_{n,0}), 
   (f_{0,k_0},\smdots,f_{n,k_n})) :=
 \Delta_{A_0, _{f_{0,0}}{A_1}_{f_{0,k_0}}} 
 \otimes \dots \otimes
 \Delta_{A_0, _{f_{n,0}}{A_1}_{f_{n,k_n}}}.
+$$
+The sign on the term
+$
+(\phi_{0,1}\smdots \phi_{0,i_0} | \smdots |
+\phi_{n,1}\smdots \phi_{n,i_n}) \otimes
+(\phi_{0,i_0+1}\smdots \phi_{0,k_0} | \smdots |
+\phi_{n,i_n+1}\smdots \phi_{n,k_n}) 
+$
+in the cocomposition is:
+$$
+(-1)^{\sum \limits_{\substack{
+  1 \leq p \leq n\\ 1 \leq r<p}}\;
+(\sum \limits_{1\leq q \leq i_p} |\phi_{p,q}|+1)
+(\sum \limits_{i_r+1 \leq s \leq k_r} |\phi_{r,s}|+1)}
 $$
 %
 It's clear from the definitions that
