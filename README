@@ -1,18 +1,17 @@
 Big To Do's:
 
-1) signs on braces and facts: assoc, map of complexes
-- define lambda(psi}
+1) signs
 - signs for Upsilon, B1, B2,
 - signs for Eq B.1, B.3, B.4, B.6
 - signs for proof of Prop B.3, B.5
 
-2) we have an A-infinity functor
+2) Cobar is an A-infinity functor (adjunctions)
+- Cobar--morphism of dg categories (=dg functor)? of A-infinity categories (= A-infinity functor)?
 
-3) Cobar is an A-infinity functor (adjunctions)
+3) Rectify
+- Check hypotheses needed for applying Remarks A.27 and A.28--seems ok
 
-4) Rectify
-
-5) Intro/Context, abstract
+4) Intro/Context, abstract
 - background and motivation
 - alg in algs: apply cobar/use MS, get an action of an explicit model of E2
 --------

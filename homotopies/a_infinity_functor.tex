@@ -1,0 +1,341 @@
+\section{An $A_\infty$-functor}
+We can repackage the work of the previous 
+sections into a concise statement: We have 
+constructed an $A_\infty$-functor from 
+$\chi$ to $\mathcal{D}$. This section is 
+devoted to making that concise statement 
+more rigorous. We refer to Reference 
+\cite{F}, Appendix A, Definitions 
+A.6 and A.8 for the notation and 
+definition of an 
+$A_\infty$-category and  
+$A_\infty$-functor.
+
+First, we must think of $\chi$ and 
+$\mathcal{D}$ as $A_\infty$-categories. 
+Let $\chi_\infty$ be the (usual) category 
+with the same objects as $\chi$ and 
+morphisms linear combinations over $k$ 
+of morphisms in $\chi$. We will think of 
+the morphisms in $\chi_\infty$ as 
+complexes concentrated in degree zero. 
+$\chi_\infty$ is an $A_\infty$-category 
+with $m_2$ = (usual) composition of 
+morphisms in $\chi_\infty$, $m_1 = 
+m_{\geq 3} = 0$. The relations for an 
+$A_\infty$-category are satisfied 
+because $m_2$ is associative.
+
+Let $\mathcal{D}_\infty$ be the 
+dg category with the same objects 
+as $\mathcal{D}$ and morphisms
+\begin{align*}
+\mathcal{D}_\infty^\bullet((B_1, C_1), (B_0,C_0))
+= \big\{ \big(
+& F: 
+B_1 \to B_0 \quad \textrm{dg functor},\\
+& F_!:
+C_1 \to F^*C_0 \quad \textrm{map of 
+comodules of degree $\bullet$}
+\big) \big\}\\
+d_{\mathcal{D}_\infty}(F,F_!)
+&=
+(F,\; d_{F^*C_0} \circ F_! - (-1)^{|F_!|} 
+F_! \circ d_{C_1}).
+\end{align*}
+We can think of $\mathcal{D}_\infty$ 
+as an $A_\infty$-category with $m_1 = 
+d_{\mathcal{D}_\infty}$, $m_2$ = (usual) 
+composition of morphisms, $m_{\geq 3} = 0$. 
+For $\mathcal{D}_\infty$, the relations for an 
+$A_\infty$-category are precisely that 
+(1) the differentials square to zero, 
+(2) composition is a map of 
+complexes, and (3) composition is 
+associative.
+
+Now, we will show that the constructions 
+given in the previous sections constitute 
+an $A_\infty$-functor $\mathcal{F}: 
+\chi_\infty \to \mathcal{D}_\infty$. Still using 
+the notation in Reference \cite{F}, 
+Definition A.8, we define $\mathcal{F}$ 
+as follows:
+\begin{align*}
+f: Obj(\chi_\infty) 
+&\to 
+Obj(\mathcal{D}_\infty)
+\quad \textrm{map of sets}\\
+\mathcal{A}
+&\mapsto
+(B(\mathcal{A}), C(\mathcal{A}))
+\textrm{ defined in Chapter 1}\\
+%
+f_1: \chi_\infty^\bullet(x_0, x_1)
+&\to
+\mathcal{D}_\infty^\bullet(fx_0, fx_1)
+\quad \textrm{map of graded vector spaces}\\
+\lambda
+&\mapsto 
+(\hat{\lambda}, \lambda_!)
+\textrm{ defined in Sections \ref{sec:cyclic_B(n)}, \ref{sec:shriek_maps}}\\
+&\phantom{{}moveover{}}
+  \textrm{for $\lambda$ a generating morphism in $\Lambda$}\\
+id_{\mathcal{A}}
+&\mapsto
+(id_{B(\mathcal{A})}, id_{C(\mathcal{A})})\\
+%  
+f_2: \chi_\infty^\bullet(x_0, x_1)
+  \otimes \chi_\infty^\bullet(x_1, x_2)
+&\to
+\mathcal{D}_\infty^\bullet(fx_0, fx_2)
+\quad \textrm{degree $-1$ map of vector spaces}\\
+%
+f_{i\geq 3}: \chi_\infty^\bullet(x_0, x_1)
+  \otimes \smdots \otimes 
+  \chi_\infty^\bullet(x_{i-1}, x_i)
+&\to 
+\mathcal{D}_\infty^\bullet(fx_0, fx_i)
+\quad \textrm{degree $1-i$ map of vector spaces}\\
+\mu_1 \otimes \smdots \otimes \mu_i
+&\mapsto
+0 \textrm{ for all morphisms $\mu$}
+\end{align*}
+We will show that the $f_i$'s satisfy 
+the relations in Reference \cite{F}, 
+Definition A.8.
+
+First, we finish defining $\mathcal{F}$, 
+namely, we must define $f_1(\mu)$ for 
+$\mu$ not a generating morphism in $\Lambda$ 
+as well as for linear combinations of 
+morphisms. We also still need to define $f_2$.
+
+Let $\mu$ be a non-generating morphism 
+in $\Lambda$ that induces a morphsim in 
+$\chi$ with source $\mathcal{A}$. Choose 
+(i.e., fix once and 
+for all) a presentation of $\mu$ as a 
+composition of generating morphisms. 
+Within the chosen presentation, in the 
+following order, (1) replace 
+all occurrences of $\tau_{n-1} \delta_{n-1,n}$ 
+with $\delta_{0,n}\tau_n^2$, (2) replace all 
+$\tau_{n+1}\sigma_{n,n}$ with 
+$\tau_{n+1}^{n+1}\sigma_{0,n}\tau_n$, 
+(3) replace all decompositions of identity 
+maps with identity maps, (4) remove all 
+identity maps if $\mu \neq id$, (5) call 
+this new presentation 
+$``$the presentation corresponding to $\mu$'', 
+denoted $\mu = \lambda_{\mu,k_\mu}\smdots 
+\lambda_{\mu,1}$. The presentation 
+corresponding to $\mu$ is not unique (i.e., 
+still depends on the original, chosen 
+presentation). However, letting 
+\begin{align*}
+f_1(\mu) := \big(
+&\hat{\mu}: 
+B(\mathcal{A}) \to 
+  B(\mu\mathcal{A})\\
+&
+\hat{\lambda}_{\mu,1}^*\smdots
+  \hat{\lambda}_{\mu,k_\mu-1}^*
+  (\lambda_{\mu,k_\mu!})
+  \circ \smdots \circ
+  \hat{\lambda}_{\mu,1}^*(\lambda_{\mu,2!})
+  \circ \lambda_{\mu,1!}: C(\mathcal{A})
+  \to \hat{\mu}^*C(\mu\mathcal{A}) \big)
+\end{align*}
+is well-defined because we have made 
+consistent choices for all of the 
+relations among $\lambda_!$'s that 
+only hold up to homotopy (see Equations 
+\ref{eq:weak}). More explicitly, 
+$f_1(\mu)$ would have been well-defined 
+for any choice of presentation if 
+Equations \ref{eq:weak} were equalities 
+rather than homotopies. Instead, 
+we choose to define $f_1(\mu)$ via a 
+presentation that only uses the lefthand 
+side of Equation \ref{eq:weak_delta} and 
+only uses the righthand sides of Equations 
+\ref{eq:weak_sigma} and \ref{eq:weak_tau}.
+Finally, extend $f_1$ linearly over $k$ to 
+define $f_1$ for all linear combinations of 
+morphisms in $\chi$.
+
+Before defining $f_2$, let's take a look 
+at an $A_\infty$ relation we expect 
+$f_2$ to satisfy: For $\cdot 
+\xrightarrow{\mu_1} \cdot 
+\xrightarrow{\mu_2} \cdot$ 
+composable morphisms in $\chi$, 
+we expect
+\begin{align}
+\label{eq:A_2}
+f_1(\mu_2\circ \mu_1) 
+= 
+f_1(\mu_2) \circ f_1(\mu_1) + 
+d_{\mathcal{D}_\infty} \circ f_2(\mu_1, \mu_2).
+\end{align}
+Given the definition of $f_1$ above, 
+we require a non-zero $f_2$ only if: 
+(Condition H) 
+the presentation corresponding to 
+$\mu_2$ composed with the presentation 
+corresponding to $\mu_1$ contains, after 
+removing (decompositions of) identity 
+maps except for $\tau_{n}^{n+1}$, one 
+or more of the following terms:
+$\tau_{n-1} \delta_{n-1,n}$, 
+$\tau_{n+1}\sigma_{n,n}$, 
+$\tau_{n}^{n+1}$. If $\mu_1, \mu_2$ 
+satisfy Condition H, homotopies given 
+in Section \ref{sec:weak_relations} 
+can be used to define $f_2$. If 
+$\mu_1, \mu_2$ do not satisfy Condition 
+H, let $f_2(\mu_1, \mu_2) = 0$.
+
+We will give some instructive examples 
+of non-zero $f_2$ that satisfy Equation 
+\ref{eq:A_2}.
+\begin{eg}
+Let $\mu_1 = \delta_{n-1,n}$, $\mu_2 = 
+\tau_{n-1}$. Then, the presentation 
+corresponding to $\mu_2\mu_1$ is 
+$\delta_{0,n}\tau_n^2$. Let 
+$f_2(\mu_1, \mu_2)$ be the homotopy given 
+in Section \ref{sec:weak_relations_delta} 
+(also given in Appendix Proposition 
+\ref{prop:c2} or \ref{prop:c4}). 
+Then, Equation \ref{eq:A_2} 
+is equivalent to Equation \ref{eq:weak_delta}.
+\end{eg}
+%
+\begin{eg}
+Let $\mu_1 = \sigma_{0,n-1} \delta_{n-1,n}$, 
+$\mu_2 = \tau_{n-1} \delta_{0,n}$. To 
+form the presentation corresponding to 
+$\mu_2\mu_1$, we follow these steps: 
+$$
+\tau_{n-1} \delta_{0,n} \sigma_{0,n-1} 
+\delta_{n-1,n} 
+\xrightarrow[\textrm{of identities}]{\textrm{remove decompositions}}
+\tau_{n-1} \delta_{n-1,n}
+\xrightarrow{\textrm{replace}}
+\delta_{0,n}\tau_n^2.
+$$
+On the other hand, 
+\begin{align*}
+f_1(\mu_2)f_1(\mu_1) 
+&= 
+(\widehat{\delta_{0,n}\sigma_{0,n-1}
+  \delta_{n-1,n}})^*(\tau_{n-1!}) \circ
+  (\widehat{\sigma_{0,n-1}\delta_{n-1,n}})^*
+  (\delta_{0,n!}) \circ 
+  \hat{\delta}_{n-1,n}^*(\sigma_{0,n-1!}) 
+  \circ \delta_{n-1,n!}\\
+&= 
+\hat{\delta}_{n-1,n}^*(\tau_{n-1!}) \circ
+  id \circ \delta_{n-1,n!}.
+\end{align*}
+So, we can let $f_2(\mu_1, \mu_2)$ be the 
+homotopy given in Section 
+\ref{sec:weak_relations_delta}, and Equation 
+\ref{eq:A_2} is equivalent to Equation 
+\ref{eq:weak_delta}.
+\end{eg}
+%
+\begin{eg}
+Let $(\mu_1, \mu_2) \in \{ (\tau_{n+1}, 
+\sigma_{n,n}), (\tau_{n}^{n+1-j}, 
+\tau_n^j): 1\leq j \leq n, n \in \mathbb{N}
+\}$. Let $f_2(\mu_1, \mu_2)$ be 
+the homotopy given in 
+\ref{sec:weak_relations_sigma} if $\mu_2 = 
+\sigma_{n,n}$ and the homotopy given in 
+\ref{sec:weak_relations_tau} if $\mu_2 \neq 
+\sigma_{n,n}$. Then, Equation \ref{eq:A_2} 
+is equivalent to either Equation 
+\ref{eq:weak_sigma} ($\mu_2 = 
+\sigma_{n,n}$) or Equation \ref{eq:weak_tau} 
+($\mu_2 \neq \sigma_{n,n}$).
+\end{eg}
+%
+\begin{eg}
+Let $\mu_1 = \sigma_{n-1,n-1} \delta_{n-1,n}$, 
+$\mu_2 = \tau_n$. To 
+form the presentation corresponding to 
+$\mu_2\mu_1$, we follow these steps: 
+$$
+(\tau_n \sigma_{0,n-1}) 
+\delta_{n-1,n} 
+\xrightarrow{\textrm{replace $(\cdot)$}}
+\tau_n^n \sigma_{0,n-1}(\tau_{n-1}\delta_{n-1,n})
+\xrightarrow{\textrm{replace $(\cdot)$}}
+\tau_n^n \sigma_{0,n-1}\delta_{0,n}\tau_n^2.
+$$
+Let $f_2(\mu_1, \mu_2) = g_1 + g_2$ where 
+$g_1 = \hat{\delta}_{n-1,n}^*( 
+\textrm{homotopy in Section 
+\ref{sec:weak_relations_sigma}})\circ
+\delta_{n-1,n!}$ and $g_2 = 
+(\widehat{\tau_{n-1}\delta_{n-1,n}})^*\big(
+(\widehat{\tau_n^{n-1}\sigma_{0,n-1}})^*
+  (\tau_{n!}) \circ \smdots \circ 
+  \hat{\sigma}_{0,n-1}^*(\tau_{n!}) \circ 
+  \sigma_{0,n-1!} \big) \circ 
+\textrm{(homotopy in Section 
+\ref{sec:weak_relations_delta})}$. 
+Then, Equation \ref{eq:A_2} 
+reduces to $\delta_{n-1,n}^*$(Equation 
+\ref{eq:weak_sigma}) and Equation 
+\ref{eq:weak_delta}.
+\end{eg}
+%
+Now, we will check that the $f_i$'s 
+we gave satisfy the rest of the 
+relations for an $A_\infty$-functor 
+from Reference \cite{F}, Definition A.8:
+For $\cdot 
+\xrightarrow{\mu_1} \cdot 
+\xrightarrow{\mu_2} \cdot
+\xrightarrow{\mu_3} \cdot 
+\xrightarrow{\mu_4} \cdot $ 
+composable morphisms in $\chi$, 
+we expect
+\begin{align} 
+0
+&= 
+d_{\mathcal{D}_\infty} \circ f_1(\mu_1)
+\label{eq:A_1}\\
+f_2(\mu_3, \mu_2 \circ \mu_1) - 
+  f_2(\mu_3 \circ \mu_2, \mu_1)
+&= 
+f_2(\mu_3, \mu_2) \circ f_1(\mu_1) - 
+  f_1(\mu_3) \circ f_2(\mu_2, \mu_1)
+\label{eq:A_3}\\  
+0
+&= 
+f_2(\mu_4, \mu_3) \circ f_2(\mu_2, \mu_1).  
+\label{eq:A_4}
+\end{align}
+Equation \ref{eq:A_1} is satisfied 
+since the $\lambda_!$'s we defined 
+in Section \ref{sec:shriek_maps} are maps 
+of complexes. Equation \ref{eq:A_4} is 
+satisfied since composing two of our 
+degree $-1$ homotopies is always equal to 
+zero (see Section 
+\ref{sec:higher_homotopies}, first 
+paragraph). Finally, Equation \ref{eq:A_3} 
+boils down to showing that the two 
+homotopies in Figure \ref{fig:two_homotopies} 
+and in Figure \ref{fig:two_homotopies_1} are 
+the same (see Section 
+\ref{sec:higher_homotopies}).
+
+
+
+
