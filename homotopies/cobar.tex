@@ -1,0 +1,108 @@
+\section{A functor to dg cocategories}
+The previous section \ref{sec:rectify}
+gave a dg functor from $U(\chi_\infty)$ 
+to $\mathcal{D}_\infty = ``$dg cocategories 
+and dg comodules''. We would like to have our 
+functor land in the dg category, 
+$\mathcal{E} = ``$dg categories and dg 
+modules''. To do so, we will first give a 
+dg functor $\mathcal{D}_\infty \to 
+\mathcal{D}_1$, 
+which makes use of the adjunction in 
+Proposition \ref{prop:adjunction}. Then, 
+we will give a dg functor $Cobar: 
+\mathcal{D}_1 \to \mathcal{E}$.
+
+\subsection{Using the adjunction}
+Let $\mathcal{D}_1$ be the 
+dg category with the same objects 
+as $\mathcal{D}$ and morphisms
+\begin{align*}
+\mathcal{D}_1^\bullet(
+  (B_1, C_1), (B_0,C_0))
+= \big\{ \big(
+& F: 
+B_1 \to B_0 \quad \textrm{dg functor},\\
+& F_!:
+F_{\#}C_1 \to C_0 \quad \textrm{map of 
+comodules of degree $\bullet$}
+\big) \big\}\\
+d_{\mathcal{D}_\infty}(F,F_!)
+&=
+(F,\; d_{C_0} \circ F_! - (-1)^{|F_!|} 
+F_! \circ d_{F_\# C_1})
+\end{align*}
+with composition
+\begin{align*}  
+\mathcal{D}_1^\bullet(
+  (B_2, C_2), (B_1, C_1)) \otimes  
+  \mathcal{D}_1^\bullet(
+  (B_1, C_1), (B_0, C_0))
+&\to
+\mathcal{D}_1^\bullet(
+  (B_2, C_2), (B_0, C_0))\\
+(f,f_!) \otimes (g, g_!)
+&\mapsto
+(gf, g_!\circ g_\#(f_!)).
+\end{align*}
+This composition is well-defined because 
+we can apply the formulas from $g_\#$ to 
+(not necessarily graded) morphisms of 
+comodules. The composition is associative 
+because of the following easy-to-check 
+fact: $g_\#f_\#C = (gf)_\#C$ for 
+$B_2 \xrightarrow{f} B_1 \xrightarrow{g} 
+B_0$ functors of dg cocategories and $C$ 
+a dg comodule over $B_2$.
+
+Now, we define a dg functor 
+\begin{align*}
+Adj: \mathcal{D}_\infty 
+&\to 
+\mathcal{D}_1\\
+\textrm{on objects: }(B,C)
+& \mapsto
+(B,C)\\
+\textrm{on morphisms: }\bigg((B_1, C_1) 
+  \xrightarrow{(F, F_!)} (B_0,C_0)\bigg)
+& \mapsto
+\bigg((B_1, C_1) 
+  \xrightarrow{(F, \Phi^{-1}_FF)} 
+  (B_0,C_0)\bigg)
+\end{align*}
+where 
+$\Phi^{-1}_F:Hom_{\substack{
+  \textrm{dg comodules}\\\textrm{over $B_1$}}}
+  (C,F^*D) 
+\to 
+Hom_{\substack{
+  \textrm{dg comodules}\\\textrm{over $B_0$}}}
+  (F_\#C,D)$
+is defined in the proof of Proposition 
+\ref{prop:adjunction} and makes sense as 
+a function on (not necessarily graded) 
+maps of comodules. To check that $Adj$ 
+commutes with the differentials and 
+respects composition, we need
+\begin{align*}
+\Phi^{-1}_F \circ d_{Hom_{B_2}(C_2, F^*C_1)}
+&= 
+d_{Hom_{B_1}(F_\#C_2, C_1)} \circ \Phi^{-1}_F\\
+\Phi^{-1}_{GF}(F^*G_! \circ F_!)
+&=
+\Phi^{-1}_G(G_!) \circ G_\#(\Phi^{-1}_F(F_!))\\
+\textrm{where }
+(B_2, C_2) 
+  \xrightarrow{(F, F_!)} &(B_1,C_1)
+  \xrightarrow{(G, G_!)} (B_0,C_0)
+  \textrm{ in }\mathcal{D}_\infty.
+\end{align*}
+The equations above follow straight-forwardly 
+from the definitions.
+%
+%
+\subsection{Applying $Cobar$}
+
+
+
+
