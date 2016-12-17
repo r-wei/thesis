@@ -10,7 +10,7 @@ dg functor $\mathcal{D}_\infty \to
 \mathcal{D}_1$, 
 which makes use of the adjunction in 
 Proposition \ref{prop:adjunction}. Then, 
-we will give a dg functor $Cobar: 
+we will give a dg functor $\Omega: 
 \mathcal{D}_1 \to \mathcal{E}$.
 
 \subsection{Using the adjunction}
@@ -102,7 +102,83 @@ from the definitions.
 %
 %
 \subsection{Applying $Cobar$}
+In this section, we will use the notion of 
+a dg module over a dg category. This is 
+dual to a dg comodule over 
+a dg cocategory (Definition \ref{def:dg_comod}). 
+Given a dg functor between dg categories 
+$F:A_1 \to A_0$, we define $``$restriction 
+of scalars'', $F^*$, a functor from 
+the category of dg comodules over $A_0$ 
+to the category of dg comodules over $A_1$. 
+For $M_0$ a dg comodule over $A_0$ and $f \in 
+Obj(B_1)$, $F^*M_0(f):=M_0(Ff)$.
 
+Let $\mathcal{E}$ be the dg category defined 
+below:
+\begin{align*}
+Obj(\mathcal{E}) 
+&= 
+\{(A,M) |
+  \textrm{A is a dg category, 
+  M is a dg module over A}\} \\
+\mathcal{E}^p((A_1, M_1), (A_0, M_0))  
+&= 
+\{(f, f_!) | f:A_1 \to A_0 
+  \textrm{ is a dg functor,}\\
+& \phantom{{}=[(f, f_!)]{}}  
+  f_!:M_1 \to f^*M_0 
+  \textrm{ is a degree-$p$ map of modules over }
+  A_1\}\\
+d_{\mathcal{E}}(f,f_!)
+&=
+(f,\; d_{f^*M_0} \circ f_! - (-1)^{|f_!|} 
+f_! \circ d_{C_1})  
+\end{align*}
+\begin{align*}  
+\mathcal{E}^\bullet((A_2, M_2), (A_1, M_1)) \times  
+\mathcal{E}^\bullet((A_1, M_1), (A_0, M_0))
+&\xrightarrow{composition}
+\mathcal{E}^\bullet((A_2, M_2), (A_0, M_0))\\
+(f,f_!) \times (g, g_!)
+&\mapsto
+(gf, f^*(g_!)\circ f_!).
+\end{align*}
 
+We will define a dg functor $\Omega: 
+\mathcal{D}_1 \to \mathcal{E}$. 
+On objects, $\Omega(B,C) := 
+(Cobar(B), Cobar(B,C))$ where the first 
+Cobar is a dg functor from the category of 
+dg cocategories to the category of dg 
+categories, and the second Cobar sends 
+dg comodules over $B$ to dg modules over 
+$Cobar(B)$ (see \cite{T}, Section 4.6). 
+On morphisms, 
+\begin{align*}
+\bigg(\substack{
+	B_1 \xrightarrow{F} B_0\\
+	C_1 \xrightarrow{F_!} F^*C_0}\bigg)
+& \mapsto
+\bigg(\substack{
+  Cobar(B_1)\xrightarrow{Cobar(F)}Cobar(B_0)\\
+  Cobar(B_1,C_1)}) \xrightarrow{\Omega(F_!)} 
+  (Cobar(F))^*Cobar(B_0,C_0)\bigg)\\
+\textrm{where } 
+\Omega(F_!): Cobar(B_1,C_1)
+& \to
+(Cobar(F))^*Cobar(B_0,C_0)\\
+(b_1|\smdots|b_n|c)
+&\mapsto
+(Fb_1|\smdots|Fb_n|F_!c)\\
+\textrm{for } 
+  b_i \in B_1^\bullet(f_{i-1},f_i),
+  c \in C_1^\bullet(f_n), 
+  \textrm{ and } f_i \in 
+&Obj(B_1), 0 \leq i \leq n.
+\end{align*}
+It's straightforward from the definitions 
+to check that $\Omega$ commutes with 
+the differentials and respects composition.
 
 
