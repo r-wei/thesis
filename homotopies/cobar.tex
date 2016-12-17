@@ -1,6 +1,6 @@
 \section{A functor to dg cocategories}
-The previous section \ref{sec:rectify}
-gave a dg functor from $U(\chi_\infty)$ 
+In the previous section \ref{sec:A_infinity},
+we gave a dg functor from $U(\chi_\infty)$ 
 to $\mathcal{D}_\infty = ``$dg cocategories 
 and dg comodules''. We would like to have our 
 functor land in the dg category, 
@@ -156,14 +156,16 @@ dg comodules over $B$ to dg modules over
 $Cobar(B)$ (see \cite{T}, Section 4.6). 
 On morphisms, 
 \begin{align*}
+\mathcal{D}_1 \ni
 \bigg(\substack{
 	B_1 \xrightarrow{F} B_0\\
 	C_1 \xrightarrow{F_!} F^*C_0}\bigg)
 & \mapsto
 \bigg(\substack{
   Cobar(B_1)\xrightarrow{Cobar(F)}Cobar(B_0)\\
-  Cobar(B_1,C_1)}) \xrightarrow{\Omega(F_!)} 
-  (Cobar(F))^*Cobar(B_0,C_0)\bigg)\\
+  Cobar(B_1,C_1) \xrightarrow{\Omega(F_!)} 
+  (Cobar(F))^*Cobar(B_0,C_0)}\bigg)
+\in \mathcal{E}  \\
 \textrm{where } 
 \Omega(F_!): Cobar(B_1,C_1)
 & \to
@@ -174,11 +176,21 @@ On morphisms,
 \textrm{for } 
   b_i \in B_1^\bullet(f_{i-1},f_i),
   c \in C_1^\bullet(f_n), 
-  \textrm{ and } f_i \in 
-&Obj(B_1), 0 \leq i \leq n.
+&\textrm{ and } f_i \in 
+  Obj(B_1), 0 \leq i \leq n.
 \end{align*}
 It's straightforward from the definitions 
 to check that $\Omega$ commutes with 
 the differentials and respects composition.
 
-
+\subsection{The end: putting everything together}
+We have dg functors
+$$
+U(\chi_\infty) \xrightarrow{\tilde{\mathcal{F}}}
+\mathcal{D}_\infty \xrightarrow{Adj}
+\mathcal{D}_1 \xrightarrow{\Omega}
+\mathcal{E}.
+$$
+This is our homotopically sheafy-cyclic object 
+%in $\infty$-categories 
+in dg categories with a trace functor.
