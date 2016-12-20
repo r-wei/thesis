@@ -54,7 +54,7 @@
 
 
 % Use \includeonly to select the 
-\includeonly{notation, bibliography, 
+\includeonly{bibliography, 
 appendices/lambda, appendices/computations, 
 appendices/hochschild, 
 Bn_Cn/motivation, Bn_Cn/dg_cocats, Bn_Cn/dg_comods,
@@ -83,14 +83,15 @@ Text for acknowledgments.
 
 %\preface		% Preface (optional).
 
-% \listofabbreviations 
+%\listofabbreviations 
 % This is the list of abbreviations (optional).
 
 %\glossary
 %This is the glossary (optional).
-%
-%\nomenclature
-%This is the nomenclature (optional).
+
+\nomenclature %optional
+\input{nomenclature}
+
 %
 %% Note that the dedication text must be passed as an argument
 %% of the \dedication command
