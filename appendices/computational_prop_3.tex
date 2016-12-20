@@ -29,7 +29,7 @@ onto cogenerators. We check this directly.
   I_1I_2 = \{1,\smdots,n\}\\
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
-\epsilon_{I_1,J_1}  
+\epsilon_{I_1,J_1} \cdot
   \upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
     B_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha)) \\
 &= 
@@ -37,7 +37,8 @@ onto cogenerators. We check this directly.
   I_1I_2 = \{1,\smdots,n\}\\
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
-\epsilon_{I_1,J_1}  
+\epsilon_{I_1,J_1} \cdot 
+\eta_{\mathfrak{a_1},\mathfrak{a_2}} \cdot
 \upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
   1 \otimes \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_2}) 
   \mathfrak{a}_2, a_0, \mathfrak{a}_1) \\
@@ -46,7 +47,8 @@ onto cogenerators. We check this directly.
   I_1I_2 = \{1,\smdots,n\}\\
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
-\epsilon_{I_1,J_1}  
+\epsilon_{I_1,J_1} \cdot 
+\eta_{\mathfrak{a_1},\mathfrak{a_2}} \cdot
 1 \otimes \lambda(\vec{\phi}_{I_1}) \big( 
   \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) 
   \mathfrak{a}_2, a_0, \mathfrak{a}_1 \big)
@@ -54,7 +56,9 @@ onto cogenerators. We check this directly.
 \end{equation*}
 where $\epsilon_{I_1,J_1} = 
 (-1)^{(\sum \limits_{p\in I_2}|\phi_p|+1)
-(\sum \limits_{q \in J_1}|\psi_q|+1)}$.
+(\sum \limits_{q \in J_1}|\psi_q|+1)}$ and 
+$\eta_{\mathfrak{a_1},\mathfrak{a_2}} = 
+(-1)^{|\mathfrak{a}_1|(|\mathfrak{a}_1|+|\mathfrak{a}_2|)}$.
 %
 \begin{align*}
 & \phantom{{}={}}
@@ -65,7 +69,7 @@ where $\epsilon_{I_1,J_1} =
   I_1I_2 = \{1,\smdots,n\}\\
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
-\epsilon_{I_1,J_1}   
+\epsilon_{I_1,J_1} \cdot
 B_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | 
   \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha)) \\
 &= 
@@ -73,13 +77,13 @@ B_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} |
   I_1I_2 = \{1,\smdots,n\}\\
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
-\epsilon_{I_1,J_1}   
+\epsilon_{I_1,J_1} \cdot
 B_{|J_1|, |I_1|} \big(\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \phi_{|I_1|+1} (
   \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) 
   \mathfrak{a}_3, a_0, \mathfrak{a}_1) \otimes 
   \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) 
   \mathfrak{a}_2 \; + \\
-&\hphantom{{}moveovermoveover{}} 
+&\hphantom{{}moveovermoveovermoveover{}} 
   + a_0 \otimes \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) 
   \mathfrak{a}_1 \; \; \; 
   \text{if }J_2 = \emptyset \big) \\
@@ -88,14 +92,17 @@ B_{|J_1|, |I_1|} \big(\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \phi_{|I_1|+1} (
   I_1I_2 = \{1,\smdots,n\}\\
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
-\epsilon_{I_1,J_1}   
+\epsilon_{I_1,J_1} \cdot  
+\eta_{\mathfrak{a}_2,\mathfrak{a}_3} \cdot  
 1 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}_{J_1}) 
   \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3 \otimes 
   \phi_{|I_1|+1} (\lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_4}) 
   \mathfrak{a}_4, a_0, \mathfrak{a}_1) \otimes 
   \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) 
   \mathfrak{a}_2 \; + \\
-&\hphantom{{}==} 
+&\hphantom{{}moveovermove{}} 
+  \epsilon_{I_1,J_1} \cdot  
+  \eta_{\mathfrak{a}_1,\mathfrak{a}_2} \cdot  
   + 1 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}) 
   \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_2 \otimes 
   a_0 \otimes \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_1
