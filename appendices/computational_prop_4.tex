@@ -51,10 +51,10 @@ cogenerators:
 &\xrightarrow[cogenerators]{\textrm{project onto}}
 C_{-\bullet}(A_1, _{f_0h_0g_0}{A_1}_{id})\\
 \mathcal{B}_{n, m, p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha) 
-= & \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \\
+= \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \\
                           \textrm{as ordered sets}}}
   \eta_{\mathfrak{a}_1,\mathfrak{a}_2}\cdot
-  1 \otimes \lambda(\vec{\phi}_{I_1})\big( \lambda(\vec{\theta}) \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2})
+  1 &\otimes \lambda(\vec{\phi}_{I_1})\big( \lambda(\vec{\theta}) \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2})
   \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1 \big)
 \end{split}      
 \end{equation}
@@ -135,9 +135,11 @@ b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha 
   J_1J_2 = \{1,\smdots,m\}\\
   K_1K_2 = \{1,\smdots,p\}\\
   \textrm{as ordered sets}}}
-\epsilon_{I_2,J_1,J_2,K_1} \cdot 
+\begin{array}{l}
+\epsilon_{I_2,J_1,J_2,K_1} \cdot \\
 \upsilon_{|I_1| \leq * \leq |I_1| + |K_1|,|J_1|}(\vec{\theta}_{K_1} \bullet \vec{\phi}_{I_1}, \vec{\psi}_{J_1}, 
-    \upsilon_{|J_2| \leq * \leq |I_2| + |J_2|,|K_2|}(\vec{\phi}_{I_2} \bullet \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha )) \\
+    \upsilon_{|J_2| \leq * \leq |I_2| + |J_2|,|K_2|}(\vec{\phi}_{I_2} \bullet \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha )) 
+\end{array} \\
 %
 =0.
 \end{aligned}
@@ -174,32 +176,33 @@ cancel, so we're done.
 \begin{landscape}
 \begin{center}
 \begin{table}
-  \begin{tabular}{ p{3.25in} | p{1.75in} | p{2.75in} }
+  \begin{tabular}{ p{3.8in} | p{1.5in} | p{2.2in} }
     \hline
-    Expression & Comes from Standard Term & Cancelling Term \\ \hline
+    Expression & \breakcell{Comes from\\Standard Term} & Cancelling Term \\ \hline
     %
     % twist before
-    $1 \otimes \lambda(\vec{\phi}_{I_1}) [
+    \breakcell{$1 \otimes \lambda(\vec{\phi}_{I_1}) [
     \lambda(\vec{\theta}_{\{1,\cdots,p-1\}}
     \lambda(\vec{\psi}_{J_1})
     \lambda(\vec{\phi}_{I_2})
-    \mathfrak{a}_2 \otimes 
-    \theta_p(\lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3) \cdot a_0 \otimes
-    \mathfrak{a}_1 ]$ & 
+    \mathfrak{a}_2 \otimes$\\
+    $\phantom{moveover} \otimes 
+    \theta_p(\lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3) \cdot a_0 \otimes \mathfrak{a}_1 ]$} & 
     $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
-    $\mathcal{B}_{|I_1|, |J_1|, p-1}(\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \vec{\theta}_{\{1,\cdots, p-1\}} |
-     \theta_{p} \{\vec{\psi}_{J_2}\} \{\vec{\phi}_{I_2}\} \cdot \alpha )$ \\ \hline
+    \breakcell{$\mathcal{B}_{|I_1|, |J_1|, p-1}(\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \vec{\theta}_{\{1,\cdots, p-1\}} |$\\
+    $\phantom{moveoverm}\theta_{p} \{\vec{\psi}_{J_2}\} \{\vec{\phi}_{I_2}\} \cdot \alpha )$} \\ \hline
 
-    $1 \otimes \lambda(\vec{\phi}_{I_1}) [
+    \breakcell{$1 \otimes \lambda(\vec{\phi}_{I_1}) [
     \lambda(\vec{\theta}
     \lambda(\vec{\psi}_{\{1,\cdots,m-1\}})
     \lambda(\vec{\phi}_{I_2})
-    \mathfrak{a}_2 \otimes 
+    \mathfrak{a}_2 \otimes$\\
+    $\phantom{moveover}\otimes 
     \psi_m(\lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3) \cdot a_0 \otimes
-    \mathfrak{a}_1 ]$ & 
+    \mathfrak{a}_1 ]$} & 
     $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
-    $\mathcal{B}_{|I_1|, m-1, p}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \vec{\theta} |
-     \psi_m \{\vec{\phi}_{I_2}\} \cdot \alpha )$ \\ \hline
+    \breakcell{$\mathcal{B}_{|I_1|, m-1, p}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \vec{\theta} |$\\
+    $\phantom{moveover}\psi_m \{\vec{\phi}_{I_2}\} \cdot \alpha )$} \\ \hline
 
     $1 \otimes \lambda(\vec{\phi}_{I_1}) [
     \lambda(\vec{\theta}
@@ -213,38 +216,41 @@ cancel, so we're done.
      \phi_n \cdot \alpha )$ \\ \hline
     %
     %twist after
-    $\phi_1(\lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2)
-    \otimes \lambda(\vec{\phi}_{I_1\backslash 1})[
+    \breakcell{$\phi_1(\lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2) \otimes$\\
+    $\otimes\, \lambda(\vec{\phi}_{I_1\backslash 1})[
     \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3
-    \otimes a_0 \otimes \mathfrak{a}_1]$ &
+    \otimes a_0 \otimes \mathfrak{a}_1]$} &
     $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
-    $\phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot
-     \mathcal{B}_{n-1, |J_2|, |K_2|}
-     (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)$ \\ \hline
+    \breakcell{$\phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot$\\
+     $\mathcal{B}_{n-1, |J_2|, |K_2|}
+     (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)$} \\ \hline
 
-    $f_0\theta_1( \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2)
-    \otimes \lambda(\vec{\phi}_{I_1})[
+    \breakcell{$f_0\theta_1( \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2)
+    \otimes$\\ 
+    $\otimes\, 
+    \lambda(\vec{\phi}_{I_1})[
     \lambda(\vec{\theta}_{\{2,\cdots,p\}}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3
-    \otimes a_0 \otimes \mathfrak{a}_1]$ &
+    \otimes a_0 \otimes \mathfrak{a}_1]$} &
     $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
-    $\theta_1 \{\vec{\psi}_{J_1}\} \cdot
-     \mathcal{B}_{n, |J_2|, p-1}
-     (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha)$ \\ \hline
+    \breakcell{$\theta_1 \{\vec{\psi}_{J_1}\} \cdot$\\
+    $\mathcal{B}_{n, |J_2|, p-1}
+     (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha)$} \\ \hline
 
-    $f_0h_0\psi_1( \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2)
-    \otimes \lambda(\vec{\phi}_{I_1})[
+    \breakcell{$f_0h_0\psi_1( \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2) \otimes$\\
+    $\otimes\, \lambda(\vec{\phi}_{I_1})[
     \lambda(\vec{\theta}) \lambda(\vec{\psi}_{\{2,\cdots,m\}}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3
-    \otimes a_0 \otimes \mathfrak{a}_1]$ &
+    \otimes a_0 \otimes \mathfrak{a}_1]$} &
     $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
     $\psi_1 \cdot
      \mathcal{B}_{n, m-1, p}
      (\vec{\phi} | \vec{\psi}_{\{2,\cdots,m\}} | \vec{\theta} | \alpha)$ \\ \hline
 
     %wrap around
-    $f_0h_0g_0 \phi_{i_1} ( \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3})
-       \mathfrak{a}_3 \otimes a_0 \otimes \mathfrak{a}_1) \otimes
+    \breakcell{$f_0h_0g_0 \phi_{i_1} ( \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3})
+       \mathfrak{a}_3, a_0, \mathfrak{a}_1) \otimes$\\
+       $\otimes \, 
        \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) 
-       \lambda(\vec{\phi}_{I_2 \backslash i_1}) \mathfrak{a}_2$ &
+       \lambda(\vec{\phi}_{I_2 \backslash i_1}) \mathfrak{a}_2$} &
     $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
     11$^{th}$ row \\ \hline
 
@@ -270,27 +276,27 @@ terms that cancel them}
 %
 \begin{center}
 \begin{table}
-  \begin{tabular}{ p{6.25in} | p{2.5in} }
+  \begin{tabular}{ p{5.3in} | p{2.2in} }
     \hline
     Expression from 11$^{th}$ Row & Cancels with Extra Term \\ \hline
     %twist after
-    $\phi_1(\lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) [
+    \breakcell{$\phi_1(\lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) [
       \lambda(\vec{\theta}_{K_3}) \lambda(\vec{\psi}_{J_4}) \lambda(\vec{\phi}_{I_5})
-      \mathfrak{a}_3, a_0, \mathfrak{a}_1])
-      \otimes \lambda(\vec{\phi}_{I_1\backslash 1}) \lambda(\vec{\theta}_{K_2}) 
-      \lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_4}) \mathfrak{a}_2$ &
-    $\phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot
-     \mathcal{B}_{n-1, |J_2|, |K_2|}
-     (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)$ \\ \hline
+      \mathfrak{a}_3, a_0, \mathfrak{a}_1]) \otimes$\\
+      $\otimes\, \lambda(\vec{\phi}_{I_1\backslash 1}) \lambda(\vec{\theta}_{K_2}) 
+      \lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_4}) \mathfrak{a}_2$} &
+    \breakcell{$\phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot$\\
+     $\mathcal{B}_{n-1, |J_2|, |K_2|}
+     (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)$} \\ \hline
 
-    $f_0\theta_1( \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) [
+    \breakcell{$f_0\theta_1( \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) [
       \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_4})
-      \mathfrak{a}_3, a_0, \mathfrak{a}_1])
-      \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}_{K_1 \backslash 1}) 
-      \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_2$ &
-    $\theta_1 \{\vec{\psi}_{J_1}\} \cdot
-     \mathcal{B}_{n, |J_2|, p-1}
-     (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha)$ \\ \hline
+      \mathfrak{a}_3, a_0, \mathfrak{a}_1]) \otimes$\\
+      $\otimes\, \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}_{K_1 \backslash 1}) 
+      \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_2$} &
+    \breakcell{$\theta_1 \{\vec{\psi}_{J_1}\} \cdot$\\
+     $\mathcal{B}_{n, |J_2|, p-1}
+     (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha)$} \\ \hline
 
     $f_0h_0\psi_1( \lambda(\vec{\phi}_{I_2}) [
       \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_4})

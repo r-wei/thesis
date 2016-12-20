@@ -141,7 +141,7 @@ as $$\phi_{0,1}\smdots\phi_{0,k_0} |
 \phi_{n,1}\smdots\phi_{n,k_n} | \alpha$$
 where $\phi_{0,1}\cdots \phi_{n,k_n}$ is a morphism
 in $B(n)$ (see Section \ref{sec:phi_notation}) and
-$\alpha \in C_{-\bullet}(A_0, _{f_{k_n}\cdots f_{k_0}}{A_0}_{id})$.
+$\alpha \in C_{-\bullet}(A_0, _{f_{k_n}\cdots f_{k_0}}{A_0})$.
 See Figure \ref{fig:phi|alpha} for a picture of 
 a typical element of $C(n)^\bullet(f)$.
 % long form of equation
@@ -236,7 +236,10 @@ More precisely, there is a one-to-one correspondence
   &\xrightarrow{project}
   C_{-\bullet}(A_0, _f{A_0}_{id})
   \end{split}} 
-  \bigg)_f\\
+  \bigg)_f
+\end{split}
+\end{equation}
+\begin{align*}  
 \begin{pmatrix}
   D(f)
   &\xrightarrow{\Delta_D}
@@ -250,14 +253,13 @@ More precisely, there is a one-to-one correspondence
 &\leftmapsto  
 \bigg( D(f) \to
   C_{-\bullet}(A_0, _f{A_0}_{id})
-  \bigg)_f\\
-\end{split}
-\end{equation}
+  \bigg)_f
+\end{align*}
 %
 \begin{defn}\label{def:cogenerators}
 We will call elements of 
-$T(A_0 \to \smdots \to A_n \to A_0)(f) :=
-C_{-\bullet}(A_0, _f{A_0}_{id})$ 
+$$T(A_0 \to \smdots \to A_n \to A_0)(f) :=
+C_{-\bullet}(A_0, _f{A_0})$$ 
 the \textbf{cogenerators} of 
 $C(A_0 \to \smdots A_n \to A_0)(f)$. 
 More generally, we will refer to 
@@ -323,8 +325,8 @@ and $\mathcal{I}$ is a term that captures an action of cochains on chains descri
   see Section \ref{sec:def_braces}}\\
 \pi_{B(0)}: 
 B(0)^\bullet
-(f_{n,1}\smdots f_{1,1} f_{0,1}, 
-f_{n,k_n}\smdots f_{1,k_1} f_{0,k_0})
+(f_{n,1}\smdots f_{0,1}, 
+f_{n,k_n}\smdots f_{0,k_0})
 &\xrightarrow[component]{project\;onto}
 C^\bullet(A_0, _{f_{n,1}\smdots f_{0,1}}{A_0}_{f_{n,k_n}\smdots f_{0,k_0}})\\
 \iota

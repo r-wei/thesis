@@ -44,8 +44,8 @@ cogenerators as follows:
 \begin{align*}
 \upsilon^{f_0, g_0}: C(A_0 \to A_1 \to A_0)(f_0,g_0) 
 &\to
-\hat{\tau}_1^*C(A_1 \to A_0 \to A_1)(g_0,f_0)
-\cong 
+\hat{\tau}_1^*C(A_1 \to A_0 \to A_1)(g_0,f_0)\\
+&\cong 
 C(A_1 \to A_0 \to A_1)(g_0,f_0)\\
 &\xrightarrow[cogenerators]{\textrm{project onto}}
 C_{-\bullet}(A_1, _{f_0g_0}{A_1}_{id})\\
@@ -176,19 +176,22 @@ cancel, so $\Upsilon$ is a map of complexes.
 \begin{landscape}
 \begin{center}
 \begin{table}
-  \begin{tabular}{ p{3.25in} | p{2in} | p{2.5in} }
+  \begin{tabular}{ p{3in} | p{2in} | p{2.5in} }
     \hline
     Expression & Comes from Standard Term & Cancelling Term \\ \hline
     
-    \breakcell{$f_0\psi_1(\lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3 ) \phi_1(\lambda(\vec{\psi}_{\{2,\cdots, m\}} \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_4, a_0, \mathfrak{a}_1)$ \\ $\otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
+    \breakcell{$f_0\psi_1(\lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3 ) \cdot$\\
+    $\phi_1(\lambda(\vec{\psi}_{\{2,\cdots, m\}} \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_4, a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
     $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ & 
     $f_0 \psi_1 \cdot \upsilon_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha)$ \\ \hline
 
-    \breakcell{$\phi_1( \lambda(\vec{\psi}_{\{1,\cdots, m-1\}}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3, \psi_{m} ( \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_4) \cdot a_0, \mathfrak{a}_1 )$ \\ $\otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
+    \breakcell{$\phi_1( \lambda(\vec{\psi}_{\{1,\cdots, m-1\}}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3,$\\ 
+    $\phantom{mo} \psi_{m} ( \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_4) \cdot a_0, \mathfrak{a}_1 ) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
     $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
     $\upsilon_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha )$ \\ \hline
 
-    \breakcell{$\phi_1( \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3, g_m \phi_n(\mathfrak{a}_4) \cdot a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
+    \breakcell{$\phi_1( \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3, g_m \phi_n(\mathfrak{a}_4) \cdot a_0, \mathfrak{a}_1)\otimes$\\ 
+    $\otimes\, \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
     $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
     $\upsilon_{n-1, m}(\vec{\phi}_{\{1, \cdots, n-1\}} | \vec{\psi} | g_m \phi_{n} \cdot \alpha )$ \\ \hline
 
@@ -208,7 +211,8 @@ cancel, so $\Upsilon$ is a map of complexes.
     $b \circ \upsilon_{n, m} (\vec{\phi} | \vec{\psi} | \alpha)$ &
     $\upsilon_{n-1, m}(\phi_1 \cup \phi_2 \phi_3 \cdots \phi_n | \vec{\psi} | \alpha)$ \\ \hline
     
-    \breakcell{$\phi_1(\lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3) \phi_2(\lambda(\vec{\psi}_{J_2} \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3, a_0, \mathfrak{a}_1)$ \\ $\otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
+    \breakcell{$\phi_1(\lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3) \phi_2(\lambda(\vec{\psi}_{J_2} \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3,$\\
+    $\phantom{mo} a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
     $\upsilon_{n-1, m}(\phi_1 \cup \phi_2 \phi_3 \cdots \phi_n | \vec{\psi} | \alpha)$ &
      $\phi_1 \{ \vec{\psi}_{J_1} \} \cdot \upsilon_{n-1, |J_2|}(\vec{\phi}_{\{2, \cdots, n\}} | \vec{\psi}_{J_2} |\alpha )$\\ \hline
 

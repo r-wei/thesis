@@ -32,8 +32,9 @@ A_0 \ar@/^5pc/[r]^{f_0}
 \in C(A_0 \to A_1 \to A_0)(g_0f_0)\\
 \vec{\phi}_{\{i_1, i_2,\smdots, i_k\}}
 &:= 
-\phi_{i_1}\phi_{i_2}\smdots\phi_{i_k}
- \quad \textrm{ where $\{i_1, i_2,\smdots, i_k\}$ 
+\phi_{i_1}\phi_{i_2}\smdots\phi_{i_k}\\
+&\phantom{{}move{}}
+ \textrm{ where $\{i_1, i_2,\smdots, i_k\}$ 
  is an ordered subset of $\{1,\smdots,n\}$}\\
 \vec{\phi}_{\{\}}
 &:= 
@@ -59,7 +60,7 @@ of possibly-empty sets $I_1$ and $I_2$}\\
 b^\prime,\, b,\, \psi\{\vec{\phi}\}\cdot \alpha
 &=
 \textrm{see Appendix \ref{chap:hochschild} 
-for standard operations on Hochschild (co)chains}\\
+for operations on Hochschild (co)chains}\\
 \end{align*}
 %
 \subsection{Notation for elements of Hochschild chains}
@@ -138,21 +139,21 @@ C(A_0 \to A_1 \to A_2 \to A_0)(h_0g_0f_0)\\
 \Upsilon_{A_0\bullet A_1, A_2}:
   C(A_0 \to A_1 \to A_2 \to A_0) 
 &\to
-\hat{\tau}_2^*C(A_2 \to A_0 \to A_1 \to A_2)
-  \quad \textrm{ map of dg comodules}\\
+\hat{\tau}_2^*C(A_2 \to A_0 \to A_1 \to A_2)\\
 (\vec{\phi} | \vec{\psi} | \vec{\theta}| \alpha) 
 &\mapsto 
 \Upsilon_{A_0,A_2}
-  (\vec{\phi} \bullet \vec{\psi} | \vec{\theta}| \alpha)\\
+  (\vec{\phi} \bullet \vec{\psi} | \vec{\theta}| \alpha)
+  \quad \textrm{ map of dg comodules}\\
 \Upsilon_{A_0,A_1\bullet A_2}:
   C(A_0 \to A_1 \to A_2 \to A_0) 
 &\to
-\hat{\tau}_2^{*2}C(A_1 \to A_2 \to A_0 \to A_1)
-  \quad \textrm{ map of dg comodules}\\
+\hat{\tau}_2^{*2}C(A_1 \to A_2 \to A_0 \to A_1)\\
 (\vec{\phi} | \vec{\psi} | \vec{\theta}| \alpha) 
 &\mapsto 
 \Upsilon_{A_0,A_1}
-  (\vec{\phi}|\vec{\psi} \bullet \vec{\theta}| \alpha)\\
+  (\vec{\phi}|\vec{\psi} \bullet \vec{\theta}| \alpha)
+  \quad \textrm{ map of dg comodules}\\
 \end{align*}
 
 \section{More Propositions}
