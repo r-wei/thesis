@@ -53,6 +53,7 @@ C_{-\bullet}(A_1, _{f_0h_0g_0}{A_1}_{id})\\
 \mathcal{B}_{n, m, p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha) 
 = & \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \\
                           \textrm{as ordered sets}}}
+  (-1)^{|\mathfrak{a}_1|(|\mathfrak{a}_1 + \mathfrak{a}_2|)}
   1 \otimes \lambda(\vec{\phi}_{I_1})\big( \lambda(\vec{\theta}) \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2})
   \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1 \big)
 \end{split}      
@@ -89,39 +90,73 @@ want to check that
 \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | b(\alpha) ) \; + 
 b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha ) \; + \\
 %twist before
+\sum \limits_{\substack{
+  I_1I_2 = \{1,\smdots,n\}\\
+  J_1J_2 = \{1,\smdots,m\}\\
+  \textrm{as ordered sets}}}
+  \epsilon_{I_1, J_1,\{1,\smdots,p-1\}} \cdot
  \mathcal{B}_{|I_1|, |J_1|, p-1}(\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \vec{\theta}_{\{1,\cdots, p-1\}} |
      \theta_{p} \{\vec{\psi}_{J_2}\} \{\vec{\phi}_{I_2}\} \cdot \alpha ) \; + \\
+%
+\sum \limits_{\substack{
+  I_1I_2 = \{1,\smdots,n\}\\
+  \textrm{as ordered sets}}}
+  \epsilon_{I_1,\{1,\smdots,m-1\},\{1,\smdots,p\}} \cdot   
  \mathcal{B}_{|I_1|, m-1, p}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \vec{\theta} |
-     \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha ) \; + 
+     \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha ) \; + \\
+%     
+\epsilon_{\{1,\smdots,n-1\},\{1,\smdots,m\},\{1,\smdots,p\}}\cdot
 \mathcal{B}_{n-1, m, p}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \vec{\theta} | 
      \phi_{n} \cdot \alpha) \; + \\
 %twist after
+\sum \limits_{\substack{
+  J_1J_2 = \{1,\smdots,m\}\\
+  K_1K_2 = \{1,\smdots,p\}\\
+  \textrm{as ordered sets}}}
+\epsilon_{\{1\},J_1,K_1} \cdot
 \phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot
      \mathcal{B}_{n-1, |J_2|, |K_2|}
      (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha) \; + \\
+\sum \limits_{\substack{
+  J_1J_2 = \{1,\smdots,m\}\\
+  \textrm{as ordered sets}}}
+\epsilon_{\{\},J_1\{1\}} \cdot     
 \theta_1 \{\vec{\psi}_{J_1}\} \cdot
      \mathcal{B}_{n, |J_2|, p-1}
-     (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha) \; +
+     (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha) \; +\\
+\epsilon_{\{\},\{1\},\{\}} \cdot        
 \psi_1 \cdot
      \mathcal{B}_{n, m-1, p}
      (\vec{\phi} | \vec{\psi}_{\{2,\cdots,m\}} | \vec{\theta} | \alpha) \; + \\
 %prop4
 \upsilon_{n, p \leq * \leq m+p}(\vec{\phi} | \vec{\psi} \bullet \vec{\theta} | \alpha ) \; + \\
+\sum \limits_{\substack{
+  I_1I_2 = \{1,\smdots,n\}\\
+  J_1J_2 = \{1,\smdots,m\}\\
+  K_1K_2 = \{1,\smdots,p\}\\
+  \textrm{as ordered sets}}}
+\epsilon_{I_1,J_1,K_1} \cdot 
 \upsilon_{|I_1| \leq * \leq |I_1| + |K_1|,|J_1|}(\vec{\theta}_{K_1} \bullet \vec{\phi}_{I_1}, \vec{\psi}_{J_1}, 
     \upsilon_{|J_2| \leq * \leq |I_2| + |J_2|,|K_2|}(\vec{\phi}_{I_2} \bullet \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha )) \\
 %
 =0.
 \end{aligned}
 \end{equation}
+where $\epsilon_{I_1,J_1,K_1} = 
+(-1)^{(\sum \limits_{r \in I_2}|\phi_r|+1)
+  ((\sum \limits_{s \in J_1}|\psi_s|+1) + 
+  (\sum \limits_{t \in K_1}|\theta_t|+1)) + 
+  (\sum \limits_{s \in J_2}|\psi_s|+1)
+  (\sum \limits_{t \in K_1}|\theta_t|+1)}$.
 In Equation \ref{eq:prop4_expand} above, 
 we call the terms in rows 1-3 the 
 ``standard terms'' in the computation of 
 $D(\mathcal{B}_{A_0,A_1,A_2})$, and the terms in rows 
-4-7 the ``extra terms'' in the computation 
-of $D(\mathcal{B}_{A_0,A_1,A_2})$. The terms in rows 8-9 
+4-9 the ``extra terms'' in the computation 
+of $D(\mathcal{B}_{A_0,A_1,A_2})$. The terms in rows 10-11 
 are $\pi_1$ of the righthand side of Equation 
 \ref{eq:prop4}; we will call these the 
-``8$^{th}$- and 9$^{th}$-row terms''.
+``10$^{th}$- and 11$^{th}$-row terms''.
 
 We compute the sum of the standard terms. 
 In Table \ref{table:t41}, the leftmost column lists 
@@ -217,18 +252,18 @@ cancel, so we're done.
        \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) 
        \lambda(\vec{\phi}_{I_2 \backslash i_1}) \mathfrak{a}_2$ &
     $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
-    9$^{th}$ row \\ \hline
+    11$^{th}$ row \\ \hline
 
     $f_0h_0g_0f_{i_1}a_0 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}) 
        \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_1$ &
     $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
-    9$^{th}$ row \\ \hline
+    11$^{th}$ row \\ \hline
 
     $\phi_1( \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}) 
        \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3, a_0, \mathfrak{a}_1 ) \otimes
        \lambda(\vec{\phi}_{I_1 \backslash 1}) \mathfrak{a}_2$ &
     $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
-    8$^{th}$ row \\ \hline
+    10$^{th}$ row \\ \hline
 
   \end{tabular}
 \caption{Expansion of $``$standard terms'' in 
@@ -243,7 +278,7 @@ terms that cancel them}
 \begin{table}
   \begin{tabular}{ p{6.25in} | p{2.5in} }
     \hline
-    Expression from ninth Row & Cancels with Extra Term \\ \hline
+    Expression from 11$^{th}$ Row & Cancels with Extra Term \\ \hline
     %twist after
     $\phi_1(\lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) [
       \lambda(\vec{\theta}_{K_3}) \lambda(\vec{\psi}_{J_4}) \lambda(\vec{\phi}_{I_5})
@@ -274,7 +309,7 @@ terms that cancel them}
 
     \hline
   \end{tabular}
-\caption{Expansion of remaining $``$ninth row terms'' in 
+\caption{Expansion of remaining $``$11$^{th}$ row terms'' in 
 Equation \ref{eq:prop4_expand} and the $``$extra terms''
 that cancel them}
 \label{table:t42}
