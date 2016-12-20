@@ -33,7 +33,8 @@ the following maps to cogenerators:
 \begin{equation}
 \label{eq:def_sigma}
 B_{n, m} (\vec{\phi} | \vec{\psi} | \alpha) 
-= 1 \otimes \lambda(\psi)\lambda(\phi) \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1.
+= (-1)^{|\mathfrak{a}_1|(|\mathfrak{a}_1|+|\mathfrak{a}_2|)}
+1 \otimes \lambda(\psi)\lambda(\phi) \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1.
 \end{equation}
 Then, $D(B_{A_0,A_1}) = \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id$ where
 $\Upsilon$ is defined in Proposition 
@@ -56,16 +57,36 @@ B_{n-1, m} ( b^\prime(\vec{\phi}) | \vec{\psi} | \alpha ) \; +
 B_{n, m-1} ( \vec{\phi} | b^\prime(\vec{\psi}) | \alpha ) \; + \\
 &B_{n, m} ( \vec{\phi} | \vec{\psi} | b(\alpha) ) \; + 
 b \circ B_{n, m} ( \vec{\phi} | \vec{\psi} | \alpha ) \; + \\
-&B_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha ) \; + 
+%
+& (-1)^{(\sum \limits_{1 \leq q \leq m}|\psi_q|+1)(|\phi_n|+1)}
 B_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \phi_{n} \cdot \alpha) \; + \\
-&\phi_1 \{ \psi_{J_1}\} \cdot B_{\vec{\phi}|-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha ) \; + 
-\psi_1 \cdot B_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, |\vec{\psi}\}} | \alpha)  - \\ 
-&\upsilon_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha ))  - \pi_1(\vec{\phi} | \vec{\psi} | \alpha) \\
+%
+& (-1)^{(|\psi_1|+1)(\sum \limits_{1 \leq p \leq n}|\phi_p|+1)}
+\psi_1 \cdot B_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha)  + \\ 
+%
+& \sum \limits_{\substack{
+    I_1I_2 = \{1,\smdots,n\}\\
+    \textrm{as ordered setts}}}
+(-1)^{(\sum \limits_{1 \leq q \leq m-1}|\psi_q|+1)(\sum \limits_{p \in I_2}|\phi_p|+1)}
+B_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha ) \; + \\
+%
+& \sum \limits_{\substack{
+    J_1J_2 = \{1,\smdots,m\}\\
+    \textrm{as ordered setts}}}
+(-1)^{(\sum \limits_{q \in J_1}|\psi_q|+1)(\sum \limits_{2 \leq p \leq n}|\phi_p|+1)}
+\phi_1 \{ \psi_{J_1}\} \cdot B_{n-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha ) \; - \\
+%
+& \sum \limits_{\substack{
+    I_1I_2 = \{1,\smdots,n\}\\
+    J_1J_2 = \{1,\smdots,m\}\\
+    \textrm{as ordered setts}}}
+(-1)^{(\sum \limits_{q \in J_1}|\psi_q|+1)(\sum \limits_{p \in I_2}|\phi_p|+1)}
+\upsilon_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha ))  - \pi_1(\vec{\phi} | \vec{\psi} | \alpha) \\
 &= 0.
 \end{aligned}
 \end{equation}
 
-We will call the terms in the first two rows the ``standard terms'' in the computaion of $D(B_{A_0,A_1})$, and the terms in the second two rows the ``extra terms'' in the computation of $D(B_{A_0,A_1})$. The fifth row is $\pi_1(\Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id)$. 
+We will call the terms in rows 1-2 the ``standard terms'' in the computation of $D(B_{A_0,A_1})$, and the terms in rows 3-6 the ``extra terms'' in the computation of $D(B_{A_0,A_1})$. The seventh row is $\pi_1(\Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id)$. 
 
 We compute the sum of the standard terms. 
 In Table \ref{table:t21}, the leftmost column 
@@ -75,10 +96,10 @@ gives the standard term from which the expression
 comes, and the rightmost column gives the extra 
 term that cancels the expression. 
 Table \ref{table:t22} lists the remaining terms 
-from the fifth row that are not already listed in 
+from the seventh row that are not already listed in 
 Table \ref{table:t21}. In Table \ref{table:t22}, 
 the left column lists the remaining expressions 
-that don't cancel in the fifth row, and the 
+that don't cancel in the seventh row, and the 
 right column gives the extra term that cancels 
 the expression.
 
@@ -131,7 +152,7 @@ $\newline
 \begin{center}
   \begin{tabular}{ p{6.25in} | p{2.5in} }
     \hline
-    Expression from Fifth Row & Cancels with Extra Term \\ \hline
+    Expression from seventh Row & Cancels with Extra Term \\ \hline
 
     $\psi_1(\lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_4}) \mathfrak{a}_4, \phi_{|I_1|+1} (\lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_5}) \mathfrak{a}_5, a_0, \mathfrak{a}_1), \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) \mathfrak{a}_2) \otimes \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3$ &
      $\psi_1 \{ \vec{\phi}_{I_1} \} \cdot B_{|I_2|, m-1} (\vec{\phi}_{I_2} | \vec{\psi}_{\{2,\cdots,m\}} | \alpha)$ \\ \hline
@@ -145,7 +166,7 @@ $\newline
     \hline
   \end{tabular}
 \end{center}
-\caption{Expansion of remaining $``$fifth-row terms'' in 
+\caption{Expansion of remaining $``$seventh-row terms'' in 
 Equation \ref{eq:upsilon_homotopy} and the 
 $``$extra terms'' that cancel them}
 \label{table:t22}

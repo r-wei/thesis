@@ -333,13 +333,17 @@ $
 \phi_{n,i_n+1}\smdots \phi_{n,k_n}) 
 $
 in the cocomposition is:
-$$
+\begin{equation}
+\label{eq:coprod_signs}
 (-1)^{\sum \limits_{\substack{
   1 \leq p \leq n\\ 1 \leq r<p}}\;
 (\sum \limits_{1\leq q \leq i_p} |\phi_{p,q}|+1)
 (\sum \limits_{i_r+1 \leq s \leq k_r} |\phi_{r,s}|+1)}
-$$
+\end{equation}
 %
+In other words, moving $\phi_{i,j}$ past 
+$\phi_{p,q}$ introduces a factor of 
+$(-1)^{(|\phi_{i,j}|+1)(|\phi_{p,q}|+1)}$.
 It's clear from the definitions that
 $(B(n), \Delta_{B(n)}, \epsilon_{B(n)})$ 
 satisfy the diagrams needed to form a dg cocategory. 

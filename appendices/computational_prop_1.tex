@@ -51,7 +51,7 @@ C(A_1 \to A_0 \to A_1)(g_0,f_0)\\
 C_{-\bullet}(A_1, _{f_0g_0}{A_1}_{id})\\
 \upsilon_{n,m}^{f_0,g_0} 
 (\vec{\phi} | \vec{\psi} | \alpha) = 
-& \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \\
+& \sum_{\substack{I_1I_2 = \{2,\cdots,n\} \\
                           \textrm{as ordered sets}}}
   \phi_1(\lambda(\vec{\psi})\lambda(\vec{\phi_{I_2}})\cdot \mathfrak{a}_3, a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\phi_{I_1}}) \cdot \mathfrak{a}_2 \\
 &\phantom{{}move{}}
@@ -84,16 +84,16 @@ On one hand,
 	\big( \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
 						  J_1J_2 = \{1,2,\cdots,m\} \\
 				          \textrm{as ordered sets}}} 
-    (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha) \, \big) \\
+    \pm (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha) \, \big) \\
 &= \sum_{\substack{I_1I_2I_3 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
 				   J_1J_2J_3 = \{1,2,\cdots,m\} \\
 				   \textrm{as ordered sets}}} 
-    (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
+    \pm (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
     (\vec{\phi}_{I_2} | \vec{\psi}_{J_2}) \otimes 
     \upsilon_{|I_3|,|J_3|}(\vec{\phi}_{I_3} | \vec{\psi}_{J_3} | \alpha) \\
 \end{align*}
-
-On the other hand,
+where the signs are as in Equation 
+\ref{eq:coprod_signs}. On the other hand,
 \begin{align*}
 &\phantom{{}={}}
 [\Delta_{\hat{\tau}^*C(A_1 \to A_0 \to A_1)} 
@@ -103,16 +103,18 @@ On the other hand,
 	\big( \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
 						  J_1J_2 = \{1,2,\cdots,m\} \\
 				          \textrm{as ordered sets}}}
-	(\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
+	\pm (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
     \upsilon_{|I_2|,|J_2|}(\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha) \, \big)\\
 &= \sum_{\substack{I_1I_2I_3 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
 				   J_1J_2J_3 = \{1,2,\cdots,m\} \\
 				   \textrm{as ordered sets}}} 
-    (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
+    \pm (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
     (\vec{\phi}_{I_2} | \vec{\psi}_{J_2}) \otimes 
     \upsilon_{|I_3|,|J_3|}(\vec{\phi}_{I_3} | \vec{\psi}_{J_3} | \alpha).   				          
 \end{align*}
-Clearly $(id_B \otimes \Upsilon) \circ 
+where the signs are as in Equation 
+\ref{eq:coprod_signs}. Clearly 
+$(id_B \otimes \Upsilon) \circ 
 \Delta_{C(A_0 \to A_1 \to A_0)} = 
 \Delta_{\hat{\tau}^*C(A_1 \to A_0 \to A_1)} 
 \circ \Upsilon$.
@@ -134,16 +136,26 @@ to check that
 \upsilon_{n, m-1} ( \vec{\phi} | b^\prime(\vec{\psi}) | \alpha ) \; + \\
 &\upsilon_{n, m} ( \vec{\phi} | \vec{\psi} | b(\alpha) ) \; + 
 b \circ \upsilon_{n, m} ( \vec{\phi} | \vec{\psi} | \alpha ) \; + \\
-&\upsilon_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\} \cdot \alpha ) \; + 
-\upsilon_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \phi_{n}\cdot \alpha) \; + \\
-&\phi_1 \{ \psi_{J_1}\}\cdot \upsilon_{\vec{\phi}|-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha ) \; + 
-\psi_1\cdot \upsilon_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, |\vec{\psi}\}} | \alpha) \\ 
+& \sum \limits_{\substack{
+  I_1I_2 = \{1,\smdots,n\}\\ 
+  \textrm{as ordered sets}}}
+(-1)^{(\sum \limits_{p\in I_2}|\phi_p|+1)(\sum \limits_{1\leq q \leq m-1}|\psi_q|+1)}
+  \upsilon_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\} \cdot \alpha ) \; + \\
+& \sum \limits_{\substack{
+  J_1J_2 = \{1,\smdots,m\}\\ 
+  \textrm{as ordered sets}}}
+  (-1)^{(\sum \limits_{2 \leq p\leq n}|\phi_p|+1)(\sum \limits_{q\in J_2}|\psi_q|+1)}
+\phi_1 \{ \psi_{J_1}\}\cdot \upsilon_{n-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha ) \; + \\  
+& (-1)^{(|\phi_n|+1)(\sum \limits_{1\leq q \leq m}|\psi_q|+1)}
+  \upsilon_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi} | \phi_{n}\cdot \alpha) \; + \\
+& (-1)^{(|\psi_1|+1)(\sum \limits_{1 \leq p \leq n}|\phi_p|+1)}
+\psi_1\cdot \upsilon_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha) \\ 
 &= 0.
 \end{aligned}
 \end{equation}
 In Equation \ref{eq:upsilon}, we will call the 
-terms in the first two rows the ``standard terms'', 
-and the terms in the second two rows the 
+terms in rows 1-2 the ``standard terms'', 
+and the terms in rows 3-6 the 
 ``extra terms''.
 
 We compute the sum of the standard terms. 

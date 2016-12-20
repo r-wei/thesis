@@ -54,14 +54,18 @@
 
 
 % Use \includeonly to select the 
-\includeonly{notation, 
+\includeonly{notation, bibliography, 
 appendices/lambda, appendices/computations, 
+appendices/hochschild, 
 Bn_Cn/motivation, Bn_Cn/dg_cocats, Bn_Cn/dg_comods,
 pb_pf_adj/cyclic_object_Bn, pb_pf_adj/motivation, 
 pb_pf_adj/pullbacks, pb_pf_adj/pullback_examples,
 pb_pf_adj/adjunction, pb_pf_adj/maps_lambda_shriek, 
 homotopies/motivation, homotopies/homotopies, 
-homotopies/higher_homotopies}	
+homotopies/higher_homotopies, 
+homotopies/a_infinity_functor, 
+homotopies/cobar}	
+
 
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%
@@ -116,9 +120,6 @@ homotopies/higher_homotopies}
 
 
 
-\mainmatter             % Actual text starts here.
-% If there is an introduction it must be the first chapter
-%
 \chapter{$B(n)$ and $C(n)$}
 	\include{Bn_Cn/motivation}
 	\include{Bn_Cn/dg_cocats}
@@ -136,57 +137,23 @@ homotopies/higher_homotopies}
 	\include{homotopies/motivation}
 	\include{homotopies/homotopies}
 	\include{homotopies/higher_homotopies}
-	\section{A functor $\chi_\infty \to \mathcal{D}_\infty$}
-		Not yet written
-	\section{Take Cobar}		
-		Not yet written
-		%A homotopically cyclic object in $\infty$-categories in dg categorieswith a trace functor
-
-
-% The command \includeonly above allows to include a selected 
-% set of chapters only.
+	\include{homotopies/a_infinity_functor}
+	\include{homotopies/cobar}
+	
 
 % Uncomment the 'singlespace' environment and '\bibsep' command
 % if needed - some bibliographic styles overide the definition
 % of 'thebibliography' in nuthesis.cls
-%
-% \begin{singlespace}
-% %\bibsep 12pt
-% \clearpage\phantomsection % needed for hyperlikns to work correctly
-% \begin{thebibliography}{xxx}
-
-% \bibitem{label1} A bibliographic item.  A bibliographic item.  A
-% bibliographic item.  A bibliographic item.
-% \bibitem{label2} Another bibliographic item.  
-% \bibitem{label3} Yet another bibliographic item.  
-% % The usages of \bibitem and \cite{..} are 
-% % explained in Section 4.3 (page 73) of % LaTeX manual.
-% % Or you may use BibTeX.
-% \end{thebibliography}
-% \end{singlespace}
-
-% (The following suggested by Francisco Iacobelli - 5/11/2010)
-% In case, you want to use BibTeX, you should replace (or comment)
-% the bibliography environment.
-% Instead uncomment the following 3 lines and replace <bib file>
-% with your .bib file:
-% \renewcommand\refname{\begin{centering}References\end{centering}}
-% \bibliography{<bib file>}
-% \bibliographystyle{acm} %or another suitable style.
-
-
+\begin{singlespace}
+%\bibsep 12pt
+\clearpage\phantomsection % needed for hyperlikns to work correctly
+\include{bibliography}
+\end{singlespace}
 
 \appendix		% Appendix begins here (optional).
-
-%\appendices	        % If more than one appendix chapters,
-				% use appendices instead of appendix
+%\appendices	% If more than one appendix chapters
 \include{appendices/lambda}
 \include{appendices/computations}
-
-%\chapter{Notation}	% First appendix chapter, i.e., Appendix A.
-	%\include{notation}
-
-
+\include{appendices/hochschild}
 
 \end{document}
-

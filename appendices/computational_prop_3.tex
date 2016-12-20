@@ -24,23 +24,57 @@ onto cogenerators. We check this directly.
 \begin{aligned}
 \pi_1 \circ \Upsilon_{A_0,A_1} \circ B_{A_0,A_1} 
   (\vec{\phi} | \vec{\psi} | \alpha ) 
-&= \upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
-  B_{|I_2|, |J_2|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \alpha)) \\
-&= \upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
+&= 
+\sum \limits_{\substack{
+  I_1I_2 = \{1,\smdots,n\}\\
+  J_1J_2 = \{1,\smdots,m\}\\
+  \textrm{as ordered sets}}}
+\epsilon_{I_1,J_1}  
+  \upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
+    B_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha)) \\
+&= 
+\sum \limits_{\substack{
+  I_1I_2 = \{1,\smdots,n\}\\
+  J_1J_2 = \{1,\smdots,m\}\\
+  \textrm{as ordered sets}}}
+\epsilon_{I_1,J_1}  
+\upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
   1 \otimes \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_2}) 
   \mathfrak{a}_2, a_0, \mathfrak{a}_1) \\
-&= 1 \otimes \lambda(\vec{\phi}_{I_1}) \big( 
+&= 
+\sum \limits_{\substack{
+  I_1I_2 = \{1,\smdots,n\}\\
+  J_1J_2 = \{1,\smdots,m\}\\
+  \textrm{as ordered sets}}}
+\epsilon_{I_1,J_1}  
+1 \otimes \lambda(\vec{\phi}_{I_1}) \big( 
   \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) 
   \mathfrak{a}_2, a_0, \mathfrak{a}_1 \big)
 \end{aligned}
 \end{equation*}
+where $\epsilon_{I_1,J_1} = 
+(-1)^{(\sum \limits_{p\in I_2}|\phi_p|+1)
+(\sum \limits_{q \in J_1}|\psi_q|+1)}$.
 %
 \begin{align*}
+& \phantom{{}={}}
 \pi_1 \circ B_{A_1,A_0} \circ \Upsilon_{A_0,A_1} 
-  (\vec{\phi} | \vec{\psi} | \alpha ) 
-&= B_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | 
-  \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \alpha)) \\
-&= B_{|J_1|, |I_1|} \big(\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \phi_{|I_1|+1} (
+  (\vec{\phi} | \vec{\psi} | \alpha ) \\
+&=
+\sum \limits_{\substack{
+  I_1I_2 = \{1,\smdots,n\}\\
+  J_1J_2 = \{1,\smdots,m\}\\
+  \textrm{as ordered sets}}}
+\epsilon_{I_1,J_1}   
+B_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | 
+  \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha)) \\
+&= 
+\sum \limits_{\substack{
+  I_1I_2 = \{1,\smdots,n\}\\
+  J_1J_2 = \{1,\smdots,m\}\\
+  \textrm{as ordered sets}}}
+\epsilon_{I_1,J_1}   
+B_{|J_1|, |I_1|} \big(\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \phi_{|I_1|+1} (
   \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) 
   \mathfrak{a}_3, a_0, \mathfrak{a}_1) \otimes 
   \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) 
@@ -49,7 +83,13 @@ onto cogenerators. We check this directly.
   + a_0 \otimes \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) 
   \mathfrak{a}_1 \; \; \; 
   \text{if }J_2 = \emptyset \big) \\
-&= 1 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}_{J_1}) 
+&= 
+\sum \limits_{\substack{
+  I_1I_2 = \{1,\smdots,n\}\\
+  J_1J_2 = \{1,\smdots,m\}\\
+  \textrm{as ordered sets}}}
+\epsilon_{I_1,J_1}   
+1 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}_{J_1}) 
   \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3 \otimes 
   \phi_{|I_1|+1} (\lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_4}) 
   \mathfrak{a}_4, a_0, \mathfrak{a}_1) \otimes 
