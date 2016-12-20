@@ -33,7 +33,7 @@ the following maps to cogenerators:
 \begin{equation}
 \label{eq:def_sigma}
 B_{n, m} (\vec{\phi} | \vec{\psi} | \alpha) 
-= (-1)^{|\mathfrak{a}_1|(|\mathfrak{a}_1|+|\mathfrak{a}_2|)}
+= \eta_{\mathfrak{a}_1,\mathfrak{a}_2}\cdot
 1 \otimes \lambda(\psi)\lambda(\phi) \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1.
 \end{equation}
 Then, $D(B_{A_0,A_1}) = \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id$ where
@@ -58,29 +58,29 @@ B_{n, m-1} ( \vec{\phi} | b^\prime(\vec{\psi}) | \alpha ) \; + \\
 &B_{n, m} ( \vec{\phi} | \vec{\psi} | b(\alpha) ) \; + 
 b \circ B_{n, m} ( \vec{\phi} | \vec{\psi} | \alpha ) \; + \\
 %
-& (-1)^{(\sum \limits_{1 \leq q \leq m}|\psi_q|+1)(|\phi_n|+1)}
+& \epsilon_{\{n\},\{1,\smdots,m\}}\cdot
 B_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \phi_{n} \cdot \alpha) \; + \\
 %
-& (-1)^{(|\psi_1|+1)(\sum \limits_{1 \leq p \leq n}|\phi_p|+1)}
+& \epsilon_{\{1,\smdots,n\},\{1\}}\cdot
 \psi_1 \cdot B_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha)  + \\ 
 %
 & \sum \limits_{\substack{
     I_1I_2 = \{1,\smdots,n\}\\
     \textrm{as ordered setts}}}
-(-1)^{(\sum \limits_{1 \leq q \leq m-1}|\psi_q|+1)(\sum \limits_{p \in I_2}|\phi_p|+1)}
+\epsilon_{I_2,\{1,\smdots,m-1\}}\cdot
 B_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha ) \; + \\
 %
 & \sum \limits_{\substack{
     J_1J_2 = \{1,\smdots,m\}\\
     \textrm{as ordered setts}}}
-(-1)^{(\sum \limits_{q \in J_1}|\psi_q|+1)(\sum \limits_{2 \leq p \leq n}|\phi_p|+1)}
+\epsilon_{\{2,\smdots,n\},J_1}\cdot
 \phi_1 \{ \psi_{J_1}\} \cdot B_{n-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha ) \; - \\
 %
 & \sum \limits_{\substack{
     I_1I_2 = \{1,\smdots,n\}\\
     J_1J_2 = \{1,\smdots,m\}\\
     \textrm{as ordered setts}}}
-(-1)^{(\sum \limits_{q \in J_1}|\psi_q|+1)(\sum \limits_{p \in I_2}|\phi_p|+1)}
+\epsilon_{I_1,J_2}\cdot
 \upsilon_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha ))  - \pi_1(\vec{\phi} | \vec{\psi} | \alpha) \\
 &= 0.
 \end{aligned}

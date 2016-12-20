@@ -11,13 +11,10 @@ Background I need:
 - NOTE: we prove the pb/pf adjunction for hom SETS--do we need more?
 ----------
 Edit:
--fix figure references to label captions
--check finite vs infinite sums
 - check formulas for consistent notation and indexing
 - check margins
 - include vs input
 http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
-- functor vs dg functor???
 
 List of notation:
 -Lambda

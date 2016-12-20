@@ -53,7 +53,7 @@ C_{-\bullet}(A_1, _{f_0h_0g_0}{A_1}_{id})\\
 \mathcal{B}_{n, m, p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha) 
 = & \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \\
                           \textrm{as ordered sets}}}
-  (-1)^{|\mathfrak{a}_1|(|\mathfrak{a}_1 + \mathfrak{a}_2|)}
+  \eta_{\mathfrak{a}_1,\mathfrak{a}_2}\cdot
   1 \otimes \lambda(\vec{\phi}_{I_1})\big( \lambda(\vec{\theta}) \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2})
   \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1 \big)
 \end{split}      
@@ -94,18 +94,18 @@ b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha 
   I_1I_2 = \{1,\smdots,n\}\\
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
-  \epsilon_{I_1, J_1,\{1,\smdots,p-1\}} \cdot
+  \epsilon_{I_2, J_1,J_2,\{1,\smdots,p-1\}} \cdot
  \mathcal{B}_{|I_1|, |J_1|, p-1}(\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \vec{\theta}_{\{1,\cdots, p-1\}} |
      \theta_{p} \{\vec{\psi}_{J_2}\} \{\vec{\phi}_{I_2}\} \cdot \alpha ) \; + \\
 %
 \sum \limits_{\substack{
   I_1I_2 = \{1,\smdots,n\}\\
   \textrm{as ordered sets}}}
-  \epsilon_{I_1,\{1,\smdots,m-1\},\{1,\smdots,p\}} \cdot   
+  \epsilon_{I_2,\{1,\smdots,m-1\},\{m\},\{1,\smdots,p\}} \cdot   
  \mathcal{B}_{|I_1|, m-1, p}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \vec{\theta} |
      \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha ) \; + \\
 %     
-\epsilon_{\{1,\smdots,n-1\},\{1,\smdots,m\},\{1,\smdots,p\}}\cdot
+\epsilon_{\{n\},\{1,\smdots,m\},\{\},\{1,\smdots,p\}}\cdot
 \mathcal{B}_{n-1, m, p}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \vec{\theta} | 
      \phi_{n} \cdot \alpha) \; + \\
 %twist after
@@ -113,18 +113,18 @@ b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha 
   J_1J_2 = \{1,\smdots,m\}\\
   K_1K_2 = \{1,\smdots,p\}\\
   \textrm{as ordered sets}}}
-\epsilon_{\{1\},J_1,K_1} \cdot
+\epsilon_{\{2,\smdots,n\},J_1,J_2,K_1} \cdot
 \phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot
      \mathcal{B}_{n-1, |J_2|, |K_2|}
      (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha) \; + \\
 \sum \limits_{\substack{
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
-\epsilon_{\{\},J_1\{1\}} \cdot     
+\epsilon_{\{1,\smdots,n\},J_1,J_2,\{1\}} \cdot     
 \theta_1 \{\vec{\psi}_{J_1}\} \cdot
      \mathcal{B}_{n, |J_2|, p-1}
      (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha) \; +\\
-\epsilon_{\{\},\{1\},\{\}} \cdot        
+\epsilon_{\{1,\smdots,n\},\{1\},\{2,\smdots,m\},\{\}} \cdot        
 \psi_1 \cdot
      \mathcal{B}_{n, m-1, p}
      (\vec{\phi} | \vec{\psi}_{\{2,\cdots,m\}} | \vec{\theta} | \alpha) \; + \\
@@ -135,19 +135,13 @@ b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha 
   J_1J_2 = \{1,\smdots,m\}\\
   K_1K_2 = \{1,\smdots,p\}\\
   \textrm{as ordered sets}}}
-\epsilon_{I_1,J_1,K_1} \cdot 
+\epsilon_{I_2,J_1,J_2,K_1} \cdot 
 \upsilon_{|I_1| \leq * \leq |I_1| + |K_1|,|J_1|}(\vec{\theta}_{K_1} \bullet \vec{\phi}_{I_1}, \vec{\psi}_{J_1}, 
     \upsilon_{|J_2| \leq * \leq |I_2| + |J_2|,|K_2|}(\vec{\phi}_{I_2} \bullet \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha )) \\
 %
 =0.
 \end{aligned}
 \end{equation}
-where $\epsilon_{I_1,J_1,K_1} = 
-(-1)^{(\sum \limits_{r \in I_2}|\phi_r|+1)
-  ((\sum \limits_{s \in J_1}|\psi_s|+1) + 
-  (\sum \limits_{t \in K_1}|\theta_t|+1)) + 
-  (\sum \limits_{s \in J_2}|\psi_s|+1)
-  (\sum \limits_{t \in K_1}|\theta_t|+1)}$.
 In Equation \ref{eq:prop4_expand} above, 
 we call the terms in rows 1-3 the 
 ``standard terms'' in the computation of 

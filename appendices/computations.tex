@@ -48,6 +48,13 @@ I_1I_2
 &:= 
 \textrm{concatenation as ordered sets 
 of possibly-empty sets $I_1$ and $I_2$}\\
+\epsilon_{I_1,J_1} 
+&:= 
+(-1)^{(\sum \limits_{r \in I_1}|\phi_r|+1)
+  (\sum \limits_{s \in J_1}|\psi_s|+1) }\\
+&\phantom{{}:={}}  
+  \quad \textrm{when $I_1$, $J_1$ are 
+  ordered indexing sets}\\
 \lambda({\vec{\psi}}),\, \tilde{\delta},\, 
 b^\prime,\, b,\, \psi\{\vec{\phi}\}\cdot \alpha
 &=
@@ -80,7 +87,11 @@ a_0 \otimes \mathfrak{a}_1 \otimes \phi(\mathfrak{a}_2)
 \otimes \mathfrak{a}_3.
 $$
 If $\mathfrak{a}_1 = a_1 \otimes \smdots \otimes a_p$, 
-then $|\mathfrak{a}_1| = p$.
+then $|\mathfrak{a}_1| = p$. For $a_0\otimes \mathfrak{a}_1
+\otimes \mathfrak{a}_2$, we write 
+$\eta_{\mathfrak{a}_1,\mathfrak{a}_2} = 
+(-1)^{|\mathfrak{a}_1|(|\mathfrak{a}_1| + 
+|\mathfrak{a}_2|)}$.
 
 \section{Computational Propositions}
 \input{appendices/computational_prop_1}
@@ -113,6 +124,17 @@ A_0 \ar@/^5pc/[r]^{f_0}
 }\\
 &\in 
 C(A_0 \to A_1 \to A_2 \to A_0)(h_0g_0f_0)\\
+\epsilon_{I_2,J_1,J_2,K_1} 
+&:= 
+(-1)^{(\sum \limits_{r \in I_1}|\phi_r|+1)
+  ((\sum \limits_{s \in J_1}|\psi_s|+1) + 
+  (\sum \limits_{t \in K_1}|\theta_t|+1))}\cdot\\
+&\phantom{{}:={}} 
+  (-1)^{(\sum \limits_{s \in J_2}|\psi_s|+1)
+  (\sum \limits_{t \in K_1}|\theta_t|+1)}\\
+&\phantom{{}:={}}  
+  \quad \textrm{when $I_1$, $J_1$, $J_2$, $K_1$, 
+  are ordered indexing sets}\\  
 \Upsilon_{A_0\bullet A_1, A_2}:
   C(A_0 \to A_1 \to A_2 \to A_0) 
 &\to
