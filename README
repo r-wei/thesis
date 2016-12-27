@@ -3,6 +3,8 @@ Big To Do's:
 1) Intro/Context, abstract
 - background and motivation
 - alg in algs: apply cobar/use MS, get an action of an explicit model of E2
+
+2) defense presentation
 --------
 Background I need:
 - conilp + counital --> coproduct lands in finite sums (maybe using a cofree adjunction?)
@@ -15,3 +17,4 @@ Edit:
 - check margins
 - include vs input
 http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
+
