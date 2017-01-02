@@ -2,6 +2,14 @@
 \usetheme{AnnArbor}
 \usecolortheme{dolphin}
 
+\usepackage{color}
+\usepackage[all]{xy}
+\usepackage{bm}
+
+%make dots smaller
+\newcommand \smdots{\makebox[1em][c]{.\hfil.\hfil.}}
+\let \dots \smdots
+
 %info for title slide
 \title{Title}
 \subtitle{Subtitle}
@@ -15,18 +23,130 @@
 \frame{\titlepage}
 \frame{\tableofcontents}
 
-\section{First Section}
-	\begin{frame}
-		\frametitle{This is the first slide}
-		\begin{theorem}
-		Blahbalbsdlfkjasd;lkfajsfd
-		\end{theorem}
-	\end{frame}
+\frame{
+	\frametitle{A more categorical appropach
+	(or somehow otherwise motivate $B(n)$)}
+	Fix an algebra, $A$. \\
+	Define a dg category, $Hoch(A)$: \\
 
-\section{Second Section}
-	\begin{frame}
-		\frametitle{This is the second slide}
-		\framesubtitle{A bit more information about this}
-	\end{frame}
+	\only<2-5>
+	{$\quad$Objects: algebra maps $f:A \to A$ \\
+	$\quad$Morphisms: $Hoch(A)(f,g) = 
+	(C^\bullet(A,\, _fA_g),\, _f\delta_g)$ \\}
+	
+	\only<3>
+	{\begin{align*}
+	_f\delta_g(\phi)(a_1 \otimes \dots \otimes a_n) 
+	= &\epsilon_\phi \bigg( 
+	  \textcolor{red}{f(a_1) \cdot}
+	  \phi(a_2,\dots, a_n) \,+ \\
+	  &\phantom{mo} 
+	  + \sum \limits_{1 \leq i \leq n-1} (-1)^i
+	    \phi(a_1, \dots, a_ia_{i+1}, \dots, a_n) \,+ \\
+	  &\phantom{mo}
+	  + (-1)^{n}\phi(a_1, \dots, a_{n-1})
+	  \textcolor{red}{\cdot g(a_n)} \bigg)\\
+	\epsilon_\phi = 
+	& (-1)^{|\phi|+1}	  
+	\end{align*}}
+
+	\only<4-5>
+	{$\quad$Composition: cup product on cochains\\}
+
+	\only<5>
+	{$$\xymatrix{
+		A 
+		\ar@/^2pc/[r]^f_{\substack{\\\\\Downarrow \phi_1}}
+		\ar[r]_{\substack{g\\\Downarrow \phi_2}} 
+		\ar@/_2pc/[r]_h 
+		& A 
+		\ar@{~>}[r]^{compose}
+		& A
+		\ar@/^2pc/[r]^f_{\substack{\\\\\\ \phi_1 \cup \phi_2\\ \Downarrow}}
+		\ar@/_2pc/[r]_h
+		& A
+		}$$}
+
+	\only<6-8> 
+	{$$\resizebox{.85\vsize}{!}
+	  {\xymatrix{
+	  Bar(Hoch(A)) \otimes Bar(Hoch(A)) 
+	  \ar[r]^{\quad\quad\quad\quad\quad \bullet}
+	  & Hoch(A)}}$$}
+
+	\only<7>
+	{\resizebox{1.3\vsize}{!}
+	   {\xymatrix{
+		A 
+		\ar@/^4pc/[rrr]^{f_0}_{\substack{\\\textcolor{blue}{\Downarrow \phi_1}}}
+		\ar@/^2pc/[rrr]^{f_1}_{\substack{\\\textcolor{blue}{\Downarrow \phi_2}}}
+		\ar@/^0pc/[rrr]^{f_2}_{\textcolor{blue}{\vdots}}
+		\ar@/_3pc/[rrr]^{f_{n-1}}_{\substack{\\\textcolor{blue}{\Downarrow \phi_n}}}
+		\ar@/_4pc/[rrr]_{f_n} 
+		&&&	A}
+	 \quad A morphism from $f_0$ to $f_n$ in Bar(Hoch(A))}
+ 	}
+
+ 	\only<8>
+	{$$\resizebox{.85\vsize}{!}
+	  {\xymatrix{
+		A 
+		\ar@/^4pc/[rrrr]^{f_0}_{\substack{\\\textcolor{blue}{\Downarrow \phi_1}}}
+		\ar@/^2pc/[rrrr]^{f_1}_{\substack{\\\textcolor{blue}{\Downarrow \phi_2}}}
+		\ar@/^0pc/[rrrr]^{f_2}_{\textcolor{blue}{\vdots}}
+		\ar@/_3pc/[rrrr]^{f_{n-1}}_{\substack{\\\textcolor{blue}{\Downarrow \phi_n}}}
+		\ar@/_4pc/[rrrr]_{f_n} 
+		&&&&	A 
+		\ar@/^1pc/[r]^{g_0}_{\substack{\\\\\textcolor{blue}{\Downarrow \psi}}}
+		\ar@/_1pc/[r]_{g_1} 
+		& A 
+		\ar@{|->}[r]^{\bullet}
+		& A
+		\ar@/^2pc/[rr]^{g_0f_0}_{\substack{\\\\\\ \textcolor{blue}{\psi\{\phi_1, \dots, \phi_n\}}\\ \textcolor{blue}{\Downarrow}}}
+		\ar@/_2pc/[rr]_{g_1f_n}
+		&& A
+	  }}$$
+	}
+
+	\only<9-> 
+	{$\newline$ In this context, braces give multilinear maps: 
+	$$\resizebox{.85\vsize}{!}
+	  {\xymatrix{
+	  Bar(Hoch(A)) \otimes Bar(Hoch(A)) 
+	  \ar[r]^{\quad\quad\quad\quad\quad \bullet}
+	  \ar@{.>}[rd]_\bullet
+	  & Hoch(A)\\
+	  & Bar(Hoch(A))
+	  \ar@{->>}[u]}}$$
+	Then, (Bar(Hoch(A)), $\bullet$) is an algebra in DGCocats.
+	}
+}
+% 	$$\psi\{\phi_1, \dots, \phi_n\}(a_1,\dots,a_q) = 
+% 	\sum \limits_{1 \leq p \leq n} 
+% 	(-1)^{(|\phi_p|+1)i_p}
+% 	\psi(a_1, \dots, a_{i_1}, \phi_1(a_{i_1+1}, \dots), 
+% 	\dots, \phi_n(a_{i_n+1}, \dots), \dots)
+% 	$$
+% }
+
+
+
+
+
+
+
+% \section{First Section}
+% 	\begin{frame}
+% 		\frametitle{This is the first slide}
+% 		\begin{theorem}
+% 		Blahbalbsdlfkjasd;lkfajsfd
+% 		\end{theorem}
+% 	\end{frame}
+
+% \section{Second Section}
+% 	\begin{frame}
+% 		\frametitle{This is the second slide}
+% 		\framesubtitle{A bit more information about this}
+% 	\end{frame}
 % etc
 \end{document}
