@@ -7,6 +7,7 @@
 \usepackage{bm}
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{ulem} %\sout
 
 \theoremstyle{plain}
 \newtheorem{prop}[theorem]{Proposition}
@@ -410,6 +411,41 @@
 	\hat{\lambda}
 	\end{align*}
 	\end{prop}}
+}
+
+\frame{
+	Each dg cocategory $B(A_0 \to \dots \to A_n \to A_0)$ 
+	has a dg comodule $C(A_0 \to \dots \to A_n \to A_0)$ 
+	{\small (which is a categorified version of the bar complex of 
+	Hochschild chains as a module over Hochschild cochains via 
+	contraction)}.\\
+
+	\only<2->
+	{$\newline$ 
+	\textbf{Motivating Question:} Can we extend the sheafy-cyclic 
+	structure to the comodules? In other words, can we give}
+	%
+	\only<2-4>
+	{a functor}
+	%
+	\only<2-3>
+	{$$\chi \to \mathcal{D} := \{(dg\, cocat,\, dg\, comod)\}?$$}
+	%
+	\only<3>
+	{\begin{center}\textcolor{blue}{No.}\end{center}}
+	%
+	\only<4>
+	{\begin{center}\sout{$\chi \to \mathcal{D} 
+	:= \{(dg\, cocat,\, dg\, comod)\}?$}\end{center}
+	$$\textcolor{blue}{\chi_\infty \to \mathcal{D}_\infty
+	\quad dg\; categories}$$}
+	%
+	\only<5>{\textcolor{blue}{an $A_\infty$-functor}
+	\begin{center}\sout{$\chi \to \mathcal{D} 
+	:= \{(dg\, cocat,\, dg\, comod)\}?$}\end{center}
+	$$\textcolor{blue}{\chi_\infty \to \mathcal{D}_\infty
+	\quad dg\; categories}$$}
+	
 }
 
 % 	$$\psi\{\phi_1, \dots, \phi_n\}(a_1,\dots,a_q) = 
