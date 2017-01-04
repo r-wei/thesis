@@ -248,10 +248,11 @@
 	\begin{eg} For $n\geq 1, 0 \leq j < n$, 
 	we have a dg functor 
 	\begin{align*}
-	\hat{\delta}_{j,n}: B(A_0 \to \dots \to A_n \to A_0)
+	\hat{\delta}_{j,n}: 
+	B(A_0 \to \dots \to A_n \to A_0)
 	& \to 
-	B(A_0 \to \dots \to A_j \to 
-	A_{j+2} \to A_0)\\
+	B( {\scriptstyle \small A_0 \to \dots \to A_j \to 
+	A_{\substack{j+2\\(mod\,n+1)}} \to \dots \to A_0})\\
 	Obj:\quad \quad \quad \quad \quad \quad
 	(f_0, \dots, f_n) 
 	&\mapsto
@@ -311,17 +312,17 @@
 	\frametitle{Structure among the 
 	$B(A_0 \to \dots \to A_n \to A_0)$'s}
 
-	\begin{eg} For $n\geq 0, 0 \leq j \leq n$, 
+	\begin{eg} For $n\geq 0, 0 \leq i \leq n$, 
 	we have a dg functor 
 	\begin{align*}
-	\hat{\delta}_{j,n}: B(A_0 \to \dots \to A_n \to A_0)
+	\hat{\sigma}_{i,n}: B(A_0 \to \dots \to A_n \to A_0)
 	& \to 
-	B(A_0 \to \dots \to A_j \to 
-	A_j \to A_0)\\
+	B({\scriptstyle A_0 \to \dots \to A_i \to 
+	A_i \to \dots \to A_0})\\
 	Obj:\quad \quad \quad \quad \quad \quad
 	(f_0, \dots, f_n) 
 	&\mapsto
-	(f_0, \dots, f_{j-1}, id_{A_j}, f_j, \dots, f_n)\\
+	(f_0, \dots, f_{i-1}, id_{A_i}, f_i, \dots, f_n)\\
 	Mor:
 	\resizebox{.5\vsize}{!}
 	{\xymatrix{
@@ -353,11 +354,11 @@
 	\ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \textcolor{blue}{\vdots}}} 
 	\ar@{.>}@/_2pc/[r]
 	\ar@{.>}@/_4pc/[r]
-	& A_j \ar@/^4pc/[r]^{id_{A_j}} 
+	& A_i \ar@/^4pc/[r]^{id_{A_i}} 
 	\ar@/_4pc/[r]^{\substack{
 		\textcolor{blue}{1 \in k}\\
-		\textcolor{blue}{\Downarrow}\\\\\\\\\\\\}}_{id_{A_j}} 
-	& A_j \ar@{.>}@/^4pc/[r] 
+		\textcolor{blue}{\Downarrow}\\\\\\\\\\\\}}_{id_{A_i}} 
+	& A_i \ar@{.>}@/^4pc/[r] 
 	\ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \textcolor{blue}{\vdots}}} 
 	\ar@{.>}@/_2pc/[r]
 	\ar@{.>}@/_4pc/[r]
@@ -414,6 +415,7 @@
 }
 
 \frame{
+	\frametitle{Motivating Question}
 	Each dg cocategory $B(A_0 \to \dots \to A_n \to A_0)$ 
 	has a dg comodule $C(A_0 \to \dots \to A_n \to A_0)$ 
 	{\small (which is a categorified version of the bar complex of 
@@ -444,24 +446,80 @@
 	\begin{center}\sout{$\chi \to \mathcal{D} 
 	:= \{(dg\, cocat,\, dg\, comod)\}?$}\end{center}
 	$$\textcolor{blue}{\chi_\infty \to \mathcal{D}_\infty
-	\quad dg\; categories}$$}
-	%
-	\only<6->
-	{\begin{align*}
-	\mathcal{D}_\infty^\bullet \big((B_1, C_1), (B_0,C_0) \big)
-	&= 
-	\begin{Bmatrix}
-	F: B_1 \to B_0 \; dg\; functor\\
-	F_!: C_1 \to F^*C_0 \; linear \; map
-	\end{Bmatrix}\\
-	& or \\
-	&= 
-	\begin{Bmatrix}
-	F: B_1 \to B_0 \; dg\; functor\\
-	F_\#: F_\#C_1 \to C_0 \; linear \; map
-	\end{Bmatrix}
-	\end{align*}}
+	\quad dg\; categories}$$}	
 }
+
+\frame{
+	\frametitle{Motivating Question}
+
+	\textbf{Rest of this talk:} Describe our 
+	$A_\infty$-functor $\mathcal{F}: \chi_\infty \to 
+	\mathcal{D}_\infty$.
+
+	\only<2->
+	{\begin{itemize}
+	\item Define dg categories $\chi_\infty$ and 
+	$\mathcal{D}_\infty$
+	\item Define the $A_\infty$-functor $\mathcal{F}$
+		\begin{itemize}
+		\item Define $C(A_0 \to \dots \to A_n \to A_0)$
+		\end{itemize}
+	\end{itemize}}
+	%
+	\only<3->
+	{\begin{itemize}		
+	\item Add-ons
+		\begin{itemize}
+		\item Rectify $\mathcal{F}$ to a dg functor
+		\item Give a dg functor $\mathcal{D}_\infty \to 
+		\mathcal{E} = \{$(dg cat, dg mod)$\}$
+		$$U(\chi_\infty) \xrightarrow{rectified} 
+		\mathcal{D}_\infty \to \mathcal{E}$$\\
+		\begin{center}$``$A homotopically sheafy-cyclic 
+		object in dg categories with a dg module''\end{center}
+		\end{itemize}
+	\end{itemize}}
+}
+
+\frame{
+	\frametitle{Dg categories $\chi_\infty$ and 
+	$\mathcal{D}_\infty$}
+
+	\only<2->
+	{$\chi_\infty$:\\
+	\quad Objects: same objects as $\chi = 
+	\{A_0 \to \dots \to A_n \to A_0\}$\\
+	\quad $\chi_\infty^\bullet(X,Y) := \{ 
+	\sum a_iv_i : a_i \in k, v_i \in \chi(X,Y) \}$\\}
+
+	\only<3->
+	{$\newline \mathcal{D}_\infty$:\\
+	\quad Objects: same objects as $\mathcal{D} = 
+	\{$(dg cocategory, dg comodule)$\}$\\
+	\quad \begin{align*}
+	\mathcal{D}_\infty^p \big((B_1, C_1), (B_0,C_0) \big)
+	&= 
+	\begin{Bmatrix}
+	F: B_1 \to B_0 \; dg\; functor\\
+	F_!: C_1 \to F^*C_0 \; degree\textrm{-}p \; linear \; map
+	\end{Bmatrix}\\
+	%& or \\
+	% &= 
+	% \begin{Bmatrix}
+	% F: B_1 \to B_0 \; dg\; functor\\
+	% F_\#: F_\#C_1 \to C_0 \; degree\textrm{-}p \; linear \; map
+	% \end{Bmatrix}
+	\end{align*}}
+
+	\only<4->
+	{$F^*C_0$ is the categorified version of 
+	co-extension of scalars:
+	$$F^*C_0 = ker(B_1 \otimes C_0 \rightrightarrows 
+	B_1 \otimes B_0 \otimes C_0)$$
+	}
+}
+
+
 
 % 	$$\psi\{\phi_1, \dots, \phi_n\}(a_1,\dots,a_q) = 
 % 	\sum \limits_{1 \leq p \leq n} 
