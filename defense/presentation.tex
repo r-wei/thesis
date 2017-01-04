@@ -8,6 +8,7 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{ulem} %\sout
+\usepackage{relsize} %\mathlarger
 
 \theoremstyle{plain}
 \newtheorem{prop}[theorem]{Proposition}
@@ -460,15 +461,13 @@
 	{\begin{itemize}
 	\item Define dg categories $\chi_\infty$ and 
 	$\mathcal{D}_\infty$
+	\item Define dg comodules $C(A_0 \to \dots \to A_n \to A_0)$
 	\item Define the $A_\infty$-functor $\mathcal{F}$
-		\begin{itemize}
-		\item Define $C(A_0 \to \dots \to A_n \to A_0)$
-		\end{itemize}
 	\end{itemize}}
 	%
 	\only<3->
 	{\begin{itemize}		
-	\item Add-ons
+	\item Time and interest permitting
 		\begin{itemize}
 		\item Rectify $\mathcal{F}$ to a dg functor
 		\item Give a dg functor $\mathcal{D}_\infty \to 
@@ -498,7 +497,7 @@
 	\{$(dg cocategory, dg comodule)$\}$\\
 	\quad \begin{align*}
 	\mathcal{D}_\infty^p \big((B_1, C_1), (B_0,C_0) \big)
-	&= 
+	&:= 
 	\begin{Bmatrix}
 	F: B_1 \to B_0 \; dg\; functor\\
 	F_!: C_1 \to F^*C_0 \; degree\textrm{-}p \; linear \; map
@@ -519,6 +518,103 @@
 	}
 }
 
+\frame{
+	\frametitle{Dg comodules over dg cocategories}
+
+	\begin{defn}
+	A \textbf{dg comodule} $C$ 
+	over a dg cocategory $B$ consists
+	of the following data:
+	\begin{itemize}
+	\item for each object $f \in B$, a complex $C^\bullet(f)$, and
+	\item maps of complexes
+	\begin{equation*}
+	\Delta_C(f): C^\bullet(f) \to 
+	\prod\limits_{g \in Obj(B)} B^\bullet(f,g) \otimes C^\bullet(g).
+	\end{equation*}
+	\end{itemize}
+	{\small such that the following diagrams 
+	for coassociativity and 
+	counitality commute:}
+	$$
+	\resizebox{.9\vsize}{!}
+	{\xymatrixcolsep{3pc}
+	\xymatrixrowsep{3pc}
+	\xymatrix{
+	C^\bullet(f)
+	\ar[r]^{\Delta_C}
+	\ar[d]_{\Delta_C}
+	& \prod \limits_{g \in Obj(B)}
+	B^\bullet(f,g) \otimes
+	C^\bullet(g)
+	\ar[d]^{ id_B \otimes \Delta_C}\\
+	\prod \limits_{g \in Obj(B)}
+	B^\bullet(f,g) \otimes
+	C^\bullet(g)
+	\ar[r]^{\Delta_B \otimes id_C}
+	& \prod \limits_{\substack{g, g^\prime \in\\ Obj(B)}}
+	B^\bullet(f,g) \otimes
+	B^\bullet(g,g^\prime) \otimes
+	C^\bullet(g^\prime)  
+	}}
+	\resizebox{.5\vsize}{!}
+	{\xymatrixcolsep{3pc}
+	\xymatrixrowsep{3pc}
+	\xymatrix{
+	C^\bullet(f)
+	\ar[r]^{\Delta_C}
+	\ar[rd]_{id}
+	& \prod \limits_{g \in Obj(B)}
+	B^\bullet(f,g) \otimes
+	C^\bullet(g)
+	\ar[d]^{\epsilon_B \otimes id_C} \\
+	& C^\bullet(f)
+	}}
+	$$
+	\end{defn}
+}
+
+\frame{
+	\frametitle{Dg comodules over dg cocategories}
+
+	Fix algebras $A_0,\dots,A_n$.\\
+	Define a dg comodule over $B(A_0 \to \dots \to
+	A_n \to A_0)$:
+	\begin{align*}
+	C(A_0 \to &\dots \to A_n \to A_0)^\bullet
+	(f_{0,0},\dots,f_{n,0}):=\\
+	:= 
+	\{
+	&\resizebox{.85\vsize}{!}
+	{\xymatrix{
+	A_0 \ar@/^4pc/[r]^{f_{0,0}} 
+	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{0,1}}}_{f_{0,1}} 
+	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{0,k_0}}}
+	\ar@/_4pc/[rrrrr]^{\substack{\mathlarger{\textcolor{blue}{\alpha}} \\\\ id_{A_0}}}
+	& A_1 \ar@/^4pc/[r]^{f_{1,0}} 
+	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{1,1}}}_{f_{1,1}} 
+	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{1,k_1}}}
+	& A_2 \ar@{.>}@/^4pc/[r] 
+	\ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \textcolor{blue}{\vdots}}} 
+	\ar@{.>}@/_1pc/[r]
+	& \cdots \ar@{.>}@/^4pc/[r] 
+	\ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \textcolor{blue}{\vdots}}} 
+	\ar@{.>}@/_1pc/[r]
+	& A_n \ar@/^4pc/[r]^{f_{n,0}} 
+	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{n,1}}}_{f_{n,1}} 
+	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{n,k_n}}}
+	& A_0 
+	}}
+	\}\\
+	&(\phi_{0,1}|\dots|\phi_{0,k_0}) \otimes \dots \otimes
+	(\phi_{n,1}|\dots|\phi_{n,k_n}) \otimes \alpha\\
+	&\phi_{i,j} \in C^\bullet(A_i, _{f_{j-1}}
+ 	{A_{i+1}}_{f_j}),\;
+ 	\alpha \in C_{-\bullet}(A_0, _{f_n\cdots f_1 f_0}
+ 	{A_0}_{id})\\
+ 	differential
+	\end{align*}
+}
 
 
 % 	$$\psi\{\phi_1, \dots, \phi_n\}(a_1,\dots,a_q) = 
