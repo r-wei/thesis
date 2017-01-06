@@ -465,20 +465,6 @@
 	\item Define dg comodules $C(A_0 \to \dots \to A_n \to A_0)$
 	\item Define the $A_\infty$-functor $\mathcal{F}$
 	\end{itemize}}
-	%
-	\only<3->
-	{\begin{itemize}		
-	\item Time and interest permitting
-		\begin{itemize}
-		\item Rectify $\mathcal{F}$ to a dg functor
-		\item Give a dg functor $\mathcal{D}_\infty \to 
-		\mathcal{E} = \{$(dg cat, dg mod)$\}$
-		$$U(\chi_\infty) \xrightarrow{rectified} 
-		\mathcal{D}_\infty \to \mathcal{E}$$\\
-		\begin{center}$``$A homotopically sheafy-cyclic 
-		object in dg categories with a dg module''\end{center}
-		\end{itemize}
-	\end{itemize}}
 }
 
 \frame{
@@ -1196,15 +1182,153 @@
 	\chi_\infty \to \mathcal{D}_\infty$}
 	%
 	The $A_\infty$ relations mean:\\
-
+	%
+	\begin{itemize}
+	\item $\tau_{1!}$ is a map of complexes
+	\item $B^2 = 0$
+	\item The following diagram commutes:
+	$$\xymatrix{
+	C(\mathcal{A})
+	\ar[r]^{\tau_{1!}}
+	\ar[d]^{B}
+	& \hat{\tau}_1^* C(\tau_1\mathcal{A})
+	\ar[d]^{\hat{\tau}_1^*B}\\
+	C(\mathcal{A})
+	\ar[r]_{\tau_{1!}}
+	& \hat{\tau}_1^* C(\tau_1\mathcal{A})
+	}
+	$$
+	\end{itemize}
 }
 
 \frame{
 	\frametitle{An $A_\infty$-functor $\mathcal{F}:
 	\chi_\infty \to \mathcal{D}_\infty$}
 	%
-	For higher n, ...
-	
+	For higher $n >1$, we want to find a 
+	homotopy between $``\tau_{n!}^{n+1}$'' 
+	and $id$.\\
+	%
+	\only<2->
+	{However, it is sufficient to find a 
+	homotopy between $\hat{\tau}_n^{*2} \delta_{0,n!} 
+	\circ \hat{\tau}_n^* \tau_{n!} \circ \tau_{n!}$ and 
+	$\hat{\delta}_{n-1,n}^* \tau_{n-1!} \circ 
+	\delta_{n-1,n!}$.
+	$$
+	\xymatrix{
+	[n]
+	\ar[r]^{\tau_n}
+	\ar[d]^{\delta_{n-1,n}}
+	& [n]
+	\ar[r]^{\tau_n}
+	& [n]
+	\ar[dl]^{\delta_{0,n}}\\
+	[n-1]
+	\ar[r]_{\tau_{n-1}}
+	& [n-1]
+	}
+	$$}
+	%
+	\only<3->
+	{\textbf{Solution:} Find such a homotopy, 
+	$\mathcal{B}$, for $n=2$, and use 
+	$\hat{\delta}_0^{*n-2}\mathcal{B}$ for $n>2$.}
+}
+
+\frame{
+	\frametitle{An $A_\infty$-functor $\mathcal{F}:
+	\chi_\infty \to \mathcal{D}_\infty$}
+	%
+	For higher $n$, the $A_\infty$ relations mean:\\
+	%
+	\begin{itemize}
+	\item $\tau_{n!}$ is a map of complexes
+	\item $\mathcal{B}^2 = 0$
+	%
+	\only<1>
+	{\item We have a pair of homotopic maps:
+	$$\xymatrixrowsep{5pc}
+	\xymatrix{
+	C(A_0 \to \smdots \to A_n \to A_0) 
+	 \ar@/^1pc/[d]^{\substack{
+	   (\widehat{\delta_{n-2,n-1}\delta_{n-1,n}})^*
+	   \tau_{n-2!}\\\\\\
+	   \textrm{$``$brace together the last 3 algebras,}\\
+	   \textrm{then apply $\tau_{n-2!}$ once''}}}
+	 \ar@/_1pc/[d]_{\substack{
+	   \hat{\tau}_n^{*2} \tau_{n!}\circ
+	   \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}\\\\\\
+	   \textrm{$``$apply $\tau_{n!}$ 3 times''}}}\\
+	C(A_{n-2} \to A_{n-1} \to A_n \to 
+	A_0 \to \smdots \to A_{n-2}).
+	}$$}
+	%
+	\only<2>
+	{\item They are homotopic via two different homotopies:
+	$$\resizebox{1.1\vsize}{!}
+	{\xymatrix{
+	\underset{\substack{\\\\
+	  \textrm{$``$brace together $A_{n-2}, A_{n-1}, A_n$,}\\
+	  \textrm{then apply $\tau_{n-2!}$''}}}
+	  {(\widehat{\delta_{n-2,n-1}
+	   \delta_{n-1,n}})^*\tau_{n-2!}}
+	\ar[r]^{\cong}
+	\ar[d]_{\cong}   
+	& \hat{\delta}_{n-1,n}^*(
+	  \hat{\delta}_{n-2,n-1}^*\tau_{n-2!})   
+	\ar[r]^{\hat{\delta}_{n-1,n}^*\mathcal{B}_{n-1}}
+	& \hat{\delta}_{n-1,n}^*(
+	  \hat{\tau}_{n-1}^*\tau_{n-1!} \circ \tau_{n-1!})
+	\ar[d]^{\cong}  \\
+	(\widehat{\delta_{n-2,n-1}\delta_{n-2,n}})^*
+	  \tau_{n-2!}  
+	\ar[d]_{\hat{\delta}_{n-2,n}^*\mathcal{B}_{n-1}}
+	&& \underset{\substack{ \\\\
+	    \textrm{$``$brace together $A_{n-1}, A_n$}\\
+	    \textrm{and apply $\tau_{n-1!}$,}\\
+	    \textrm{then apply $\tau_{n!}$''}}}
+	    {\hat{\tau}_n^{*2}\tau_{n!} \circ 
+	    \hat{\delta}_{n-1,n}^*\tau_{n-1!}} 
+	\ar[d]^{\substack{\\\\\\\\
+	        \tau_n^{*2}\tau_{n!} \circ \mathcal{B}_n}}\\
+	\hat{\delta}_{n-2,n}^*(
+	  \hat{\tau}_{n-1}^*\tau_{n-1!} \circ \tau_{n-1!})
+	\ar[r]_{\cong}                   
+	& \underset{\substack{\\\\
+	          \textrm{$``$apply $\tau_{n!}$,}\\
+	          \textrm{then brace together $A_{n-1}, A_{n-2}$}\\
+	          \textrm{and apply $\tau_{n-1!}$''}}}
+	         {\hat{\tau}_n^*(\hat{\delta}_{n-1,n}^*
+	          \tau_{n-1!}) \circ \tau_{n!}}
+	\ar[r]^{\hat{\tau}_n^*\mathcal{B}_n \circ \tau_{n!}}
+	& \underset{\substack{\\\\
+	    \textrm{$``$apply $\tau_{n!}$ three times''}}}
+	    {\hat{\tau}_n^{*2} \tau_{n!}\circ
+	     \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}}
+	}}$$}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Summary:}
+
+	We have a given a $``$homotopically 
+	sheafy-cyclic object in dg cocategories 
+	with a dg comodule'', i.e., an 
+	$A_\infty$-functor between dg categories
+	$\chi_\infty$ and $\mathcal{D}_\infty$. \\
+
+	$\newline$Time and interest permitting
+	\begin{itemize}
+	\item Rectify $\mathcal{F}$ to a dg functor
+	\item Give a dg functor $\mathcal{D}_\infty \to 
+	\mathcal{E} = \{$(dg cat, dg mod)$\}$
+	$$U(\chi_\infty) \xrightarrow{rectified} 
+	\mathcal{D}_\infty \to \mathcal{E}$$\\
+	\begin{center}$``$A homotopically sheafy-cyclic 
+	object in dg categories with a dg module''\end{center}
+	\end{itemize}
 }
 
 % 	$$\psi\{\phi_1, \dots, \phi_n\}(a_1,\dots,a_q) = 
