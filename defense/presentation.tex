@@ -47,7 +47,8 @@
 	\Omega^\bullet_{A/k}\\
 	(C^\bullet(A,A), \delta)
 	& \xrightarrow{\sim}
-	\wedge^\bullet T_A.
+	\wedge^\bullet T_A 
+	= \wedge^\bullet(Der_k(A,A)).
 	\end{align*}
 	\end{theorem}}
 	%
@@ -85,12 +86,12 @@
 	\frametitle{A cyclic object in dg cocategories}
 	Fix an algebra, $A$. \\
 	Define a dg category, $Hoch(A)$: \\
-
+	%
 	\only<2-5>
 	{$\quad$Objects: algebra maps $f:A \to A$ \\
 	$\quad$Morphisms: $Hoch(A)(f,g) = 
 	(C^\bullet(A,\, _fA_g),\, _f\delta_g)$ \\}
-	
+	%	
 	\only<3>
 	{\begin{align*}
 	_f\delta_g(\phi)(a_1 \otimes \dots \otimes a_n) 
@@ -106,31 +107,35 @@
 	\epsilon_\phi = 
 	& (-1)^{|\phi|+1}	  
 	\end{align*}}
-
+	%
 	\only<4-5>
 	{$\quad$Composition: cup product on cochains\\}
-
+	%
 	\only<5>
 	{$$\xymatrix{
 		A 
-		\ar@/^2pc/[r]^f_{\substack{\\\\\Downarrow \phi_1}}
-		\ar[r]_{\substack{g\\\Downarrow \phi_2}} 
+		\ar@/^2pc/[r]^f_{\substack{\\\\
+			\textcolor{blue}{\Downarrow \phi_1}}}
+		\ar[r]_{\substack{g\\
+			\textcolor{blue}{\Downarrow \phi_2}}} 
 		\ar@/_2pc/[r]_h 
 		& A 
 		\ar@{~>}[r]^{compose}
 		& A
-		\ar@/^2pc/[r]^f_{\substack{\\\\\\ \phi_1 \cup \phi_2\\ \Downarrow}}
+		\ar@/^2pc/[r]^f_{\substack{\\\\\\ 
+			\textcolor{blue}{\phi_1 \cup \phi_2}\\ 
+			\textcolor{blue}{\Downarrow}}}
 		\ar@/_2pc/[r]_h
 		& A
 		}$$}
-
-	\only<6-8> 
+	%
+	\only<6-9> 
 	{$$\resizebox{.85\vsize}{!}
 	  {\xymatrix{
 	  Bar(Hoch(A)) \otimes Bar(Hoch(A)) 
 	  \ar[r]^{\quad\quad\quad\quad\quad \bullet}
 	  & Hoch(A)}}$$}
-
+	%
 	\only<7>
 	{\resizebox{1.3\vsize}{!}
 	   {\xymatrix{
@@ -143,8 +148,8 @@
 		&&&	A}
 	 \quad A morphism from $f_0$ to $f_n$ in Bar(Hoch(A))}
  	}
-
- 	\only<8>
+	%
+ 	\only<8-9>
 	{$$\resizebox{.85\vsize}{!}
 	  {\xymatrix{
 		A 
@@ -164,9 +169,19 @@
 		&& A
 	  }}$$
 	}
-
-	\only<9-> 
-	{$\newline$ In this context, braces give multilinear maps: 
+	%
+	\only<9>
+	{$${\scriptstyle 
+	\psi\{\phi_1, \dots, \phi_n\}(a_1,\dots,a_q) = 
+	\sum \limits_{1 \leq i_1 \leq \dots \leq i_n \leq q} \pm
+	%(-1)^{(|\phi_p|+1)i_p}
+	\psi(a_1, \dots, a_{i_1}, \phi_1(a_{i_1+1}, \dots), 
+	\dots, \phi_n(a_{i_n+1}, \dots), \dots)
+	}$$}
+	%
+	\only<10-> 
+	{$\newline$ In this context, braces, $\bullet$,
+	 give multilinear maps: 
 	$$\resizebox{.85\vsize}{!}
 	  {\xymatrix{
 	  Bar(Hoch(A)) \otimes Bar(Hoch(A)) 
@@ -177,8 +192,8 @@
 	  \ar@{->>}[u]}}$$
 	Then, (Bar(Hoch(A)), $\bullet$) is an algebra in DGCocats.\\
 	}
-
-	\only<10->
+	%
+	\only<11->
 	{But we have more...}
 }
 
@@ -524,14 +539,19 @@
 	\only<3->
 	{$\newline \mathcal{D}_\infty$:\\
 	\quad Objects: same objects as $\mathcal{D} = 
-	\{$(dg cocategory, dg comodule)$\}$\\
+	\{(\underset{B}{\textrm{dg cocategory}}, 
+	\underset{C}{\textrm{dg comodule}})\}$\\
 	\quad \begin{align*}
 	\mathcal{D}_\infty^p \big((B_1, C_1), (B_0,C_0) \big)
 	&:= 
 	\begin{Bmatrix}
-	F: B_1 \to B_0 \; dg\; functor\\
+	F: B_1 \to B_0 \; dg\; functor,\\
 	F_!: C_1 \to F^*C_0 \; degree\textrm{-}p \; linear \; map
 	\end{Bmatrix}\\
+	&\phantom{:=}
+	d_{D_\infty}(F, F_!) = 
+	(F, [d,F_!] = 
+	{\scriptstyle d_{F^*C_0}\circ F_! \pm F_! \circ d_{C_1}})
 	%& or \\
 	% &= 
 	% \begin{Bmatrix}
@@ -1374,13 +1394,7 @@
 	\end{itemize}
 }
 
-% 	$$\psi\{\phi_1, \dots, \phi_n\}(a_1,\dots,a_q) = 
-% 	\sum \limits_{1 \leq p \leq n} 
-% 	(-1)^{(|\phi_p|+1)i_p}
-% 	\psi(a_1, \dots, a_{i_1}, \phi_1(a_{i_1+1}, \dots), 
-% 	\dots, \phi_n(a_{i_n+1}, \dots), \dots)
-% 	$$
-% }
+
 
 
 
