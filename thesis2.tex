@@ -1,4 +1,4 @@
-\documentclass[12pt]{nuthesis}	
+\documentclass[12pt,draft]{nuthesis} %use [draft] to check on margins
 
 \usepackage{bm} 	%bold in any mode
 \usepackage{amscd}        % For writing commutative diagrams.
@@ -28,8 +28,8 @@
 \newtheorem*{notation}{Notation}
 \theoremstyle{example}
 \newtheorem{eg}{Example}[section]
-\newcommand{\breakcell}[2][c]{% break cell in tabular
-  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\newcommand{\breakcell}[2][l]{% break cell in tabular
+  \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
 \newcommand \smdots{\makebox[1em][c]{.\hfil.\hfil.}} %small \dots
 \newcommand{\leftmapsto}{\leftarrow\!\shortmid} %\left mapsto
 
@@ -39,22 +39,22 @@
 % DATA OF AUTHOR AND DISSERTATION %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\author{Ann Rebecca Wei}
+\author{Ann Rebecca Wei}
 
-%\title{Title of the Dissertation}
+\title{Title of the Dissertation}
 
 %\degree{DOCTOR OF PHILOSOPHY}  % Default: DOCTOR OF PHILOSOPHY
 
 %\field{Mathematics}            % Default: Mathematics
 
-%\graduationmonth{June}         % The default is June or December
+\graduationmonth{March}         % The default is June or December
                                 % depending on current date.
 
 %\graduationyear{2003}          % Default: current year.
 
 
 % Use \includeonly to select the 
-\includeonly{notation, bibliography, 
+\includeonly{bibliography, 
 appendices/lambda, appendices/computations, 
 appendices/hochschild, 
 Bn_Cn/motivation, Bn_Cn/dg_cocats, Bn_Cn/dg_comods,
@@ -66,52 +66,42 @@ homotopies/higher_homotopies,
 homotopies/a_infinity_functor, 
 homotopies/cobar}	
 
-
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%
 % Some initial stuff %
 %%%%%%%%%%%%%%%%%%%%%%
 
-%\frontmatter		% Preliminary pages start here.
+% \frontmatter		% Preliminary pages start here.
+% \maketitle		% Produces the title page.
+% %\copyrightpage		% Creates the copyright page.
 
-%\maketitle		% Produces the title page.
+% \abstract		% Abstract.
+% This is the abstract.
 
-%\copyrightpage		% Creates the copyright page.
-
-
-%\abstract		% Abstract.
-
-%This is the abstract.
-
-%\acknowledgements	% Acknowledgements (optional).
-
-%Text for acknowledgments.
+% \acknowledgements	% Acknowledgements (optional).
+% Text for acknowledgments.
 
 %\preface		% Preface (optional).
 
-%% A few more optional pages (uncomment if needed)
-%
 %\listofabbreviations 
-
-%This is the list of abbreviations (optional).
+% This is the list of abbreviations (optional).
 
 %\glossary
-%
 %This is the glossary (optional).
-%
-%\nomenclature
-%
-%This is the nomenclature (optional).
+
+\nomenclature %optional
+\input{nomenclature}
+
 %
 %% Note that the dedication text must be passed as an argument
 %% of the \dedication command
 %\dedication{This is the dedication (optional).}
 %
-
 \clearpage\phantomsection % needed for the hyperlinks to work correctly
 \tableofcontents	% Table of Contents will be automatically
 			% generated and placed here.
 
+%list of tables and figures are not optional...
 %\clearpage\phantomsection % needed for the hyperlinks to work correctly
 %\listoftables		% List of Tables and List of Figures will be placed
 
@@ -120,6 +110,9 @@ homotopies/cobar}
 
 
 
+\mainmatter             % Actual text starts here.
+% If there is an introduction it must be the first chapter
+%
 \chapter{$B(n)$ and $C(n)$}
 	\include{Bn_Cn/motivation}
 	\include{Bn_Cn/dg_cocats}
@@ -157,3 +150,4 @@ homotopies/cobar}
 \include{appendices/hochschild}
 
 \end{document}
+
