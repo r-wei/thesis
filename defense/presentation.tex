@@ -709,40 +709,39 @@
 
 	\begin{align*}
 		\only<1->
-		{\chi_\infty
+		{%\phantom{moveover}
+		\chi_\infty
 		&\to 
 		\mathcal{D}_\infty\\}
 		%
 		\only<2->
-		{\mathcal{A}
+		{%\phantom{moveovermoveovermo}
+		\mathcal{A}
 		&\mapsto
 		(B(\mathcal{A}), C(\mathcal{A}))\\}
 		%
 		\only<3->
-		{\textrm{Generating Morphisms:}\quad }
+		{\textrm{Generating Morphisms:}\quad
 		%
-		\only<4->
-		{\sigma_{i,n}
+		\sigma_{i,n}
 		&\mapsto
 		\begin{pmatrix}
 		B(\mathcal{A}) \xrightarrow{\hat{\sigma}_{i,n}}
 		  B(\sigma_{i,n}\mathcal{A})\\
 		C(\mathcal{A}) \xrightarrow{id} 
 		  \hat{\sigma}_{i,n}^* C(\sigma_{i,n}\mathcal{A})
-		\end{pmatrix}\\}
+		\end{pmatrix}\\
 		%
-		\only<5->
-		{\delta_{j,n}
+		\delta_{j,n}
 		\mapsto
 		\begin{pmatrix}
 		B(\mathcal{A}) \xrightarrow{\hat{\delta}_{j,n}}
 		  B(\delta_{j,n}\mathcal{A})\\
 		C(\mathcal{A}) \xrightarrow{id} 
 		  \hat{\delta}_{j,n}^* C(\delta_{j,n}\mathcal{A})
-		\end{pmatrix}\quad }
+		\end{pmatrix}\quad 
 		%
-		\only<6->
-		{\tau_n
+		\tau_n
 		&\mapsto
 		\begin{pmatrix}
 		B(\mathcal{A}) \xrightarrow{\hat{\tau}_n}
@@ -770,12 +769,12 @@
 	\only<2>
 	{&\cong 
 	\{
-	\resizebox{.7\vsize}{!}
+	\resizebox{.65\vsize}{!}
 	{\xymatrix{
 	A_n \ar@/^4pc/[r]^{f_{n,0}} 
 	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{n,1}}}_{f_{n,1}} 
 	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{n,k_n}}}
-	\ar@/_4pc/[rrrr]^{\substack{\mathlarger{\textcolor{blue}{\alpha}} \\\\}}_{ id_{A_n}}
+	\ar@/_4pc/[rrrrr]^{\substack{\mathlarger{\textcolor{blue}{\alpha}} \\\\}}_{ id_{A_n}}
 	& A_0
 	\ar@{.>}@/^4pc/[r] 
 	\ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \textcolor{blue}{\vdots}}} 
@@ -783,10 +782,11 @@
 	& \cdots \ar@{.>}@/^4pc/[r] 
 	\ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \textcolor{blue}{\vdots}}} 
 	\ar@{.>}@/_1pc/[r]
-	& A_{n-1} \ar@/^4pc/[r]^{f_{n-1,0}} 
-	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{n-1,1}}}_{f_{n-1,1}} 
-	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{n-1,k_{n-1}}}}
-	& A_n 
+	& A_{n-1} \ar@/^4pc/[rr]^{f_{n-1,0}} 
+	\ar@/^2pc/[rr]^{\textcolor{blue}{\Downarrow \phi_{n-1,1}}}_{f_{n-1,1}} 
+	\ar@/_1pc/[rr]^{\substack{\textcolor{blue}{\vdots}\\
+		f_{n-1,k_{n-1}}}}
+	&& A_n 
 	}}
 	\}}
 	\end{align*}
@@ -851,7 +851,7 @@
 	\frametitle{An $A_\infty$-functor $\mathcal{F}:
 	\chi_\infty \to \mathcal{D}_\infty$}
 	%
-	\textbf{Solution:} Give these maps to 
+	\textbf{Strategy:} Give these maps to 
 	cogenerators to 
 	define $\tau_{1!}$, then let
 	{\small \begin{align*}
@@ -956,9 +956,9 @@
 	}}\\}
 	%
 	\only<5>
-	{\bar{\tau}_{1!} \circ d (\phi \otimes \alpha)
+	{\overline{\tau_{1!} \circ d} (\phi \otimes \alpha)
 	& = 
-	d\circ \bar{\tau}_{1!}(\phi \otimes \alpha)\\}
+	\overline{d\circ \tau_{1!}}(\phi \otimes \alpha)\\}
 	%
 	\only<6-8>
 	{[b,\bar{\tau}_{1!}](\phi \otimes \alpha) \pm
