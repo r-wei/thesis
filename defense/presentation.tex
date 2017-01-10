@@ -1305,7 +1305,7 @@
 	$$}
 	%
 	\only<3->
-	{\textbf{Solution:} Find such a homotopy, 
+	{\textbf{Strategy:} Find such a homotopy, 
 	$\mathcal{B}$, for $n=2$, and use 
 	$\hat{\delta}_0^{*n-2}\mathcal{B}$ for $n>2$.}
 }
@@ -1314,7 +1314,56 @@
 	\frametitle{An $A_\infty$-functor $\mathcal{F}:
 	\chi_\infty \to \mathcal{D}_\infty$}
 	%
-	For higher $n$, the $A_\infty$ relations mean:\\
+	\begin{align*}
+		\chi_\infty
+		&\to 
+		\mathcal{D}_\infty\\
+		%
+		\mathcal{A}
+		&\mapsto
+		(B(\mathcal{A}), C(\mathcal{A}))\\
+		%
+		\mu = \tau_{n-1}\circ \delta_{n-1,n} = 
+		\delta_{0,n}\circ \tau_n^2
+		&\mapsto 
+		\begin{pmatrix}
+		\hat{\tau}_{n-1} \circ \hat{\delta}_{n-1,n}
+		= \hat{\delta}_{0,n}\circ \hat{\tau}_n^2\\
+		\hat{\tau}_n^{*2} \delta_{0,n!} \circ 
+		  \hat{\tau}_n^*\tau_{n!} \circ \tau_{n!}
+		\end{pmatrix}\\
+		%
+		(\delta_{0,n}, \tau_n^2)
+		&\mapsto
+		\begin{pmatrix}
+		\hat{\delta}_{0,n}\circ \hat{\tau}_n^2\\
+		0
+		\end{pmatrix}\\
+		%
+		(\tau_{n-1}, \delta_{n-1,n})
+		&\mapsto
+		\begin{pmatrix}
+		\hat{\tau}_{n-1}\circ \hat{\delta}_{n-1,n}\\
+		\mathcal{B}
+		\end{pmatrix}\\
+		%
+		(\tau_{n-1}, \delta_{n-1,n}, \lambda)
+		&\mapsto
+		\begin{pmatrix}
+		\hat{\tau}_{n-1}\circ \hat{\delta}_{n-1,n} 
+		  \circ \hat{\lambda} \\
+		0
+		\end{pmatrix}\\
+		%
+		&\vdots
+	\end{align*}
+}
+
+\frame{
+	\frametitle{An $A_\infty$-functor $\mathcal{F}:
+	\chi_\infty \to \mathcal{D}_\infty$}
+	%
+	For $n>1$, the $A_\infty$ relations mean:\\
 	%
 	\begin{itemize}
 	\item $\tau_{n!}$ is a map of complexes
