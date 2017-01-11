@@ -1436,22 +1436,65 @@
 \frame{
 	\frametitle{Summary:}
 
-	We have a given a $``$homotopically 
+	We have a given a \textcolor{blue}{$``$homotopically 
 	sheafy-cyclic object in dg cocategories 
-	with a dg comodule'', i.e., an 
-	$A_\infty$-functor between dg categories
-	$\chi_\infty$ and $\mathcal{D}_\infty$. \\
-
-	$\newline$Time and interest permitting
-	\begin{itemize}
-	\item Rectify $\mathcal{F}$ to a dg functor
-	\item Give a dg functor $\mathcal{D}_\infty \to 
-	\mathcal{E} = \{$(dg cat, dg mod)$\}$
-	$$U(\chi_\infty) \xrightarrow{rectified} 
-	\mathcal{D}_\infty \to \mathcal{E}$$\\
-	\begin{center}$``$A homotopically sheafy-cyclic 
-	object in dg categories with a dg module''\end{center}
-	\end{itemize}
+	with a dg comodule''}, i.e., an 
+	$A_\infty$-functor 
+	$\chi_\infty \to \mathcal{D}_\infty$. \\
+	%
+	$\newline$Time and interest permitting: 
+	$``$A homotopically sheafy-cyclic 
+	object in \textcolor{blue}{dg categories with a dg module}''
+	%
+	\only<2->
+	{\begin{itemize}
+	\only<2->
+	{\item Rectify $\mathcal{F}$ to a dg functor 
+	$U(\chi_\infty) \to \mathcal{D}_\infty$}
+	  \only<2>
+	  {$$Hom_{A_\infty-Cat}(\chi_\infty, \mathcal{D}_\infty) 
+		= Hom_{DGCat}(U(\chi_\infty), \mathcal{D}_\infty)$$}
+	%
+	\only<3->	
+	{\item Give a dg functor $Adj: \mathcal{D}_\infty \to \mathcal{D}_1$}
+	\only<3>
+	{\begin{align*}
+	&\mathcal{D}_1^\bullet 
+	  \big((B_1, C_1), (B_0, C_0) \big)
+	  = \begin{Bmatrix}
+	  F: B_1 \to B_0 \textrm{ dg functor}\\
+	  F_!: F_\# C_1 \to C_0 \textrm{ linear map}\\
+	  \textrm{``co-restriction of scalars''}
+	  \end{Bmatrix}\\
+	  &Hom_{B_1}(C_1, F^*C_0) = Hom_{B_0}(F_\#C_1, C_0)
+	 \end{align*}}
+	 %
+	\only<4->
+	{\item Give a dg functor $Cobar: 
+	\mathcal{D}_1 \to \mathcal{E}$}
+	\only<4>
+	{\begin{align*}
+	& Obj(\mathcal{E}) = 
+	\{(\textrm{dg category, dg module})\}\\
+	&\mathcal{E}^\bullet 
+	  \big((A_1, M_1), (A_0, M_0) \big)
+	  = \begin{Bmatrix}
+	  F: A_1 \to A_0 \textrm{ dg functor}\\
+	  F_!: M_1 \to F^*M_0 \textrm{ linear map}\\
+	  \textrm{``restriction of scalars''}
+	  \end{Bmatrix}
+	 \end{align*}}
+	\end{itemize}}
+	%
+	\only<5->
+	{$$\newline \newline $$
+	$$U(\chi_\infty)
+	\xrightarrow{\textrm{rectified }\mathcal{F}}
+	\mathcal{D}_\infty
+	\xrightarrow{Adj}
+	\mathcal{D}_1
+	\xrightarrow{Cobar}
+	\mathcal{E}$$}
 }
 
 
