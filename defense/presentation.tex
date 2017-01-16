@@ -186,7 +186,7 @@
 	}$$}
 	%
 	\only<11>
-	{$$\resizebox{.45\vsize}{!}
+	{$$\resizebox{1.0\vsize}{!}
 	  {\xymatrix{
 		A 
 		\ar@/^1pc/[r]^{f_0}_{\substack{\\\\\textcolor{blue}{\Downarrow \phi}}}
@@ -198,6 +198,20 @@
 		\ar@{|->}[r]^{\bullet}
 		& A
 		\ar@/^1pc/[r]^{g_0f_0}_{\substack{\\\\ \textcolor{blue}{\Downarrow \phi}}}
+		\ar@/_1pc/[r]_{g_1f_n}
+		& A
+	  } \quad \quad
+	  \xymatrix{
+		A 
+		\ar@/^1pc/[r]^{f_0}_{\substack{\\\\\textcolor{blue}{\Downarrow 1 \in k}}}
+		\ar@/_1pc/[r]_{f_n} 
+		&	A 
+		\ar@/^1pc/[r]^{g_0}_{\substack{\\\\\textcolor{blue}{\Downarrow \psi}}}
+		\ar@/_1pc/[r]_{g_1} 
+		& A 
+		\ar@{|->}[r]^{\bullet}
+		& A
+		\ar@/^1pc/[r]^{g_0f_0}_{\substack{\\\\ \textcolor{blue}{\Downarrow \psi}}}
 		\ar@/_1pc/[r]_{g_1f_n}
 		& A
 	  }}$$}
@@ -1034,8 +1048,8 @@
 	(\phi_{0,1}|\dots|\phi_{0,k_0}) \otimes 
 	(\phi_{1,1}|\dots|\phi_{1,k_1}) \otimes 
 	\alpha \big) = \\
-	=  &\sum_{\substack{1 \leq i \leq n_0\\
-			i \leq j_1 \leq \dots \leq j_{2k_1} \leq k_0 
+	=  &\sum_{\substack{
+			1\leq i \leq j_1 \leq \dots \leq j_{2k_1} \leq k_0,
 			\\p}} 		
 	  \pm \phi_{0,1} \big(
 	  \substack{
@@ -1064,7 +1078,6 @@
 	f_{0,n_0}a_n \quad \textrm{if $k_1 = 0$} \bigg)
 	\end{align*}
 }
-
 
 \frame{
 	\frametitle{An $A_\infty$-functor $\mathcal{F}:
