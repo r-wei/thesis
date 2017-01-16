@@ -23,12 +23,12 @@
 \let \dots \smdots
 
 %info for title slide
-\title{Title}
-\subtitle{Subtitle}
+\title[]{From Noncommutative Calculus to a (Sheafy-)Cyclic Structure}
+%\subtitle{Subtitle}
 \author{Rebecca Wei}
 \institute{Northwestern University}
 \date{Date/Event}
-\subject{Subject}
+%\subject{Subject}
 
 \begin{document}
 
@@ -85,7 +85,7 @@
 \frame{
 	\frametitle{A cyclic object in dg cocategories}
 	Fix an algebra, $A$. \\
-	Define a dg category, $Hoch(A)$: \\
+	Define a dg category, $Hoch(A)$. \\
 	%
 	\only<2-5>
 	{$\quad$Objects: algebra maps $f:A \to A$ \\
@@ -129,15 +129,15 @@
 		& A
 		}$$}
 	%
-	\only<6-9> 
-	{$$\resizebox{.85\vsize}{!}
-	  {\xymatrix{
-	  Bar(Hoch(A)) \otimes Bar(Hoch(A)) 
-	  \ar[r]^{\quad\quad\quad\quad\quad \bullet}
-	  & Hoch(A)}}$$}
+	\only<6->
+	{Take Bar(Hoch(A)).\\}
+	%
+	\only<6-7>
+	{$$Bar: DGCat \to DGCocat$$}
 	%
 	\only<7>
-	{\resizebox{1.3\vsize}{!}
+	{Bar(Hoch(A)) has the same objects as Hoch(A).\\
+	\resizebox{1.3\vsize}{!}
 	   {\xymatrix{
 		A 
 		\ar@/^4pc/[rrr]^{f_0}_{\substack{\\\textcolor{blue}{\Downarrow \phi_1}}}
@@ -146,10 +146,16 @@
 		\ar@/_3pc/[rrr]^{f_{n-1}}_{\substack{\\\textcolor{blue}{\Downarrow \phi_n}}}
 		\ar@/_4pc/[rrr]_{f_n} 
 		&&&	A}
-	 \quad A morphism from $f_0$ to $f_n$ in Bar(Hoch(A))}
- 	}
+	 \quad A morphism from $f_0$ to $f_n$ in Bar(Hoch(A))}}
 	%
- 	\only<8-9>
+	\only<8-11> 
+	{$$\resizebox{.85\vsize}{!}
+	  {\xymatrix{
+	  Bar(Hoch(A)) \otimes Bar(Hoch(A)) 
+	  \ar[r]^{\quad\quad\quad\quad\quad \bullet}
+	  & Hoch(A)}}$$}
+	%
+ 	\only<9-11>
 	{$$\resizebox{.85\vsize}{!}
 	  {\xymatrix{
 		A 
@@ -170,7 +176,7 @@
 	  }}$$
 	}
 	%
-	\only<9>
+	\only<10>
 	{$${\scriptstyle 
 	\psi\{\phi_1, \dots, \phi_n\}(a_1,\dots,a_q) = 
 	\sum \limits_{1 \leq i_1 \leq \dots \leq i_n \leq q} \pm
@@ -179,7 +185,24 @@
 	\dots, \phi_n(a_{i_n+1}, \dots), \dots)
 	}$$}
 	%
-	\only<10-> 
+	\only<11>
+	{$$\resizebox{.45\vsize}{!}
+	  {\xymatrix{
+		A 
+		\ar@/^1pc/[r]^{f_0}_{\substack{\\\\\textcolor{blue}{\Downarrow \phi}}}
+		\ar@/_1pc/[r]_{f_n} 
+		&	A 
+		\ar@/^1pc/[r]^{g_0}_{\substack{\\\\\textcolor{blue}{\Downarrow 1 \in k}}}
+		\ar@/_1pc/[r]_{g_1} 
+		& A 
+		\ar@{|->}[r]^{\bullet}
+		& A
+		\ar@/^1pc/[r]^{g_0f_0}_{\substack{\\\\ \textcolor{blue}{\Downarrow \phi}}}
+		\ar@/_1pc/[r]_{g_1f_n}
+		& A
+	  }}$$}
+	%
+	\only<12-> 
 	{$\newline$ In this context, braces, $\bullet$,
 	 give multilinear maps: 
 	$$\resizebox{.85\vsize}{!}
@@ -193,7 +216,7 @@
 	Then, (Bar(Hoch(A)), $\bullet$) is an algebra in DGCocats.\\
 	}
 	%
-	\only<11->
+	\only<13->
 	{But we have more...}
 }
 
@@ -693,7 +716,7 @@
 	  \bullet \dots \bullet
 	 (\phi_{n,1}|\dots|\phi_{n,k_n})} \alpha\\
 	& \iota_\phi(a_0 \otimes \dots a_p)
-	= \pm \phi(a_{d+1}, \dots, a_n)\cdot a_0 \otimes 
+	= \pm \phi(a_{d+1}, \dots, a_p)\cdot a_0 \otimes 
 	a_1 \otimes \dots \otimes a_d \quad 
 	\textrm{where } |\phi|=n-d
 	\end{align*}}
@@ -1086,7 +1109,7 @@
 		  B(\tau_n \mathcal{A})\\
 		C(\mathcal{A}) 
 		\textcolor{blue}{\xrightarrow{\tau_{n!}=
-		d_0^{*n-1}\tau_{1!}}} 
+		\delta_0^{*n-1}\tau_{1!}}} 
 		  \hat{\tau}_n^* C(\tau_n\mathcal{A})
 		\end{pmatrix}
 	\end{align*}
