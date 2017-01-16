@@ -1,4 +1,4 @@
-\documentclass[12pt,draft]{nuthesis} %use [draft] to check on margins
+\documentclass[12pt]{nuthesis} %use [draft] to check on margins
 
 \usepackage{bm} 	%bold in any mode
 \usepackage{amscd}        % For writing commutative diagrams.
@@ -41,7 +41,7 @@
 
 \author{Ann Rebecca Wei}
 
-\title{Title of the Dissertation}
+\title{From Noncommutative Calculus to a (Sheafy-)Cyclic Structure}
 
 %\degree{DOCTOR OF PHILOSOPHY}  % Default: DOCTOR OF PHILOSOPHY
 
@@ -54,7 +54,8 @@
 
 
 % Use \includeonly to select the 
-\includeonly{bibliography, 
+\includeonly{intro/abstract, intro/intro, 
+bibliography, 
 appendices/lambda, appendices/computations, 
 appendices/hochschild, 
 Bn_Cn/motivation, Bn_Cn/dg_cocats, Bn_Cn/dg_comods,
@@ -72,14 +73,14 @@ homotopies/cobar}
 %%%%%%%%%%%%%%%%%%%%%%
 
 \frontmatter		% Preliminary pages start here.
-\maketitle		% Produces the title page.
+%\maketitle		% Produces the title page.
 %\copyrightpage		% Creates the copyright page.
 
 \abstract		% Abstract.
-This is the abstract.
+\input{intro/abstract}
 
-\acknowledgements	% Acknowledgements (optional).
-Text for acknowledgments.
+%\acknowledgements	% Acknowledgements (optional).
+%Text for acknowledgments.
 
 %\preface		% Preface (optional).
 
@@ -111,8 +112,11 @@ Text for acknowledgments.
 
 
 \mainmatter             % Actual text starts here.
+
 % If there is an introduction it must be the first chapter
-%
+\chapter{Introduction}
+	\include{intro/intro}
+
 \chapter{$B(n)$ and $C(n)$}
 	\include{Bn_Cn/motivation}
 	\include{Bn_Cn/dg_cocats}
