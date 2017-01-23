@@ -1,0 +1,250 @@
+\documentclass[t]{beamer}
+\usetheme{AnnArbor}
+\usecolortheme{dolphin}
+
+\usepackage{color}
+\usepackage[all]{xy}
+\usepackage{bm}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{ulem} %\sout
+\usepackage{relsize} %\mathlarger
+
+
+\theoremstyle{plain}
+\newtheorem{prop}[theorem]{Proposition}
+\theoremstyle{example}
+\newtheorem{eg}{Example}[section]
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+
+%make dots smaller
+\newcommand \smdots{\makebox[1em][c]{.\hfil.\hfil.}}
+\let \dots \smdots
+
+%info for title slide
+\title[]{}
+%\subtitle{Subtitle}
+\author{Rebecca Wei}
+\institute{Northwestern University}
+\date{Jan 25, 2017}
+%\subject{Subject}
+
+\begin{document}
+
+\frame{\titlepage}
+%\frame{\tableofcontents}
+
+\frame{
+	\frametitle{Outline}
+	\begin{itemize}
+	\item \textbf{Question:} What do algebras form?
+	$\newline$
+	\item \textbf{Answer 1:} A category in categories ($HH^0$)
+	\item \textbf{Derived Answer 1:} A category in dg cocategories (Hochschild cochains...)
+	$\newline$
+	\item \textbf{Answer 2:} A 2-category with a trace functor ($HH_0$)
+	\item \textbf{Derived Answer 2:} A category in dg cocategories with a trace functor (Hochschild chains...)
+	%
+	\only<2>
+	{\textcolor{blue}{up to homotopy}}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{}
+	\begin{defn} (Kaledin): A \underline{trace functor} on a 2-category $\mathcal{C}$ is:
+	\begin{itemize}
+		\item for each $A \in Obj(\mathcal{C})$, a functor 
+		$TR_A: \mathcal{C}(A,A) \to k-mod$
+		%
+		\item for each pair $A, B \in Obj(\mathcal{C})$, a natural transformation
+		$\tau_!(A,B)$
+		\only<1>
+		{$$\resizebox{0.9\vsize}{!}
+		{\xymatrix{
+		\mathcal{C}(A,B) \otimes \mathcal{C}(B,A)
+		\ar[rr]^{\tau = flip}
+		\ar[d]_{m}
+		&& \mathcal{C}(B,A) \otimes \mathcal{C}(A,B)
+		\ar[d]_{m} \\
+		\mathcal{C}(A,A)
+		\ar[rd]_{TR_A}
+		& \textcolor{blue}{\substack{\Rightarrow\\ \tau_!(A,B)}}
+		& \mathcal{C}(B,B) 
+		\ar[ld]^{TR_B}\\
+		& k-mod
+		}}$$}
+		%
+		\item such that $\tau_!(B,A) \circ \tau_!(C,B) \circ \tau_!(A,C) = id$
+		\only<2>
+		{$$\resizebox{1.3\vsize}{!}
+		{\xymatrixcolsep{0.25pc}
+		\xymatrix{
+		& \mathcal{C}(C,A) \otimes \mathcal{C}(A,C) \otimes \mathcal{C}(B,C) 
+		\ar[rd]^{\tau}
+		\ar[dd]_{\textcolor{blue}{\substack{\Leftarrow\\ \tau_!(B,A)}}}\\
+		\mathcal{C}(A,B) \otimes \mathcal{C}(B,C) \otimes \mathcal{C}(C,A) 
+		\ar[ru]^{\tau}
+		\ar[rd]^{\textcolor{blue}{\quad \quad \quad \substack{\Rightarrow\\ \tau_!(A,C)}}}
+		&& \mathcal{C}(B,C) \otimes \mathcal{C}(C,A) \otimes \mathcal{C}(A,B)
+		\ar@/_1pc/[ll]_{\quad \quad \quad \quad \quad \tau}
+		\ar[ld]_{\textcolor{blue}{\substack{\Rightarrow\\ \tau_!(C,B)}}\quad \quad\quad \quad}\\
+		& k-mod
+		}}$$}
+	\end{itemize}
+	\end{defn}
+}
+
+
+\frame{
+	\frametitle{}
+	\begin{defn} (Kaledin): A \underline{trace functor} on a 2-category $\mathcal{C}$ is:
+	\begin{itemize}
+		\item for each $A \in Obj(\mathcal{C})$, a 
+		\only<1>{functor $TR_A: \mathcal{C}(A,A) \to k-mod$}
+		\only<2->{\textcolor{blue}{left module $T(A)$ over $\mathcal{C}(A,A)$}}
+		$$\mathcal{C}(A,A)(f,g) \otimes_k TR_A(g) \to TR_A(f)$$
+		%
+		\item for each pair $A, B \in Obj(\mathcal{C})$, a
+		\only<1-2>{natural transformation $\tau_!(A,B)$}
+		\only<3->{\textcolor{blue}{map of modules 
+		$\tau_!(A,B): m^*T(A) \to \tau^*m^*T(B)$ 
+		over $\mathcal{C}(A,B) \otimes \mathcal{C}(B,A)$}}
+		$$\resizebox{0.75\vsize}{!}
+		{\xymatrix{
+		\mathcal{C}(A,B) \otimes \mathcal{C}(B,A)
+		\ar[rr]^{\tau}
+		\ar[d]_{m}
+		&& \mathcal{C}(B,A) \otimes \mathcal{C}(A,B)
+		\ar[d]_{m} \\
+		\mathcal{C}(A,A)
+		\ar[rd]_{TR_A}
+		& \textcolor{blue}{\substack{\Rightarrow\\ \tau_!(A,B)}}
+		& \mathcal{C}(B,B) 
+		\ar[ld]^{TR_B}\\
+		& k-mod
+		}}$$
+		%
+		\item such that 
+		\only<1-3>
+		{$\tau_!(B,A) \circ \tau_!(C,B) \circ \tau_!(A,C) = id$}
+		\only<4->
+		{\textcolor{blue}{$
+		\tau^{*2} \tau_!(B,A) \circ 
+		\tau^* \tau_!(C,B) \circ 
+		\tau_!(A,C) = id$}}
+	\end{itemize}
+	\end{defn}
+}
+
+\frame{
+	\begin{defn} Let $\mathcal{C}$ be a category in $k$-linear categories. 
+	Let $\chi(\mathcal{C})$ be the $k$-linear category with 
+	\begin{itemize}
+		\item Objects = $\{ A\to A,\; A \to B \to A,\; A \to B \to C \to A 
+		: A, B, C \in Obj(\mathcal{C})\}$
+		\item Morphisms = $\{$linear combinations of compositions of 
+		rotations $\tau_i$ s.t. $\tau_i^{i+1} = id$, $i = 0,1,2\}$.
+		\only<3->
+		{\textcolor{blue}{Why stop at n=2? What about $\delta$, $\sigma$?}}
+	\end{itemize}
+	\end{defn}
+	%
+	\only<2->
+	{A \underline{trace functor} on $\mathcal{C}$ gives a functor 
+	$$\chi(\mathcal{C}) \to 
+	\mathcal{D} = \{(k\textrm{-lin category, module})\}$$ 
+	\scalebox{.75}{\parbox{1\linewidth}{%
+	\begin{align*}
+	(A \to A)
+	&\mapsto 
+	\big( \mathcal{C}(A,A), T(A) \big)\\
+	(A \to B \to A)
+	&\mapsto 
+	\big( \mathcal{C}(A,B) \otimes \mathcal{C}(B,A), m^*T(A) \big)\\
+	(A \to B \to C \to A)
+	&\mapsto 
+	\big( \mathcal{C}(A,B) \otimes \mathcal{C}(B,C) \otimes \mathcal{C}(C,A), m^{*2}T(A) \big)\\
+	\tau_1: {\scriptstyle (A \to B \to A) \to (B \to A \to B)}
+	&\mapsto
+	\tau_!(A,B)\\
+	\tau_2: {\scriptstyle (A \to B \to C \to A) \to (C \to A \to B \to C)}
+	&\mapsto
+	m^*\tau_!(A,C)\\
+	\tau_1^2 = id,\; \tau_2^3 = id
+	&\mapsto
+	\textrm{relations in definition of trace functor}
+	\end{align*}}}
+	}
+}
+
+\frame{
+	\begin{defn} Let $\mathcal{C}$ be a category in dg cocategories. 
+	Let $\chi_\infty(\mathcal{C})$ be the dg category with
+	\begin{itemize}
+	\item Objects = $\{A_0 \to \dots \to A_n \to A_0: A_i \in Obj(\mathcal{C}), n\geq 0\}$
+	\item Morphisms = $\{$linear combinations of compositions of 
+	{\small  
+  	\setlength{\abovedisplayskip}{6pt}
+  	\setlength{\belowdisplayskip}{\abovedisplayskip}
+  	\setlength{\abovedisplayshortskip}{0pt}
+  	\setlength{\belowdisplayshortskip}{3pt}
+  	\begin{align*}
+	rotations\; \tau_n
+	&: 
+	\mathcal{A}
+	\mapsto (A_n \to A_0 \to \dots \to A_n) \\
+	coboundaries\; \delta_{j,n}
+	&: 
+	\mathcal{A}\mapsto 
+	(A_0 \to \dots \to A_j \to A_{j+2\,(mod\,n+1)} 
+	\to \dots \to A_0) \\
+	codegeneracies\; \sigma_{i,n}
+	&: \mathcal{A}
+	\mapsto 
+	(A_0 \to \dots \to A_i \to A_i \to \dots \to A_0)
+	\end{align*}}
+	where $\mathcal{A}:= (A_0 \to \dots \to A_n \to A_0)$,
+	subject to the cyclic relations$\}[0]$
+	\end{itemize}
+	\end{defn}
+}
+
+\frame{
+	\begin{defn} Let $\mathcal{D}_\infty$ be the dg category with 
+	\begin{itemize}
+	\item Objects = $\{(\underset{B}{\textrm{dg cocategory}}, 
+	\underset{C}{\textrm{dg comodule}})\}$
+	\item Morphisms:
+	\begin{align*}
+	\mathcal{D}_\infty^p \big((B_1, C_1), (B_0,C_0) \big)
+	&:= 
+	\begin{Bmatrix}
+	F: B_1 \to B_0 \; dg\; functor,\\
+	F_!: C_1 \to F^*C_0 \; degree\textrm{-}p \; linear \; map
+	\end{Bmatrix}\\
+	&\phantom{:=}
+	d_{D_\infty}(F, F_!) = 
+	(F, [d,F_!] = 
+	{\scriptstyle d_{F^*C_0}\circ F_! \pm F_! \circ d_{C_1}})
+	\end{align*}
+	\end{itemize}
+	$F^*C_0$ is the categorified version of 
+	co-extension of scalars:
+	$$F^*C_0 = ker(B_1 \otimes C_0 \rightrightarrows 
+	B_1 \otimes B_0 \otimes C_0)$$
+	\end{defn}
+	%
+	\only<2->
+	{\begin{center}
+	\textcolor{blue}{Can we give a dg functor 
+	$\chi(\mathcal{C}) \to \mathcal{D}_\infty$?}
+	\end{center}}
+	%
+	\only<3->
+	{\begin{center}
+	\textcolor{red}{No, but we can give an $A_\infty$-functor.}
+	\end{center}}
+}
+\end{document}
