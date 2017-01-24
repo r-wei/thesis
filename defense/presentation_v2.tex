@@ -52,7 +52,120 @@
 }
 
 \frame{
-	\frametitle{}
+	\textbf{Answer 1:} Algebras form a \textbf{2-category}.\\
+	$\newline$
+	\begin{itemize}
+	\item Objects: algebras $A, B, \dots$
+	\item 1-Morphisms: 
+		\only<1>{bimodules $_AM_B$}
+		\only<2->{\textcolor{blue}{$_fB$, $f:A \to B$ map of algebras}}
+	\item 1-Composition: $_AM_B \otimes_B { _B}N_C$
+	\item 2-Morphisms: 
+		\only<1-2>{morphisms of bimodules}
+		\only<3->{\textcolor{blue}{
+		\begin{align*}
+		HH^0(A,\, _gB_f) \cong Z_A(_gB_f)
+		&\mapsto 
+		\{\textrm{maps of bimodules } _fB \to _gB \}\\
+		b
+		&\mapsto 
+		(M_b: b^\prime \mapsto b \cdot b^\prime)
+		\end{align*}}}
+	\end{itemize}
+	%
+	\only<4->
+	{\begin{center}
+	Can we use Hochschild cohomology or cochains instead of $HH^0$?
+	\end{center}}
+}
+
+\frame{
+	\textbf{Derived Answer 1:} Algebra form a category in dg cocategories.
+	$\newline$
+	\begin{itemize}
+	\item Objects: algebras $A, B, \dots$
+	\item Morphisms: a dg cocategory $Bar(Hoch(A,B))$
+	\item Composition: $\bullet: Bar(Hoch(A,B)) \otimes Bar(Hoch(B,C)) \to 
+	Bar(Hoch(A,C))$ associative map of dg cocategories
+	\end{itemize}
+}
+
+\frame{
+	\textbf{Defining $Bar(Hoch(A,B))$}\\
+	\begin{enumerate}
+	%
+	\item $Hoch(A,B)$ is a dg category with 
+	\begin{itemize}
+		\item Objects: algebra maps $f:A \to B$ 
+		\item Morphisms: $Hoch(A)(f,g) = 
+		(C^\bullet(A,\, _fB_g),\, _f\delta_g)$
+		%
+		\item Composition: cup product on cochains
+		\only<1>
+		{\begin{align*}
+		\phi &\in C^p(A, _fB_g)\\
+		\psi &\in C^q(A, _gB_h)\\
+		(\phi \cup \psi)(a_1,\dots,a_{p+q})
+		&= \pm \phi(a_1, \dots, a_p)\psi(a_{p+1},\dots,a_q)
+		\end{align*}}
+	\end{itemize}
+	%
+	\only<2->
+	{\item $Bar: DGCat \to DGCocat$\\}
+	%
+	\only<3>
+	{Bar(Hoch(A)) has the same objects as Hoch(A).\\
+	\begin{columns}
+	\begin{column}{0.4\textwidth}
+   	\resizebox{0.45\vsize}{!}
+	   {\xymatrix{
+		A 
+		\ar@/^4pc/[rrr]^{f_0}_{\substack{\\\textcolor{blue}{\Downarrow \phi_1}}}
+		\ar@/^2pc/[rrr]^{f_1}_{\substack{\\\textcolor{blue}{\Downarrow \phi_2}}}
+		\ar@/^0pc/[rrr]^{f_2}_{\textcolor{blue}{\vdots}}
+		\ar@/_3pc/[rrr]^{f_{n-1}}_{\substack{\\\textcolor{blue}{\Downarrow \phi_n}}}
+		\ar@/_4pc/[rrr]_{f_n} 
+		&&&	A}}
+	\end{column}
+	\begin{column}{0.6\textwidth} 
+		A morphism from $f_0$ to $f_n$ in Bar(Hoch(A)) \\ $\newline$
+		$\Delta(\phi_1 \dots \phi_n) = \sum \limits_{0 \leq i \leq n} \pm 
+		\phi_1 \dots \phi_i \otimes \phi_{i+1} \dots \phi_n$\\
+		$|\phi_1 \dots \phi_n| = \sum \limits_{1 \leq i \leq n} |\phi_i| - n$\\
+		$d_{Bar(Hoch(A))} = \tilde{d}_{Hoch(A)} + d_\cup$
+	\end{column}
+	\end{columns}
+	}
+	\end{enumerate}
+}
+
+\frame{
+	\textbf{Derived Answer 1:} Algebra form a category in dg cocategories.
+	$\newline$
+	\begin{itemize}
+	\item Objects: algebras $A, B, \dots$
+	\item Morphisms: a dg cocategory $Bar(Hoch(A,B))$
+	\item Composition: $\bullet: Bar(Hoch(A,B)) \otimes Bar(Hoch(B,C)) \to 
+	Bar(Hoch(A,C))$ associative map of dg cocategories
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Outline}
+	\begin{itemize}
+	\item \textbf{Question:} What do algebras form?
+	$\newline$
+	\item \textbf{Answer 1:} A category in categories ($HH^0$)
+	\item \textbf{Derived Answer 1:} A category in dg cocategories (Hochschild cochains...)
+	$\newline$
+	\item \textbf{Answer 2:} A 2-category with a trace functor ($HH_0$)
+	\item \textbf{Derived Answer 2:} A category in dg cocategories with a trace functor (Hochschild chains...)
+	\textcolor{blue}{up to homotopy}
+	\end{itemize}
+}
+
+\frame{
+	\textbf{Answer 2:} A 2-category with a trace functor
 	\begin{defn} (Kaledin): A \underline{trace functor} on a 2-category $\mathcal{C}$ is:
 	\begin{itemize}
 		\item for each $A \in Obj(\mathcal{C})$, a functor 
@@ -96,6 +209,45 @@
 	\end{defn}
 }
 
+\frame{
+	\textbf{Answer 2:} A 2-category with a trace functor
+	\begin{defn} (Kaledin): A \underline{trace functor} on a 2-category $\mathcal{C}$ is:
+	\begin{itemize}
+		\item for each $A \in Obj(\mathcal{C})$, a functor 
+		$TR_A: \mathcal{C}(A,A) \to k-mod$\\
+		\textcolor{blue}{$TR_A: \textrm{bimodule } _AM_A \mapsto M/[A,M] = HH_0(A,M)$}
+		%
+		\only<2->
+		{\item for each pair $A, B \in Obj(\mathcal{C})$, a natural transformation
+		$\tau_!(A,B)$
+		$$\resizebox{0.75\vsize}{!}
+		{\xymatrix{
+		\mathcal{C}(A,B) \otimes \mathcal{C}(B,A)
+		\ar[rr]^{\tau = flip}
+		\ar[d]_{m}
+		&& \mathcal{C}(B,A) \otimes \mathcal{C}(A,B)
+		\ar[d]_{m} \\
+		\mathcal{C}(A,A)
+		\ar[rd]_{TR_A}
+		& \textcolor{blue}{\substack{\Rightarrow\\ \tau_!(A,B)}}
+		& \mathcal{C}(B,B) 
+		\ar[ld]^{TR_B}\\
+		& k-mod
+		}} $$
+		\scalebox{.75}{\parbox{1\linewidth}{%
+		\textcolor{blue}{\begin{align*}
+		_AM_B \otimes_B { _B}N_A / [A, M \otimes_B N] 
+		&\xrightarrow{\tau_!(A,B)} 
+		_BN_A \otimes_A { _A}M_B / [B, N \otimes_A M]\\
+		m \otimes n
+		&\mapsto
+		n \otimes m
+		\end{align*}}
+		%
+		such that $\tau_!(B,A) \circ \tau_!(C,B) \circ \tau_!(A,C) = id$}}}
+	\end{itemize}
+	\end{defn}
+}
 
 \frame{
 	\frametitle{}
