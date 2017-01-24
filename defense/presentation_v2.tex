@@ -25,7 +25,7 @@
 \newcommand{\leftmapsto}{\leftarrow\!\shortmid} %\left mapsto
 
 %info for title slide
-\title[]{}
+\title[]{What do algebras form?}
 %\subtitle{Subtitle}
 \author{Rebecca Wei}
 \institute{Northwestern University}
@@ -230,7 +230,9 @@
 	  }}$$}
 	%
 	\only<5->
-	{Braces are associative. (...)}
+	{Braces are associative. 
+	(Getzler-Jones; Voronov-Gerstenhaber, Lyubashenko-Manzyuk; 
+	Keller)}
 }
 
 \frame{
@@ -648,7 +650,7 @@
 }
 
 \frame{
-	Give an $A_\infty$-functor
+	\textbf{Give an $A_\infty$-functor}
 	\begin{align*}
 	\chi_\infty(\mathcal{C}) 
 	&\to 
@@ -692,4 +694,566 @@
 		\end{pmatrix}}
 	\end{align*}
 }
+
+\frame{
+	\textbf{Defining $\tau_{n!}$}
+	%
+	\begin{align*}
+	\only<1->
+	{n=1: \quad C(A_0 \to A_1 \to A_0)^\bullet(f,g) 
+	&\xrightarrow{\tau_{1!}} C(A_1 \to A_0 \to A_1)^\bullet(g,f)\\}
+	%
+	\only<1>
+	{\resizebox{.35\vsize}{!}
+	{\xymatrix{
+	A_0 \ar@/^4pc/[r]^{f_{0,0}} 
+	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{0,1}}}_{f_{0,1}} 
+	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{0,k_0}}}
+	\ar@/_2pc/[rr]^{\substack{\mathlarger{\textcolor{blue}{\alpha}} \\}}_{ id_{A_0}}
+	& A_1 \ar@/^4pc/[r]^{f_{1,0}} 
+	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{1,1}}}_{f_{1,1}} 
+	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{1,k_1}}}
+	& A_0 
+	}}
+	&\mapsto 
+	\sum
+	\resizebox{.35\vsize}{!}
+	{\xymatrix{
+	A_1 \ar@/^4pc/[r]^{f_{1,0}} 
+	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{1,1}^\prime}}_{f_{1,1}} 
+	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{1,k_1}}}
+	\ar@/_2pc/[rr]^{\substack{\mathlarger{\textcolor{blue}{\alpha^\prime}} \\}}_{ id_{A_1}}
+	& A_0 \ar@/^4pc/[r]^{f_{0,0}} 
+	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{0,1}^\prime}}_{f_{0,1}} 
+	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{0,k_0}}}
+	& A_1 
+	}}}
+	%
+	\only<2->
+	{\resizebox{.35\vsize}{!}
+	{\xymatrix{
+	A_0 \ar@/^4pc/[r]^{f_{0,0}} 
+	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{0,1}}}_{f_{0,1}} 
+	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{0,k_0}}}
+	\ar@/_2pc/[rr]^{\substack{\mathlarger{\textcolor{blue}{\alpha}} \\}}_{ id_{A_0}}
+	& A_1 \ar@/^4pc/[r]^{f_{1,0}} 
+	\ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{1,1}}}_{f_{1,1}} 
+	\ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{1,k_1}}}
+	& A_0 
+	}}
+	&\mapsto 
+	\resizebox{.35\vsize}{!}
+	{\xymatrix{
+	A_1 
+	\ar[r]^{f_{1,0}} 
+	\ar@/_2pc/[rr]^{\substack{\mathlarger{\textcolor{blue}{\alpha^\prime}} \\}}_{ id_{A_1}}
+	& A_0 
+	\ar[r]^{f_{0,0}} 
+	& A_1 
+	}}}
+	\end{align*}
+	%
+	\only<3->
+	{\textbf{Strategy:} Give these maps to 
+	cogenerators to 
+	define $\tau_{1!}$, then let
+	{\small \begin{align*}
+	\tau_{n!}: C(\mathcal{A}) 
+	&\cong 
+	\hat{\delta}_0^{*n-1}
+	C({\scriptstyle A_0 \to A_n \to A_0})
+	\xrightarrow{\hat{\delta}_0^{*n-1}\tau_{1!}}
+	\hat{\delta}_0^{*n-1}\hat{\tau}_1^* 
+	C({\scriptstyle A_n \to A_0 \to A_n}) \cong \\
+	&\cong
+	(\widehat{\tau_1\delta_0^{n-1}})^*
+	C({\scriptstyle A_n \to A_0 \to A_n}) \cong 
+	(\widehat{\delta_0^{n-1}\tau_n})^*
+	C({\scriptstyle A_n \to A_0 \to A_n}) \cong \\
+	&\cong
+	\hat{\tau}_n^*\hat{\delta}_0^{*n-1} 
+	C({\scriptstyle A_n \to A_0 \to A_n})\cong
+	\hat{\tau}_n^* C(\tau_n\mathcal{A}).
+	\end{align*}}}%
+}
+
+\frame{
+	\textbf{Defining $\tau_{1!}$}
+	%
+	\begin{align*}
+	\only<2-3>
+	{\resizebox{.35\vsize}{!}
+	{\xymatrix{
+	A_0 
+	\ar[r]^{f_{0,0}} 
+	\ar@/_2pc/[rr]^{\substack{\mathlarger{\textcolor{blue}{\alpha}} \\}}_{ id_{A_0}}
+	& A_1 
+	\ar[r]^{f_{1,0}} 
+	& A_0 }}
+	&\overset{?}{\mapsto}
+	\resizebox{.35\vsize}{!}
+	{\xymatrix{
+	A_1 
+	\ar[r]^{f_{1,0}} 
+	\ar@/_2pc/[rr]^{\substack{\mathlarger{\textcolor{blue}{\alpha^\prime}} \\}}_{ id_{A_1}}
+	& A_0 
+	\ar[r]^{f_{0,0}} 
+	& A_1 
+	}}\\}
+	%
+	\only<3>
+	{\alpha = a_0 \otimes \dots \otimes a_n
+	&\mapsto 
+	\alpha^\prime = f_{0,0}(a_0) \otimes \dots 
+	\otimes f_{0,0}(a_n)\\}
+	%
+	\only<4-8>
+	{\resizebox{.35\vsize}{!}
+	{\xymatrix{
+	A_0 
+	\ar@/^2pc/[r]^{f_{0,0}}_{\textcolor{blue}{\Downarrow \phi}}
+	\ar[r]^{f_{0,1}}
+	\ar@/_2pc/[rr]^{\substack{\mathlarger{\textcolor{blue}{\alpha}} \\}}_{ id_{A_0}}
+	& A_1 
+	\ar[r]^{f_{1,0}} 
+	& A_0 }}
+	&\overset{?}{\mapsto}
+	\resizebox{.35\vsize}{!}
+	{\xymatrix{
+	A_1 
+	\ar[r]^{f_{1,0}} 
+	\ar@/_2pc/[rr]^{\substack{\mathlarger{\textcolor{blue}{\alpha^\prime}} \\}}_{ id_{A_1}}
+	& A_0 
+	\ar[r]^{f_{0,0}} 
+	& A_1 
+	}}\\}
+	%
+	\only<5>
+	{\overline{\tau_{1!} \circ d} (\phi \otimes \alpha)
+	& = 
+	\overline{d\circ \tau_{1!}}(\phi \otimes \alpha)\\}
+	%
+	\only<6-8>
+	{[b,\bar{\tau}_{1!}](\phi \otimes \alpha) \pm
+	\bar{\tau}_{1!}(\delta\phi \otimes \alpha)
+	&= 
+	[\bar{\tau}_{1!}, \iota_{\phi}](\alpha)\\}
+	\end{align*}
+	%
+	\begin{align*}
+	\only<7>
+	{L_\phi(\alpha) = 
+	&\sum \limits_{k\geq 1}
+	\pm a_0 \otimes \dots \otimes \phi(a_k,\dots)
+	\otimes a_r \otimes \dots \otimes a_n +\\
+	&\sum \pm \phi(a_k, \dots, a_n, a_0, \dots) \otimes 
+	a_s \otimes \dots \otimes a_{k-1}\\
+	[b,L_\phi] 
+	&\pm L_{\delta\phi} = 0}
+	%
+	\only<8>
+	{\textcolor{blue}{\bar{\tau}_{1!}}
+	(\phi \otimes \alpha) = 
+	&\sum \limits_{k\geq 1}
+	\pm \textcolor{blue}{f_{0,0}}a_0 \otimes 
+	\dots \otimes \phi(a_k,\dots) \otimes 
+	\textcolor{blue}{f_{0,1}}a_r \dots \otimes 
+	\textcolor{blue}{f_{0,1}}a_n +\\
+	&\sum \pm \phi(\textcolor{blue}{f_{1,0}f_{0,1}} a_k, 
+	\dots, \textcolor{blue}{f_{1,0}f_{0,1}}a_n, 
+	a_0, \dots) \otimes 
+	\textcolor{blue}{f_{0,1}}a_s \otimes \dots \otimes
+	\textcolor{blue}{f_{0,1}} a_{k-1}}
+	\end{align*}
+}
+
+\frame{	
+	\textbf{Defining $\tau_{1!}$}
+	%
+	\begin{align*}
+	&\bar{\tau}_{1!} \big(
+	(\phi_{0,1}|\dots|\phi_{0,k_0}) \otimes 
+	(\phi_{1,1}|\dots|\phi_{1,k_1}) \otimes 
+	\alpha \big) = \\
+	=  &\sum_{\substack{
+			1\leq i \leq j_1 \leq \dots \leq j_{2k_1} \leq k_0,
+			\\p}} 		
+	  \pm \phi_{0,1} \big(
+	  \substack{
+	  f_{1,0}f_{0,i}a_p, \dots, 
+	  f_{1,0}\phi_{0,i+1}(a_*, \dots), \\
+	  f_{1,0}f_{0,i+1}a_*, \dots,
+	  f_{1,0}\phi_{0,j_1}(a_*, \dots),\\
+	  f_{1,0}f_{0,j_1}a_*, \dots,
+	  \phi_{1,1}(f_{0,j_1}a_*, \dots, 
+	  \phi_{0,j_1+1}(a_*, \dots), \dots), \dots,\\
+	  \phi_{1,k_1}(f_{0,j_{2k_1-1}}a_*, \dots, 
+	  \phi_{0,j_{2k_1-1}+1}(a_*, \dots), \dots), 
+	  \dots, a_0, \dots} \big) \otimes \\
+	& \phantom{moveovermove}
+	\otimes f_{0,1}a_* \otimes \dots \otimes 
+	  \phi_{0,2}(a_*, \dots ) \otimes 
+	  f_{0,2}a_* \otimes \dots \otimes \\ 
+	& \phantom{moveovermove} \otimes
+	  \phi_{0,i}(a_*, \dots ) \otimes 
+	  f_{0,i}a_* \otimes \dots f_{0,i}a_{p-1} + \\
+	& \bigg( \sum \pm f_{0,0}a_0 \otimes \dots 
+	\otimes \phi_{0,1}(a_*, \dots) \otimes \dots \otimes 
+	 \phi_{0,n_0}(a_*,\dots) \otimes \\
+	& \phantom{move}
+	\otimes f_{0,n_0}a_* \otimes \dots \otimes 
+	f_{0,n_0}a_n \quad \textrm{if $k_1 = 0$} \bigg)
+	\end{align*}
+}
+
+\frame{
+	\textbf{Give an $A_\infty$-functor}
+	\begin{align*}
+	\chi_\infty(\mathcal{C}) 
+	&\to 
+	\mathcal{D}_\infty \\
+	{\scriptstyle \mathcal{A}:= (A_0 \to \dots \to A_n \to A_0)}
+	& \mapsto
+	\begin{pmatrix}
+	{\scriptstyle B(\mathcal{A}), }\\
+	{\scriptstyle C(\mathcal{A})}
+	\end{pmatrix}\\
+	%
+	\textrm{Generating Morphisms:}\quad 
+		%
+		\sigma_{i,n}
+		&\mapsto
+		\begin{pmatrix}
+		B(\mathcal{A}) \xrightarrow{\hat{\sigma}_{i,n}}
+		  B(\sigma_{i,n}\mathcal{A})\\
+		C(\mathcal{A}) \xrightarrow{id} 
+		  \hat{\sigma}_{i,n}^* C(\sigma_{i,n}\mathcal{A})
+		\end{pmatrix}\\
+		%
+		\delta_{j,n}
+		\mapsto
+		\begin{pmatrix}
+		B(\mathcal{A}) \xrightarrow{\hat{\delta}_{j,n}}
+		  B(\delta_{j,n}\mathcal{A})\\
+		C(\mathcal{A}) \xrightarrow{id} 
+		  \hat{\delta}_{j,n}^* C(\delta_{j,n}\mathcal{A})
+		\end{pmatrix}\quad 
+		%
+		\tau_n
+		&\mapsto
+		\begin{pmatrix}
+		B(\mathcal{A}) \xrightarrow{\hat{\tau}_n}
+		  B(\tau_n \mathcal{A})\\
+		C(\mathcal{A}) 
+		\xrightarrow{\textcolor{blue}{\tau_{n!} = 
+		\delta_0^{*n-1}\tau_{1!}}} 
+		  \hat{\tau}_n^* C(\tau_n\mathcal{A})
+		\end{pmatrix}
+	\end{align*}
+}
+
+\frame{
+	\textbf{First homotopy, n=1:} 
+	\only<1->
+	{$$\resizebox{1.2\vsize}{!}
+	{\xymatrix{
+	C(A_0 \to A_1 \to A_0)
+	\ar[r]^{\tau_{1!}} 
+	\ar@/_2pc/[rr]_{id}
+	& \hat{\tau}_1^*C(\tau_1(A_0 \to A_1 \to A_0))
+	\ar[r]^{\hat{\tau}_1^*\tau_{1!}} 
+	& \hat{\tau}_1^{*2}C(\tau_1^2(A_0 \to A_1 \to A_0))
+	}}$$}
+	%
+	\only<2-3>
+	{$\resizebox{.35\vsize}{!}
+	{\xymatrix{
+	A_0 
+	\ar[r]^{f_{0,0}} 
+	\ar@/_2pc/[rr]^{\substack{\mathlarger{\textcolor{blue}{\alpha}} \\}}_{ id_{A_0}}
+	& A_1 
+	\ar[r]^{f_{1,0}} 
+	& A_0 }}$\\
+	$\alpha = a_0 \otimes \dots \otimes a_n 
+	\overset{\tau_{1!}}{\mapsto} 
+	f_{0,0}a_0 \otimes \dots \otimes f_{0,0}a_n
+	\overset{\hat{\tau}_{1!}^*\tau_{1!}}{\mapsto}  
+	f_{1,0}f_{0,0}a_0 \otimes \dots \otimes f_{1,0}f_{0,0}a_n$}
+	%
+	\only<3>
+	{$\newline$ 
+	\begin{align*}
+	f_{1,0}f_{0,0}\alpha - \alpha
+	&= [b, B] (\alpha)\\
+	B(a_0 \otimes \dots \otimes a_n) 
+	&= 
+	\sum \limits_{0\leq i \leq n} \pm
+	1 \otimes f_{1,0}f_{0,0}a_i \otimes 
+	\dots \otimes f_{1,0}f_{0,0}a_n \otimes 
+	a_0 \otimes \dots \otimes a_{i-1}
+	\end{align*}}
+	%
+	\only<4>
+	{\begin{align*}
+	&B \big(
+	(\phi_{0,1}|\dots|\phi_{0,k_0}) \otimes 
+	(\phi_{1,1}|\dots|\phi_{1,k_1}) \otimes 
+	\alpha \big) = \\
+	=  &\sum_{\substack{
+	   0 \leq j_1 \leq \dots \leq j_{2k_1} \leq k_0 
+	   \\p}}
+	\pm 1 \otimes  		
+	  f_{1,0}f_{0,0}a_p \otimes \dots \otimes 
+	  f_{1,0}\phi_{0,1}(a_*, \dots) \otimes \\
+	&\phantom{moveovermove}  \otimes
+	  f_{1,0}f_{0,1}a_* \otimes \dots \otimes
+	  f_{1,0}\phi_{0,j_1}(a_*, \dots) \otimes \\
+	&\phantom{moveovermove}  \otimes
+	  f_{1,0}f_{0,j_1}a_* \otimes \dots \otimes
+	  \phi_{1,1}(f_{0,j_1}a_*, \dots, 
+	  \phi_{0,j_1+1}(a_*, \dots), \dots) \otimes \\
+	&\phantom{moveovermove} \otimes	  
+	  \dots \otimes \phi_{1,k_1}(f_{0,j_{2k_1-1}}a_*, \dots, 
+	  \phi_{0,j_{2k_1-1}+1}(a_*, \dots), \dots) \otimes 
+	  \dots \otimes \\
+	&\phantom{moveovermove} \otimes	
+	  a_0 \otimes \dots \otimes a_{p-1}
+	  \end{align*}}
+}
+
+\frame{
+	\textbf{Give an $A_\infty$-functor}
+	\begin{align*}
+	\chi_\infty(\mathcal{C}) 
+	&\to 
+	\mathcal{D}_\infty \\
+	{\scriptstyle \mathcal{A}:= (A_0 \to \dots \to A_n \to A_0)}
+	& \mapsto
+	\begin{pmatrix}
+	{\scriptstyle B(\mathcal{A}), }\\
+	{\scriptstyle C(\mathcal{A})}
+	\end{pmatrix}\\
+	%
+	\tau_1
+	&\mapsto 
+	\begin{pmatrix}
+	\hat{\tau}_1: B(\mathcal{A}) \to 
+	  B(\tau_1 \mathcal{A})\\
+	\tau_{1!}: C(\mathcal{A}) \to 
+	  \hat{\tau}_1^*C(\tau_1\mathcal{A})
+	\end{pmatrix}\\
+	%
+	(\tau_1, \tau_1)
+	&\mapsto
+	\begin{pmatrix}
+	id: B(\mathcal{A}) \to B(\mathcal{A})\\
+	B: C(\mathcal{A}) \to C(\mathcal{A})
+	\end{pmatrix}\\
+	%
+	(\tau_1, \tau_1, \tau_1)
+	&\mapsto
+	\begin{pmatrix}
+	\hat{\tau}_1: B(\mathcal{A}) \to 
+	  B(\tau_1 \mathcal{A})\\
+	0: C(\mathcal{A}) \to 
+	  \hat{\tau}_1^*C(\tau_1\mathcal{A})
+	\end{pmatrix}\\
+	%
+	&\vdots
+	\end{align*}
+}
+
+\frame{
+	\textbf{The $A_\infty$ relations mean:}\\
+	%
+	\begin{itemize}
+	\item $\tau_{1!}$ is a map of complexes
+	\item $B^2 = 0$
+	\item The following diagram commutes:
+	$$\xymatrix{
+	C(\mathcal{A})
+	\ar[r]^{\tau_{1!}}
+	\ar[d]^{B}
+	& \hat{\tau}_1^* C(\tau_1\mathcal{A})
+	\ar[d]^{\hat{\tau}_1^*B}\\
+	C(\mathcal{A})
+	\ar[r]_{\tau_{1!}}
+	& \hat{\tau}_1^* C(\tau_1\mathcal{A})
+	}
+	$$
+	\end{itemize}
+}		
+
+
+\frame{
+	For higher $n >1$, we want to find a 
+	homotopy between $``\tau_{n!}^{n+1}$'' 
+	and $id$.\\
+	%
+	\only<2->
+	{However, it is sufficient to find a 
+	homotopy between $\hat{\tau}_n^{*2} \delta_{0,n!} 
+	\circ \hat{\tau}_n^* \tau_{n!} \circ \tau_{n!}$ and 
+	$\hat{\delta}_{n-1,n}^* \tau_{n-1!} \circ 
+	\delta_{n-1,n!}$.
+	$$
+	\xymatrix{
+	[n]
+	\ar[r]^{\tau_n}
+	\ar[d]^{\delta_{n-1,n}}
+	& [n]
+	\ar[r]^{\tau_n}
+	& [n]
+	\ar[dl]^{\delta_{0,n}}\\
+	[n-1]
+	\ar[r]_{\tau_{n-1}}
+	& [n-1]
+	}
+	$$}
+	%
+	\only<3->
+	{\textbf{Strategy:} Find such a homotopy, 
+	$\mathcal{B}$, for $n=2$, and use 
+	$\hat{\delta}_0^{*n-2}\mathcal{B}$ for $n>2$.}
+}
+
+\frame{
+	\begin{align*}
+		\chi_\infty(\mathcal{C})
+		&\to 
+		\mathcal{D}_\infty\\
+		%
+		\mathcal{A}
+		&\mapsto
+		(B(\mathcal{A}), C(\mathcal{A}))\\
+		%
+		\mu = \tau_{n-1}\circ \delta_{n-1,n} = 
+		\delta_{0,n}\circ \tau_n^2
+		&\mapsto 
+		\begin{pmatrix}
+		\hat{\tau}_{n-1} \circ \hat{\delta}_{n-1,n}
+		= \hat{\delta}_{0,n}\circ \hat{\tau}_n^2\\
+		\hat{\tau}_n^{*2} \delta_{0,n!} \circ 
+		  \hat{\tau}_n^*\tau_{n!} \circ \tau_{n!}
+		\end{pmatrix}\\
+		%
+		(\delta_{0,n}, \tau_n^2)
+		&\mapsto
+		\begin{pmatrix}
+		\hat{\delta}_{0,n}\circ \hat{\tau}_n^2\\
+		0
+		\end{pmatrix}\\
+		%
+		(\tau_{n-1}, \delta_{n-1,n})
+		&\mapsto
+		\begin{pmatrix}
+		\hat{\tau}_{n-1}\circ \hat{\delta}_{n-1,n}\\
+		\mathcal{B}
+		\end{pmatrix}\\
+		%
+		(\tau_{n-1}, \delta_{n-1,n}, \lambda)
+		&\mapsto
+		\begin{pmatrix}
+		\hat{\tau}_{n-1}\circ \hat{\delta}_{n-1,n} 
+		  \circ \hat{\lambda} \\
+		0
+		\end{pmatrix}\\
+		%
+		&\vdots
+	\end{align*}
+}
+
+\frame{
+	For $n>1$, the $A_\infty$ relations mean:\\
+	%
+	\begin{itemize}
+	\item $\tau_{n!}$ is a map of complexes
+	\item $\mathcal{B}^2 = 0$
+	%
+	\only<1>
+	{\item We have a pair of homotopic maps:
+	$$\xymatrixrowsep{5pc}
+	\xymatrix{
+	C(A_0 \to \smdots \to A_n \to A_0) 
+	 \ar@/^1pc/[d]^{\substack{
+	   (\widehat{\delta_{n-2,n-1}\delta_{n-1,n}})^*
+	   \tau_{n-2!}\\\\\\
+	   \textrm{$``$brace together the last 3 algebras,}\\
+	   \textrm{then apply $\tau_{n-2!}$ once''}}}
+	 \ar@/_1pc/[d]_{\substack{
+	   \hat{\tau}_n^{*2} \tau_{n!}\circ
+	   \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}\\\\\\
+	   \textrm{$``$apply $\tau_{n!}$ 3 times''}}}\\
+	C(A_{n-2} \to A_{n-1} \to A_n \to 
+	A_0 \to \smdots \to A_{n-2}).
+	}$$}
+	%
+	\only<2>
+	{\item They are homotopic via two homotopies:
+	$$\resizebox{1.1\vsize}{!}
+	{\xymatrix{
+	\underset{\substack{\\\\
+	  \textrm{$``$brace together $A_{n-2}, A_{n-1}, A_n$,}\\
+	  \textrm{then apply $\tau_{n-2!}$''}}}
+	  {(\widehat{\delta_{n-2,n-1}
+	   \delta_{n-1,n}})^*\tau_{n-2!}}
+	\ar[r]^{\cong}
+	\ar[d]_{\cong}   
+	& \hat{\delta}_{n-1,n}^*(
+	  \hat{\delta}_{n-2,n-1}^*\tau_{n-2!})   
+	\ar[r]^{\hat{\delta}_{n-1,n}^*\mathcal{B}_{n-1}}
+	& \hat{\delta}_{n-1,n}^*(
+	  \hat{\tau}_{n-1}^*\tau_{n-1!} \circ \tau_{n-1!})
+	\ar[d]^{\cong}  \\
+	(\widehat{\delta_{n-2,n-1}\delta_{n-2,n}})^*
+	  \tau_{n-2!}  
+	\ar[d]_{\hat{\delta}_{n-2,n}^*\mathcal{B}_{n-1}}
+	&& \underset{\substack{ \\\\
+	    \textrm{$``$brace together $A_{n-1}, A_n$}\\
+	    \textrm{and apply $\tau_{n-1!}$,}\\
+	    \textrm{then apply $\tau_{n!}$''}}}
+	    {\hat{\tau}_n^{*2}\tau_{n!} \circ 
+	    \hat{\delta}_{n-1,n}^*\tau_{n-1!}} 
+	\ar[d]^{\substack{\\\\\\\\
+	        \tau_n^{*2}\tau_{n!} \circ \mathcal{B}_n}}\\
+	\hat{\delta}_{n-2,n}^*(
+	  \hat{\tau}_{n-1}^*\tau_{n-1!} \circ \tau_{n-1!})
+	\ar[r]_{\cong}                   
+	& \underset{\substack{\\\\
+	          \textrm{$``$apply $\tau_{n!}$,}\\
+	          \textrm{then brace together $A_{n-1}, A_{n-2}$}\\
+	          \textrm{and apply $\tau_{n-1!}$''}}}
+	         {\hat{\tau}_n^*(\hat{\delta}_{n-1,n}^*
+	          \tau_{n-1!}) \circ \tau_{n!}}
+	\ar[r]^{\hat{\tau}_n^*\mathcal{B}_n \circ \tau_{n!}}
+	& \underset{\substack{\\\\
+	    \textrm{$``$apply $\tau_{n!}$ three times''}}}
+	    {\hat{\tau}_n^{*2} \tau_{n!}\circ
+	     \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}}
+	}}$$}
+	\end{itemize}
+}
+
+\frame{
+	\textbf{Summary:}
+	%
+	We have a given an $A_\infty$-functor 
+	$\chi_\infty(\mathcal{C}) \to \mathcal{D}_\infty$, 
+	which implies that algebras form a 
+	\textcolor{blue}{category in dg cocategories with 
+	a trace up to homotopy}.\\
+	%
+	$\newline$
+	To get a category in \textcolor{blue}{dg categories} 
+	with a trace up to homotopy, apply (categorified) 
+	Cobar(-).
+}
+
+\frame{
+	$\newline\newline\newline\newline\newline$
+	\begin{center} 
+	\textbf{Thank you!}
+	\end{center}
+}
+
 \end{document}
