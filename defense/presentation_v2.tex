@@ -119,7 +119,7 @@
 	{\item $Bar: DGCat \to DGCocat$\\}
 	%
 	\only<3>
-	{Bar(Hoch(A)) has the same objects as Hoch(A).\\
+	{Bar(Hoch(A,B)) has the same objects as Hoch(A,B).\\
 	\begin{columns}
 	\begin{column}{0.4\textwidth}
    	\resizebox{0.45\vsize}{!}
@@ -130,14 +130,14 @@
 		\ar@/^0pc/[rrr]^{f_2}_{\textcolor{blue}{\vdots}}
 		\ar@/_3pc/[rrr]^{f_{n-1}}_{\substack{\\\textcolor{blue}{\Downarrow \phi_n}}}
 		\ar@/_4pc/[rrr]_{f_n} 
-		&&&	A}}
+		&&&	B}}
 	\end{column}
 	\begin{column}{0.6\textwidth} 
-		A morphism from $f_0$ to $f_n$ in Bar(Hoch(A)) \\ $\newline$
+		A morphism from $f_0$ to $f_n$ in Bar(Hoch(A,B)) \\ $\newline$
 		$\Delta(\phi_1 \dots \phi_n) = \sum \limits_{0 \leq i \leq n} \pm 
 		\phi_1 \dots \phi_i \otimes \phi_{i+1} \dots \phi_n$\\
 		$|\phi_1 \dots \phi_n| = \sum \limits_{1 \leq i \leq n} |\phi_i| - n$\\
-		$d_{Bar(Hoch(A))} = \tilde{d}_{Hoch(A)} + d_\cup$
+		$d_{Bar(Hoch(A,B))} = \tilde{d}_{Hoch(A,B)} + d_\cup$
 	\end{column}
 	\end{columns}
 	}
@@ -181,8 +181,8 @@
 		&&& C 
 		\ar@{|->}[r]^{\bullet}
 		& A
-		\ar@/^2pc/[rr]^{g_0f_0 \in Obj(Bar(Hoch(A,C)))}_{\substack{\\\\\\ \textcolor{blue}{\psi\{\phi_1, \dots, \phi_n\}}\\ \textcolor{blue}{\Downarrow}}}
-		\ar@/_2pc/[rr]_{g_1f_n \in Obj(Bar(Hoch(A,C)))}
+		\ar@/^2pc/[rr]^{g_0f_0 \in Obj(Hoch(A,C))}_{\substack{\\\\\\ \textcolor{blue}{\psi\{\phi_1, \dots, \phi_n\}}\\ \textcolor{blue}{\Downarrow}}}
+		\ar@/_2pc/[rr]_{g_1f_n \in Obj(Hoch(A,C))}
 		&& C
 	  }}$$
 	}
@@ -191,8 +191,7 @@
 	{\scalebox{.75}{\parbox{1\linewidth}{%
 	\begin{align*}
 	\psi\{\phi_1, \dots, \phi_n\}(a_1,\dots,a_q) = 
-	\sum \limits_{1 \leq i_1 \leq \dots \leq i_n \leq q} \pm
-	\psi(
+	\sum \pm \psi(
 	&f_0a_1, \dots, f_0a_{i_1}, \phi_1(a_{i_1+1}, \dots), 
 	  f_1a_*, \dots, f_1a_*, \\
 	&\phi_2(a_*, \dots), f_2a_*, \dots
@@ -229,7 +228,9 @@
 		\ar@/_1pc/[r]_{g_1f_n}
 		& C
 	  }}$$}
-	
+	%
+	\only<5->
+	{Braces are associative. (...)}
 }
 
 \frame{
@@ -247,7 +248,7 @@
 }
 
 \frame{
-	\textbf{Answer 2:} A 2-category with a trace functor
+	\textbf{Answer 2:} Algebras form a 2-category with a trace functor
 	\begin{defn} (Kaledin): A \underline{trace functor} on a 2-category $\mathcal{C}$ is:
 	\begin{itemize}
 		\item for each $A \in Obj(\mathcal{C})$, a functor 
@@ -292,7 +293,7 @@
 }
 
 \frame{
-	\textbf{Answer 2:} A 2-category with a trace functor
+	\textbf{Answer 2:} Algebras form 2-category with a trace functor
 	\begin{defn} (Kaledin): A \underline{trace functor} on a 2-category $\mathcal{C}$ is:
 	\begin{itemize}
 		\item for each $A \in Obj(\mathcal{C})$, a functor 
@@ -401,7 +402,8 @@
 	\end{defn}
 	%
 	\only<2->
-	{A \underline{trace functor} on $\mathcal{C}$ gives a functor 
+	{A \underline{trace functor} on a category $\mathcal{C}$ in k-linear categories 
+	gives a functor 
 	$$\chi(\mathcal{C}) \to 
 	\mathcal{D} = \{(k\textrm{-linear category, module})\}$$ 
 	\scalebox{.75}{\parbox{1\linewidth}{%
@@ -493,14 +495,14 @@
 	\begin{align*}
 	\chi_\infty(\mathcal{C}) 
 	&\to 
-	\mathcal{D}_\infty ?\\
-	{\scriptstyle (A_0 \to \dots \to A_n \to A_0)}
+	\mathcal{D}_\infty \\
+	{\scriptstyle \textrm{where }(A_0 \to \dots \to A_n \to A_0)}
 	& \mapsto
 	\begin{pmatrix}
 	{\scriptstyle B(A_0 \to \dots \to A_n \to A_0) := }\\
 	{\scriptstyle := Bar(Hoch(A_0, A_1)) \otimes \dots \otimes Bar(Hoch(A_n,A_0)),}\\
 	{\scriptstyle C(A_0 \to \dots \to A_n \to A_0)}
-	\end{pmatrix}
+	\end{pmatrix}?
 	\end{align*}
 	%
 	\only<2->
@@ -573,7 +575,7 @@
 
 \frame{
 	Fix algebras $A_0,\dots,A_n$.
-	Let $\mathcal{A} = (A_0 \to \dots \to A_n \to A_0)$\\
+	Let $\mathcal{A} = (A_0 \to \dots \to A_n \to A_0)$.\\
 	Define a dg comodule $C(\mathcal{A})$ over $B(\mathcal{A})$:
 	$$C(\mathcal{A})^\bullet
 	(\underbrace{
@@ -654,7 +656,7 @@
 	{\scriptstyle \mathcal{A}:= (A_0 \to \dots \to A_n \to A_0)}
 	& \mapsto
 	\begin{pmatrix}
-	{\scriptstyle B(\mathcal{A}) }\\
+	{\scriptstyle B(\mathcal{A}), }\\
 	{\scriptstyle C(\mathcal{A})}
 	\end{pmatrix}\\
 	%
