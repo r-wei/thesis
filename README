@@ -1,15 +1,14 @@
 To Do:
-1) acknowledgements
+- acknowledgements
+- check for broken refs and citations
+- intro: describe what's in the rest of the sections
+- intro: future directions? --- alg in algs: apply cobar/use MS, get an action of an explicit model of E2
 ---------
 Edit (try submitting first):
 - check formulas for consistent notation and indexing
 - check margins
 - include vs input
 http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
---------------
-Might do:
-1) add more to intro, abstract
-- alg in algs: apply cobar/use MS, get an action of an explicit model of E2
 --------
 Background I need:
 - conilp + counital --> coproduct lands in finite sums (maybe using a cofree adjunction?)

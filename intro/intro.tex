@@ -1,16 +1,59 @@
 %\documentclass[12pt]{article} %use [draft] to check on margins
 %\begin{document}
 
-This dissertation builds on work in noncommutative differential geometry, and we start with a brief history of the subject. In 1962, Hochschild, Kostant and Rosenberg gave the first hint that, to build a notion of differential geometry for noncommutative algebras, one should start by studying Hochschild homology and cohomology. Their famous HKR theorem states that, for a regular, commutative algebra over a field of characteristic zero, (1) Hochschild homology is quasi-isomorphic to deRham forms on the algebra (with zero differential), and (2) Hochschild cohomology is quasi-isomorphic to poly-vector fields on the algebra (also with zero differential) (Reference \cite{HKR}).
+What do algebras (over a fixed field $k$ of characteristic zero) form? A straight-forward answer is that they form a 2-category as follows: 
+\begin{align}\label{eq:2-cat}
+\begin{split}
+	&\textrm{Objects: $k$-algebras } A,B,\dots\\
+	&\textrm{1-Morphisms: bimodules } _AM_B\\
+	&\textrm{1-Composition: } _AM_B \otimes_B { _B}N_C\\
+	&\textrm{2-Morphisms: morphisms of bimodules.}
+\end{split}
+\end{align}
+When we restrict the above 1-morphisms to only those bimodules that come from maps of algebras (i.e., bimodules $_AM_B$ where $_AM_B = _{f(A)}B_B =: _fB$ for some map of algebras $f:A \to B$), then 2-morphisms have an additional structure, namely they are certain zero-th Hochschild cohomology groups:
+\begin{align*}
+	\{\textrm{morphisms of bimodules } _fB \to _gB \}
+	&\overset{1:1}{\leftrightarrow}
+	Z_A(_gB_f) \cong HH^0(A,\, _gB_f) \\
+	M
+	&\mapsto
+	M(1)\\
+	(M_b: b^\prime \mapsto b \cdot b^\prime)
+	&\leftmapsto 
+	b\\
+\end{align*}
+$\indent$The question naturally arises: what happens if we use Hochschild cohomology or cochains instead of just $HH^0$ for 2-morphisms? The answer is that algebras form a category in dg categories as follows:
+\begin{align} \label{eq:cat_in_dgcocat}
+\begin{split}
+	&\textrm{Objects: $k$-algebras } A,B,\dots\\
+	&\textrm{Morphisms: dg cocategory } Bar(Hoch(A,B)\\
+	&\textrm{Composition: } \bullet: Bar(Hoch(A,B)) \otimes 
+	Bar(Hoch(B,C)) \to Bar(Hoch(A,C))\\
+	&\phantom{Composition: }
+	\textrm{ associative map of dg cocategories}
+\end{split}
+\end{align}
+$Bar(Hoch(A,B))$ is the cofree dg cocategory defined in Section \ref{sec:} and uses Hochschild cochains as morphisms. The composition, $\bullet$, is defined in Section \ref{sec:} and uses the brace operator on Hochschild cochains. The fact that $\bullet$ is associative follows from \cite{(Getzler-Jones; Voronov-Gerstenhaber, Lyubashenko-Manzyuk; Keller)}. 
 
-However, when the algebra is an algebra of smooth functions on a real manifold, we have much more differential-geometric structure. For example, (shifted) poly-vector fields form a dgla with the Schouten-Nijenhuis bracket, an extension of the Lie bracket on vector fields to poly-vector fields; and in 1997, Kontsevich proved that Hochschild cohomology with its known Gerstenhaber bracket is quasi-isomorphic to poly-vector fields, not as dglas, but as $L_\infty$ algebras (Reference \cite{K}). Moreover, the associative wedge product satisfies a Leibniz relation with the Schouten-Nijenhuis bracket, making poly-vector fields a Gerstenhaber algebra. In 1998, Tamarkin gave, for each Drinfeld associator, a quasi-isomorphism between Hochschild cochains and poly-vector fields as Gerstenhaber$_\infty$ algebras (Reference \cite{Tam}, Theorem 2.1).
+Thus far, we have used Hochschild cochains to show that algebras form a category in dg cocategories. Non-commutative calculus tells us that the pair, (Hochschild cochains $C^\bullet(A,A)$, Hochschild chains $C_{-\bullet}(A,A)$), is a $Calc_\infty$-algebra (Reference \cite{DTT}, Corollary 4). In other words, Hochschild cochains is a Gerstenhaber$_\infty$-algebra and acts on Hochschild chains up to homotopy via (1) an analogue of the Lie derivative, and (2) an analogue of the contraction of a form against a vector field.
 
-But what about differential forms? Poly-vector fields act on forms in two ways: (1) via contraction as a dga, and (2) via the Lie derivative as a dgla. Together, these two actions satisfy Cartan's formula. We can axiomatize all of this structure (a Gerstenhaber algebra and the two actions on a module satsifying relations) into the notion of an algebra over the Calc operad. In 2008, Dolgushev, Tamarkin and Tsygan proved that the pair (Hochschild cochains, Hochschild chains) are quasi-isomorphic to (poly-vector fields, deRham forms) as Calc$_\infty$ algebras (Reference \cite{DTT}, Corollary 4).
+Taking advantage of this $Calc_\infty$ structure, we incorporate $HH_0$ and find that algebras form a 2-category with a trace functor. The definition of a trace functor on a 2-category \`{a} la Kaledin is given in Section \ref{sec:}, and in Section \ref{sec:}, we describe a trace functor on the 2-category given in Equation \ref{eq:2-cat} that uses the action of $HH^0$ on $HH_0$.
 
-Loosely given, the motivating question of this thesis is: Can we use the Calc$_\infty$ structure on Hochschild cochains and chains to create a cyclic object? First, we repackage and generalize the $L_\infty$ structure on Hochschild cochains to construct dg cocategories, $B(n)$ (Section \ref{sec:B(n)}). Then, we show that these dg cocategories form, not a cyclic, but a sheafy-cyclic object (Section \ref{sec:cyclic_B(n)}). We introduce dg comodules $C(n)$ over $B(n)$, which are categorified versions of the bar construction of Hochschild chains as a module over Hochschild cochains via contraction (Section \ref{sec:C(n)}). Given this background, we ask the motivating question in a more technical way: Can we extend the sheafy-cyclic structure on dg cocategories to include the dg comodules?
+Again, we ask: can we derive this structure? Can we use Hochschild homology or chains instead of $HH_0$ to get a trace functor on the category in dg cocategories defined in Equation \ref{eq:cat_in_dgcocat}? We give the definition of a trace functor on a category in dg cocategories in Section \ref{sec:}. Ultimately, we settle on the following language: on $\mathcal{C}$, a category in dg cocategories, a trace functor gives a dg functor $\chi(\mathcal{C}) \to \mathcal{D}$ where $\chi(\mathcal{C})$ and $\mathcal{D}$ are dg categories introduced in Sections \ref{sec:} and \ref{sec:}, respectively. 
 
-In Sections \ref{sec:pb_theory} and \ref{sec:pb_example}, we establish the theoretical background needed to work with the dg comodules. Then, we give a reasonable candidate for a sheafy-cyclic structure on dg comodules (Section \ref{sec:shriek_maps}). Here, we find, surprisingly, that the formulas for cyclically rotating a dg comodule resemble the formulas for the Lie derivative of Hochschild cochains on chains (Equation \ref{eq:define_upsilon}). Unfortunately, our candidate only respects composition of morphisms up to homotopy. Yet, we are able to give these homotopies explicitly (Section \ref{sec:homotopies}), and interestingly, they are also familiar formulas--they look like generalizations of the B operator, the analogue of the deRham differential on Hochschild chains (Equation \ref{eq:def_sigma}). We show that no higher homotopies are needed (Section \ref{sec:higher_homotopies}), and repackage our $``$functor up to homotopy'' into an $A_\infty$ functor (Section \ref{sec:A_infinity}). Finally, we apply (categorified) Cobar to get a $``$homotopically sheafy-cyclic object in dg categories with dg modules'' (Section \ref{sec:cobar}, \ref{sec:cobar_ref}).
+For $\mathcal{C}$ = the category in Equation \ref{eq:cat_in_dgcocat}, we are not able to give a dg functor $\chi(\mathcal{C}) \to \mathcal{D}$, however, we do give an $A_\infty$-functor. This is the (precise) sense in which we have a trace functor $``$up to homotopy'': we give an $A_\infty$-functor between dg categories $\chi(\mathcal{C})$ and $\mathcal{D}$.
 
-Appendix \ref{chap:lambda} gives the presentation of Connes' cyclic category, $\Lambda$, that we will use throughout this thesis. Appendix \ref{chap:hochschild} gives background on Hochschild chains and cochains and their calculus structure. Appendix \ref{chap:computations} contains all of our computations.
+
+% This dissertation builds on work in noncommutative differential geometry, and we start with a brief history of the subject. In 1962, Hochschild, Kostant and Rosenberg gave the first hint that, to build a notion of differential geometry for noncommutative algebras, one should start by studying Hochschild homology and cohomology. Their famous HKR theorem states that, for a regular, commutative algebra over a field of characteristic zero, (1) Hochschild homology is quasi-isomorphic to deRham forms on the algebra (with zero differential), and (2) Hochschild cohomology is quasi-isomorphic to poly-vector fields on the algebra (also with zero differential) (Reference \cite{HKR}).
+
+% However, when the algebra is an algebra of smooth functions on a real manifold, we have much more differential-geometric structure. For example, (shifted) poly-vector fields form a dgla with the Schouten-Nijenhuis bracket, an extension of the Lie bracket on vector fields to poly-vector fields; and in 1997, Kontsevich proved that Hochschild cohomology with its known Gerstenhaber bracket is quasi-isomorphic to poly-vector fields, not as dglas, but as $L_\infty$ algebras (Reference \cite{K}). Moreover, the associative wedge product satisfies a Leibniz relation with the Schouten-Nijenhuis bracket, making poly-vector fields a Gerstenhaber algebra. In 1998, Tamarkin gave, for each Drinfeld associator, a quasi-isomorphism between Hochschild cochains and poly-vector fields as Gerstenhaber$_\infty$ algebras (Reference \cite{Tam}, Theorem 2.1).
+
+% But what about differential forms? Poly-vector fields act on forms in two ways: (1) via contraction as a dga, and (2) via the Lie derivative as a dgla. Together, these two actions satisfy Cartan's formula. We can axiomatize all of this structure (a Gerstenhaber algebra and the two actions on a module satsifying relations) into the notion of an algebra over the Calc operad. In 2008, Dolgushev, Tamarkin and Tsygan proved that the pair (Hochschild cochains, Hochschild chains) are quasi-isomorphic to (poly-vector fields, deRham forms) as Calc$_\infty$ algebras (Reference \cite{DTT}, Corollary 4).
+
+% Loosely given, the motivating question of this thesis is: Can we use the Calc$_\infty$ structure on Hochschild cochains and chains to create a cyclic object? First, we repackage and generalize the $L_\infty$ structure on Hochschild cochains to construct dg cocategories, $B(n)$ (Section \ref{sec:B(n)}). Then, we show that these dg cocategories form, not a cyclic, but a sheafy-cyclic object (Section \ref{sec:cyclic_B(n)}). We introduce dg comodules $C(n)$ over $B(n)$, which are categorified versions of the bar construction of Hochschild chains as a module over Hochschild cochains via contraction (Section \ref{sec:C(n)}). Given this background, we ask the motivating question in a more technical way: Can we extend the sheafy-cyclic structure on dg cocategories to include the dg comodules?
+
+% In Sections \ref{sec:pb_theory} and \ref{sec:pb_example}, we establish the theoretical background needed to work with the dg comodules. Then, we give a reasonable candidate for a sheafy-cyclic structure on dg comodules (Section \ref{sec:shriek_maps}). Here, we find, surprisingly, that the formulas for cyclically rotating a dg comodule resemble the formulas for the Lie derivative of Hochschild cochains on chains (Equation \ref{eq:define_upsilon}). Unfortunately, our candidate only respects composition of morphisms up to homotopy. Yet, we are able to give these homotopies explicitly (Section \ref{sec:homotopies}), and interestingly, they are also familiar formulas--they look like generalizations of the B operator, the analogue of the deRham differential on Hochschild chains (Equation \ref{eq:def_sigma}). We show that no higher homotopies are needed (Section \ref{sec:higher_homotopies}), and repackage our $``$functor up to homotopy'' into an $A_\infty$ functor (Section \ref{sec:A_infinity}). Finally, we apply (categorified) Cobar to get a $``$homotopically sheafy-cyclic object in dg categories with dg modules'' (Section \ref{sec:cobar}, \ref{sec:cobar_ref}).
+
+% Appendix \ref{chap:lambda} gives the presentation of Connes' cyclic category, $\Lambda$, that we will use throughout this thesis. Appendix \ref{chap:hochschild} gives background on Hochschild chains and cochains and their calculus structure. Appendix \ref{chap:computations} contains all of our computations.
 
 %\end{document}
