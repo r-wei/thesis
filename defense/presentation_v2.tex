@@ -24,6 +24,32 @@
 
 \newcommand{\leftmapsto}{\leftarrow\!\shortmid} %\left mapsto
 
+%extensible rightrightarrows
+\makeatletter
+\newcommand*{\relrelbarsep}{.386ex}
+\newcommand*{\relrelbar}{%
+  \mathrel{%
+    \mathpalette\@relrelbar\relrelbarsep
+  }%
+}
+\newcommand*{\@relrelbar}[2]{%
+  \raise#2\hbox to 0pt{$\m@th#1\relbar$\hss}%
+  \lower#2\hbox{$\m@th#1\relbar$}%
+}
+\providecommand*{\rightrightarrowsfill@}{%
+  \arrowfill@\relrelbar\relrelbar\rightrightarrows
+}
+\providecommand*{\leftleftarrowsfill@}{%
+  \arrowfill@\leftleftarrows\relrelbar\relrelbar
+}
+\providecommand*{\xrightrightarrows}[2][]{%
+  \ext@arrow 0359\rightrightarrowsfill@{#1}{#2}%
+}
+\providecommand*{\xleftleftarrows}[2][]{%
+  \ext@arrow 3095\leftleftarrowsfill@{#1}{#2}%
+}
+\makeatother
+
 %info for title slide
 \title[]{What do algebras form?}
 %\subtitle{Subtitle}
@@ -486,6 +512,11 @@
 	subject to the cyclic relations$\}[0]$
 	\end{itemize}
 	\end{defn}
+	%
+	\only<2->
+	{A trace functor on a category $\mathcal{C}$ 
+	in dg cocategories will give: a dg functor from 
+	$\chi(\mathcal{C}) \to \mathcal{D}$.}
 }
 
 \frame{
@@ -514,7 +545,9 @@
 	\only<2->
 	{For us, $F^*C_0$ is the categorified version of 
 	co-extension of scalars:
-	$$F^*C_0 = ker(B_1 \otimes C_0 \rightrightarrows 
+	$$F^*C_0 = ker(B_1 \otimes C_0 
+	\xrightrightarrows[1 \otimes \Delta_{C_0}]{(1 \otimes F \otimes 1)
+		(\Delta_{B_1} \otimes 1 )} 
 	B_1 \otimes B_0 \otimes C_0)$$}
 }
 
@@ -594,7 +627,7 @@
 	\begin{itemize}
 	\item n=2 cocyle relation, 
 	\item $n>2$ pullback of cocycle relation, 
-	\item n=1 cocycle relation for $A,B,C=B$ and the fact that $\sigma_{1,1!}$is an identity map
+	\item n=1 cocycle relation for $A,B,C=B$ and the fact that $\sigma_{1,1!}$ is an identity map
 	\end{itemize}}
 	%
 	\only<7>
