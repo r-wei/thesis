@@ -371,9 +371,20 @@
 	\begin{itemize}
 		\item for each $A \in Obj(\mathcal{C})$, a functor 
 		$TR_A: \mathcal{C}(A,A) \to k-mod$\\
-		\textcolor{blue}{$TR_A: \textrm{bimodule } _AM_A \mapsto M/[A,M] \cong HH_0(A,M)$}
-		%
+		\only<1>
+		{\textcolor{blue}{$TR_A: \textrm{bimodule } _AM_A \mapsto M/[A,M] \cong HH_0(A,M)$}}
 		\only<2->
+		{\textcolor{blue}{$TR_A: \textrm{bimodule }$}
+		\textcolor{red}{$_fA \mapsto A/[A, _fA] \cong HH_0(A, _fA)$}}
+		\only<3->
+		{\textcolor{blue}{
+		$\quad \quad \quad Z_A( _fA_g) \otimes A/[A, _gA] 
+		\to A/[A, _fA], \quad 
+		b \otimes a
+		\mapsto
+		b\cdot a$}}
+		%
+		\only<4->
 		{\item for each pair $A, B \in Obj(\mathcal{C})$, a natural transformation
 		$\tau_!(A,B)$
 		\begin{columns}[T]
@@ -411,7 +422,7 @@
 	\end{itemize}
 	\end{defn}
 	%
-	\only<3->
+	\only<5->
 	{{\begin{center}
 	Can we use Hochschild homology or chains instead of $HH_0$ 
 	to extend this to a trace functor on the category in dg cocategories?
