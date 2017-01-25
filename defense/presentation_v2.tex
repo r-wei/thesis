@@ -243,10 +243,55 @@
 	\item \textbf{Answer 1:} A category in categories ($HH^0$)
 	\item \textbf{Derived Answer 1:} A category in dg cocategories (Hochschild cochains...)
 	$\newline$
+	\only<2->
+	{\item \textcolor{blue}{Brief background on non-commutative calculus}}
+	$\newline$
 	\item \textbf{Answer 2:} A 2-category with a trace functor ($HH_0$)
 	\item \textbf{Derived Answer 2:} A category in dg cocategories with a trace functor (Hochschild chains...)
 	\textcolor{blue}{up to homotopy}
 	\end{itemize}
+}
+
+\frame{
+	\textbf{Non-commutative calculus}
+	%
+	\only<1->
+	{\begin{theorem}(Hochschild-Kostant-Rosenberg, '62) Let $A$ be a regular, commutative algebra 
+	over a field $k$ of characteristic 0. Then, 
+	\begin{align*}
+	(C_\bullet(A, A), b) 
+	& \xrightarrow{\sim}
+	\Omega^\bullet_{A/k}\\
+	(C^\bullet(A,A), \delta)
+	& \xrightarrow{\sim}
+	\wedge^\bullet T_A 
+	= \wedge^\bullet(Der_k(A,A)).
+	\end{align*}
+	\end{theorem}}
+	%
+	\only<2>
+	{\begin{theorem}(Kontsevich, '97) Let $A=C^\infty(M)$ 
+	for $M$ a smooth real manifold. Then, there is an 
+	$L_\infty$ map $$(C^{\bullet+1}(A,A), \delta, [,]_{Ger})
+	\xrightarrow{\sim} (\wedge^{\bullet+1} T_A, d=0, [,]_{SN}).$$
+	\end{theorem}}
+	%
+	\only<3>
+	{\begin{theorem}(Tamarkin, '98) Dependent on the 
+	choice of a Drinfeld associator, there is a 
+	$Ger_\infty$ map $$(C^{\bullet+1}(A,A), \delta, 
+	[,]_{Ger}, \cup, \dots)
+	\xrightarrow{\sim} 
+	(\wedge^\bullet T_A, d=0, [,]_{SN}, \wedge).$$
+	\end{theorem}}
+	%
+	\only<4-5>
+	{\begin{theorem}(Dolgushev-Tamarkin-Tsygan, '08) 
+	There is a $Calc_\infty$ map 
+	$$(C^\bullet(A,A), C_{-\bullet}(A,A))
+	\xrightarrow{\sim} 
+	(\wedge^\bullet T_A, \Omega^\bullet_{A/k}).$$
+	\end{theorem}}
 }
 
 \frame{
