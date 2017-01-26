@@ -1,0 +1,55 @@
+\section{A trace on $\underline{C}$}
+%
+\begin{defn} \label{def:trace_functor}
+(Kaledin): A trace functor on a 
+2-category $\underline{C}$ is:
+\begin{itemize}
+	\item for each $A \in Obj(\underline{C})$, a functor 
+	$TR_A: \underline{C}(A,A) \to k-mod$
+	%
+	\item for each pair $A, B \in Obj(\underline{C})$, a natural transformation
+	$\tau_!(A,B)$:
+	$$\xymatrix{
+	\underline{C}(A,B) \otimes \underline{C}(B,A)
+	\ar[rr]^{\tau = flip}
+	\ar[d]_{m}
+	&& \underline{C}(B,A) \otimes \underline{C}(A,B)
+	\ar[d]_{m} \\
+	\underline{C}(A,A)
+	\ar[rd]_{TR_A}
+	& \textcolor{blue}{\substack{\Rightarrow\\ \tau_!(A,B)}}
+	& \underline{C}(B,B) 
+	\ar[ld]^{TR_B}\\
+	& k-mod
+	}$$
+	%
+	such that, for $A,B,C \in Obj(\underline{C})$, 
+	\begin{equation}
+	\tau_!(B,A) \circ \tau_!(C,B) \circ \tau_!(A,C) = id.
+	\end{equation}
+	$$\xymatrixcolsep{0.25pc}
+	\xymatrix{
+	& \underline{C}(C,A) \otimes \underline{C}(A,C) \otimes \underline{C}(B,C) 
+	\ar[rd]^{\tau}
+	\ar[dd]_{\textcolor{blue}{
+		\substack{\Leftarrow\\ \tau_!(B,A)}}}^{\substack{
+		\\\\\\\\\\\\\\\\\\TR_C \circ m^2}}\\
+	\underline{C}(A,B) \otimes \underline{C}(B,C) \otimes \underline{C}(C,A) 
+	\ar[ru]^{\tau}
+	\ar[rd]^{\textcolor{blue}{\quad \quad \quad \substack{\Rightarrow\\ \tau_!(A,C)}}}_{TR_A\circ m^2}
+	&& \underline{C}(B,C) \otimes \underline{C}(C,A) \otimes \underline{C}(A,B)
+	\ar@/_1pc/[ll]_{\quad \quad \quad \quad \quad \tau}
+	\ar[ld]_{\textcolor{blue}{\substack{\Rightarrow\\ \tau_!(C,B)}}\quad \quad\quad \quad}^{TR_B \circ m^2}\\
+	& k-mod
+	}$$
+\end{itemize}
+\end{defn}
+%
+Now, we will give a trace functor on the 
+2-category, $\underline{C}$, define in Equation 
+\ref{eq:2-cat}. Let $A \in Obj(\underline{C})$ 
+be an algebra and $f: A \to A$ a map of algebras. 
+Then, we set
+$$TR_A(_fA) := \frac{A}{[A, _fA]}
+= \frac{A}{(f(a)\cdot a^\prime - a^\prime \cdot a)}$$
+
