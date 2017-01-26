@@ -1,0 +1,17 @@
+\section{Dg cocategories $Bar(Hoch(A,B))$}
+Let $A$, $B$ be $k$-algebras. We define 
+a dg category, $Hoch(A,B)$, as follows:
+\begin{align*}
+	&\textrm{Objects: algebra maps } f:A \to B\\
+	&\textrm{Morphisms: } 
+	  Hoch(A)(f,g) = (C^\bullet(A,\, _fB_g),\, _f\delta_g)\\
+	&\textrm{Composition: cup product on cochains.}
+\end{align*}
+(See Appendix \ref{chap:hochschild} for notation and 
+standard operations on Hochschild complexes.) 
+The cup product is an associative map of complexes, 
+so $Hoch(A,B)$ is a dg category.
+
+Now, we will take $Bar(-)$ of $Hoch(A,B)$, which 
+is a categorified bar construction:
+$$Bar: DGCat \to DGCocat.$$
