@@ -1,4 +1,4 @@
-\section{A trace on $\underline{C}$}
+\section{A trace on C} \label{sec:2cat_trace_eg}
 %
 \begin{defn} \label{def:trace_functor}
 (Kaledin): A trace functor on a 
@@ -24,7 +24,7 @@
 	}$$
 	%
 	such that, for $A,B,C \in Obj(\underline{C})$, 
-	\begin{equation}
+	\begin{equation} \label{eq:trace_cocycle}
 	\tau_!(B,A) \circ \tau_!(C,B) \circ \tau_!(A,C) = id.
 	\end{equation}
 	$$\xymatrixcolsep{0.25pc}
@@ -51,5 +51,55 @@ Now, we will give a trace functor on the
 be an algebra and $f: A \to A$ a map of algebras. 
 Then, we set
 $$TR_A(_fA) := \frac{A}{[A, _fA]}
-= \frac{A}{(f(a)\cdot a^\prime - a^\prime \cdot a)}$$
+= \frac{A}{(f(a)\cdot a^\prime - a^\prime \cdot a)}.$$
+And for morphisms, 
+\begin{align*}
+\underline{C}(A,A)(f,g) \otimes \frac{A}{[A, _gA]}
+\cong Z_A(_fA_g) \otimes \frac{A}{[A, _gA]}
+&\to \frac{A}{[A, _fA]}\\
+b \otimes a
+&\mapsto 
+b\cdot a
+\end{align*}
+is a well-defined map on $k$-modules. 
+For algebra maps $f,f^\prime:A \leftrightarrows 
+B:g,g^\prime$, 
+we define 
+the natural transformation $\tau_!(A,B)$ 
+as follows:
+$$
+\xymatrixcolsep{1pc}
+\xymatrix{
+  _fB \underset{B}{\otimes} { _gA}/
+    [A, _fB \underset{B}{\otimes} { _gA}]
+  \ar[rrr]^{\tau_!(A,B)(f,g)}
+  \ar[ddd]
+  &&& _gA \underset{A}{\otimes} { _fB}/
+    [B, _gA \underset{A}{\otimes} { _fB}]
+  \ar[ddd]\\
+  %
+  &[b \otimes a] 
+  \ar@{|->}[r]
+  \ar@{|->}[d]_{(b^\prime \cdot, a^\prime \cdot)}
+  & [a \otimes b]
+  \ar@{|->}[d]^{(a^\prime \cdot, b^\prime \cdot)}\\
+  & [b^\prime \cdot b \otimes a^\prime \cdot a]
+  \ar@{|->}[r]
+  & [a^\prime \cdot a \otimes b^\prime \cdot b]\\
+  %
+  _{f^\prime}B \underset{B}{\otimes} { _{g^\prime}A}/
+    [A, _{f^\prime}B \underset{B}{\otimes} { _{g^\prime}A}]
+  \ar[rrr]_{\tau_!(A,B)(f^\prime,g^\prime)}
+  &&& _{g^\prime}A \underset{A}{\otimes} { _{f^\prime}B}/
+  [B, _{g^\prime}A \underset{A}{\otimes} { _{f^\prime}B}]\\
+}
+$$
+where $b^\prime \in Z_A(_{f^\prime}B_f)$, 
+$a^\prime \in Z_B(_{g^\prime}A_g)$, $a \in A$, 
+$b \in B$. Clearly, this flip map $\tau_!$ satisfies 
+Equation \ref{eq:trace_cocycle}.
+
+
+
+
 

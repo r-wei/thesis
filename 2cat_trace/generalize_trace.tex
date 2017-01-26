@@ -1,0 +1,142 @@
+\section{Redefining the trace functor} \label{sec:redefine_trace}
+In this section, we generalize Kaledin's 
+definition of a trace functor on a 2-category 
+to a trace functor on dg cocategories.
+First, we transform the definition from 
+the language from functors and natural 
+transformations to the language of modules.
+%
+\begin{defn} \label{def:module_over_cat}
+Let $\mathcal{C}$ be a $k$-linear category. 
+A left module over $\mathcal{C}$ is a 
+$k$-linear functor 
+$\mathcal{C} \to k-mods$.
+\end{defn}
+%
+Given the definition above, we can rewrite 
+the definition of a trace functor on a 
+2-category in the language of modules.
+%
+\begin{defn} \label{def:trace_module}
+(Kaledin, reformulated): Let $\mathcal{C}$ 
+be a category in $k$-linear categories. 
+A trace functor on $\mathcal{C}$ is:
+\begin{itemize}
+\item for each $A \in Obj(\mathcal{C})$, a 
+left module $T(A)$ over $\mathcal{C}(A,A)$
+%
+\item for each pair $A, B \in Obj(\mathcal{C})$, a
+map of modules over $\mathcal{C}(A,B) \otimes \mathcal{C}(B,A)$
+$$\tau_!(A,B): m_{ABA}^*T(A) \to \tau^*m_{BAB}^*T(B)$$ 
+where $m_{ABA}$ is the composition functor 
+$m_{ABA}: \mathcal{C}(A,B) \otimes \mathcal{C}(B,A) \to 
+\mathcal{C}(A,A)$, $\tau$ is a flip functor, and 
+pulling back along a functor means pre-composition.
+%
+\item for $A,B,C \in Obj(\mathcal{C})$, 
+$$\tau^{*2} \tau_!(B,A) \circ \tau^* \tau_!(C,B) \circ 
+\tau_!(A,C) = id.$$
+\end{itemize}
+\end{defn}
+%
+Now, we will translate from modules to dg comodules. 
+Reversing the arrows in Definition 
+\ref{def:module_over_cat}, we have the following 
+definition for a dg comodule over a category 
+in dg cocategories.
+%
+\begin{defn}\label{def:dg_comod} 
+Let $\mathcal{C}$ be a dg 
+cocategory. A dg comodule over 
+$\mathcal{C}$ is: 
+for each $f \in Obj(\mathcal{C})$, a complex 
+$T^\bullet(f)$ and map of complexes
+$$\Delta_f: T^\bullet(f) \to 
+\prod\limits_{g \in Obj(\mathcal{C})} 
+\mathcal{C}^\bullet(f,g) \otimes T^\bullet(g)
+$$
+such that the following two maps 
+coincide (coassociativity):
+$$
+\xymatrix{
+T^\bullet(f)
+\ar[d]_{\Delta(f)}\\
+\prod \limits_{g \in Obj(\mathcal{C})}
+\mathcal{C}^\bullet(f,g) \otimes
+T^\bullet(g)
+\ar@/^1pc/[d]^{id \otimes \Delta(g)}
+\ar@/_1pc/[d]_{\Delta_{\mathcal{C}(} \otimes id}\\
+ \prod \limits_{g, g^\prime \in Obj(\mathcal{C})}
+\mathcal{C}^\bullet(f,g) \otimes
+\mathcal{C}^\bullet(g,g^\prime) \otimes
+T^\bullet(g^\prime)  
+}
+$$
+and the following diagram commutes 
+(counitality):
+$$
+\xymatrixcolsep{5pc}
+\xymatrixrowsep{5pc}
+\xymatrix{
+T^\bullet(f)
+\ar[r]^{\Delta(f)}
+\ar[rd]_{id}
+& \prod \limits_{g \in Obj(\mathcal{C})}
+\mathcal{C}^\bullet(f,g) \otimes
+T^\bullet(g)
+\ar[d]^{\epsilon_{\mathcal{C}}
+\otimes id} \\
+%
+& T^\bullet(f).  
+}
+$$
+\end{defn}
+%
+Finally, we can rewrite Definition 
+\ref{def:trace_module} in terms of dg 
+comodules.
+%
+\begin{defn} \label{def:trace_dg_comodule}
+Let $\mathcal{C}$ be a category in 
+dg cocategories. A trace functor on 
+$\mathcal{C}$ is:
+\begin{itemize}
+\item for each $A \in Obj(\mathcal{C})$, a 
+dg comodule $T(A)$ over $\mathcal{C}(A,A)$
+%
+\item for each pair $A, B \in Obj(\mathcal{C})$, a
+map of dg comodules over $\mathcal{C}(A,B) \otimes \mathcal{C}(B,A)$
+$$\tau_!(A,B): m_{ABA}^*T(A) \to \tau^*m_{BAB}^*T(B)$$ 
+where $m_{ABA}$ is the composition functor 
+$m_{ABA}: \mathcal{C}(A,B) \otimes \mathcal{C}(B,A) \to 
+\mathcal{C}(A,A)$, $\tau$ is a flip functor. We 
+can take any definition for the pullback that 
+is a natural and satisifies 
+\begin{equation}
+F^*G^* = (GF)^*.
+\end{equation}
+%
+\item for $A,B,C \in Obj(\mathcal{C})$, 
+$$\tau^{*2} \tau_!(B,A) \circ \tau^* \tau_!(C,B) \circ 
+\tau_!(A,C) = id.$$
+\end{itemize}
+\end{defn}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
