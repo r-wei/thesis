@@ -1,0 +1,106 @@
+\section{Associative Composition $\bullet$}
+Now, we define an associative composition of 
+dg cocategories 
+$$Bar(Hoch(A,B)) \otimes Bar(Hoch(B,C))
+\to Bar(Hoch(A,C))$$
+where $A,B,C$ are $k$-algebras. To define 
+the composition, we use the fact that 
+$Bar(Hoch(A,C))$ is the cofree dg 
+cocategory over $Hoch(A,C)$. In other 
+words, $Bar(Hoch(A,C))$ satisfies 
+the following universal property:
+%
+\begin{figure}[H]
+\centerline{\xymatrix{
+  \mathcal{B}
+  %Bar(Hoch(A,B)) \otimes Bar(Hoch(B,C)) 
+  \ar[r]
+  \ar@{.>}[rd]
+  & Hoch(A,C)\\
+  & Bar(Hoch(A,C))
+  \ar@{->>}[u]}}
+\caption{Universal Property of $Bar$}	
+\end{figure}  
+where $\mathcal{B}$ is any dg cocategory, 
+the horizontal map is a map of underlying 
+structure (i.e., an association on objects 
+and maps of complexes of morphisms), and the 
+diagonal lift arrow is a map of dg cocategories. 
+For us, $\mathcal{B} = Bar(Hoch(A,B)) 
+\otimes Bar(Hoch(B,C))$. We will define a map of 
+underlying structure $Bar(Hoch(A,B)) \otimes 
+Bar(Hoch(B,C)) \to Hoch(A,C)$, which will lift 
+to the map of dg cocategories 
+$$\bullet: Bar(Hoch(A,B)) \otimes 
+Bar(Hoch(B,C)) \to Bar(Hoch(A,C)).$$
+The map on underlying structure is defined 
+as follows:
+%
+\begin{align*}
+Bar(Hoch(A,B)) \otimes 
+Bar(Hoch(B,C)) 
+&\to 
+Hoch(A,C)\\
+%
+\textrm{On objects: } f \otimes g
+&\mapsto 
+g \circ f\\
+%
+\textrm{On morphisms: }
+\xymatrix{
+	A 
+	\ar@/^5pc/[rr]^{f_0 \in Obj(Bar(Hoch(A,B)))}_{\substack{\\\textcolor{blue}{\Downarrow \phi_1}}}
+	\ar@/^2pc/[rr]^{f_1}_{\substack{\\\textcolor{blue}{\Downarrow \phi_2}}}
+	\ar@/_1pc/[rr]^{f_2}_{\textcolor{blue}{\vdots}}
+	\ar@/_4pc/[rr]^{f_{n-1}}_{\substack{\\\textcolor{blue}{\Downarrow \phi_n}}}
+	\ar@/_6pc/[rr]_{f_n \in Obj(Bar(Hoch(A,B)))} 
+	&&	B 
+	\ar@/^2pc/[rr]^{g_0 \in Obj(Bar(Hoch(B,C)))}_{\substack{\\\\\textcolor{blue}{\Downarrow \psi}}}
+	\ar@/_2pc/[rr]_{g_1\in Obj(Bar(Hoch(B,C)))} 
+	&& C 
+}
+&\mapsto
+\xymatrix{
+	A
+	\ar@/^2pc/[rr]^{g_0f_0 \in Obj(Hoch(A,C))}_{\substack{\\\\\\ \textcolor{blue}{\psi\{\phi_1, \dots, \phi_n\}}\\ \textcolor{blue}{\Downarrow}}}
+	\ar@/_2pc/[rr]_{g_1f_n \in Obj(Hoch(A,C))}
+	&& C
+}\\
+%
+\xymatrix{
+	A 
+	\ar@/^1pc/[r]^{f_0}_{\substack{\\\\\textcolor{blue}{\Downarrow \phi}}}
+	\ar@/_1pc/[r]_{f_n} 
+	&	B 
+	\ar@/^1pc/[r]^{g_0}_{\substack{\\\\\textcolor{blue}{\Downarrow 1 \in k}}}
+	\ar@/_1pc/[r]_{g_1} 
+	& C}
+&\mapsto	
+\xymatrix{
+	A
+	\ar@/^1pc/[r]^{g_0f_0}_{\substack{\\\\ \textcolor{blue}{\Downarrow \phi}}}
+	\ar@/_1pc/[r]_{g_1f_n}
+	& C
+}\\ 
+%
+\xymatrix{
+	A 
+	\ar@/^1pc/[r]^{f_0}_{\substack{\\\\\textcolor{blue}{\Downarrow 1 \in k}}}
+	\ar@/_1pc/[r]_{f_n} 
+	&	B 
+	\ar@/^1pc/[r]^{g_0}_{\substack{\\\\\textcolor{blue}{\Downarrow \psi}}}
+	\ar@/_1pc/[r]_{g_1} 
+	& 	C}
+&\mapsto
+\xymatrix{
+	A
+	\ar@/^1pc/[r]^{g_0f_0}_{\substack{\\\\ \textcolor{blue}{\Downarrow \psi}}}
+	\ar@/_1pc/[r]_{g_1f_n}
+	& C
+}
+\end{align*}
+All other non-pictured pairings of a morphism from 
+$Bar(Hoch(A,B))$ and a morphism from $Bar(Hoch(B,C))$ 
+map to zero. The brace operation is given in Reference 
+\cite{T}, Equation 4.8, and the fact that it is 
+associative follows from References \cite{,,,}.

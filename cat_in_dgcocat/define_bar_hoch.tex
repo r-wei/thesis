@@ -15,3 +15,53 @@ so $Hoch(A,B)$ is a dg category.
 Now, we will take $Bar(-)$ of $Hoch(A,B)$, which 
 is a categorified bar construction:
 $$Bar: DGCat \to DGCocat.$$
+$Bar(Hoch(A,B))$ has the same objects as 
+$Hoch(A,B)$. A morphism in $Bar(Hoch(A,B))$ 
+from object $f_0$ to object $f_n$ 
+is a sequence of composable morphisms in 
+$Hoch(A,B)$ starting at $f_0$ and ending at 
+$f_n$. We can picture such a morphism as 
+follows:
+%
+\begin{figure}[H]
+\centerline{\xymatrix{
+	A 
+	\ar@/^5pc/[rrr]^{f_0}_{\substack{\\\textcolor{blue}{\Downarrow \phi_1}}}
+	\ar@/^2pc/[rrr]^{f_1}_{\substack{\\\textcolor{blue}{\Downarrow \phi_2}}}
+	\ar@/_1pc/[rrr]^{f_2}_{\textcolor{blue}{\vdots}}
+	\ar@/_4pc/[rrr]^{f_{n-1}}_{\substack{\\\textcolor{blue}{\Downarrow \phi_n}}}
+	\ar@/_6pc/[rrr]_{f_n} 
+	&&&	B}}
+\caption{A morphism in $Bar(Hoch(A,B))(f_0,f_n)$}
+\end{figure}
+%
+As a complex, 
+\begin{align*}
+&Bar(Hoch(A,B))^\bullet(f,g) 
+=\\
+&\quad = \underbrace{k[0]}_{\textrm{counit}} \oplus
+\bigoplus \limits_{\substack{
+	n \geq 0,\\
+	f_i \in Obj(Hoch(A,B))}}
+{\scriptstyle Hoch(A,B)^\bullet[1](f,f_1) \otimes 
+Hoch(A,B)^\bullet[1](f_1,f_2) \otimes \dots \otimes 
+Hoch(A,B)^\bullet[1](f_n,g)}\\
+%
+& d_{Bar(Hoch(A,B))} = 
+\tilde{d}_{Hoch(A,B)} + d_\cup\\
+%
+& \tilde{d}_{Hoch(A,B)} =
+\textrm{extension of $d_{Hoch(A,B)}$ 
+to a differential on $Bar$}\\
+%
+& d_\cup = 
+\textrm{signed sum over composing (cup-producting) 
+two consecutive $\phi_i$'s}
+\end{align*}
+with cocomposition
+$$\Delta(\phi_1\dots \phi_n) = 
+\sum \limits_{0 \leq i \leq n}
+\pm (\phi_1 \dots \phi_i) \otimes (\phi_{i+1}\dots \phi_n).$$
+%
+For more precise details and explicit signs, 
+see Reference \cite{T}, Section 4.6.

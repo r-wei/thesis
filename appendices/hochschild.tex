@@ -1,10 +1,10 @@
 \chapter{Background on Hochschild chains and cochains}
 \label{chap:hochschild}
-In this section, we give some known 
+In this appendix, we give some known 
 constructions on Hochschild chains and 
 cochains for the reader's convenience. 
 %
-\section{Standard constructions and notation}
+%\section{Standard constructions and notation}
 Let $k$ be a field of characteristic zero, 
 $A$ a flat unital $k$-algebra, and $M$ be an 
 $A$-$A$-bimodule. Then, we can take 
@@ -91,179 +91,179 @@ C_{-\bullet}(A, _{f_0}A)\\
 f_na_{i_{2n}+1} \otimes \smdots \otimes f_na_p.
 \end{align*}
 %
-%
-\section{Brace operation on Hochschild cochains}
-\label{sec:def_braces}
-Fix algebras $A_0, A_1$ and maps of algebras 
-$f_0,f_n: A_0 \rightrightarrows A_1$, 
-$A_0 \leftleftarrows A_1: g_0, g_m$. We will 
-define a map of complexes called \textbf{braces}
-\begin{align*}
-&\phantom{{}={}}
-C(A_0 \to A_1 \to A_0)((f_0,g_0), (f_n,g_m))\\
-&:=
-\Big( \bigoplus \limits_{\substack{
-  i \in \mathbb{N}\\
-  f_1,\smdots,f_i \textrm{ maps of algebras}\\
-  f_{i+1} = f_n}}
-  C^\bullet(A_0, _{f_0}{A_1}_{f_1}) \otimes \smdots \otimes 
-  C^\bullet(A_0, _{f_i}{A_1}_{f_{i+1}}) \Big) \otimes \\
-&\phantom{{}={}}  
-\Big( \bigoplus \limits_{\substack{
-	j \in \mathbb{N}\\
-	g_1,\smdots,g_j \textrm{ maps of algebras}\\
-	g_{j+1} = g_m}}
-  C^\bullet(A_1, _{g_0}{A_0}_{g_1}) \otimes \smdots \otimes 
-  C^\bullet(A_1, _{g_j}{A_0}_{g_{j+1}}) \Big)\\
-&\phantom{{}moveovermoveovermoveover{}}
-  \Big\downarrow -\bullet -\\
-&\phantom{{}={}}
-C(A_0 \to A_0)(g_0f_0, g_mf_n)\\
-&:=
-\bigoplus \limits_{\substack{
-  i \in \mathbb{N}\\
-  h_1,\smdots,h_i \textrm{ maps of algebras}\\
-  h_{i+1} = g_mf_n}}
-  C^\bullet(A_0, _{g_0f_0}{A_0}_{h_1}) \otimes \smdots \otimes 
-  C^\bullet(A_0, _{h_i}{A_0}_{h_{i+1}}).
-\end{align*}
-First, for 
-$$
-(\phi_1\smdots\phi_n | 1) = 
-\xymatrix{
-A_0 
-\ar@/^5pc/[r]^{f_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
-& A_0 
-\ar@/^2pc/[r]^{}^{id}_{\big\Downarrow 1}
-\ar@/_2pc/[r]_{id}
-& A_0
-}
-\quad \textrm{and} \quad
-(1|\phi_1\smdots\phi_n) = 
-\xymatrix{
-A_0
-\ar@/^2pc/[r]^{}^{id}_{\big\Downarrow 1}
-\ar@/_2pc/[r]_{id}
-& A_0 
-\ar@/^5pc/[r]^{f_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
-& A_0,
-}$$
-define $(\phi_1\smdots\phi_n | 1) 
-\overset{\bullet}{\mapsto} 
-(\phi_1\smdots\phi_n) \bullet 1 = 
-(\phi_1\smdots\phi_n)$ and 
-$(1| \phi_1\smdots\phi_n) 
-\overset{\bullet}{\mapsto} 
-1 \bullet (\phi_1\smdots\phi_n) = 
-(\phi_1\smdots\phi_n)$.
-Then, for $n,m\geq 1$, let 
-$$
-(\phi_1\smdots\phi_n | \psi_1\smdots\psi_m)
-=
-\xymatrix{
-A_0 \ar@/^5pc/[r]^{f_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
-& A_1 \ar@/^5pc/[r]^{g_0} 
-\ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
-\ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
-& A_0
-}
-$$
-and define $(\phi_1\smdots\phi_n) \bullet
-(\psi_1\smdots\psi_m) \in C(A_0 \to A_0)
-(g_0f_0, g_mf_n)$ as follows:
-\begin{align*}
-(\phi_1\smdots\phi_n) \bullet
-(\psi_1\smdots\psi_m)
-&= 
-\sum \limits_{
-  0 \leq i_1 \leq \smdots
-  \leq i_{2m} \leq n
-} 
-(-1)^{\sum \limits_{\substack{
-  T \textrm{ odd}\\T \geq 1}}
-  \big( (\sum \limits_{t \leq i_T}
-    |\phi_t|+1) (|\psi_{\frac{T+1}{2}}|+1)
-  \big)}\cdot \\
-&\phantom{{}moveovermov{}}    
-  \cdot g_0\phi_1 \otimes \smdots \otimes g_0\phi_{i_1} \otimes 
-  \psi_1\{\phi_{i_1+1}\smdots \phi_{i_2}\} \otimes\\
-&\phantom{{}moveovermove{}}  
-  \otimes g_1\phi_{i_2+1} \otimes \smdots \otimes g_1\phi_{i_3} 
-  \otimes \psi_2\{\phi_{i_3+1}\smdots \phi_{i_4}\} \otimes \\
-&\phantom{{}moveovermove{}} 
-  \otimes \dots \otimes
-  \psi_m\{\phi_{i_{2m-1}+1}\smdots \phi_{i_{2m}}\} \otimes \\
-&\phantom{{}moveovermove{}} 
-  \otimes g_m\phi_{i_{2m}+1} \otimes \smdots \otimes g_m\phi_n \\
-\psi_j\{\phi_{i_r+1}\smdots \phi_{i_r+s}\}
-&\in 
-C^\bullet(A_0, _{g_{j-1}f_{i_r}} {A_0}_{g_jf_{i_r+s}}) \\
-\psi_j\{\phi_{i_r+1}\smdots \phi_{i_r+s}\}
-&(a_1 \otimes \smdots \otimes a_p)\\
-&= 
-\sum \limits_{
-  0 \leq k_1 \leq \smdots \leq k_{2s} \leq p}
-(-1)^{\sum \limits_{\substack{
-  j \textrm{ odd}\\
-  j \geq 1}}
-  k_j(|\phi_{i_r + \frac{j-1}{2}}| + 1)} \cdot\\ 
-&\phantom{{}moveovermo{}}  
-\cdot \psi_j \Bigg( f_{i_r}a_1, \smdots, f_{i_r}a_{k_1},
-  \phi_{i_r+1}(a_{k_1+1}, \smdots, a_{k_2}),\\
-&\phantom{{}moveovermoveover{}}  
-  f_{i_r+1}a_{k_2+1}, \smdots, f_{i_r+1}a_{k_3},
-  \phi_{i_r+2}(a_{k_3+1}, \smdots, a_{k_4}), \\
-&\phantom{{}moveovermoveover{}}   
-  ,\smdots, 
-  \phi_{i_r+s}(a_{k_{2s-1}}, \smdots, a_{k_{2s}}), \\
-&\phantom{{}moveovermoveover{}} 
-  f_{i_r+s}a_{k_{2s}+1}, \smdots, f_{i_r+s}a_p \Bigg).
-\end{align*}
-%
-We follow the sign convention in 
-Reference \cite{T} (Equation 2.25 and 
-Section 4.7.2). In $(\phi_1\smdots\phi_n) 
-\bullet (\psi_1\smdots\psi_m)$, moving 
-$\phi_i$ past $\psi_j$ introduces a factor of 
-$(-1)^{(|\phi_i|+1)(|\psi_j|+1)}$. Braces 
-are unital, associative maps of complexes 
-(see Reference \cite{T}, Proposition 4.7.2). 
-It's also straightforward to check that 
-$\lambda(\psi_1\smdots \psi_m)
-\lambda(\phi_1 \smdots \phi_n) = 
-\lambda((\phi_1\smdots \phi_n) \bullet
-(\psi_1 \smdots \psi_m))$.
-%\
-\begin{figure}
-$\sum \pm
-\xymatrix{
-A_0 
-\ar@/^14pc/[rrrrrrrrrr]^{g_0f_0}_{\big\Downarrow g_0\phi_1}
-\ar@{.>}@/^12pc/[rrrrrrrrrr]_{\substack{
-  g_0f_1\\ \vdots\\\\g_0f_{i_1-1}}} 
-\ar@{.>}@/^8pc/[rrrrrrrrrr]
-\ar@{.>}@/^6pc/[rrrrrrrrrr]^{\big\Downarrow g_0\phi_{i_1}}_{g_0f_{i_1}}
-\ar@{.>}@/^3pc/[rrrrrrrrrr]^{\big\Downarrow 
-  \psi_1\{\phi_{i_1+1}\smdots \phi_{i_2}\}}_{\substack{
-  g_1f_{i_2}\\ \vdots \\\\ g_{m-1}f_{i_{2m-1}}}}
-\ar@{.>}@/_1pc/[rrrrrrrrrr]
-\ar@{.>}@/_3pc/[rrrrrrrrrr]^{\big\Downarrow 
- \psi_m\{\phi_{i_{2m-1}+1}\smdots \phi_{i_{2m}}\}}_{g_m
- f_{i_{2m}}}
-\ar@{.>}@/_6pc/[rrrrrrrrrr]^{\big\Downarrow g_m
-  \phi_{i_{2m}+1}}_{\substack{
-  g_mf_{i_{2m}+1}\\ \vdots\\\\g_mf_{n-1} }} 
-\ar@{.>}@/_10pc/[rrrrrrrrrr]_{\big\Downarrow g_m\phi_n}
-\ar@/_12pc/[rrrrrrrrrr]_{g_mf_n}
-&&&&&&&&&& A_0  
-}$
-\caption{Picture of the terms in 
-$(\phi_1\dots\phi_n) \bullet (\psi_1\dots\psi_m)$}
-\label{fig:braces}
-\end{figure}
+% %
+% \section{Brace operation on Hochschild cochains}
+% \label{sec:def_braces}
+% Fix algebras $A_0, A_1$ and maps of algebras 
+% $f_0,f_n: A_0 \rightrightarrows A_1$, 
+% $A_0 \leftleftarrows A_1: g_0, g_m$. We will 
+% define a map of complexes called \textbf{braces}
+% \begin{align*}
+% &\phantom{{}={}}
+% C(A_0 \to A_1 \to A_0)((f_0,g_0), (f_n,g_m))\\
+% &:=
+% \Big( \bigoplus \limits_{\substack{
+%   i \in \mathbb{N}\\
+%   f_1,\smdots,f_i \textrm{ maps of algebras}\\
+%   f_{i+1} = f_n}}
+%   C^\bullet(A_0, _{f_0}{A_1}_{f_1}) \otimes \smdots \otimes 
+%   C^\bullet(A_0, _{f_i}{A_1}_{f_{i+1}}) \Big) \otimes \\
+% &\phantom{{}={}}  
+% \Big( \bigoplus \limits_{\substack{
+% 	j \in \mathbb{N}\\
+% 	g_1,\smdots,g_j \textrm{ maps of algebras}\\
+% 	g_{j+1} = g_m}}
+%   C^\bullet(A_1, _{g_0}{A_0}_{g_1}) \otimes \smdots \otimes 
+%   C^\bullet(A_1, _{g_j}{A_0}_{g_{j+1}}) \Big)\\
+% &\phantom{{}moveovermoveovermoveover{}}
+%   \Big\downarrow -\bullet -\\
+% &\phantom{{}={}}
+% C(A_0 \to A_0)(g_0f_0, g_mf_n)\\
+% &:=
+% \bigoplus \limits_{\substack{
+%   i \in \mathbb{N}\\
+%   h_1,\smdots,h_i \textrm{ maps of algebras}\\
+%   h_{i+1} = g_mf_n}}
+%   C^\bullet(A_0, _{g_0f_0}{A_0}_{h_1}) \otimes \smdots \otimes 
+%   C^\bullet(A_0, _{h_i}{A_0}_{h_{i+1}}).
+% \end{align*}
+% First, for 
+% $$
+% (\phi_1\smdots\phi_n | 1) = 
+% \xymatrix{
+% A_0 
+% \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% & A_0 
+% \ar@/^2pc/[r]^{}^{id}_{\big\Downarrow 1}
+% \ar@/_2pc/[r]_{id}
+% & A_0
+% }
+% \quad \textrm{and} \quad
+% (1|\phi_1\smdots\phi_n) = 
+% \xymatrix{
+% A_0
+% \ar@/^2pc/[r]^{}^{id}_{\big\Downarrow 1}
+% \ar@/_2pc/[r]_{id}
+% & A_0 
+% \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% & A_0,
+% }$$
+% define $(\phi_1\smdots\phi_n | 1) 
+% \overset{\bullet}{\mapsto} 
+% (\phi_1\smdots\phi_n) \bullet 1 = 
+% (\phi_1\smdots\phi_n)$ and 
+% $(1| \phi_1\smdots\phi_n) 
+% \overset{\bullet}{\mapsto} 
+% 1 \bullet (\phi_1\smdots\phi_n) = 
+% (\phi_1\smdots\phi_n)$.
+% Then, for $n,m\geq 1$, let 
+% $$
+% (\phi_1\smdots\phi_n | \psi_1\smdots\psi_m)
+% =
+% \xymatrix{
+% A_0 \ar@/^5pc/[r]^{f_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
+% & A_1 \ar@/^5pc/[r]^{g_0} 
+% \ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
+% \ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
+% & A_0
+% }
+% $$
+% and define $(\phi_1\smdots\phi_n) \bullet
+% (\psi_1\smdots\psi_m) \in C(A_0 \to A_0)
+% (g_0f_0, g_mf_n)$ as follows:
+% \begin{align*}
+% (\phi_1\smdots\phi_n) \bullet
+% (\psi_1\smdots\psi_m)
+% &= 
+% \sum \limits_{
+%   0 \leq i_1 \leq \smdots
+%   \leq i_{2m} \leq n
+% } 
+% (-1)^{\sum \limits_{\substack{
+%   T \textrm{ odd}\\T \geq 1}}
+%   \big( (\sum \limits_{t \leq i_T}
+%     |\phi_t|+1) (|\psi_{\frac{T+1}{2}}|+1)
+%   \big)}\cdot \\
+% &\phantom{{}moveovermov{}}    
+%   \cdot g_0\phi_1 \otimes \smdots \otimes g_0\phi_{i_1} \otimes 
+%   \psi_1\{\phi_{i_1+1}\smdots \phi_{i_2}\} \otimes\\
+% &\phantom{{}moveovermove{}}  
+%   \otimes g_1\phi_{i_2+1} \otimes \smdots \otimes g_1\phi_{i_3} 
+%   \otimes \psi_2\{\phi_{i_3+1}\smdots \phi_{i_4}\} \otimes \\
+% &\phantom{{}moveovermove{}} 
+%   \otimes \dots \otimes
+%   \psi_m\{\phi_{i_{2m-1}+1}\smdots \phi_{i_{2m}}\} \otimes \\
+% &\phantom{{}moveovermove{}} 
+%   \otimes g_m\phi_{i_{2m}+1} \otimes \smdots \otimes g_m\phi_n \\
+% \psi_j\{\phi_{i_r+1}\smdots \phi_{i_r+s}\}
+% &\in 
+% C^\bullet(A_0, _{g_{j-1}f_{i_r}} {A_0}_{g_jf_{i_r+s}}) \\
+% \psi_j\{\phi_{i_r+1}\smdots \phi_{i_r+s}\}
+% &(a_1 \otimes \smdots \otimes a_p)\\
+% &= 
+% \sum \limits_{
+%   0 \leq k_1 \leq \smdots \leq k_{2s} \leq p}
+% (-1)^{\sum \limits_{\substack{
+%   j \textrm{ odd}\\
+%   j \geq 1}}
+%   k_j(|\phi_{i_r + \frac{j-1}{2}}| + 1)} \cdot\\ 
+% &\phantom{{}moveovermo{}}  
+% \cdot \psi_j \Bigg( f_{i_r}a_1, \smdots, f_{i_r}a_{k_1},
+%   \phi_{i_r+1}(a_{k_1+1}, \smdots, a_{k_2}),\\
+% &\phantom{{}moveovermoveover{}}  
+%   f_{i_r+1}a_{k_2+1}, \smdots, f_{i_r+1}a_{k_3},
+%   \phi_{i_r+2}(a_{k_3+1}, \smdots, a_{k_4}), \\
+% &\phantom{{}moveovermoveover{}}   
+%   ,\smdots, 
+%   \phi_{i_r+s}(a_{k_{2s-1}}, \smdots, a_{k_{2s}}), \\
+% &\phantom{{}moveovermoveover{}} 
+%   f_{i_r+s}a_{k_{2s}+1}, \smdots, f_{i_r+s}a_p \Bigg).
+% \end{align*}
+% %
+% We follow the sign convention in 
+% Reference \cite{T} (Equation 2.25 and 
+% Section 4.7.2). In $(\phi_1\smdots\phi_n) 
+% \bullet (\psi_1\smdots\psi_m)$, moving 
+% $\phi_i$ past $\psi_j$ introduces a factor of 
+% $(-1)^{(|\phi_i|+1)(|\psi_j|+1)}$. Braces 
+% are unital, associative maps of complexes 
+% (see Reference \cite{T}, Proposition 4.7.2). 
+% It's also straightforward to check that 
+% $\lambda(\psi_1\smdots \psi_m)
+% \lambda(\phi_1 \smdots \phi_n) = 
+% \lambda((\phi_1\smdots \phi_n) \bullet
+% (\psi_1 \smdots \psi_m))$.
+% %\
+% \begin{figure}
+% $\sum \pm
+% \xymatrix{
+% A_0 
+% \ar@/^14pc/[rrrrrrrrrr]^{g_0f_0}_{\big\Downarrow g_0\phi_1}
+% \ar@{.>}@/^12pc/[rrrrrrrrrr]_{\substack{
+%   g_0f_1\\ \vdots\\\\g_0f_{i_1-1}}} 
+% \ar@{.>}@/^8pc/[rrrrrrrrrr]
+% \ar@{.>}@/^6pc/[rrrrrrrrrr]^{\big\Downarrow g_0\phi_{i_1}}_{g_0f_{i_1}}
+% \ar@{.>}@/^3pc/[rrrrrrrrrr]^{\big\Downarrow 
+%   \psi_1\{\phi_{i_1+1}\smdots \phi_{i_2}\}}_{\substack{
+%   g_1f_{i_2}\\ \vdots \\\\ g_{m-1}f_{i_{2m-1}}}}
+% \ar@{.>}@/_1pc/[rrrrrrrrrr]
+% \ar@{.>}@/_3pc/[rrrrrrrrrr]^{\big\Downarrow 
+%  \psi_m\{\phi_{i_{2m-1}+1}\smdots \phi_{i_{2m}}\}}_{g_m
+%  f_{i_{2m}}}
+% \ar@{.>}@/_6pc/[rrrrrrrrrr]^{\big\Downarrow g_m
+%   \phi_{i_{2m}+1}}_{\substack{
+%   g_mf_{i_{2m}+1}\\ \vdots\\\\g_mf_{n-1} }} 
+% \ar@{.>}@/_10pc/[rrrrrrrrrr]_{\big\Downarrow g_m\phi_n}
+% \ar@/_12pc/[rrrrrrrrrr]_{g_mf_n}
+% &&&&&&&&&& A_0  
+% }$
+% \caption{Picture of the terms in 
+% $(\phi_1\dots\phi_n) \bullet (\psi_1\dots\psi_m)$}
+% \label{fig:braces}
+% \end{figure}
