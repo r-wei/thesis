@@ -1,0 +1,135 @@
+\section{From a trace functor to a dg functor}
+We begin this section by defining two dg 
+categories.
+
+\begin{defn} \label{def:chi}
+Let $\mathcal{C}$ be a category in dg cocategories. 
+Let $\chi(\mathcal{C})$ be the dg category with
+\begin{itemize}
+	\item Objects = $\{A_0 \to \dots \to A_n \to A_0: A_i \in Obj(\mathcal{C}), n\geq 0\}$
+	\item Morphisms = $\{$linear combinations of compositions of 
+	\begin{align*}
+	\textrm{rotations } \tau_n
+	&: 
+	\mathcal{A}
+	\mapsto (A_n \to A_0 \to \dots \to A_n) \\
+	\textrm{coboundaries } \delta_{j,n}
+	&: 
+	\mathcal{A}\mapsto 
+	(A_0 \to \dots \to A_j \to A_{j+2\,(mod\,n+1)} 
+	\to \dots \to A_0) \\
+	\textrm{codegeneracies: } \sigma_{i,n}
+	&: \mathcal{A}
+	\mapsto 
+	(A_0 \to \dots \to A_i \to A_i \to \dots \to A_0)
+	\end{align*}
+	where $\mathcal{A}:= (A_0 \to \dots \to A_n \to A_0)$,
+	subject to the cyclic relations in Appendix \label{chap:lambda}$\}[0]$
+\end{itemize}
+\end{defn}
+%
+\begin{defn} \label{def:D}
+Let $\mathcal{D}$ be the dg category with 
+\begin{itemize}
+	\item Objects = $\{(\underset{B}{\textrm{dg cocategory}}, 
+	\underset{C}{\textrm{dg comodule}})\}$
+	\item Morphisms:
+	\begin{align*}
+	\mathcal{D}^p \big((B_1, C_1), (B_0,C_0) \big)
+	&:= 
+	\begin{Bmatrix}
+	F: B_1 \to B_0 \textrm{ dg functor,}\\
+	F_!: C_1 \to F^*C_0 \textrm{ degree-p linear map}
+	\end{Bmatrix}\\
+	&\phantom{:=}
+	d_{\mathcal{D}}(F, F_!) = 
+	(F, [d,F_!] = 
+	d_{F^*C_0}\circ F_! \pm F_! \circ d_{C_1})
+	\end{align*}
+	\item Composition: $(G, G_!) \underset{D}{\circ} (F, F_!) 
+	= (GF, F^*G_! \circ F_!)$
+\end{itemize}
+\end{defn}
+%
+Composition in $\mathcal{D}$ will be well-defined 
+and associative for any choice of a natural pullback 
+that satisfies
+\begin{equation}
+F^*G^* \cong (GF)^*.
+\end{equation}
+For consistency, we will choose the same pullback of 
+dg comodules for Definitions \ref{def:trace_dg_comodule} 
+and \ref{def:D}. (See Section \ref{sec:} for an 
+explicit description of 
+the pullback we've chosen for dg comodules over the 
+endomorphism dg cocategories given in Equation 
+\ref{eq:cat_in_dgcocat}.)
+%
+
+Now, let $\mathcal{C}$ be a category in dg cocategories 
+and $T$ be a trace functor on $\mathcal{C}$ 
+(Definition \ref{def:trace_dg_comodule}). We will show 
+that $T$ gives a dg functor $\mathcal{F}_T: 
+\chi(\mathcal{C}) \to \mathcal{D}$. On objects,
+$$
+\underbrace{(A_0 \to \dots \to A_n \to A_0)}_{\in Obj(\chi(\mathcal{C}))}
+\underset{\mathcal{F}_T}{\mapsto} 
+\begin{pmatrix}
+	\mathcal{C}(A_0,A_1) \otimes \dots \otimes \mathcal{C}(A_n,A_0)
+	\textrm{ dg cocategory,}\\
+	m^{*n} T(A_0) \textrm{ dg comodule where }\\
+	m^n: \mathcal{C}(A_0,A_1) \otimes \dots \otimes \mathcal{C}(A_n,A_0) \to \mathcal{C}(A_0,A_0)
+\end{pmatrix}
+$$
+On generating morphisms in $\chi(\mathcal{C})$, 
+\begin{align*}
+\delta_{j,n}
+&\mapsto
+\begin{pmatrix}
+	\textrm{$\hat{\delta}_{j,n}$ := composition functor over $(j+1)^{th}$ factor}\\
+	\dots \otimes \mathcal{C}(A_j,A_{j+1})
+	\otimes \mathcal{C}(A_{j+1},A_{j+2}) \otimes \dots
+	\xrightarrow{\hat{\delta}_{j,n}=m}
+	\dots \otimes \mathcal{C}(A_j,A_{j+2}) \otimes \dots,\\
+	m^{*n}T(A_0)
+	\xrightarrow{\delta_{j,n!} := id}
+	\hat{\delta}_{j,n}^* m^{*n-1}T(A_0)
+	\cong (m^{n-1}\hat{\delta}_{j,n})^* T(A_0)
+	\cong m^{*n} T(A_0)
+\end{pmatrix}\\
+%
+\sigma_{i,n}
+&\mapsto
+\begin{pmatrix}
+	\textrm{$\hat{\sigma}_{i,n}$ := insert $id_{A_i}$ and $1\in k$ 
+	into the $i^{th}$ slot}\\
+	\dots \otimes \mathcal{C}(A_i,A_{i+1})
+	\otimes \dots
+	\xrightarrow{\hat{\sigma}_{i,n}}
+	\dots \otimes \mathcal{C}(A_i,A_i) 
+	\otimes \mathcal{C}(A_i,A_{i+1}) \otimes \dots,\\
+	m^{*n}T(A_0)
+	\xrightarrow{\sigma_{i,n!} := id}
+	\hat{\sigma}_{i,n}^* m^{*n+1}T(A_0)
+	\cong (m^{n+1}\hat{\sigma}_{i,n})^* T(A_0)
+	\cong m^{*n} T(A_0)
+\end{pmatrix}\\
+%
+\tau_n
+&\mapsto
+\begin{pmatrix}
+	\textrm{$\hat{\tau}_n$ := rotate factors}\\
+	\mathcal{C}(A_0,A_1) \otimes \dots 
+	\otimes \mathcal{C}(A_n,A_0)
+	\xrightarrow{\hat{\tau}_n}
+	\mathcal{C}(A_n,A_0) \otimes \dots 
+	\otimes \mathcal{C}(A_{n-1},A_n),\\
+	m^{*n}T(A_0)
+	\xrightarrow{\tau_{n!} := m^{*n-1} \tau_!(A_0,A_n)}
+	\hat{\tau}_n^* m^{*n}T(A_n) \textrm{ where}\\
+	m^{n-1}: 
+	\big( \mathcal{C}(A_0,A_1) \otimes \dots \otimes 
+	\mathcal{C}(A_{n-1},A_n) \big) \otimes \mathcal{C}(A_n,A_0)
+	\to \mathcal{C}(A_0,A_n) \otimes \mathcal{C}(A_n,A_0)
+\end{pmatrix}.\\
+\end{align*}
