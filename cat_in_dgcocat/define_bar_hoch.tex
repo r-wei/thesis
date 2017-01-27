@@ -24,7 +24,9 @@ $f_n$. We can picture such a morphism as
 follows:
 %
 \begin{figure}[H]
-\centerline{\xymatrix{
+\centerline{
+$(\phi_1 \dots \phi_n) = $
+\xymatrix{
 	A 
 	\ar@/^5pc/[rrr]^{f_0}_{\substack{\\\textcolor{blue}{\Downarrow \phi_1}}}
 	\ar@/^2pc/[rrr]^{f_1}_{\substack{\\\textcolor{blue}{\Downarrow \phi_2}}}
@@ -35,6 +37,7 @@ follows:
 \caption{A morphism in $Bar(Hoch(A,B))(f_0,f_n)$}
 \end{figure}
 %
+where $\phi_i \in C^\bullet(A, _{f_{i-1}}B_{f_i})$. 
 As a complex, 
 \begin{align*}
 &Bar(Hoch(A,B))^\bullet(f,g) 

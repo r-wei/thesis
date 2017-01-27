@@ -1,0 +1,146 @@
+\section{Dg comodules $T(A)$} \label{sec:dg_comod}
+Let $A$ be an algebra and 
+$Hoch(A,A)$ be the dg category 
+defined in Section 
+\ref{sec:define_bar_hoch}. First, 
+we will define a dg module, 
+$\underline{T}(A)$ over $Hoch(A,A)$:
+%
+\begin{align*}
+\underline{T}(A)^\bullet(f)
+&:= 
+\big( C_{-\bullet}(A,_fA), b \big) \\
+Hoch(A,A)^\bullet(f,g) \otimes T(A)^\bullet(g)
+&\cong 
+C^\bullet(A, _fA_g) \otimes C_{-\bullet}(A, _gA)
+\xrightarrow{\iota}
+C_{-\bullet}(A, _fA) \cong T(A)^\bullet(f)
+\end{align*}
+where $f:A\to A$ is a map of algebras, 
+$( C_{-\bullet}(A,_fA), b )$ is the 
+Hochschild chain complex (see Appendix 
+\ref{chap:hochschild}) and $\iota$ is the 
+contraction operation from Equation 
+\ref{eq:contraction}.
+
+Now, let $B(A) := \mathcal{C}(A,A) = 
+Bar(Hoch(A,A))$ be the 
+endomorphism dg cocategory 
+defined in Section \ref{sec:define_bar_hoch}. 
+Then, we set $T(A):= Bar_{mod}(Hoch(A,A), 
+\underline{T}(A))$, a dg comodule over $B(A)$. 
+$Bar_{mod}$ is a functor
+$$Bar_{mod}: \{\textrm{dg modules over }Hoch(A,A)\} \to 
+\{\textrm{dg comodules over }B(A)\}.$$
+More explicitly, 
+%
+\begin{align*}
+T(A)^\bullet(f) 
+&:= \bigoplus \limits_{\substack{
+	n \geq 0,\\
+	f_i \in Obj(Hoch(A,A))\\
+	f_0 = f}}
+Hoch(A,A)^\bullet[1](f_0,f_1) \otimes 
+\dots \otimes 
+Hoch(A,A)^\bullet[1](f_{n-1},f_n) \otimes 
+\underline{T}^\bullet(f_n)\\
+&= \bigoplus \limits_{\substack{
+	n \geq 0,\\
+	f_i:A \to A\\
+	f_0 = f}}
+C^\bullet(A,  _{f_0}A_{f_1})[1] \otimes \dots \otimes 
+C^\bullet(A, _{f_{n-1}}A_{f_n})[1] \otimes 
+C_{-\bullet}(A, _{f_n}A ).
+\end{align*}
+%
+We can picture an element of $T(A)^\bullet(f)$ 
+as follows:
+%
+\begin{figure}[H]
+\centerline{
+$(\phi_1 \dots \phi_n| \alpha) = $
+\xymatrix{
+	A 
+	\ar@/^6pc/[rrr]^{f_0}_{\substack{\\\textcolor{blue}{\Downarrow \phi_1}}}
+	\ar@/^3pc/[rrr]^{f_1}_{\substack{\\\textcolor{blue}{\Downarrow \phi_2}}}
+	\ar@/_0pc/[rrr]^{f_2}_{\textcolor{blue}{\vdots}}
+	\ar@/_3pc/[rrr]^{f_{n-1}}_{\substack{\\\textcolor{blue}{\Downarrow \phi_n}}}
+	\ar@/_6pc/[rrr]^{f_n}_{\textcolor{blue}{\alpha}}
+	\ar@/_7pc/[rrr]_{id_A}
+	&&&	A}}
+\caption{An element of $T(A)^\bullet(f=f_0)$}
+\end{figure}
+%
+where $\phi_i \in C^\bullet(A, _{f_{i-1}}A_{f_i})$
+and $\alpha \in C_{-\bullet}(A, _{f_n}A)$. The 
+differential on $T(A)$ is:
+%
+\begin{align*}
+d_{T(A)} 
+&=
+\tilde{d}_{Hoch(A,A)} + \tilde{b} + \tilde{\iota}\\
+%
+\tilde{d}_{Hoch(A,A)} 
+&=
+\textrm{extension of $d_{Hoch(A,A)}$ 
+to a differential on $T(A)$}\\
+%
+\tilde{b}
+&=
+\textrm{extension of the Hochschild chain 
+differential $b$ to a differential on $T(A)$}\\
+%
+\tilde{\iota}(\phi_1 \dots \phi_n|\alpha) 
+&:=
+(\phi_1 \dots \phi_{n-1}| \iota(\phi_n, \alpha)).
+\end{align*}
+%
+The coproduct on $T(A)$ is induced by the 
+coproduct on $B(A)$:
+$$\Delta(\phi_1\dots \phi_n|n) = 
+\sum \limits_{0 \leq i \leq n}
+\pm (\phi_1 \dots \phi_i) \otimes (\phi_{i+1}\dots \phi_n|\alpha).$$
+%
+For more precise details and explicit signs, 
+see Reference \cite{T}, Section 4.6. 
+$T(A)$ is the cofree dg comodule over $B(A)$ with 
+cogenerators given by Hochschild chains. 
+In other words, 
+\begin{equation*}
+\begin{split}
+\bigg\{ \let\scriptstyle\textstyle
+\substack{\textrm{maps of dg comodules}\\
+  D \to T(A) \textrm{ over }B(A)} 
+\bigg\}
+&\overset{1:1}{\longleftrightarrow}
+\bigg\{ \bigg( \let\scriptstyle\textstyle
+\substack{\textrm{maps of complexes}\\
+  D^\bullet(f) \to C_{-\bullet}(A, _fA)}
+\bigg)_{f \in Obj(B(A))} \bigg\}\\
+%
+\bigg( F:D\to T(A) \bigg)
+&\mapsto
+\bigg(
+  D^\bullet(f) 
+  \xrightarrow{F_f} T(A)^\bullet(f)
+  \xrightarrow{project}
+  C_{-\bullet}(A, _fA)
+\bigg)_f
+\end{split}
+\end{equation*}
+\begin{align*}  
+\begin{pmatrix}
+  D(f)
+  &\xrightarrow{\Delta_D}
+  \bigoplus \limits_{g \in Obj(B(A))}
+  B(A)^\bullet(f,g) \otimes D(g)\\
+  &\xrightarrow{id \otimes F}
+  \bigoplus \limits_g
+  B(A)^\bullet(f,g) \otimes C_{-\bullet}(A, _gA)\\
+  &\cong T(A)(f)
+  \end{pmatrix} _f
+&\leftmapsto  
+\bigg( D^\bullet(f) \xrightarrow{F}
+  C_{-\bullet}(A, _fA)
+  \bigg)_f
+\end{align*}

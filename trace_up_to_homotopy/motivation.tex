@@ -2,6 +2,55 @@
 In this chapter, we give a trace functor 
 up to homotopy on the category $\mathcal{C}$ 
 defined in Equation \ref{eq:cat_in_dgcocat}. 
-See Definition \ref{def:trace_up_to_homotopy} 
-for the precise notion of a trace functor 
-up to homotopy.
+To do so, we give an $A_\infty$-functor 
+$\mathcal{F}: \chi(\mathcal{C}) \to 
+\mathcal{D}$ satisfying 
+certain requirements (see Definition 
+\ref{def:trace_up_to_homotopy} and 
+Reference \cite{F}, 
+Appendix A, Definition A.8). The 
+only choices we need to make to define 
+$\mathcal{F}$ are:
+\begin{enumerate}
+	\item for each algebra $A$, 
+	a dg comodule $T(A)$ over 
+	$\mathcal{C}(A, A)$, 
+	\item for each pair of algebras $A,B$, 
+	a map of dg comodules over 
+	$\mathcal{C}(A,B) \otimes \mathcal{C}(B,A)$
+	$$\tau_{1!}(A,B):T(A) \to \hat{\tau}_1^* T(B)$$
+	where $\hat{\tau}_1: \mathcal{C}(A,B) \otimes 
+	\mathcal{C}(B,A) \to \mathcal{C}(B,A) \otimes 
+	\mathcal{C}(A,B)$ is a rotation,
+	\item for each non-generating 
+	morphism $\mu \in \chi(\mathcal{C})$, 
+	a map of dg comodules $\mathcal{F}(\mu) \in 
+	\mathcal{D}$,
+	\item for each pair of morphisms $\mu_1, \mu_2 
+	\in \chi(\mathcal{C})$, 
+	a degree-1 map of comodules 
+	$\mathcal{F}(\mu_1, \mu_2) \in 
+	\mathcal{D}$, 
+	\item for each sequence of morphisms 
+	$\mu_1, \dots, \mu_n \in \chi(\mathcal{C})$ 
+	where $n>2$, a degree-(n-1) map of comodules 
+	$\mathcal{F}(\mu_1, \dots, \mu_n) \in 
+	\mathcal{D}$.
+\end{enumerate}
+In Section \ref{sec:dg_comod}, we define item (1), the dg 
+comodule $T(A)$, which is a (categorified) bar 
+construction of the module $C_{\bullet}(A,A)$ over 
+the algebra $C^\bullet(A,A)$ acting via contraction. 
+In Proposition \ref{prop:c1}, we define item (2) by 
+adapting known equations for the Lie derivative of a 
+Hochschild cochain against a chain. 
+In Section \ref{sec:}, we give a prescription for 
+defining item (3). We see that $\mathcal{F}$ 
+respects composition except for a few cases, so 
+in Section \ref{sec:}, we give a prescription for 
+defining the few non-zero $\mathcal{F}(\mu_1, \mu_2)$'s 
+in item (4). Finally in item (5), we claim that we can set 
+$\mathcal{F}(\mu_1, \dots, \mu_n) = $ zero map 
+on comodules for all composable $mu_1, \dots, \mu_n$, 
+$n>2$--this is the claim that we have no higher 
+homotopies, which we justify in Section \ref{sec:}.

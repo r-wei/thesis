@@ -25,30 +25,31 @@
 
 \begin{prop}
 \label{prop:c1}
-Let $\hat{\tau}_1: 
-B(A_0 \to A_1 \to A_0) 
-\longrightarrow B(A_1 \to A_0 \to A_1)$ 
-be as defined in Section 
-\ref{sec:cyclic_B(n)}.
-Recall from Example \ref{eg:pb5} that 
-$\hat{\tau}_1^*C(A_1 \to A_0 \to A_0)
-\cong C(A_1 \to A_0 \to A_1)$ 
-as complexes. Define a map 
+Fix algebras $A,B$, and let 
+$\hat{\tau}_1: \mathcal{C}(A,B) \otimes 
+\mathcal{C}(B,A) \to \mathcal{C}(B,A) \otimes 
+\mathcal{C}(A,B)$ be the rotation functor.
+Recall from Example \ref{eg:pb5} 
+the descriptions of $m^*T(A)$ and 
+$m^*\hat{\tau}^*T(B)$. Define a map 
 $$
-\Upsilon_{A_0,A_1}: C(A_0 \to A_1 \to A_0)
-\to \hat{\tau}_1^*C(A_1 \to A_0 \to A_1)
+\Upsilon_{A,B}: m^*T(A)
+\to m^*\hat{\tau}^*T(B)
 $$
 of comodules over 
-$B(A_0 \to A_1 \to A_0)$ by mapping into 
-cogenerators as follows:
+$\mathcal{C}(A,B) \otimes 
+\mathcal{C}(B,A)$ by mapping into 
+cogenerators as follows: for 
+$(f_0,g_0) \in Obj(\mathcal{C}(A,B) \otimes 
+\mathcal{C}(B,A))$,
 \begin{align}\label{eq:define_upsilon}
-\upsilon^{f_0, g_0}: C(A_0 \to A_1 \to A_0)(f_0,g_0) 
-&\to
-\hat{\tau}_1^*C(A_1 \to A_0 \to A_1)(g_0,f_0)\\
-&\cong 
-C(A_1 \to A_0 \to A_1)(g_0,f_0)\\
-&\xrightarrow[cogenerators]{\textrm{project onto}}
-C_{-\bullet}(A_1, _{f_0g_0}{A_1}_{id})\\
+\begin{split}
+\upsilon^{f_0, g_0}: 
+m^*T(A)
+&(f_0, g_0)
+\to m^*\hat{\tau}^*T(B)(g_0, f_0)
+\xrightarrow[cogenerators]{\textrm{project onto}}
+C_{-\bullet}(B, _{f_0g_0}B)\\
 \upsilon_{n,m}^{f_0,g_0} 
 (\vec{\phi} | \vec{\psi} | \alpha) = 
 & \sum_{\substack{I_1I_2 = \{2,\cdots,n\} \\
@@ -57,18 +58,20 @@ C_{-\bullet}(A_1, _{f_0g_0}{A_1}_{id})\\
 &\phantom{{}move{}}
 \bigg( + f_0a_0 \otimes \lambda(\vec{\phi}) \mathfrak{a}_1 
   \; \; \; \; if \; \; m = 0 \bigg).
+\end{split}
 \end{align}
-Then, $\Upsilon_{A_0,A_1}: C(A_0 \to A_1 \to A_0)
-\to \hat{\tau}^*C(A_1 \to A_0 \to A_1)$ 
+Then, $\Upsilon_{A,B}: m^*T(A)
+\to m^*\hat{\tau}^*T(B)$ 
 is a map of dg comodules over 
-$B(A_0 \to A_1 \to A_0)$.
+$\mathcal{C}(A,B) \otimes 
+\mathcal{C}(B,A)$.
 \end{prop}
 %
 \begin{proof}
 We must show: (1) $\Upsilon$ is a map of comodules, and 
 (2) $\Upsilon$ commutes with the differentials. (In this 
 proof, we drop the subscripts and write 
-$\Upsilon := \Upsilon_{A_0, A_1}$.)
+$\Upsilon := \Upsilon_{A, B}$.)
 
 (1) This proof is standard for cofree comodules. 
 Let ($\vec{\phi} | \vec{\psi} | \alpha$) be as 
@@ -78,7 +81,7 @@ On one hand,
 \begin{align*}
 &\phantom{{}={}}
 [(id_B \otimes \Upsilon) \circ 
-  \Delta_{C(A_0 \to A_1 \to A_0)}] 
+  \Delta_{m^*T(A)}] 
   ( \vec{\phi} | \vec{\psi} | \alpha ) \\
 &= [id_B \otimes \Upsilon]
 	\big( \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
@@ -97,10 +100,10 @@ On one hand,
 On the other hand,
 \begin{align*}
 &\phantom{{}={}}
-[\Delta_{\hat{\tau}^*C(A_1 \to A_0 \to A_1)} 
+[\Delta_{m^*\hat{\tau}^*T(B)} 
   \circ \Upsilon ]
   ( \vec{\phi} | \vec{\psi} | \alpha ) \\
-&= \Delta_{\hat{\tau}^*C(A_1 \to A_0 \to A_1)}
+&= \Delta_{m^*\hat{\tau}^*T(B)}
 	\big( \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
 						  J_1J_2 = \{1,2,\cdots,m\} \\
 				          \textrm{as ordered sets}}}
@@ -117,8 +120,8 @@ On the other hand,
 \end{align*}
 Clearly 
 $(id_B \otimes \Upsilon) \circ 
-\Delta_{C(A_0 \to A_1 \to A_0)} = 
-\Delta_{\hat{\tau}^*C(A_1 \to A_0 \to A_1)} 
+\Delta_{m^*T(A)} = 
+\Delta_{m^*\hat{\tau}^*T(B)} 
 \circ \Upsilon$.
 
 (2) We will show that $\Upsilon$ commutes with 
