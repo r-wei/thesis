@@ -1,4 +1,4 @@
-\section{From a trace functor to a dg functor}
+\section{From a trace functor to a dg functor} \label{sec:trace_to_dg}
 We begin this section by defining two dg 
 categories.
 
@@ -82,9 +82,10 @@ $$
 \end{pmatrix}
 $$
 On generating morphisms in $\chi(\mathcal{C})$, 
-\begin{align*}
+\begin{align} \label{eq:trace_induced_dg}
+\begin{split}
 \delta_{j,n}
-&\mapsto
+&\underset{\mathcal{F}_T}{\mapsto} 
 \begin{pmatrix}
 	\textrm{$\hat{\delta}_{j,n}$ := composition functor over $(j+1)^{th}$ factor}\\
 	\dots \otimes \mathcal{C}(A_j,A_{j+1})
@@ -99,7 +100,7 @@ On generating morphisms in $\chi(\mathcal{C})$,
 \end{pmatrix}\\
 %
 \sigma_{i,n}
-&\mapsto
+&\underset{\mathcal{F}_T}{\mapsto} 
 \begin{pmatrix}
 	\textrm{$\hat{\sigma}_{i,n}$ := insert $id_{A_i}$ and $1\in k$ 
 	into the $i^{th}$ slot}\\
@@ -116,7 +117,7 @@ On generating morphisms in $\chi(\mathcal{C})$,
 \end{pmatrix}\\
 %
 \tau_n
-&\mapsto
+&\underset{\mathcal{F}_T}{\mapsto} 
 \begin{pmatrix}
 	\textrm{$\hat{\tau}_n$ := rotate factors}\\
 	\mathcal{C}(A_0,A_1) \otimes \dots 
@@ -131,5 +132,92 @@ On generating morphisms in $\chi(\mathcal{C})$,
 	\big( \mathcal{C}(A_0,A_1) \otimes \dots \otimes 
 	\mathcal{C}(A_{n-1},A_n) \big) \otimes \mathcal{C}(A_n,A_0)
 	\to \mathcal{C}(A_0,A_n) \otimes \mathcal{C}(A_n,A_0)
-\end{pmatrix}.\\
-\end{align*}
+\end{pmatrix}.
+\end{split}
+\end{align}
+To show that this association on generating morphisms 
+gives a functor, we should check that $\mathcal{F}_T$ 
+preserves the cyclic relations in Equation 
+\ref{eqn:cyclic_relations}. All of the relations involving 
+$\delta$'s and $\sigma$'s are straightforward to 
+check and follow from (1) the associativity of the composition 
+functor $m$ in $\mathcal{C}$, and (2) the general fact that 
+$f \circ id = id \circ f = f$ for a map $f$. The 
+remaining relation, $\tau_n^{n+1} = id$, is preserved:
+\begin{itemize}
+	\item for $n=2$ because this is Equation 
+	\ref{eq:trace_cocycle} from the definition of a 
+	trace functor,
+	\item for $n>2$ because these are pullbacks of 
+	Equation \ref{eq:trace_cocycle},
+	\item and for $n=1$ because this follows from 
+	Equation \ref{eq:trace_cocycle} with $B=C$ and 
+	the fact that $\sigma_{1,1!}$ is an identity 
+	map on comodules.
+\end{itemize}
+$\mathcal{F}_T$ is dg because $\delta_{j,n!} := id$, 
+$\sigma_{i,n!} := id$ and $\tau_{n!} := m^{*n-1} \tau_!$
+commute with the differentials.
+
+%
+Now, we are ready to define a $``$trace functor up 
+to homotopy''.
+%
+\begin{defn} \label{def:trace_up_to_homotopy}
+Let $\mathcal{C}$ be a category in dg 
+cocategories. A trace functor up to homotopy on 
+$\mathcal{C}$ is an $A_\infty$-functor 
+$$\mathcal{F}: \chi(\mathcal{C}) \to \mathcal{D}$$
+where $\chi(\mathcal{C})$ and $\mathcal{D}$ are 
+dg categories defined in Defintions \ref{def:chi} 
+and \ref{def:D}, respectively, such that
+\begin{itemize}
+	\item $\mathcal{F}(A_0 \to A_0) \cong 
+	\begin{pmatrix}
+		\mathcal{C}(A_0,A_0),\\
+		T(A_0) \textrm{ any dg comodule over }\mathcal{C}(A_0,A_0)\\
+	\end{pmatrix}$
+	\item for $n>0$,$\; \mathcal{F}
+	(A_0 \to \dots \to A_n \to A_0) \cong	
+	\begin{pmatrix}
+		\mathcal{C}(A_0,A_1) \otimes \dots \otimes \mathcal{C}(A_n,A_0),\\
+		m^{*n} T(A_0) \textrm{ where }\\
+		m^n: \mathcal{C}(A_0,A_1) \otimes \dots \otimes \mathcal{C}(A_n,A_0) \to \mathcal{C}(A_0,A_0)
+	\end{pmatrix}$
+	\item for $\lambda = \delta_{j,n}, \sigma_{i,n}$,  
+	$\; \mathcal{F}(\lambda) \cong 
+	\mathcal{F}_T(\lambda)$ given in Equation \ref{eq:trace_induced_dg}
+	\item $\mathcal{F}(\tau_1) \cong 
+	\begin{pmatrix}
+		\textrm{$\hat{\tau}_1$ := rotate factors}\\
+		\mathcal{C}(A_0,A_1) \otimes \mathcal{C}(A_1,A_0)
+		\xrightarrow{\hat{\tau}_1}
+		\mathcal{C}(A_1,A_0) \otimes \mathcal{C}(A_0,A_1),\\
+		T(A_0)
+		\xrightarrow{\tau_{1!}}
+		\hat{\tau}_1^* T(A_1) \textrm{ any map of dg comodules}
+	\end{pmatrix}$
+	\item for $n>1$, $\mathcal{F}(\tau_n) \cong 
+	\mathcal{F}_T(\tau_n)$ given in Equation \ref{eq:trace_induced_dg}.
+\end{itemize}
+\end{defn}
+There are many stipulations in the definition above 
+because not every functor $\chi(\mathcal{C}) \to \mathcal{D}$
+comes from a trace functor. However, an dg functor 
+satsifying Definition \ref{def:trace_up_to_homotopy} 
+does come from a trace functor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
