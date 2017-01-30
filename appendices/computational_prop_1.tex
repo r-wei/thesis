@@ -9,7 +9,7 @@
 % \ar@/_2pc/[r]^{\substack{\vdots\\ g_m}}
 % & A_0
 % }
-% $\overset{\Upsilon}\longrightarrow$
+% $\overset{\tau_{1!}}\longrightarrow$
 % \xymatrix{
 % A_1 \ar@/^5pc/[r]^{g_0} 
 % \ar@/^2pc/[r]^{\big\Downarrow \psi_1}_{g_1} 
@@ -20,7 +20,7 @@
 % \ar@/_2pc/[r]^{\substack{\vdots\\ f_n}}
 % & A_1
 % }}
-% \caption{A picture of the domain and target of $\Upsilon$}
+% \caption{A picture of the domain and target of $\tau_{1!}$}
 % \end{figure}
 
 \begin{prop}
@@ -30,27 +30,31 @@ $\hat{\tau}_1: \mathcal{C}(A,B) \otimes
 \mathcal{C}(B,A) \to \mathcal{C}(B,A) \otimes 
 \mathcal{C}(A,B)$ be the rotation functor.
 Recall from Example \ref{eg:pb5} 
-the descriptions of $m^*T(A)$ and 
-$\hat{\tau}^*m^*T(B)$. Define a map 
+the descriptions of the cofree dg comodules 
+\begin{align*}
+m^*T(A) &\cong T(A \to B \to A) \\
+\hat{\tau}^*m^*T(B) &\cong T(B \to A \to B).
+\end{align*}
+Define a map 
 $$
-\Upsilon_{A,B}: m^*T(A)
-\to \hat{\tau}^*m^*T(B)
+\tau_{1!}(A,B): m^*T(A) \cong T(A \to B \to A) 
+\longrightarrow
+T(B \to A \to B) \cong \hat{\tau}^*m^*T(B) 
 $$
-of comodules over 
-$\mathcal{C}(A,B) \otimes 
+of comodules over $\mathcal{C}(A,B) \otimes 
 \mathcal{C}(B,A)$ by mapping into 
 cogenerators as follows: for 
-$(f_0,g_0) \in Obj(\mathcal{C}(A,B) \otimes 
+$(A \overset{f_0}{\to} B \overset{g_0}{\to} A) \in Obj(\mathcal{C}(A,B) \otimes 
 \mathcal{C}(B,A))$,
 \begin{align}\label{eq:define_upsilon}
 \begin{split}
-\upsilon^{f_0, g_0}: 
-m^*T(A)
-&(f_0, g_0)
-\to \hat{\tau}^*m^*T(B)(g_0, f_0)
+\tau_{1!}(f_0, g_0): 
+T(A \overset{f_0}{\to} B \overset{g_0}{\to} A)^\bullet
+&\to 
+T(B \overset{g_0}{\to} A \overset{f_0}{\to} B)^\bullet
 \xrightarrow[cogenerators]{\textrm{project onto}}
 C_{-\bullet}(B, _{f_0g_0}B)\\
-\upsilon_{n,m}^{f_0,g_0} 
+[\tau_{1!}(f_0,g_0)]^{n,m}
 (\vec{\phi} | \vec{\psi} | \alpha) = 
 & \sum_{\substack{I_1I_2 = \{2,\cdots,n\} \\
                           \textrm{as ordered sets}}}
@@ -60,7 +64,10 @@ C_{-\bullet}(B, _{f_0g_0}B)\\
   \; \; \; \; if \; \; m = 0 \bigg).
 \end{split}
 \end{align}
-Then, $\Upsilon_{A,B}: m^*T(A)
+where $\vec{\phi}$ is an element of length $n$ and 
+$\vec{\psi}$ is an element of length $m$ (see 
+Section \ref{sec:comp_notation_1}).
+Then, $\tau_{1!}(A,B): m^*T(A)
 \to \hat{\tau}^*m^*T(B)$ 
 is a map of dg comodules over 
 $\mathcal{C}(A,B) \otimes 
@@ -68,22 +75,22 @@ $\mathcal{C}(A,B) \otimes
 \end{prop}
 %
 \begin{proof}
-We must show: (1) $\Upsilon$ is a map of comodules, and 
-(2) $\Upsilon$ commutes with the differentials. (In this 
+We must show: (1) $\tau_{1!}$ is a map of comodules, and 
+(2) $\tau_{1!}$ commutes with the differentials. (In this 
 proof, we drop the subscripts and write 
-$\Upsilon := \Upsilon_{A, B}$.)
+$\tau_{1!} := \tau_{1!}(A,B)$.)
 
 (1) This proof is standard for cofree comodules. 
 Let ($\vec{\phi} | \vec{\psi} | \alpha$) be as 
 in the statement of the proposition. We want to 
-show that $\Upsilon$ commutes with the coproducts. 
+show that $\tau_{1!}$ commutes with the coproducts. 
 On one hand,
 \begin{align*}
 &\phantom{{}={}}
-[(id_B \otimes \Upsilon) \circ 
+[(id_B \otimes \tau_{1!}) \circ 
   \Delta_{m^*T(A)}] 
   ( \vec{\phi} | \vec{\psi} | \alpha ) \\
-&= [id_B \otimes \Upsilon]
+&= [id_B \otimes \tau_{1!}]
 	\big( \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
 						  J_1J_2 = \{1,2,\cdots,m\} \\
 				          \textrm{as ordered sets}}} 
@@ -95,13 +102,13 @@ On one hand,
     \epsilon_{I_2I_3,J_1}\cdot \epsilon_{I_3,J_2}\cdot
     (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
     (\vec{\phi}_{I_2} | \vec{\psi}_{J_2}) \otimes 
-    \upsilon_{|I_3|,|J_3|}(\vec{\phi}_{I_3} | \vec{\psi}_{J_3} | \alpha). \\
+    \tau_{1!}^{|I_3|,|J_3|}(\vec{\phi}_{I_3} | \vec{\psi}_{J_3} | \alpha). \\
 \end{align*}
 On the other hand,
 \begin{align*}
 &\phantom{{}={}}
 [\Delta_{\hat{\tau}^*m^*T(B)} 
-  \circ \Upsilon ]
+  \circ \tau_{1!} ]
   ( \vec{\phi} | \vec{\psi} | \alpha ) \\
 &= \Delta_{\hat{\tau}^*m^*T(B)}
 	\big( \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
@@ -109,52 +116,52 @@ On the other hand,
 				          \textrm{as ordered sets}}}
 	\epsilon_{I_2,J_1} \cdot 
   (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
-    \upsilon_{|I_2|,|J_2|}(\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha) \, \big)\\
+    \tau_{1!}^{|I_2|,|J_2|}(\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha) \, \big)\\
 &= \sum_{\substack{I_1I_2I_3 = \{1,2,\cdots,n\} \, \textrm{and} \\ 
 				   J_1J_2J_3 = \{1,2,\cdots,m\} \\
 				   \textrm{as ordered sets}}} 
     \epsilon_{I_2I_3,J_1}\cdot \epsilon_{I_3,J_2}\cdot
     (\vec{\phi}_{I_1} | \vec{\psi}_{J_1}) \otimes 
     (\vec{\phi}_{I_2} | \vec{\psi}_{J_2}) \otimes 
-    \upsilon_{|I_3|,|J_3|}(\vec{\phi}_{I_3} | \vec{\psi}_{J_3} | \alpha).   				          
+    \tau_{1!}^{|I_3|,|J_3|}(\vec{\phi}_{I_3} | \vec{\psi}_{J_3} | \alpha).   				          
 \end{align*}
 Clearly 
-$(id_B \otimes \Upsilon) \circ 
+$(id_B \otimes \tau_{1!}) \circ 
 \Delta_{m^*T(A)} = 
 \Delta_{\hat{\tau}^*m^*T(B)} 
-\circ \Upsilon$.
+\circ \tau_{1!}$.
 
-(2) We will show that $\Upsilon$ commutes with 
+(2) We will show that $\tau_{1!}$ commutes with 
 the differentials by direct computation. Since 
-$\Upsilon$ is a map of cofree comodules, we only 
-need to check that $\pi_1 \circ D(\Upsilon) = 0$ 
-where $D(\Upsilon)$ is the differential applied 
-to $\Upsilon$ as a linear map between complexes 
+$\tau_{1!}$ is a map of cofree comodules, we only 
+need to check that $\pi_1 \circ D(\tau_{1!}) = 0$ 
+where $D(\tau_{1!})$ is the differential applied 
+to $\tau_{1!}$ as a linear map between complexes 
 and $\pi_1$ denotes projection of a comodule 
 onto its cogenerators. More explicitly, we want 
 to check that
 \begin{equation} \label{eq:upsilon}
 \begin{aligned}
-&\upsilon_{n, m} ( \tilde{\delta}(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
-\upsilon_{n, m} ( \vec{\phi} | \tilde{\delta}(\vec{\psi}) | \alpha ) \; + 
-\upsilon_{n-1, m} ( b^\prime(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
-\upsilon_{n, m-1} ( \vec{\phi} | b^\prime(\vec{\psi}) | \alpha ) \; + \\
-&\upsilon_{n, m} ( \vec{\phi} | \vec{\psi} | b(\alpha) ) \; + 
-b \circ \upsilon_{n, m} ( \vec{\phi} | \vec{\psi} | \alpha ) \; + \\
+&\tau_{1!}^{n, m} ( \tilde{\delta}(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
+\tau_{1!}^{n, m} ( \vec{\phi} | \tilde{\delta}(\vec{\psi}) | \alpha ) \; + 
+\tau_{1!}^{n-1, m} ( b^\prime(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
+\tau_{1!}^{n, m-1} ( \vec{\phi} | b^\prime(\vec{\psi}) | \alpha ) \; + \\
+&\tau_{1!}^{n, m} ( \vec{\phi} | \vec{\psi} | b(\alpha) ) \; + 
+b \circ \tau_{1!}^{n, m} ( \vec{\phi} | \vec{\psi} | \alpha ) \; + \\
 & \sum \limits_{\substack{
   I_1I_2 = \{1,\smdots,n\}\\ 
   \textrm{as ordered sets}}}
   \epsilon_{I_2,\{1,\smdots,m-1\}}\cdot
-  \upsilon_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\} \cdot \alpha ) \; + \\
+  \tau_{1!}^{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\} \cdot \alpha ) \; + \\
 & \sum \limits_{\substack{
   J_1J_2 = \{1,\smdots,m\}\\ 
   \textrm{as ordered sets}}}
   \epsilon_{\{2,\smdots,n\},J_1}\cdot
-\phi_1 \{ \psi_{J_1}\}\cdot \upsilon_{n-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha ) \; + \\  
+\phi_1 \{ \psi_{J_1}\}\cdot \tau_{1!}^{n-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha ) \; + \\  
 & \epsilon_{\{n\},\{1,\smdots,m\}}\cdot
-  \upsilon_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi} | \phi_{n}\cdot \alpha) \; + \\
+  \tau_{1!}^{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi} | \phi_{n}\cdot \alpha) \; + \\
 & \epsilon_{\{1,\smdots,n\},\{1\}}\cdot
-\psi_1\cdot \upsilon_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha) \\ 
+\psi_1\cdot \tau_{1!}^{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha) \\ 
 &= 0.
 \end{aligned}
 \end{equation}
@@ -173,7 +180,7 @@ column gives the term (extra or standard)
 that cancels the expression. 
 
 All of the terms in Table \ref{table:t1} 
-cancel, so $\Upsilon$ is a map of complexes.
+cancel, so $\tau_{1!}$ is a map of complexes.
 \end{proof}
 %
 \begin{landscape}
@@ -187,43 +194,43 @@ cancel, so $\Upsilon$ is a map of complexes.
     
     \breakcell{$f_0\psi_1(\lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3 ) \cdot$\\
     $\phi_1(\lambda(\vec{\psi}_{\{2,\cdots, m\}} \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_4, a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
-    $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ & 
-    $f_0 \psi_1 \cdot \upsilon_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha)$ \\ \hline
+    $\tau_{1!}^{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ & 
+    $f_0 \psi_1 \cdot \tau_{1!}^{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha)$ \\ \hline
 
     \breakcell{$\phi_1( \lambda(\vec{\psi}_{\{1,\cdots, m-1\}}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3,$\\ 
     $\phantom{mo} \psi_{m} ( \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_4) \cdot a_0, \mathfrak{a}_1 ) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
-    $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
-    $\upsilon_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha )$ \\ \hline
+    $\tau_{1!}^{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
+    $\tau_{1!}^{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha )$ \\ \hline
 
     \breakcell{$\phi_1( \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3, g_m \phi_n(\mathfrak{a}_4) \cdot a_0, \mathfrak{a}_1)\otimes$\\ 
     $\otimes\, \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
-    $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
-    $\upsilon_{n-1, m}(\vec{\phi}_{\{1, \cdots, n-1\}} | \vec{\psi} | g_m \phi_{n} \cdot \alpha )$ \\ \hline
+    $\tau_{1!}^{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
+    $\tau_{1!}^{n-1, m}(\vec{\phi}_{\{1, \cdots, n-1\}} | \vec{\psi} | g_m \phi_{n} \cdot \alpha )$ \\ \hline
 
     \breakcell{$\phi_1( \lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2) \cdot f_1(a_0) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_1$} &
-    $\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
-    $\phi_1 \cdot \upsilon_{n-1, 0}(\vec{\phi}_{\{2, \cdots, n\}} | \vec{\psi} |\alpha )$ \\ \hline
+    $\tau_{1!}^{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ &
+    $\phi_1 \cdot \tau_{1!}^{n-1, 0}(\vec{\phi}_{\{2, \cdots, n\}} | \vec{\psi} |\alpha )$ \\ \hline
 
     \breakcell{$f_0a_0 \cdot \phi_1(\mathfrak{a}_1) \otimes \lambda(\vec{\phi}_{\{1,\cdots,n-1\}}) \mathfrak{a}_2$} &
-    \breakcell{$\upsilon_{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ \\ if $\vec{\psi} = 1$} & 
-    \breakcell{$b \circ \upsilon_{n, m} (\vec{\phi} | \vec{\psi} | \alpha)$ \\ if $\vec{\psi} =1$} \\ \hline
+    \breakcell{$\tau_{1!}^{n, m} (\delta(\phi_1)\phi_2 \cdots \phi_n | \vec{\psi} | \alpha)$ \\ if $\vec{\psi} = 1$} & 
+    \breakcell{$b \circ \tau_{1!}^{n, m} (\vec{\phi} | \vec{\psi} | \alpha)$ \\ if $\vec{\psi} =1$} \\ \hline
 
     \breakcell{$f_0 g_m \phi_n(\mathfrak{a}_2) f_0a_0 \otimes \lambda(\vec{\phi}_{\{1,\cdots,n-1\}}) \mathfrak{a}_1$} &
-    \breakcell{$b \circ \upsilon_{n, m} (\vec{\phi} | \vec{\psi} | \alpha)$ \\ if $\vec{\psi} = 1$} &
-    \breakcell{$\upsilon_{n-1, m}(\vec{\phi}_{\{1, \cdots, n-1\}} | \vec{\psi} | g_m \phi_{n} \cdot \alpha )$ \\ if $\vec{\psi} = 1$} \\ \hline
+    \breakcell{$b \circ \tau_{1!}^{n, m} (\vec{\phi} | \vec{\psi} | \alpha)$ \\ if $\vec{\psi} = 1$} &
+    \breakcell{$\tau_{1!}^{n-1, m}(\vec{\phi}_{\{1, \cdots, n-1\}} | \vec{\psi} | g_m \phi_{n} \cdot \alpha )$ \\ if $\vec{\psi} = 1$} \\ \hline
 
     \breakcell{$\phi_1(\lambda(\vec{\psi}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_4, a_0, \mathfrak{a}_1) \cdot \phi_2(\mathfrak{a}_2) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_3$} &
-    $b \circ \upsilon_{n, m} (\vec{\phi} | \vec{\psi} | \alpha)$ &
-    $\upsilon_{n-1, m}(\phi_1 \cup \phi_2 \phi_3 \cdots \phi_n | \vec{\psi} | \alpha)$ \\ \hline
+    $b \circ \tau_{1!}^{n, m} (\vec{\phi} | \vec{\psi} | \alpha)$ &
+    $\tau_{1!}^{n-1, m}(\phi_1 \cup \phi_2 \phi_3 \cdots \phi_n | \vec{\psi} | \alpha)$ \\ \hline
     
     \breakcell{$\phi_1(\lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3) \phi_2(\lambda(\vec{\psi}_{J_2} \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3,$\\
     $\phantom{mo} a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$} &
-    $\upsilon_{n-1, m}(\phi_1 \cup \phi_2 \phi_3 \cdots \phi_n | \vec{\psi} | \alpha)$ &
-     $\phi_1 \{ \vec{\psi}_{J_1} \} \cdot \upsilon_{n-1, |J_2|}(\vec{\phi}_{\{2, \cdots, n\}} | \vec{\psi}_{J_2} |\alpha )$\\ \hline
+    $\tau_{1!}^{n-1, m}(\phi_1 \cup \phi_2 \phi_3 \cdots \phi_n | \vec{\psi} | \alpha)$ &
+     $\phi_1 \{ \vec{\psi}_{J_1} \} \cdot \tau_{1!}^{n-1, |J_2|}(\vec{\phi}_{\{2, \cdots, n\}} | \vec{\psi}_{J_2} |\alpha )$\\ \hline
 
     \breakcell{$f_0 \psi_1(\lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2) \cdot f_0a_0 \otimes \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_1$} &  
-    \breakcell{$f_0 \psi_1 \cdot \upsilon_{n, 0}(\vec{\phi} | 1 | \alpha)$ \\ if $\vec{\psi} = \psi_1$} &
-    \breakcell{$ \upsilon_{|I_1|, 0} (\vec{\phi}_{I_1} | 1 | \psi_1 \{ \vec{\phi}_{I_2} \} \cdot \alpha )$ \\ if $\vec{\psi} = \psi_1$} \\ \hline
+    \breakcell{$f_0 \psi_1 \cdot \tau_{1!}^{n, 0}(\vec{\phi} | 1 | \alpha)$ \\ if $\vec{\psi} = \psi_1$} &
+    \breakcell{$ \tau_{1!}^{|I_1|, 0} (\vec{\phi}_{I_1} | 1 | \psi_1 \{ \vec{\phi}_{I_2} \} \cdot \alpha )$ \\ if $\vec{\psi} = \psi_1$} \\ \hline
     \hline
   \end{tabular}
 \caption{Expansion of terms in Equation \ref{eq:upsilon}}

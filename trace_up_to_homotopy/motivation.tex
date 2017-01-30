@@ -6,22 +6,28 @@ To do so, we give an $A_\infty$-functor
 $\mathcal{F}: \chi(\mathcal{C}) \to 
 \mathcal{D}$ satisfying 
 certain requirements (see Definition 
-\ref{def:trace_up_to_homotopy} and 
-Reference \cite{F}, 
-Appendix A, Definition A.8). The 
+\ref{def:trace_up_to_homotopy}). Applying 
+the definition of an $A_\infty$-functor 
+(from Reference \cite{F}, 
+Appendix A, Definition A.8), the 
 only choices we need to make to define 
 $\mathcal{F}$ are:
 \begin{enumerate}
 	\item for each algebra $A$, 
 	a dg comodule $T(A)$ over 
 	$\mathcal{C}(A, A)$, 
+	\item for a functor of dg cocategories 
+	$F: C_1 \to C_0$ and a dg comodule $T_0$ over 
+	$C_0$, a definition of a pullback 
+	$F^*T_0$ that is natural in $T_0$ and satisfies 
+	Equation \ref{eq:pullback_yoga},
 	\item for each pair of algebras $A,B$, 
 	a map of dg comodules over 
 	$\mathcal{C}(A,B) \otimes \mathcal{C}(B,A)$
 	$$\tau_{1!}(A,B):T(A) \to \hat{\tau}_1^* T(B)$$
 	where $\hat{\tau}_1: \mathcal{C}(A,B) \otimes 
 	\mathcal{C}(B,A) \to \mathcal{C}(B,A) \otimes 
-	\mathcal{C}(A,B)$ is a rotation,
+	\mathcal{C}(A,B)$ is rotation,
 	\item for each non-generating 
 	morphism $\mu \in \chi(\mathcal{C})$, 
 	a map of dg comodules $\mathcal{F}(\mu) \in 
@@ -41,16 +47,18 @@ In Section \ref{sec:dg_comod}, we define item (1), the dg
 comodule $T(A)$, which is a (categorified) bar 
 construction of the module $C_{\bullet}(A,A)$ over 
 the algebra $C^\bullet(A,A)$ acting via contraction. 
-In Proposition \ref{prop:c1}, we define item (2) by 
+In Appendix \ref{chap:}, we give item (2) as well as 
+compute some examples of pullbacks for later use. 
+In Proposition \ref{prop:c1}, we define item (3) by 
 adapting known equations for the Lie derivative of a 
 Hochschild cochain against a chain. 
-In Section \ref{sec:}, we give a prescription for 
-defining item (3). We see that $\mathcal{F}$ 
+In Section \ref{sec:F_of_mu}, we give a prescription for 
+defining item (4). Here, we see that $\mathcal{F}$ 
 respects composition except for a few cases, so 
-in Section \ref{sec:}, we give a prescription for 
+in Section \ref{sec:F_of_mu_2}, we give a prescription for 
 defining the few non-zero $\mathcal{F}(\mu_1, \mu_2)$'s 
-in item (4). Finally in item (5), we claim that we can set 
-$\mathcal{F}(\mu_1, \dots, \mu_n) = $ zero map 
-on comodules for all composable $mu_1, \dots, \mu_n$, 
-$n>2$--this is the claim that we have no higher 
-homotopies, which we justify in Section \ref{sec:}.
+in item (5). Finally, for item (6), we claim that we can set 
+$\mathcal{F}(\mu_1, \dots, \mu_n) = $ (zero map 
+on comodules) for all composable $mu_1, \dots, \mu_n$, 
+$n>2$: this is the claim that we have no higher 
+homotopies, justified in Section \ref{sec:verify_A_relations}.

@@ -1,0 +1,200 @@
+\section{Prescriptions for 
+$\mathcal{F}(\mu_1, \dots, \mu_n)$} 
+
+\subsection{Prescription for $\mathcal{F}(\mu)$} \label{sec:F_of_mu}
+Now, we will define $\mathcal{F}(\mu)$ for 
+$\mu$ not a generating morphism in $\Lambda$. 
+(A general morphism in $\chi(\mathcal{C})$ is a 
+linear combination of morphisms in $\Lambda$, so 
+we extend $\mathcal{F}$ linearly to define 
+$\mathcal{F}$ on any morphism in $\chi(\mathcal{C})$, 
+see Definition \ref{def:chi}.)
+
+Let $\mu$ be a non-generating morphism 
+in $\Lambda$ that induces a morphsim in 
+$\chi(\mathcal{C})$ with source $\mathcal{A} :=
+(A_0 \to \dots \to A_n \to A_0)$ for some 
+algebras $A_i$, $0 \leq i \leq n$, $n \geq 0$. 
+Choose (i.e., fix once and 
+for all) a presentation of $\mu$ as a 
+composition of generating morphisms. 
+Within the chosen presentation, in the 
+following order, (1) replace 
+all occurrences of $\tau_{n-1} \delta_{n-1,n}$ 
+with $\delta_{0,n}\tau_n^2$, (2) replace all 
+$\tau_{n+1}\sigma_{n,n}$ with 
+$\tau_{n+1}^{n+1}\sigma_{0,n}\tau_n$, 
+(3) replace all decompositions of identity 
+maps with identity maps, (4) remove all 
+identity maps if $\mu \neq id$, (5) call 
+this new presentation 
+$``$the presentation corresponding to $\mu$'', 
+denoted $\mu = \lambda_{\mu,k_\mu}\smdots 
+\lambda_{\mu,1}$. The presentation 
+corresponding to $\mu$ is not unique (i.e., 
+still depends on the original chosen 
+presentation). However, letting $\mathcal{F}(\mu)$ 
+act on comodules via
+\begin{align*}
+\mathcal{F}(\mu) := 
+\hat{\lambda}_{\mu,1}^*\smdots
+  \hat{\lambda}_{\mu,k_\mu-1}^*
+  (\lambda_{\mu,k_\mu!})
+  \circ \smdots \circ
+  \hat{\lambda}_{\mu,1}^*(\lambda_{\mu,2!})
+  \circ \lambda_{\mu,1!}: 
+  T(\mathcal{A})
+  \to \hat{\mu}^*T(\mu \mathcal{A})
+\end{align*}
+is well-defined because we have made 
+consistent choices. More explicitly, 
+we show in Section \ref{sec:} that
+the choices we have made for 
+$\mathcal{F}(\{ 
+\textrm{generating morphisms}\})$ 
+respect all of the relations in $\Lambda$ 
+(Equation \ref{eqn:cyclic_relations}) 
+except for 
+\begin{align}
+\textrm{These equations.}
+\end{align}
+The above steps ensure that the 
+presentation corresponding 
+to $\mu$ only uses the lefthand 
+side of Equation \ref{eq:weak_delta} and 
+the righthand sides of Equations 
+\ref{eq:weak_sigma} and \ref{eq:weak_tau}.
+%
+\subsection{Prescription for $\mathcal{F}(\mu_1, \mu_2)$} \label{sec:F_of_mu_2}
+Before defining $\mathcal{F}$ on pairs of 
+composable morphisms, let's take a look 
+at an $A_\infty$ relation we expect 
+$\mathcal{F}$ to satisfy: For $\cdot 
+\xrightarrow{\mu_1} \cdot 
+\xrightarrow{\mu_2} \cdot$ 
+composable morphisms in $\chi(\mathcal{C})$, 
+we expect
+\begin{align}
+\label{eq:A_2}
+\mathcal{F}(\mu_2\circ \mu_1) 
+= 
+\mathcal{F}(\mu_2) \circ \mathcal{F}(\mu_1) + 
+d_{\mathcal{D}_\infty} \circ \mathcal{F}(\mu_1, \mu_2).
+\end{align}
+Given the definition of $\mathcal{F}(\mu)$ above, 
+we require a non-zero $\mathcal{F}(\mu_1, \mu_2)$ 
+if and only if: 
+(Condition H) 
+the presentation corresponding to 
+$\mu_2$ composed with the presentation 
+corresponding to $\mu_1$ contains, after 
+removing (decompositions of) identity 
+maps except for $\tau_{n}^{n+1}$, one 
+or more of the following terms:
+$\tau_{n-1} \delta_{n-1,n}$, 
+$\tau_{n+1}\sigma_{n,n}$, 
+$\tau_{n}^{n+1}$. If $\mu_1, \mu_2$ 
+satisfy Condition H, homotopies given 
+in Section \ref{sec:weak_relations} 
+can be used to define $\mathcal{F}(\mu_1, \mu_2)$. 
+If $\mu_1, \mu_2$ do not satisfy Condition 
+H, let $\mathcal{F}(\mu_1, \mu_2) = 0$ 
+on comodules.
+
+We will give some instructive examples 
+of non-zero $\mathcal{F}(\mu_1, \mu_2)$ that satisfy Equation 
+\ref{eq:A_2}.
+\begin{eg}
+Let $\mu_1 = \delta_{n-1,n}$, $\mu_2 = 
+\tau_{n-1}$. Then, the presentation 
+corresponding to $\mu_2\mu_1$ is 
+$\delta_{0,n}\tau_n^2$. Let 
+$f_2(\mu_1, \mu_2)$ be the homotopy given 
+in Section \ref{sec:weak_relations_delta} 
+(also given in Appendix Proposition 
+\ref{prop:c2} or \ref{prop:c4}). 
+Then, Equation \ref{eq:A_2} 
+is equivalent to Equation \ref{eq:weak_delta}.
+\end{eg}
+%
+\begin{eg}
+Let $\mu_1 = \sigma_{0,n-1} \delta_{n-1,n}$, 
+$\mu_2 = \tau_{n-1} \delta_{0,n}$. To 
+form the presentation corresponding to 
+$\mu_2\mu_1$, we follow these steps: 
+$$
+\tau_{n-1} \delta_{0,n} \sigma_{0,n-1} 
+\delta_{n-1,n} 
+\xrightarrow[\textrm{of identities}]{\textrm{remove decompositions}}
+\tau_{n-1} \delta_{n-1,n}
+\xrightarrow{\textrm{replace}}
+\delta_{0,n}\tau_n^2.
+$$
+On the other hand, 
+\begin{align*}
+f_1(\mu_2)f_1(\mu_1) 
+&= 
+(\widehat{\delta_{0,n}\sigma_{0,n-1}
+  \delta_{n-1,n}})^*(\tau_{n-1!}) \circ
+  (\widehat{\sigma_{0,n-1}\delta_{n-1,n}})^*
+  (\delta_{0,n!}) \circ 
+  \hat{\delta}_{n-1,n}^*(\sigma_{0,n-1!}) 
+  \circ \delta_{n-1,n!}\\
+&= 
+\hat{\delta}_{n-1,n}^*(\tau_{n-1!}) \circ
+  id \circ \delta_{n-1,n!}.
+\end{align*}
+So, we can let $f_2(\mu_1, \mu_2)$ be the 
+homotopy given in Section 
+\ref{sec:weak_relations_delta}, and Equation 
+\ref{eq:A_2} is equivalent to Equation 
+\ref{eq:weak_delta}.
+\end{eg}
+%
+\begin{eg}
+Let $(\mu_1, \mu_2) \in \{ (\tau_{n+1}, 
+\sigma_{n,n}), (\tau_{n}^{n+1-j}, 
+\tau_n^j): 1\leq j \leq n, n \in \mathbb{N}
+\}$. Let $f_2(\mu_1, \mu_2)$ be 
+the homotopy given in 
+\ref{sec:weak_relations_sigma} if $\mu_2 = 
+\sigma_{n,n}$ and the homotopy given in 
+\ref{sec:weak_relations_tau} if $\mu_2 \neq 
+\sigma_{n,n}$. Then, Equation \ref{eq:A_2} 
+is equivalent to either Equation 
+\ref{eq:weak_sigma} ($\mu_2 = 
+\sigma_{n,n}$) or Equation \ref{eq:weak_tau} 
+($\mu_2 \neq \sigma_{n,n}$).
+\end{eg}
+%
+\begin{eg}
+Let $\mu_1 = \sigma_{n-1,n-1} \delta_{n-1,n}$, 
+$\mu_2 = \tau_n$. To 
+form the presentation corresponding to 
+$\mu_2\mu_1$, we follow these steps: 
+$$
+(\tau_n \sigma_{0,n-1}) 
+\delta_{n-1,n} 
+\xrightarrow{\textrm{replace $(\cdot)$}}
+\tau_n^n \sigma_{0,n-1}(\tau_{n-1}\delta_{n-1,n})
+\xrightarrow{\textrm{replace $(\cdot)$}}
+\tau_n^n \sigma_{0,n-1}\delta_{0,n}\tau_n^2.
+$$
+Let $f_2(\mu_1, \mu_2) = g_1 + g_2$ where 
+$g_1 = \hat{\delta}_{n-1,n}^*( 
+\textrm{homotopy in Section 
+\ref{sec:weak_relations_sigma}})\circ
+\delta_{n-1,n!}$ and $g_2 = 
+(\widehat{\tau_{n-1}\delta_{n-1,n}})^*\big(
+(\widehat{\tau_n^{n-1}\sigma_{0,n-1}})^*
+  (\tau_{n!}) \circ \smdots \circ 
+  \hat{\sigma}_{0,n-1}^*(\tau_{n!}) \circ 
+  \sigma_{0,n-1!} \big) \circ 
+\textrm{(homotopy in Section 
+\ref{sec:weak_relations_delta})}$. 
+Then, Equation \ref{eq:A_2} 
+reduces to $\delta_{n-1,n}^*$(Equation 
+\ref{eq:weak_sigma}) and Equation 
+\ref{eq:weak_delta}.
+\end{eg}
+%
