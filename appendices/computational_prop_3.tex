@@ -1,27 +1,27 @@
 \begin{prop}
 \label{prop:c3}
-Let $\Upsilon_{A_0,A_1}: 
-C(A_0 \to A_1 \to A_0) \longrightarrow
-C(A_1 \to A_0 \to A_1)$ and 
-$B_{A_0,A_1}:C(A_0 \to A_1 \to A_0) 
-\longrightarrow C(A_0 \to A_1 \to A_0)$ 
+Let $\tau_{1!}(A_0,A_1): 
+T(A_0 \to A_1 \to A_0) \longrightarrow
+T(A_1 \to A_0 \to A_1)$ and 
+$B(A_0,A_1): T(A_0 \to A_1 \to A_0) 
+\longrightarrow T(A_0 \to A_1 \to A_0)$ 
 be the maps defined in Propositions 
 \ref{prop:c1} and \ref{prop:c2} above. 
-Then, $[\Upsilon, B] := 
-\Upsilon_{A_0,A_1} B_{A_0,A_1} - 
-B_{A_1,A_0}\Upsilon_{A_0,A_1} = 0$.
+Then, $$[\tau_{1!}, B] := 
+\tau_{1!}(A_0,A_1) \circ B(A_0,A_1) - 
+B(A_1,A_0) \circ \tau_{1!}(A_0,A_1) = 0.$$
 \end{prop}
 %
 \begin{proof}
-We show that $[\Upsilon, B] = 0$ by direct 
+We show that $[\tau_{1!}, B] = 0$ by direct 
 computation. Since all of the maps are maps 
 of cofree comodules, we only need to check 
-that $\pi_1([\Upsilon, B]) = 0$ where 
+that $\pi_1([\tau_{1!}, B]) = 0$ where 
 $\pi_1$ denotes projection of the comodule 
 onto cogenerators. We check this directly.
 %
 \begin{align*}
-\pi_1 \circ \Upsilon_{A_0,A_1} \circ B_{A_0,A_1} 
+[\pi_1 \circ \tau_{1!}(A_0,A_1) \circ B(A_0,A_1)] 
   (\vec{\phi} | \vec{\psi} | \alpha ) 
 &= 
 \sum \limits_{\substack{
@@ -29,8 +29,8 @@ onto cogenerators. We check this directly.
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
 \epsilon_{I_1,J_2} \cdot
-  \upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
-    B_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha)) \\
+  \tau_{1!}^{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
+    B^{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha)) \\
 &= 
 \sum \limits_{\substack{
   I_1I_2 = \{1,\smdots,n\}\\
@@ -39,7 +39,7 @@ onto cogenerators. We check this directly.
 \begin{array}{l}  
 \epsilon_{I_1,J_2} \cdot 
 \eta_{\mathfrak{a_1},\mathfrak{a_2}} \cdot\\
-\upsilon_{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
+\tau_{1!}^{|I_1|, |J_1|} (\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
   1 \otimes \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_2}) 
   \mathfrak{a}_2, a_0, \mathfrak{a}_1)
 \end{array} \\
@@ -57,7 +57,7 @@ onto cogenerators. We check this directly.
 %
 \begin{align*}
 & \phantom{{}={}}
-\pi_1 \circ B_{A_1,A_0} \circ \Upsilon_{A_0,A_1} 
+[\pi_1 \circ B(A_1,A_0) \circ \tau_{1!}(A_0,A_1)] 
   (\vec{\phi} | \vec{\psi} | \alpha ) \\
 &=
 \sum \limits_{\substack{
@@ -65,16 +65,16 @@ onto cogenerators. We check this directly.
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
 \epsilon_{I_1,J_2} \cdot
-B_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | 
-  \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha)) \\
+B^{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | 
+  \tau_{1!}^{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha)) \\
 &= 
 \sum \limits_{\substack{
   I_1I_2 = \{1,\smdots,n\}\\
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
-\begin{array}{l}
+\begin{array}{l}{}
 \epsilon_{I_1,J_2} \cdot
-B_{|J_1|, |I_1|} \big(\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \phi_{|I_1|+1} (
+B^{|J_1|, |I_1|} \big(\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \phi_{|I_1|+1} (
   \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) 
   \mathfrak{a}_3, a_0, \mathfrak{a}_1) \otimes 
   \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) 
@@ -108,12 +108,12 @@ B_{|J_1|, |I_1|} \big(\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \phi_{|I_1|+1} (
   a_0 \otimes \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_1
 \end{align*}
 %
-It's clear that $\pi_1 \circ \Upsilon_{A_0,A_1} 
-\circ B_{A_0,A_1} =  \pi_1 \circ B_{A_1,A_0} 
-\circ \Upsilon_{A_0,A_1}$: The final expansion of 
-$\pi_1 \circ \Upsilon_{A_0,A_1} \circ B_{A_0,A_1}$ 
+It's clear that $\pi_1 \circ \tau_{1!}(A_0,A_1) 
+\circ B(A_0,A_1) =  \pi_1 \circ B(A_1,A_0) 
+\circ \tau_{1!}(A_0,A_1)$: The final expansion of 
+$\pi_1 \circ \tau_{1!}(A_0,A_1) \circ B(A_0,A_1)$ 
 is the sum of the two terms in the final expansion 
-of $\pi_1 \circ B_{A_1,A_0} \circ \Upsilon_{A_0,A_1}$, 
+of $\pi_1 \circ B(A_1,A_0) \circ \tau_{1!}(A_0,A_1)$, 
 which is the sum of terms in which one of 
 the $\phi$'s contains $a_0$ and the terms in which 
 none of the $\phi$'s contains $a_0$).

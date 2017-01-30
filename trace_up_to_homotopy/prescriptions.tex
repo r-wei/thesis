@@ -48,16 +48,14 @@ act on comodules via
 \end{align*}
 is well-defined because we have made 
 consistent choices. More explicitly, 
-we show in Section \ref{sec:} that
+we show in Section 
+\ref{sec:composition_relations} that
 the choices we have made for 
 $\mathcal{F}(\{ 
 \textrm{generating morphisms}\})$ 
 respect all of the relations in $\Lambda$ 
 (Equation \ref{eqn:cyclic_relations}) 
-except for 
-\begin{align}
-\textrm{These equations.}
-\end{align}
+except for Equations \ref{eq:weak}. 
 The above steps ensure that the 
 presentation corresponding 
 to $\mu$ only uses the lefthand 
@@ -109,10 +107,8 @@ Let $\mu_1 = \delta_{n-1,n}$, $\mu_2 =
 \tau_{n-1}$. Then, the presentation 
 corresponding to $\mu_2\mu_1$ is 
 $\delta_{0,n}\tau_n^2$. Let 
-$f_2(\mu_1, \mu_2)$ be the homotopy given 
-in Section \ref{sec:weak_relations_delta} 
-(also given in Appendix Proposition 
-\ref{prop:c2} or \ref{prop:c4}). 
+$\mathcal{F}(\mu_1, \mu_2)$ be the homotopy given 
+in Section \ref{sec:weak_relations_delta}. 
 Then, Equation \ref{eq:A_2} 
 is equivalent to Equation \ref{eq:weak_delta}.
 \end{eg}
@@ -132,7 +128,7 @@ $$
 $$
 On the other hand, 
 \begin{align*}
-f_1(\mu_2)f_1(\mu_1) 
+\mathcal{F}(\mu_2)\mathcal{F}(\mu_1) 
 &= 
 (\widehat{\delta_{0,n}\sigma_{0,n-1}
   \delta_{n-1,n}})^*(\tau_{n-1!}) \circ
@@ -144,7 +140,7 @@ f_1(\mu_2)f_1(\mu_1)
 \hat{\delta}_{n-1,n}^*(\tau_{n-1!}) \circ
   id \circ \delta_{n-1,n!}.
 \end{align*}
-So, we can let $f_2(\mu_1, \mu_2)$ be the 
+So, we can let $\mathcal{F}(\mu_1, \mu_2)$ be the 
 homotopy given in Section 
 \ref{sec:weak_relations_delta}, and Equation 
 \ref{eq:A_2} is equivalent to Equation 
@@ -155,7 +151,7 @@ homotopy given in Section
 Let $(\mu_1, \mu_2) \in \{ (\tau_{n+1}, 
 \sigma_{n,n}), (\tau_{n}^{n+1-j}, 
 \tau_n^j): 1\leq j \leq n, n \in \mathbb{N}
-\}$. Let $f_2(\mu_1, \mu_2)$ be 
+\}$. Let $\mathcal{F}(\mu_1, \mu_2)$ be 
 the homotopy given in 
 \ref{sec:weak_relations_sigma} if $\mu_2 = 
 \sigma_{n,n}$ and the homotopy given in 
@@ -180,7 +176,7 @@ $$
 \xrightarrow{\textrm{replace $(\cdot)$}}
 \tau_n^n \sigma_{0,n-1}\delta_{0,n}\tau_n^2.
 $$
-Let $f_2(\mu_1, \mu_2) = g_1 + g_2$ where 
+Let $\mathcal{F}(\mu_1, \mu_2) = g_1 + g_2$ where 
 $g_1 = \hat{\delta}_{n-1,n}^*( 
 \textrm{homotopy in Section 
 \ref{sec:weak_relations_sigma}})\circ

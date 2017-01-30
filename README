@@ -10,12 +10,8 @@ Writing chunks:
 (1) pullback appendix
 - pullbacks of dg comodules--theory (everything)
 - adjunction between pullback and pushforward (everything)
-- pullback_examples_needed
+- pullback_examples_needed 
 - our cocategories and comodules are conilpotent
-
-(2) strict and weak relations
-
-(3) in Verify A_infty relations: check consistency of sigma_! notation 
 
 (4) coda: rectification, cobar
 ---------

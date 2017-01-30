@@ -12,7 +12,7 @@
 % \ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
 % & A_0
 % }
-% $\overset{[d_0^* \Upsilon, \mathcal{B}]}\longrightarrow$
+% $\overset{[d_0^* \tau_{1!}, \mathcal{B}]}\longrightarrow$
 % \xymatrix{
 % A_0 \ar@/^5pc/[r]^{f_0} 
 % \ar@/^2pc/[r]^{\big\Downarrow \phi_1}_{f_1} 
@@ -26,20 +26,20 @@
 % \ar@/_2pc/[r]^{\substack{\vdots\\ h_p}}
 % & A_0
 % }}
-% \caption{A picture of the domain and target of $[d_0^* \Upsilon, \mathcal{B}]$}
+% \caption{A picture of the domain and target of $[d_0^* \tau_{1!}, \mathcal{B}]$}
 % \end{figure}
 
 \begin{prop}
 \label{prop:c5}
-Let $\Upsilon$ and $\mathcal{B}$ be as 
+Let $\tau_{1!}$ and $\mathcal{B}$ be as 
 defined in the previous propositions. 
-Then, $[\Upsilon, \mathcal{B}] := 
-\Upsilon_{A_1\bullet A_2, A_0} 
-\mathcal{B}_{A_0,A_1,A_2} - 
-\mathcal{B}_{A_2, A_0, A_1} 
-\Upsilon_{A_0 \bullet A_1, A_2} = 0$. 
-(Note that $[\Upsilon, \mathcal{B}]$ is 
-a map from $C(A_0 \to A_1 \to A_2 \to A_0)$ 
+Then, $[\tau_{1!}, \mathcal{B}] := 
+\tau_{1!}(A_1\bullet A_2, A_0) \circ 
+\mathcal{B}(A_0,A_1,A_2) - 
+\mathcal{B}(A_2, A_0, A_1) \circ
+\tau_{1!}(A_0 \bullet A_1, A_2) = 0$. 
+(Note that $[\tau_{1!}, \mathcal{B}]$ is 
+a map from $T(A_0 \to A_1 \to A_2 \to A_0)$ 
 to itself.)
 \end{prop}
 %
@@ -47,15 +47,15 @@ to itself.)
 We show the proposition by direct computation. 
 Since all of the maps are maps of cofree 
 comodules, we only need to check that 
-$\pi_1([\Upsilon, \mathcal{B}]) = 0$ where 
+$\pi_1([\tau_{1!}, \mathcal{B}]) = 0$ where 
 $\pi_1$ denotes projection of the comodule 
 onto cogenerators. We check this directly.
 %
 \begin{equation*}
 \begin{aligned}
 &\phantom{{}={}}
-\pi_1 \circ \Upsilon_{A_1\bullet A_2, A_0} 
-  \mathcal{B}_{A_0,A_1,A_2} 
+[\pi_1 \circ \tau_{1!}(A_1\bullet A_2, A_0) \circ 
+  \mathcal{B}(A_0, A_1, A_2)]
   (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha ) \\
 &= 
 \sum \limits_{\substack{
@@ -64,10 +64,10 @@ onto cogenerators. We check this directly.
   K_1K_2 = \{1,\smdots,p\}\\
   \textrm{as ordered sets}}}
 \epsilon_{I_2,J_1,J_2,K_1}\cdot
-\upsilon_{|K_1| \leq * \leq |K_1|+|J_1|, |I_1|} (
+\tau_{1!}^{|K_1| \leq * \leq |K_1|+|J_1|, |I_1|} (
    \vec{\psi}_{J_1} \bullet \vec{\theta}_{K_1} | 
    \vec{\phi}_{I_1} | 
-   \mathcal{B}_{|I_2|, |J_2|, |K_2|} (
+   \mathcal{B}^{|I_2|, |J_2|, |K_2|} (
    \vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)) \\
 &= 
 \sum \limits_{\substack{
@@ -78,13 +78,13 @@ onto cogenerators. We check this directly.
 \begin{array}{l}  
 \epsilon_{I_2,J_1,J_2,K_1}\cdot
 \eta_{\mathfrak{a}_1, \mathfrak{a}_2} \cdot\\
-\upsilon_{|K_1| \leq * \leq |K_1|+|J_1|, |I_1|} (
+\tau_{1!}^{|K_1| \leq * \leq |K_1|+|J_1|, |I_1|} (
    \vec{\psi}_{J_1} \bullet \vec{\theta}_{K_1} | 
    \vec{\phi}_{I_1} |
    1 \otimes \lambda(\vec{\phi}_{I_2})[
      \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_2}) 
      \lambda(\vec{\phi}_{I_3}) 
-     \mathfrak{a}_2, a_0, \mathfrak{a}_1] 
+     \mathfrak{a}_2, a_0, \mathfrak{a}_1]) 
 \end{array} \\
 &= 
 \sum \limits_{\substack{
@@ -104,8 +104,8 @@ onto cogenerators. We check this directly.
 %
 \begin{align*}
 & \phantom{{}={}}
-\pi_1 \circ \mathcal{B}_{A_2, A_0, A_1} 
-  \Upsilon_{A_0 \bullet A_1, A_2} 
+[\pi_1 \circ \mathcal{B}(A_2, A_0, A_1) \circ
+  \tau_{1!}(A_0 \bullet A_1, A_2)] 
   (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha ) \\
 &= 
 \sum \limits_{\substack{
@@ -114,9 +114,9 @@ onto cogenerators. We check this directly.
   K_1K_2 = \{1,\smdots,p\}\\
   \textrm{as ordered sets}}}
 \epsilon_{I_2,J_1,J_2,K_1}\cdot
-B_{|K_1|, |I_1|, |J_1|} 
+\mathcal{B}^{|K_1|, |I_1|, |J_1|} 
    (\vec{\theta}_{K_1} | \vec{\phi}_{I_1} | \vec{\psi}_{J_1} | 
-   \upsilon_{|J_2| \leq * \leq |I_2|+|J_2|, |K_2|} 
+   \tau_{1!}^{|J_2| \leq * \leq |I_2|+|J_2|, |K_2|} 
    (\vec{\phi}_{I_2} \bullet \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)) \\
 &= 
 \sum \limits_{\substack{
@@ -132,5 +132,5 @@ B_{|K_1|, |I_1|, |J_1|}
      \lambda(\vec{\phi}_{I_2})
      \mathfrak{a}_2, a_0, \mathfrak{a}_1]  
 \end{align*}
-It's clear that $\pi_1([\Upsilon, \mathcal{B}]) = 0$.
+It's clear that $\pi_1([\tau_{1!}, \mathcal{B}]) = 0$.
 \end{proof}

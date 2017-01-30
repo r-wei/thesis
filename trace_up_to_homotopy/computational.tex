@@ -1,0 +1,464 @@
+\section{Computational: Composition of maps of dg comodules} 
+\label{sec:composition_relations}
+In Equations \ref{eq:trace_induced_dg} 
+and \ref{eq:define_upsilon}, we gave the maps of 
+dg comodules re-stated below:
+\begin{align*}
+\delta_{j,n!}&: 
+m^{*n}T(A_0) \xrightarrow[\cong]{id}
+\hat{\delta}_{j,n}^*m^{*n-1}T(A_0)
+& \textrm{Equation \ref{eq:trace_induced_dg}}\\
+\sigma_{i,n!}&:
+m^{*n}T(A_0) \xrightarrow[\cong]{id}
+\hat{\sigma}_{i,n}^*m^{*n+1}T(A_0)
+& \textrm{Equation \ref{eq:trace_induced_dg}}\\
+\tau_{n!}&: 
+m^{*n}T(A_0) \xrightarrow{m^{*n-1}\tau_!(A_0,A_n)}
+\hat{\tau}_n^*m^{*n}T(A_n)
+& \textrm{Equation \ref{eq:trace_induced_dg}}\\
+\tau_{1!}&: 
+m^{*}T(A_0) \to{}
+\hat{\tau}_1^*m^{*}T(A_1)
+& \textrm{Equation \ref{eq:define_upsilon} 
+for $A=A_0$, $B=A_1$}\\
+\end{align*}
+%
+Here, we show that these maps satisfy the 
+relations in $\Lambda$ (Equation 
+\ref{eqn:cyclic_relations}) up to 
+homotopy. More precisely, we will 
+show that
+\begin{subequations}\label{eq:strict}
+\begin{align}
+\begin{split}\label{eq:strict_1}
+\hat{\delta}_{j,n}^*(\delta_{i,n-1!}) \circ \delta_{j,n!} 
+&= 
+\hat{\delta}_{i,n}^*(\delta_{j-1,n-1!}) \circ \delta_{i,n!} 
+  \quad 0 \leq i < j \leq n-1 \\
+\hat{\sigma}_{j,n}^*(\sigma_{i,n+1!}) \circ \sigma_{j,n!} 
+&= 
+\hat{\sigma}_{i,n}^*(\sigma_{j+1,n+1!}) \circ \sigma_{i,n!}
+  \quad 0 \leq i \leq j \leq n \\
+\hat{\sigma}_{i,n}^*(\delta_{j,n+1!}) \circ \sigma_{i,n!} 
+&= 
+  \begin{cases}
+    \hat{\delta}_{j-1,n}^*(\sigma_{i,n-1!}) \circ \delta_{j-1,n!} 
+      & 0 \leq i < j \leq n\\
+    id & j = i, i-1\\
+    \hat{\delta}_{j,n}^*(\sigma_{i-1,n-1!}) \circ \delta_{j,n!} 
+      & \quad 0 \leq j < i-1 \leq n-1
+   \end{cases}
+\end{split}\\
+\begin{split}\label{eq:strict_2}
+\hat{\sigma}_{i,n}^*(\tau_{n+1!}) \circ \sigma_{i,n!} 
+&= 
+\hat{\tau}_n^*(\sigma_{i+1,n!}) \circ \tau_{n!}
+  \quad 0 \leq i \leq n-1\\
+\hat{\delta}_{j,n}^*(\tau_{n-1!}) \circ \delta_{j,n!} 
+&= 
+\hat{\tau}_n^*(\delta_{j+1,n!}) \circ \tau_{n!}
+  \quad 0 \leq j \leq n-1
+\end{split}\\
+\begin{split}\label{eq:strict_3}
+(\widehat{\tau_{1}\sigma_{0,0}})^*
+  (\delta_{0,1!}) \circ
+  \hat{\sigma}_{0,0}^*(\tau_{1!}) \circ 
+  \sigma_{0,0!}
+= id
+\end{split} 
+\end{align}
+\end{subequations}
+and 
+\begin{subequations} \label{eq:weak}
+\begin{equation} \label{eq:weak_delta}
+\hat{\tau}_n^{*2}(\delta_{0,n!}) \circ 
+  \hat{\tau}_n^*(\tau_{n!}) \circ \tau_{n!} 
+\simeq 
+\hat{\delta}_{n-1,n}^*(\tau_{n-1!}) \circ \delta_{n-1,n!}
+\end{equation}
+\begin{equation} \label{eq:weak_tau}
+\hat{\tau}_n^{*n}(\tau_{n!}) \circ \smdots 
+  \circ \hat{\tau}_n^*(\tau_{n!}) \circ \tau_{n!}
+\simeq id
+\end{equation}
+\begin{equation} 
+\begin{split}\label{eq:weak_sigma}
+&\phantom{{}\simeq{}}
+\hat{\sigma}_{n,n}^*(\tau_{n+1!}) \circ \sigma_{n,n!}\\
+&\simeq
+(\widehat{\tau_{n+1}^n\sigma_{0,n}\tau_{n}})^*(\tau_{n+1!})
+  \circ \smdots \circ 
+  (\widehat{\tau_{n+1}\sigma_{0,n}\tau_{n}})^*(\tau_{n+1!}) \circ
+  (\widehat{\sigma_{0,n}\tau_{n}})^*(\tau_{n+1!}) \circ
+  \hat{\tau}_n^*(\sigma_{0,n!}) \circ \tau_{n!}
+\end{split}
+\end{equation}
+\end{subequations}
+% %
+% \subsection{Aside on composing $\lambda_!$'s}
+% In this section and the next, we will use 
+% the following convention for composing 
+% $\lambda_!$'s, which we first illustrate with 
+% an example. Suppose we have 3 composable 
+% generating morphisms in $\Lambda$: 
+% $\lambda_1 \in \Lambda([m],[n])$, 
+% $\lambda_2 \in \Lambda([n],[p])$, and 
+% $\lambda_3 \in \Lambda([p],[q])$. 
+% Fix a sequence of algebras $A_0, \smdots, A_m$. 
+% We can construct the following 
+% composition of morphisms of dg 
+% comodules over $B(\mathcal{A}):=
+% B(A_0 \to \smdots \to A_m \to A_0)$:
+% \begin{align*}
+% C(\mathcal{A})
+% \xrightarrow{\lambda_{1, \mathcal{A}!}}
+% %
+% \hat{\lambda}_1^*C(\lambda_1\mathcal{A})
+% \xrightarrow{\hat{\lambda}_1^*(
+%   \lambda_{2, \lambda_1\mathcal{A}!})}
+% %
+% \hat{\lambda}_1^*\hat{\lambda}_2^*C(\lambda_2\lambda_1\mathcal{A})
+% \xrightarrow{\hat{\lambda}_1^*\hat{\lambda}_2^*
+%   (\lambda_{3, \lambda_2\lambda_1\mathcal{A}!})}
+% %
+% \hat{\lambda}_1^*\hat{\lambda}_2^*\hat{\lambda}_3^*
+%   C(\lambda_3\lambda_2\lambda_1\mathcal{A}).
+% \end{align*}
+% To simplify the notation, we will write 
+% $$
+% \hat{\lambda}_1^*\hat{\lambda}_2^*(\lambda_{3!}) 
+% \circ \hat{\lambda}_1^*(\lambda_{2!})
+% \circ \lambda_{1!}
+% \quad \textrm{instead of} \quad
+% \hat{\lambda}_1^*\hat{\lambda}_2^*
+%   (\lambda_{3, \lambda_2\lambda_1\mathcal{A}!}) 
+% \circ \hat{\lambda}_1^*(\lambda_{2, \lambda_1\mathcal{A}!}) 
+% \circ \lambda_{1, \mathcal{A}!}.
+% $$
+
+% More generally, when the reader sees 
+% $\hat{\lambda}_1^* \smdots \hat{\lambda}_{r-1}^*
+% (\lambda_{r!}) \circ \smdots \circ 
+% \hat{\lambda}_1^*(\lambda_{2!}) 
+% \circ \lambda_{1!}$
+% for a sequence of composable generating morphisms 
+% $\lambda_r \circ \smdots \circ \lambda_1$ in $\Lambda$, 
+% s/he may decode this notation by choosing a sequence 
+% of algebras $A_0, \smdots, A_{m=\textrm{source of }
+% \lambda_1}$, setting $\mathcal{A} = (A_0 \to \smdots 
+% \to A_m \to A_0)$, and letting the composition of 
+% $\lambda_!$'s denote
+% $\hat{\lambda}_1^* \smdots \hat{\lambda}_{r-1}^*
+%   (\lambda_{r, \lambda_{r-1} \smdots \lambda_1 \mathcal{A}!}) 
+% \circ \smdots \circ  
+% \hat{\lambda}_1^*(\lambda_{2, \lambda_1\mathcal{A}!}) 
+% \circ \lambda_{1, \mathcal{A}!}$.
+% %
+\subsection{Strict relations: showing Equations \ref{eq:strict} hold}
+$\indent$Equation \ref{eq:strict_1} has three relations. 
+All of the $\sigma_!$'s and $\delta_!$'s in Equation 
+\ref{eq:strict_1} are identity maps, so it's clear that 
+these relations hold.
+
+Equation \ref{eq:strict_2} has two relations. 
+To show that the first one holds, we have
+\begin{align*}
+\hat{\sigma}_{i,n}^*(\tau_{n+1!}) \circ \sigma_{i,n!} 
+&= 
+\hat{\sigma}_{i,n}^*(
+  (\widehat{\delta_{0,2}\smdots\delta_{0,n+1}})^*
+  (\tau_{1!})) \circ \sigma_{i,n!}
+  \quad \textrm{definitions of $\tau_{n+1!}$ and $\hat{\delta}_{\cdot,\cdot}$}\\
+&= 
+(\widehat{\delta_{0,2}\smdots\delta_{0,n+1}\sigma_{i,n}})^*
+  (\tau_{1!}) \circ \sigma_{i,n!}
+  \quad \textrm{Proposition } \ref{prop:pbs_compose}\\
+&= 
+(\widehat{\delta_{0,2}\smdots\delta_{0,n}})^*
+  (\tau_{1!}) \circ \sigma_{i,n!}\\
+&= 
+\tau_{n!} \circ \sigma_{i,n!}
+  \quad \textrm{definitions of $\tau_{n!}$ and $\hat{\delta}_{\cdot,\cdot}$}\\
+&= 
+\tau_{n!} \circ id  
+  = id \circ \tau_{n!} \\
+&= 
+\hat{\tau}_n^*(\sigma_{i+1,n!}) \circ \tau_{n!}.
+\end{align*}
+To show that the second relation holds, the 
+reasoning is the same as above. We have
+\begin{align*}
+\hat{\delta}_{j,n}^*(\tau_{n-1!}) \circ \delta_{j,n!} 
+&= 
+\hat{\delta}_{j,n}^*
+  ((\widehat{\delta_{0,2}\smdots\delta_{0,n-1}})^*
+  (\tau_{1!})) \circ \delta_{j,n!} \\
+&=
+(\widehat{\delta_{0,2}\smdots\delta_{0,n-1}\delta_{j,n}})^*
+  (\tau_{1!}) \circ \delta_{j,n!} \\
+&=
+\tau_{n!} \circ \delta_{j,n!}\\
+&= 
+\tau_{n!} \circ id   
+  = id \circ \tau_{n!}\\
+&=
+\hat{\tau}_n^*(\delta_{j+1,n!}) \circ \tau_{n!}. 
+\end{align*} 
+
+Equation \ref{eq:strict_3} has one relation. 
+The only map in this relation that is not 
+defined to be an identity map is $\hat{\sigma}_{0,0}^*
+(\tau_{1!})$. We will compute this map and 
+show that it is also an identity. 
+Let $(\phi_1\smdots \phi_k|\alpha)
+\in T(A_0) =: T(A_0 \to A_0)$ (see Figure \ref{fig:phi|alpha} 
+for notation). By Proposition \ref{prop:compute_pb},
+\begin{align*}
+T(A_0 \to A_0)
+&\xrightarrow{\cong} 
+\hat{\sigma}_{0,0}^*T(A_0 \to A_0 \to A_0)\\
+(\phi_1\smdots \phi_k|\alpha)
+&\mapsto
+\sum \limits_{0 \leq r \leq k}
+  (\phi_1\smdots \phi_r) \otimes 
+  (1 | \phi_{r+1}\smdots \phi_k|\alpha).
+\end{align*}
+Applying $\hat{\sigma}_{0,0}^*(\tau_{1!})$
+to the righthand side, we have
+\begin{align*}
+\hat{\sigma}_{0,0}^*T(A_0 \to A_0 \to A_0)
+&\xrightarrow{\hat{\sigma}_{0,0}^*(\tau_{1!})}
+\hat{\sigma}_{0,0}^*\hat{\tau}_1^*T(A_0 \to A_0 \to A_0)\\
+\sum \limits_{0 \leq r \leq k}
+  (\phi_1\smdots \phi_r) \otimes 
+  (1 | \phi_{r+1}\smdots \phi_k|\alpha)
+&\mapsto
+\sum \limits_{0 \leq r \leq s \leq k}
+  (\phi_1\smdots \phi_r) \otimes \\
+&\phantom{{}\mapsto \sum{}}  
+  (\phi_{r+1}\smdots \phi_s|1|
+  \tau_{1!}(1|\phi_{s+1}\smdots\phi_k|\alpha)).
+\end{align*}
+The righthand side above is equal to
+\begin{align*}
+&\phantom{{}={}}
+\sum \limits_{0 \leq r \leq s \leq k}
+  (\phi_1\smdots \phi_r) \otimes 
+  (\phi_{r+1}\smdots \phi_s|1|
+  \tau_{1!}(1|\phi_{s+1}\smdots\phi_k|\alpha))\\
+&=  
+\sum \limits_{0 \leq r \leq s \leq k}
+  (\phi_1\smdots \phi_r) \otimes 
+  (\phi_{r+1}\smdots \phi_s|1|
+  \tau_{1!}^{0,k-s}(1|\phi_{0,s_0+1}\smdots\phi_{0,k_0}|\alpha))\\
+&\phantom{{}=\sum\sum{}}  
+  \quad \textrm{(see Proposition \ref{prop:c1} for definition of }
+  \tau_{1!}^{0,k-s})\\
+&=  
+\sum \limits_{0 \leq r \leq k}
+  (\phi_1\smdots \phi_r) \otimes 
+  (\phi_{r+1}\smdots \phi_k|1|\alpha)
+  \quad \quad (\tau_{1!}^{0,>0}=0)\\
+&\in
+\hat{\sigma}_{0,0}^*\hat{\tau}_1^*T(A_0 \to A_0 \to A_0).
+\end{align*}
+Finally, applying Proposition 
+\ref{prop:compute_pb} again, we have
+\begin{align*}
+\hat{\sigma}_{0,0}^*\hat{\tau}_1^*T(A_0 \to A_0 \to A_0)
+&\xrightarrow[\cong]{\textrm{project onto cogenerators}} 
+T(A_0 \to A_0)\\
+\sum \limits_{0 \leq r \leq k}
+  (\phi_1\smdots \phi_r) \otimes 
+  (\phi_{r+1}\smdots \phi_k|1|\alpha)
+&\mapsto
+(\phi_1\smdots \phi_k|\alpha).
+\end{align*}
+So, we've shown 
+$$
+T(A_0 \to A_0) \cong 
+\hat{\sigma}_{0,0}^*T(A_0 \to A_0 \to A_0)
+\xrightarrow{\hat{\sigma}_{0,0}^*(\tau_{1!})}
+\hat{\sigma}_{0,0}^*\hat{\tau}_1^*T(A_0 \to A_0 \to A_0)
+\cong T(A_0 \to A_0)
+$$
+is the identity map.
+% 
+\subsection{Weak relations: showing Equations \ref{eq:weak} hold} \label{sec:weak_relations}
+\subsubsection{Showing Equation \ref{eq:weak_delta} holds}\label{sec:weak_relations_delta}
+For $n=1$, eliminating the identity 
+maps reduces Equation \ref{eq:weak_delta} to:
+\begin{align*} 
+\hat{\tau}_1^*(\tau_{1!}) \circ \tau_{1!} 
+\simeq id.
+\end{align*}
+We prove the above in Appendix Proposition 
+\ref{prop:c2}. (In the appendix, we fix algebras 
+$A_0, A_1$, and 
+$\tau_{1!} = \tau_{1!}(A_0,A_1)$, 
+$\hat{\tau}_1^*(\tau_{1!}) = \tau_{1!}(A_1,A_0)$, 
+and the homotopy is denoted $B(A_0,A_1)$.)
+
+For $n=2$, eliminating the identity 
+maps and writing $\tau_{2!}$ in terms 
+of $\tau_{1!}$ reduces Equation \ref{eq:weak_delta} to:
+\begin{align*} 
+(\widehat{\delta_{0,2}\tau_2})^*(\tau_{1!}) \circ 
+  \hat{\delta}_{0,2}^*(\tau_{1!})
+\simeq \hat{\delta}_{1,2}^*(\tau_{1!}).
+\end{align*}
+We prove the above in Appendix Proposition 
+\ref{prop:c4}. (In the appendix, we fix algebras 
+$A_0, A_1, A_2$, and 
+$\hat{\delta}_{0,2}^*(\tau_{1!}) = 
+\tau_{1!}(A_0\bullet A_1, A_2)$, 
+$(\widehat{\delta_{0,2}\tau_2})^*(\tau_{1!}) 
+= \tau_{1!}(A_2\bullet A_0,A_1)$, 
+$\hat{\delta}_{1,2}^*(\tau_{1!}) =
+\tau_{1!}(A_0, A_1\bullet A_2)$, 
+and the homotopy is denoted 
+$\mathcal{B}(A_0,A_1,A_2)$.)
+
+For $n>2$, we reduce Equation 
+\ref{eq:weak_delta} to the case when 
+$n=2$. We have
+\begin{align*}
+\textrm{Lefthand side of Equation 
+\ref{eq:weak_delta}}
+&= 
+\hat{\tau}_n^{*2}(\delta_{0,n!}) \circ 
+  \hat{\tau}_n^*(\tau_{n!}) \circ \tau_{n!} \\  
+&=  
+id \circ 
+  \hat{\tau}_n^*(
+  (\widehat{\delta_{0,2}\smdots\delta_{0,n}})^*(\tau_{1!})) 
+  \circ \tau_{n!} \\
+&=   
+(\widehat{\delta_{0,2}\smdots\delta_{0,n}\tau_n})^*(\tau_{1!}) 
+  \circ \tau_{n!} \\
+&=
+(\widehat{\delta_{0,2}\tau_2\delta_{0,3}\smdots\delta_{0,n}})^*(\tau_{1!}) 
+  \circ \tau_{n!} \\
+&=
+(\widehat{\delta_{0,2}\tau_2\delta_{0,3}\smdots\delta_{0,n}})^*(\tau_{1!}) 
+  \circ (\widehat{\delta_{0,2}\smdots\delta_{0,n}\tau_n})^*(\tau_{1!}) \\
+&=
+(\widehat{\delta_{0,3}\smdots\delta_{0,n}})^*(
+  (\widehat{\delta_{0,2}\tau_2})^*(\tau_{1!}) 
+  \circ \hat{\delta}_{0,2}^*\tau_{1!}) \\ 
+%
+\textrm{Righthand side of Equation 
+\ref{eq:weak_delta}}
+&=  
+\hat{\delta}_{n-1,n}^*(\tau_{n-1!}) 
+  \circ \delta_{n-1,n!}\\
+&=  
+\hat{\delta}_{n-1,n}^*(
+  (\widehat{\delta_{0,2}\smdots\delta_{0,n-1}})^*
+  (\tau_{1!})) \circ id\\
+&=  
+(\widehat{\delta_{0,2}\smdots\delta_{0,n-1}
+  \delta_{n-1,n}})^*(\tau_{1!}))\\  
+&=  
+(\widehat{\delta_{1,2}\delta_{0,3}\smdots\delta_{0,n}})^*
+  (\tau_{1!})\\ 
+&=  
+(\widehat{\delta_{0,3}\smdots\delta_{0,n}})^*
+  (\hat{\delta}_{1,2}^*(\tau_{1!})).
+\end{align*}
+So, Equation \ref{eq:weak_delta} = 
+$(\widehat{\delta_{0,3}\smdots\delta_{0,n}})^*$(
+Equation \ref{eq:weak_delta}, $n=2$). 
+If $\mathcal{B}$ is a homotopy giving 
+Equation \ref{eq:weak_delta} for $n=2$, then 
+$(\widehat{\delta_{0,3}\smdots\delta_{0,n}})^*
+\mathcal{B}$ is a homotopy giving Equation 
+\ref{eq:weak_delta} for $n>2$.
+%
+\subsubsection{Showing Equation \ref{eq:weak_tau} holds}\label{sec:weak_relations_tau}
+We prove this by induction on $n$. For $n=1$, 
+Equation \ref{eq:weak_tau} is the same as 
+Equation \ref{eq:weak_delta}, which we 
+established in the previous section. Now, 
+assume that Equation \ref{eq:weak_tau} holds 
+for $N=n-1$. We show that Equation 
+\ref{eq:weak_tau} holds for $N=n$ below:
+\begin{align*}
+\hat{\tau}_n^{*n}(\tau_{n!}) \circ \smdots 
+  \circ \hat{\tau}_n^*(\tau_{n!}) \circ \tau_{n!}
+&= 
+\hat{\tau}_n^{*n-1}(
+  \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}) \circ
+  \hat{\tau}_n^{*n-2}\tau_{n!}\circ
+  \smdots \circ \tau_{n!}\\
+&\simeq 
+\hat{\tau}_n^{*n-1}(
+  \hat{\delta}_{n-1,n}^*\tau_{n-1!}) \circ
+  \hat{\tau}_n^{*n-2}\tau_{n!}\circ
+  \smdots \circ \tau_{n!}
+  \quad \quad \textrm{(Equation \ref{eq:weak_delta})}\\ 
+&= 
+(\widehat{\tau_{n-1}^{n-1}\delta_{0,n}})^*
+  \tau_{n-1!} \circ \\
+&\phantom{{}={}}  
+  \circ \big(
+  \hat{\tau}_n^{*n-2} \hat{\delta}_{n-2,n}^*
+  \tau_{n-1!}\circ \smdots \circ 
+  \hat{\tau}_n^* \hat{\delta}_{1,n}^* \tau_{n-1!} 
+  \circ \hat{\delta}_{0,n}^* \tau_{n-1!} 
+  \big)\\
+&= 
+(\widehat{\tau_{n-1}^{n-1}\delta_{0,n}})^*
+  \tau_{n-1!} \circ \hat{\delta}_{0,n}^* \big(
+  \hat{\tau}_{n-1}^{*n-2} \tau_{n-1!}\circ \smdots \circ 
+  \hat{\tau}_{n-1}^* \tau_{n-1!} 
+  \circ \tau_{n-1!} \big)  \\
+&= 
+\hat{\delta}_{0,n}^* \big(
+  \hat{\tau}_{n-1}^{*n-1} \tau_{n-1!} \circ 
+  \smdots \circ \tau_{n-1!} \big)  \\ 
+&\simeq 
+\hat{\delta}_{0,n}^* \big(
+  id \big)
+  \quad \quad \quad 
+  \textrm{(Inductive hypothesis)}\\
+&= id.
+\end{align*}
+%
+\subsubsection{Showing Equation \ref{eq:weak_sigma} holds}\label{sec:weak_relations_sigma}
+By manipulating morphisms in $\Lambda$, 
+we have
+\begin{align*}
+\textrm{Righthand side of Equation \ref{eq:weak_sigma}}
+&= 
+\hat{\tau}_n^{*n+1}\tau_{n!} \circ 
+  \hat{\tau}_n^{*n}\tau_{n!} \circ 
+  \smdots \circ 
+  \hat{\tau}_n^*\tau_{n!} \circ
+  \hat{\tau}_n^{*n+1} id \circ 
+  \tau_{n!}\\
+&= 
+\tau_{n!} \circ \big(
+  \hat{\tau}_n^{*n}\tau_{n!} \circ 
+  \smdots \circ 
+  \hat{\tau}_n^*\tau_{n!} \circ
+  \tau_{n!} \big)\\
+&\simeq
+\tau_{n!} \circ \big(id)
+  \quad \textrm{Equation \ref{eq:weak_tau}.}\\  
+\end{align*}
+On the other hand, we have 
+\begin{align*}
+\textrm{Lefthand side of Equation \ref{eq:weak_sigma}}
+&=
+\hat{\sigma}_{n,n}^*(\tau_{n+1!}) \circ id\\
+&=
+\hat{\sigma}_{n,n}^*(
+  \hat{\delta}_{n,n+1}^*(\tau_{n+1!}))\\
+&=
+(\widehat{\delta_{n,n+1}\sigma_{n,n}})^*
+  (\tau_{n!})\\  
+&=
+id^*(\tau_{n!}).   
+\end{align*}
+So, Equation \ref{eq:weak_sigma} holds.

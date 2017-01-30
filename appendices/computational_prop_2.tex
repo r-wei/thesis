@@ -26,67 +26,67 @@
 \begin{prop}
 \label{prop:c2}
 Let 
-$B_{A_0,A_1} = B:C(A_0 \to A_1 \to A_0)
-\longrightarrow C(A_0 \to A_1 \to A_0)$ 
+$B(A_0,A_1) = B:T(A_0 \to A_1 \to A_0)
+\longrightarrow T(A_0 \to A_1 \to A_0)$ 
 be the map of cofree comodules defined by 
 the following maps to cogenerators:
 \begin{equation}
 \label{eq:def_sigma}
-B_{n, m} (\vec{\phi} | \vec{\psi} | \alpha) 
+B^{n,m} (\vec{\phi} | \vec{\psi} | \alpha) 
 = \eta_{\mathfrak{a}_1,\mathfrak{a}_2}\cdot
 1 \otimes \lambda(\psi)\lambda(\phi) \mathfrak{a}_2 \otimes a_0 \otimes \mathfrak{a}_1.
 \end{equation}
-Then, $D(B_{A_0,A_1}) = \Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id$ where
-$\Upsilon$ is defined in Proposition 
+Then, $D(B(A_0,A_1)) = \tau_{1!}(A_1,A_0)\circ \tau_{1!}(A_0,A_1) - id$ where
+$\tau_{1!}$ is defined in Proposition 
 \ref{prop:c1}.
 \end{prop}
 %
 \begin{proof}
 We prove the statement by direct computation. 
 Since all of the maps are maps of cofree comodules, 
-we only need to check that $\pi_1(D(B_{A_0,A_1}) - 
-\Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id) = 0$ 
+we only need to check that $\pi_1(D(B(A_0,A_1)) - 
+\tau_{1!}(A_1,A_0)\circ \tau_{1!}(A_0,A_1) - id) = 0$ 
 where $\pi_1$ denotes projection of the comodule 
 onto cogenerators. More explicitly, for an element 
 $(\vec{\phi}|\vec{\psi}|\alpha)$, we want to check that
 \begin{equation} \label{eq:upsilon_homotopy}
 \begin{aligned}
-&B_{n, m} ( \tilde{\delta}(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
-B_{n, m} ( \vec{\phi} | \tilde{\delta}(\vec{\psi}) | \alpha ) \; + 
-B_{n-1, m} ( b^\prime(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
-B_{n, m-1} ( \vec{\phi} | b^\prime(\vec{\psi}) | \alpha ) \; + \\
-&B_{n, m} ( \vec{\phi} | \vec{\psi} | b(\alpha) ) \; + 
-b \circ B_{n, m} ( \vec{\phi} | \vec{\psi} | \alpha ) \; + \\
+&B^{n,m} ( \tilde{\delta}(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
+B^{n,m} ( \vec{\phi} | \tilde{\delta}(\vec{\psi}) | \alpha ) \; + 
+B^{n-1,m} ( b^\prime(\vec{\phi}) | \vec{\psi} | \alpha ) \; + 
+B^{n,m-1} ( \vec{\phi} | b^\prime(\vec{\psi}) | \alpha ) \; + \\
+&B^{n,m} ( \vec{\phi} | \vec{\psi} | b(\alpha) ) \; + 
+b \circ B^{n,m} ( \vec{\phi} | \vec{\psi} | \alpha ) \; + \\
 %
 & \epsilon_{\{n\},\{1,\smdots,m\}}\cdot
-B_{n-1, m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \phi_{n} \cdot \alpha) \; + \\
+B^{n-1,m}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \phi_{n} \cdot \alpha) \; + \\
 %
 & \epsilon_{\{1,\smdots,n\},\{1\}}\cdot
-\psi_1 \cdot B_{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha)  + \\ 
+\psi_1 \cdot B^{n,m-1} ( \vec{\phi} | \vec{\psi}_{\{2,\cdots, m\}} | \alpha)  + \\ 
 %
 & \sum \limits_{\substack{
     I_1I_2 = \{1,\smdots,n\}\\
     \textrm{as ordered setts}}}
 \epsilon_{I_2,\{1,\smdots,m-1\}}\cdot
-B_{|I_1|, m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha ) \; + \\
+B^{|I_1|,m-1}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha ) \; + \\
 %
 & \sum \limits_{\substack{
     J_1J_2 = \{1,\smdots,m\}\\
     \textrm{as ordered setts}}}
 \epsilon_{\{2,\smdots,n\},J_1}\cdot
-\phi_1 \{ \psi_{J_1}\} \cdot B_{n-1, |J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha ) \; - \\
+\phi_1 \{ \psi_{J_1}\} \cdot B^{n-1,|J_2|}(\phi_{\{2,\cdots , n\}} | \psi_{J_2} | \alpha ) \; - \\
 %
 & \sum \limits_{\substack{
     I_1I_2 = \{1,\smdots,n\}\\
     J_1J_2 = \{1,\smdots,m\}\\
     \textrm{as ordered setts}}}
 \epsilon_{I_1,J_2}\cdot
-\upsilon_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha ))  - \pi_1(\vec{\phi} | \vec{\psi} | \alpha) \\
+\tau_{1!}^{|J_1|,|I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \tau_{1!}^{|I_2|,|J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha ))  - \pi_1(\vec{\phi} | \vec{\psi} | \alpha) \\
 &= 0.
 \end{aligned}
 \end{equation}
 
-We will call the terms in rows 1-2 the ``standard terms'' in the computation of $D(B_{A_0,A_1})$, and the terms in rows 3-6 the ``extra terms'' in the computation of $D(B_{A_0,A_1})$. The seventh row is $\pi_1(\Upsilon_{A_1,A_0}\Upsilon_{A_0,A_1} - id)$. 
+We will call the terms in rows 1-2 the ``standard terms'' in the computation of $D(B(A_0,A_1))$, and the terms in rows 3-6 the ``extra terms'' in the computation of $D(B(A_0,A_1))$. The seventh row is $\pi_1(\tau_{1!}(A_1,A_0)\circ \tau_{1!}(A_0,A_1) - id)$. 
 
 We compute the sum of the standard terms. 
 In Table \ref{table:t21}, the leftmost column 
@@ -105,8 +105,7 @@ the expression.
 
 All of the terms in the tables describing the 
 expansion of equation \ref{eq:upsilon_homotopy} 
-cancel, so $D(B_{A_0,A_1}) = \Upsilon_{A_1,A_0}
-\Upsilon_{A_0,A_1} - id$.
+cancel, so $D(B(A_0,A_1)) = \tau_{1!}(A_1,A_0)\circ \tau_{1!}(A_0,A_1) - id$.
 \end{proof}
 %
 \begin{landscape}
@@ -119,24 +118,24 @@ cancel, so $D(B_{A_0,A_1}) = \Upsilon_{A_1,A_0}
       \breakcell{Cancels with Extra Term\\in Equation \ref{eq:upsilon_homotopy}} \\ \hline
    
     $\psi_1(\lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2) \otimes \lambda(\vec{\psi}_{\{2,\cdots,m\}}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3 \otimes a_0 \otimes \mathfrak{a}_1$ &
-    $b \circ B_{n,m} (\vec{\phi} | \vec{\psi} | \alpha)$ & 
-    $\psi_1 \{ \vec{\phi}_{I_1} \} \cdot B_{|I_2|, m-1} (\vec{\phi}_{I_2} | \vec{\psi}_{\{2, \cdots, m \}} | \alpha)$ \\ \hline
+    $b \circ B^{n,m} (\vec{\phi} | \vec{\psi} | \alpha)$ & 
+    $\psi_1 \{ \vec{\phi}_{I_1} \} \cdot B^{|I_2|,m-1} (\vec{\phi}_{I_2} | \vec{\psi}_{\{2, \cdots, m \}} | \alpha)$ \\ \hline
 
     $g_0\phi_1( \mathfrak{a}_2 ) \otimes \lambda(\vec{\psi}) \lambda(\vec{\phi}_{\{2, \cdots, n\}}) \mathfrak{a}_3 \otimes a_0 \otimes \mathfrak{a}_1$ &
-    $b \circ B_{n,m} (\vec{\phi} | \vec{\psi} | \alpha)$ & 
-    $\phi_1 \cdot B_{n-1, m} (\vec{\phi}_{\{2, \cdots, n\}} | \vec{\psi} | \alpha)$ \\ \hline
+    $b \circ B^{n,m} (\vec{\phi} | \vec{\psi} | \alpha)$ & 
+    $\phi_1 \cdot B^{n-1,m} (\vec{\phi}_{\{2, \cdots, n\}} | \vec{\psi} | \alpha)$ \\ \hline
 
     $1 \otimes \lambda(\vec{\psi}) \lambda(\vec{\phi}_{\{1, \cdots, n-1\}}) \mathfrak{a}_2 \otimes g_m \phi_n(\mathfrak{a}_3) \cdot a_0 \otimes \mathfrak{a}_1$ &
-    $b \circ B_{n,m} (\vec{\phi} | \vec{\psi} | \alpha)$ & 
-    $B_{n-1, m} (\vec{\phi}_{\{1, \cdots, n-1 \}} | \vec{\psi} | \phi_n \cdot \alpha)$ \\ \hline
+    $b \circ B^{n,m} (\vec{\phi} | \vec{\psi} | \alpha)$ & 
+    $B^{n-1,m} (\vec{\phi}_{\{1, \cdots, n-1 \}} | \vec{\psi} | \phi_n \cdot \alpha)$ \\ \hline
 
     $1 \otimes \lambda(\vec{\psi}_{\{1, \cdots, m-1 \}}) \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2 \otimes g_m \psi_m( \lambda(\vec{\phi}_{I_2} \mathfrak{a}_3)) \cdot a_0 \otimes \mathfrak{a}_1$ &
-    $b \circ B_{n,m} (\vec{\phi} | \vec{\psi} | \alpha)$ & 
-    $B_{|I_1|, m-1} (\vec{\phi}_{I_2} | \vec{\psi}_{\{1, \cdots, m-1\}} | \psi_m \{ \vec{\phi}_{I_2} \} \cdot \alpha)$ \\ \hline
+    $b \circ B^{n,m} (\vec{\phi} | \vec{\psi} | \alpha)$ & 
+    $B^{|I_1|,m-1} (\vec{\phi}_{I_2} | \vec{\psi}_{\{1, \cdots, m-1\}} | \psi_m \{ \vec{\phi}_{I_2} \} \cdot \alpha)$ \\ \hline
 
     $g_0f_0a_0 \otimes \lambda(\vec{\psi}) \lambda(\vec{\phi}) \mathfrak{a}_1$ &
-    $b \circ B_{n,m} (\vec{\phi} | \vec{\psi} | \alpha)$ & 
-    $\upsilon_{|J_1|, |I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \upsilon_{|I_2|, |J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha ))$ \\ \hline
+    $b \circ B^{n,m} (\vec{\phi} | \vec{\psi} | \alpha)$ & 
+    $\tau_{1!}^{|J_1|,|I_1|} (\vec{\psi}_{J_1} | \vec{\phi}_{I_1} | \tau_{1!}^{|I_2|,|J_2|} (\vec{\phi}_{I_2} | \vec{\psi}_{J_2} | \alpha ))$ \\ \hline
 
     \hline
   \end{tabular}
@@ -159,13 +158,13 @@ $\newline
 
     \breakcell{$\psi_1(\lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_4}) \mathfrak{a}_4, \phi_{|I_1|+1} (\lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_5}) \mathfrak{a}_5, a_0, \mathfrak{a}_1),$\\
     $\phantom{mo} \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) \mathfrak{a}_2) \otimes \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3$} &
-     $\psi_1 \{ \vec{\phi}_{I_1} \} \cdot B_{|I_2|, m-1} (\vec{\phi}_{I_2} | \vec{\psi}_{\{2,\cdots,m\}} | \alpha)$ \\ \hline
+     $\psi_1 \{ \vec{\phi}_{I_1} \} \cdot B^{|I_2|,m-1} (\vec{\phi}_{I_2} | \vec{\psi}_{\{2,\cdots,m\}} | \alpha)$ \\ \hline
 
     $\psi_1(\lambda(\vec{\phi}_{I_1}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_4}) \mathfrak{a}_4, f_{|I_1|+1}a_0, \lambda(\vec{\phi}_{I_2 \backslash |I_1| + 1}) \mathfrak{a}_1) \otimes \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_2$ &
-    $\phi_1 \cdot B_{n-1, m} (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi} | \alpha)$ \\ \hline
+    $\phi_1 \cdot B^{n-1,m} (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi} | \alpha)$ \\ \hline
 
     $g_0\phi_1(\lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3, a_0, \mathfrak{a}_1) \otimes \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_1}) \mathfrak{a}_2$ &
-    $\psi_1 \{ \vec{\phi}_{I_1} \} \cdot B_{|I_2|, m-1} (\vec{\phi}_{I_2} | \vec{\psi}_{\{2,\cdots,m\}} | \alpha)$ \\ \hline
+    $\psi_1 \{ \vec{\phi}_{I_1} \} \cdot B^{|I_2|,m-1} (\vec{\phi}_{I_2} | \vec{\psi}_{\{2,\cdots,m\}} | \alpha)$ \\ \hline
 
     \hline
   \end{tabular}

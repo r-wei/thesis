@@ -32,25 +32,35 @@
 \begin{prop} \label{prop:c4}
 Let 
 $$
-\mathcal{B}_{A_0,A_1,A_2} = \mathcal{B}: 
-C(A_0 \to A_1 \to A_2 \to A_0)
-\to \hat{\tau}_2^{*2}C(A_1 \to A_2 \to A_0 \to A_1)
+\mathcal{B}(A_0,A_1,A_2) = \mathcal{B}: 
+T(A_0 \to A_1 \to A_2 \to A_0)
+\to \hat{\tau}_2^{*2}T(A_1 \to A_2 \to A_0 \to A_1)
 $$ 
 be a map of comodules over 
-$B(A_0 \to A_1 \to A_2 \to A_0)$ 
+$\mathcal{C}(A_0,A_1) \otimes 
+\mathcal{C}(A_1,A_2) \otimes 
+\mathcal{C}(A_2,A_0)$ 
 determined by the following maps to 
-cogenerators:
+cogenerators: for $(A_0 \xrightarrow{f_0}
+A_1 \xrightarrow{g_0} A_2
+\xrightarrow{h_0} A_0) \in 
+Obj(\mathcal{C}(A_0,A_1) \otimes 
+\mathcal{C}(A_1,A_2) \otimes 
+\mathcal{C}(A_2,A_0))$
 \begin{equation}
 \label{eq:def_sigma2}
 \begin{split}
-\mathcal{B}^{f_0, g_0,h_0}_{A_0,A_1,A_2}: 
-  C(A_0 \to A_1 \to A_0)(h_0g_0f_0) 
+\mathcal{B}(f_0, g_0,h_0):
+  T(A_0 \xrightarrow{f_0}
+  A_1 \xrightarrow{g_0} A_2
+  \xrightarrow{h_0} A_0)^\bullet
 &\to
-\hat{\tau}_2^{*2}C(A_1 \to A_2 \to A_0 \to A_1)
-  (f_0h_0g_0)\\
+\hat{\tau}_2^{*2}
+  T(A_1 \xrightarrow{g_0} A_2
+  \xrightarrow{h_0} A_0 \xrightarrow{f_0} A_1)^\bullet\\
 &\xrightarrow[cogenerators]{\textrm{project onto}}
 C_{-\bullet}(A_1, _{f_0h_0g_0}{A_1}_{id})\\
-\mathcal{B}_{n, m, p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha) 
+\mathcal{B}^{n, m, p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha) 
 = \sum_{\substack{I_1I_2 = \{1,2,\cdots,n\} \\
                           \textrm{as ordered sets}}}
   \eta_{\mathfrak{a}_1,\mathfrak{a}_2}\cdot
@@ -60,10 +70,10 @@ C_{-\bullet}(A_1, _{f_0h_0g_0}{A_1}_{id})\\
 \end{equation}
 Then, 
 \begin{equation} \label{eq:prop4}
-D(\mathcal{B}_{A_0,A_1,A_2}) = 
-  \Upsilon_{A_2\bullet A_0, A_1} \circ
-  \Upsilon_{A_0\bullet A_1, A_2} 
-   - \Upsilon_{A_0, A_1\bullet A_2}.
+D(\mathcal{B}(A_0,A_1,A_2)) = 
+  \tau_{1!}(A_2\bullet A_0, A_1) \circ
+  \tau_{1!}(A_0\bullet A_1, A_2) 
+   - \tau_{1!}(A_0, A_1\bullet A_2).
 \end{equation}
 \end{prop}
 
@@ -72,41 +82,41 @@ We will show that Equation \ref{eq:prop4}
 holds by direct computation. Since all of 
 the maps are maps of cofree comodules, we 
 only need to check that $\pi_1($
-Equation \ref{eq:prop4}$)$ holds where 
+Equation \ref{eq:prop4} $)$ holds where 
 $\pi_1$ denotes projection of the comodule 
 onto cogenerators. More explicitly, we 
 want to check that
 \begin{equation} \label{eq:prop4_expand}
 \begin{aligned}
 %hochschild cochain delta
-\mathcal{B}_{n, m, p} ( \tilde{\delta}(\vec{\phi}) | \vec{\psi} | \vec{\theta} | \alpha ) \; + 
-\mathcal{B}_{n, m, p} ( \vec{\phi} | \tilde{\delta}(\vec{\psi}) | \vec{\theta} | \alpha ) \; + 
-\mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \tilde{\delta}(\vec{\theta}) | \alpha ) \; + \\
+\mathcal{B}^{n,m,p} ( \tilde{\delta}(\vec{\phi}) | \vec{\psi} | \vec{\theta} | \alpha ) \; + 
+\mathcal{B}^{n,m,p} ( \vec{\phi} | \tilde{\delta}(\vec{\psi}) | \vec{\theta} | \alpha ) \; + 
+\mathcal{B}^{n,m,p} ( \vec{\phi} | \vec{\psi} | \tilde{\delta}(\vec{\theta}) | \alpha ) \; + \\
 %cochain b prime
-\mathcal{B}_{n-1, m, p} ( b^\prime(\vec{\phi}) | \vec{\psi} | \vec{\theta} | \alpha ) \; + 
-\mathcal{B}_{n, m-1, p} ( \vec{\phi} | b^\prime(\vec{\psi}) | \vec{\theta} | \alpha ) \; + 
-\mathcal{B}_{n, m, p-1} ( \vec{\phi} | \vec{\psi} | b^\prime(\vec{\theta}) | \alpha ) \; + \\
+\mathcal{B}^{n-1,m,p} ( b^\prime(\vec{\phi}) | \vec{\psi} | \vec{\theta} | \alpha ) \; + 
+\mathcal{B}^{n,m-1,p} ( \vec{\phi} | b^\prime(\vec{\psi}) | \vec{\theta} | \alpha ) \; + 
+\mathcal{B}^{n,m,p-1} ( \vec{\phi} | \vec{\psi} | b^\prime(\vec{\theta}) | \alpha ) \; + \\
 %chain b
-\mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | b(\alpha) ) \; + 
-b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha ) \; + \\
+\mathcal{B}^{n,m,p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | b(\alpha) ) \; + 
+b \circ \mathcal{B}^{n,m,p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha ) \; + \\
 %twist before
 \sum \limits_{\substack{
   I_1I_2 = \{1,\smdots,n\}\\
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
   \epsilon_{I_2, J_1,J_2,\{1,\smdots,p-1\}} \cdot
- \mathcal{B}_{|I_1|, |J_1|, p-1}(\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \vec{\theta}_{\{1,\cdots, p-1\}} |
+ \mathcal{B}^{|I_1|,|J_1|,p-1}(\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \vec{\theta}_{\{1,\cdots, p-1\}} |
      \theta_{p} \{\vec{\psi}_{J_2}\} \{\vec{\phi}_{I_2}\} \cdot \alpha ) \; + \\
 %
 \sum \limits_{\substack{
   I_1I_2 = \{1,\smdots,n\}\\
   \textrm{as ordered sets}}}
   \epsilon_{I_2,\{1,\smdots,m-1\},\{m\},\{1,\smdots,p\}} \cdot   
- \mathcal{B}_{|I_1|, m-1, p}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \vec{\theta} |
+ \mathcal{B}^{|I_1|,m-1,p}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \vec{\theta} |
      \psi_{m} \{\vec{\phi}_{I_2}\}\cdot \alpha ) \; + \\
 %     
 \epsilon_{\{n\},\{1,\smdots,m\},\{\},\{1,\smdots,p\}}\cdot
-\mathcal{B}_{n-1, m, p}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \vec{\theta} | 
+\mathcal{B}^{n-1,m,p}(\vec{\phi}_{\{1,\cdots, n-1\}} |\vec{\psi}_{m} | \vec{\theta} | 
      \phi_{n} \cdot \alpha) \; + \\
 %twist after
 \sum \limits_{\substack{
@@ -115,21 +125,21 @@ b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha 
   \textrm{as ordered sets}}}
 \epsilon_{\{2,\smdots,n\},J_1,J_2,K_1} \cdot
 \phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot
-     \mathcal{B}_{n-1, |J_2|, |K_2|}
+     \mathcal{B}^{n-1, |J_2|, |K_2|}
      (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha) \; + \\
 \sum \limits_{\substack{
   J_1J_2 = \{1,\smdots,m\}\\
   \textrm{as ordered sets}}}
 \epsilon_{\{1,\smdots,n\},J_1,J_2,\{1\}} \cdot     
 \theta_1 \{\vec{\psi}_{J_1}\} \cdot
-     \mathcal{B}_{n, |J_2|, p-1}
+     \mathcal{B}^{n, |J_2|, p-1}
      (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha) \; +\\
 \epsilon_{\{1,\smdots,n\},\{1\},\{2,\smdots,m\},\{\}} \cdot        
 \psi_1 \cdot
-     \mathcal{B}_{n, m-1, p}
+     \mathcal{B}^{n,m-1,p}
      (\vec{\phi} | \vec{\psi}_{\{2,\cdots,m\}} | \vec{\theta} | \alpha) \; + \\
 %prop4
-\upsilon_{n, p \leq * \leq m+p}(\vec{\phi} | \vec{\psi} \bullet \vec{\theta} | \alpha ) \; + \\
+\tau_{1!}^{n, p \leq * \leq m+p}(\vec{\phi} | \vec{\psi} \bullet \vec{\theta} | \alpha ) \; + \\
 \sum \limits_{\substack{
   I_1I_2 = \{1,\smdots,n\}\\
   J_1J_2 = \{1,\smdots,m\}\\
@@ -137,8 +147,8 @@ b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha 
   \textrm{as ordered sets}}}
 \begin{array}{l}
 \epsilon_{I_2,J_1,J_2,K_1} \cdot \\
-\upsilon_{|I_1| \leq * \leq |I_1| + |K_1|,|J_1|}(\vec{\theta}_{K_1} \bullet \vec{\phi}_{I_1}, \vec{\psi}_{J_1}, 
-    \upsilon_{|J_2| \leq * \leq |I_2| + |J_2|,|K_2|}(\vec{\phi}_{I_2} \bullet \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha )) 
+\tau_{1!}^{|I_1| \leq * \leq |I_1| + |K_1|,|J_1|}(\vec{\theta}_{K_1} \bullet \vec{\phi}_{I_1}, \vec{\psi}_{J_1}, 
+    \tau_{1!}^{|J_2| \leq * \leq |I_2| + |J_2|,|K_2|}(\vec{\phi}_{I_2} \bullet \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha )) 
 \end{array} \\
 %
 =0.
@@ -147,9 +157,9 @@ b \circ \mathcal{B}_{n, m, p} ( \vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha 
 In Equation \ref{eq:prop4_expand} above, 
 we call the terms in rows 1-3 the 
 ``standard terms'' in the computation of 
-$D(\mathcal{B}_{A_0,A_1,A_2})$, and the terms in rows 
+$D(\mathcal{B}(A_0,A_1,A_2))$, and the terms in rows 
 4-9 the ``extra terms'' in the computation 
-of $D(\mathcal{B}_{A_0,A_1,A_2})$. The terms in rows 10-11 
+of $D(\mathcal{B}(A_0,A_1,A_2))$. The terms in rows 10-11 
 are $\pi_1$ of the righthand side of Equation 
 \ref{eq:prop4}; we will call these the 
 ``10$^{th}$- and 11$^{th}$-row terms''.
@@ -190,8 +200,8 @@ cancel, so we're done.
     \mathfrak{a}_2 \otimes$\\
     $\phantom{moveover} \otimes 
     \theta_p(\lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3) \cdot a_0 \otimes \mathfrak{a}_1 ]$} & 
-    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
-    \breakcell{$\mathcal{B}_{|I_1|, |J_1|, p-1}(\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \vec{\theta}_{\{1,\cdots, p-1\}} |$\\
+    $b \circ \mathcal{B}^{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    \breakcell{$\mathcal{B}^{|I_1|,|J_1|,p-1}(\vec{\phi}_{I_1} | \vec{\psi}_{J_1} | \vec{\theta}_{\{1,\cdots, p-1\}} |$\\
     $\phantom{moveoverm}\theta_{p} \{\vec{\psi}_{J_2}\} \{\vec{\phi}_{I_2}\} \cdot \alpha )$} \\ \hline
 
     \breakcell{$1 \otimes \lambda(\vec{\phi}_{I_1}) [
@@ -202,8 +212,8 @@ cancel, so we're done.
     $\phantom{moveover}\otimes 
     \psi_m(\lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3) \cdot a_0 \otimes
     \mathfrak{a}_1 ]$} & 
-    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
-    \breakcell{$\mathcal{B}_{|I_1|, m-1, p}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \vec{\theta} |$\\
+    $b \circ \mathcal{B}^{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    \breakcell{$\mathcal{B}^{|I_1|,m-1,p}(\vec{\phi}_{I_1} | \vec{\psi}_{\{1,\cdots, m-1\}} | \vec{\theta} |$\\
     $\phantom{moveover}\psi_m \{\vec{\phi}_{I_2}\} \cdot \alpha )$} \\ \hline
 
     $1 \otimes \lambda(\vec{\phi}_{I_1}) [
@@ -213,8 +223,8 @@ cancel, so we're done.
     \mathfrak{a}_2 \otimes 
     \psi_n(\mathfrak{a}_3) \cdot a_0 \otimes
     \mathfrak{a}_1 ]$ & 
-    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
-    $\mathcal{B}_{n-1, m, p}(\vec{\phi}_{\{1,\cdots, n-1\}} | \vec{\psi} | \vec{\theta} |
+    $b \circ \mathcal{B}^{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $\mathcal{B}^{n-1,m,p}(\vec{\phi}_{\{1,\cdots, n-1\}} | \vec{\psi} | \vec{\theta} |
      \phi_n \cdot \alpha )$ \\ \hline
     %
     %twist after
@@ -222,9 +232,9 @@ cancel, so we're done.
     $\otimes\, \lambda(\vec{\phi}_{I_1\backslash 1})[
     \lambda(\vec{\theta}_{K_2}) \lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3
     \otimes a_0 \otimes \mathfrak{a}_1]$} &
-    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $b \circ \mathcal{B}^{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
     \breakcell{$\phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot$\\
-     $\mathcal{B}_{n-1, |J_2|, |K_2|}
+     $\mathcal{B}^{n-1, |J_2|, |K_2|}
      (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)$} \\ \hline
 
     \breakcell{$f_0\theta_1( \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2)
@@ -233,18 +243,18 @@ cancel, so we're done.
     \lambda(\vec{\phi}_{I_1})[
     \lambda(\vec{\theta}_{\{2,\cdots,p\}}) \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3
     \otimes a_0 \otimes \mathfrak{a}_1]$} &
-    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $b \circ \mathcal{B}^{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
     \breakcell{$\theta_1 \{\vec{\psi}_{J_1}\} \cdot$\\
-    $\mathcal{B}_{n, |J_2|, p-1}
+    $\mathcal{B}^{n, |J_2|, p-1}
      (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha)$} \\ \hline
 
     \breakcell{$f_0h_0\psi_1( \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_2) \otimes$\\
     $\otimes\, \lambda(\vec{\phi}_{I_1})[
     \lambda(\vec{\theta}) \lambda(\vec{\psi}_{\{2,\cdots,m\}}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_3
     \otimes a_0 \otimes \mathfrak{a}_1]$} &
-    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $b \circ \mathcal{B}^{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
     $\psi_1 \cdot
-     \mathcal{B}_{n, m-1, p}
+     \mathcal{B}^{n,m-1,p}
      (\vec{\phi} | \vec{\psi}_{\{2,\cdots,m\}} | \vec{\theta} | \alpha)$ \\ \hline
 
     %wrap around
@@ -253,18 +263,18 @@ cancel, so we're done.
        $\otimes \, 
        \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}_{K_1}) \lambda(\vec{\psi}_{J_1}) 
        \lambda(\vec{\phi}_{I_2 \backslash i_1}) \mathfrak{a}_2$} &
-    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $b \circ \mathcal{B}^{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
     11$^{th}$ row \\ \hline
 
     $f_0h_0g_0f_{i_1}a_0 \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}) 
        \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_1$ &
-    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $b \circ \mathcal{B}^{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
     11$^{th}$ row \\ \hline
 
     $\phi_1( \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}) 
        \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) \mathfrak{a}_3, a_0, \mathfrak{a}_1 ) \otimes
        \lambda(\vec{\phi}_{I_1 \backslash 1}) \mathfrak{a}_2$ &
-    $b \circ \mathcal{B}_{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
+    $b \circ \mathcal{B}^{n,m,p} (\vec{\phi} | \vec{\psi} | \vec{\theta} | \alpha)$ & 
     10$^{th}$ row \\ \hline
 
   \end{tabular}
@@ -289,7 +299,7 @@ terms that cancel them}
       $\otimes\, \lambda(\vec{\phi}_{I_1\backslash 1}) \lambda(\vec{\theta}_{K_2}) 
       \lambda(\vec{\psi}_{J_3}) \lambda(\vec{\phi}_{I_4}) \mathfrak{a}_2$} &
     \breakcell{$\phi_1 \{\vec{\theta}_{K_1}\} \{\vec{\psi}_{J_1}\} \cdot$\\
-     $\mathcal{B}_{n-1, |J_2|, |K_2|}
+     $\mathcal{B}^{n-1, |J_2|, |K_2|}
      (\vec{\phi}_{\{2,\cdots,n\}} | \vec{\psi}_{J_2} | \vec{\theta}_{K_2} | \alpha)$} \\ \hline
 
     \breakcell{$f_0\theta_1( \lambda(\vec{\psi}_{J_1}) \lambda(\vec{\phi}_{I_2}) [
@@ -298,7 +308,7 @@ terms that cancel them}
       $\otimes\, \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}_{K_1 \backslash 1}) 
       \lambda(\vec{\psi}_{J_2}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_2$} &
     \breakcell{$\theta_1 \{\vec{\psi}_{J_1}\} \cdot$\\
-     $\mathcal{B}_{n, |J_2|, p-1}
+     $\mathcal{B}^{n, |J_2|, p-1}
      (\vec{\phi} | \vec{\psi}_{J_2} | \vec{\theta}_{\{2,\cdots,p\}} | \alpha)$} \\ \hline
 
     $f_0h_0\psi_1( \lambda(\vec{\phi}_{I_2}) [
@@ -307,7 +317,7 @@ terms that cancel them}
       \otimes \lambda(\vec{\phi}_{I_1}) \lambda(\vec{\theta}_{K_1}) 
       \lambda(\vec{\psi}_{J_1 \backslash 1}) \lambda(\vec{\phi}_{I_3}) \mathfrak{a}_2$ & 
     $\psi_1 \cdot
-     \mathcal{B}_{n, m-1, p}
+     \mathcal{B}^{n,m-1,p}
      (\vec{\phi} | \vec{\psi}_{\{2,\cdots,m\}} | \vec{\theta} | \alpha)$ \\ \hline
 
     \hline

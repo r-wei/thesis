@@ -28,14 +28,18 @@ d_{\mathcal{D}} \circ \mathcal{F}(\mu_1)
 \label{eq:A_4}
 \end{align}
 Equation \ref{eq:A_1} is satisfied 
-since the $\lambda_!$'s we defined 
-in Sections \ref{sec:delta and sigma, tau} are maps 
+since, for $\lambda \in \Lambda$ 
+a generating morphism, the $\lambda_!$'s we 
+gave at the beginning of Section 
+\ref{sec:composition_relations} are maps 
 of complexes. Equation \ref{eq:A_4} requires 
 that composing two of our 
 degree $-1$ homotopies is always equal to 
 zero. This is true because we use 
-reduced Hochschild chains (Section \ref{sec:}) 
-and each of the the homotopies (Equations \ref{eq:,}) inserts a 1 into the first slot of the 
+reduced Hochschild chains (Section 
+\ref{chap:hochschild}) and each homotopy 
+(Equations \ref{eq:def_sigma}, \ref{eq:def_sigma2}) 
+inserts a 1 into the first slot of the 
 Hochschild chains component. 
 
 We check that Equation \ref{eq:A_3} holds for 
@@ -63,12 +67,16 @@ A_0 \to \smdots \to A_{n-2}).
 \end{equation}
 These two maps are homotopic via 
 two homotopies: 
-$\hat{\delta}_{n-1,n}^*\sigma_!
-+ \tau_n^{*2}\tau_{n!} \circ \sigma_!$ 
+$\hat{\delta}_{n-1,n}^*
+  \mathcal{B}(A_0 \bullet \dots \bullet A_{n-3}, 
+  A_{n-2}, A_{n-1}\bullet A_n)
++ \tau_n^{*2}\tau_{n!} \circ
+  \mathcal{B}(A_0 \bullet \dots \bullet A_{n-2}, A_{n-1}, A_n)$ 
 and 
-$\hat{\delta}_{n-2,n}^*\sigma_! +
-\hat{\tau}_n^*\sigma_!
-\circ \tau_{n!}$ (see Figure 
+$\hat{\delta}_{n-2,n}^*\mathcal{B}(A_0 \bullet \dots \bullet A_{n-3}, 
+  A_{n-2} \bullet A_{n-1}, A_n)
++ \hat{\tau}_n^*\mathcal{B}(A_n \bullet \dots \bullet A_{n-3}, 
+  A_{n-2}, A_{n-1}) \circ \tau_{n!}$ (see Figure 
 \ref{fig:two_homotopies}). If the 
 two homotopies were different, then 
 their difference would be closed and
@@ -78,32 +86,37 @@ them. However, we will show the
 two homotopies are the same, so that 
 no higher homotopies are needed. 
 
-First, we show that $\hat{\delta}_{n-1,n}^*
-\sigma_! = \hat{\delta}_{n-2,n}^*\sigma_!$. 
-We have
-\begin{align*}
-\hat{\delta}_{n-1,n}^*\sigma_!
-=
-\mathcal{B}_{A_0 \bullet \smdots \bullet A_{n-2},
-  A_{n-1}\bullet A_n}
-= \mathcal{B}_{A_0 \bullet \smdots \bullet A_{n-1},A_n} 
-= \hat{\delta}_{n-2,n}^*\sigma_!
-\end{align*}
-where the second equality holds by definition 
-of $\mathcal{B}$ in Appendix Equation 
-\ref{eq:def_sigma2}.
+First, it follows directly from the definition 
+of $\mathcal{B}$ (Appendix Equation 
+\ref{eq:def_sigma2}) that
+$$\hat{\delta}_{n-1,n}^*
+  \mathcal{B}(A_0 \bullet \dots \bullet A_{n-3}, 
+  A_{n-2}, A_{n-1}\bullet A_n)
+= \hat{\delta}_{n-2,n}^*\mathcal{B}(A_0 \bullet \dots \bullet A_{n-3}, 
+  A_{n-2} \bullet A_{n-1}, A_n).$$
 
-Second, we show that $\tau_n^{*2}\tau_{n!} 
-\circ \sigma_! = \hat{\tau}_n^*\sigma_!
-\circ \tau_{n!}$ in Appendix Proposition 
-\ref{prop:c5}. In the appendix, $\tau_n^{*2}
-\tau_{n!} \circ \sigma_! = \Upsilon_{A_1\bullet A_2,A_0} 
-\mathcal{B}_{A_0,A_1,A_2}$ and $\hat{\tau}_n^*
-\sigma_!\circ \tau_{n!} = \mathcal{B}_{A_2,A_0,A_1} 
-\Upsilon_{A_0 \bullet A_1, A_2}$.
+Second, for $n=2$, we show that 
+\begin{equation} \label{eq:n_2_homotopy}
+\tau_2^{*2}\tau_{2!} \circ
+  \mathcal{B}(A_0, A_1, A_2)
+  = \hat{\tau}_2^*\mathcal{B}(A_2, A_0, A_1) 
+  \circ \tau_{2!}
+\end{equation} 
+in Appendix Proposition \ref{prop:c5}. 
+(In the appendix, 
+$\tau_2^{*2}\tau_{2!} = \tau_{1!}(A_1 \bullet A_2, A_0)$ 
+and $\tau_{21} = \tau_{1!}(A_0 \bullet A_1, A_2)$.) 
+For $n>2$, the equation $\tau_n^{*2}\tau_{n!} \circ
+  \mathcal{B}(A_0 \bullet \dots \bullet A_{n-2}, A_{n-1}, A_n)
+  = \hat{\tau}_n^*\mathcal{B}(A_n \bullet \dots \bullet A_{n-3}, 
+  A_{n-2}, A_{n-1}) \circ \tau_{n!}$ 
+is a pullback along $\hat{\delta}_{0}$'s of 
+Equation \ref{eq:n_2_homotopy}.
 %
 \begin{figure}%[H]
-\centerline{\xymatrix{
+\centerline{
+\xymatrixrowsep{3pc}
+\xymatrix{
 \underset{\substack{\\\\
   \textrm{$``$brace together $A_{n-2}, A_{n-1}, A_n$,}\\
   \textrm{then apply $\tau_{n-2!}$''}}}
@@ -113,21 +126,26 @@ Second, we show that $\tau_n^{*2}\tau_{n!}
 \ar[d]_{\cong}   
 & \hat{\delta}_{n-1,n}^*(
   \hat{\delta}_{n-2,n-1}^*\tau_{n-2!})   
-\ar[r]^{\hat{\delta}_{n-1,n}^*\sigma_!}
+\ar[r]_{\substack{\\\\
+  \hat{\delta}_{n-1,n}^*
+  \mathcal{B}(A_0 \bullet \dots \bullet A_{n-3}, 
+  A_{n-2}, A_{n-1}\bullet A_n)}}
 & \hat{\delta}_{n-1,n}^*(
   \hat{\tau}_{n-1}^*\tau_{n-1!} \circ \tau_{n-1!})
 \ar[d]^{\cong}  \\
 (\widehat{\delta_{n-2,n-1}\delta_{n-2,n}})^*
   \tau_{n-2!}  
-\ar[d]_{\hat{\delta}_{n-2,n}^*\sigma_!}
+\ar[d]^{\hat{\delta}_{n-2,n}^*\mathcal{B}(A_0 \bullet \dots \bullet A_{n-3}, 
+A_{n-2} \bullet A_{n-1}, A_n)}
 && \underset{\substack{ \\\\
     \textrm{$``$brace together $A_{n-1}, A_n$}\\
     \textrm{and apply $\tau_{n-1!}$,}\\
     \textrm{then apply $\tau_{n!}$''}}}
     {\hat{\tau}_n^{*2}\tau_{n!} \circ 
     \hat{\delta}_{n-1,n}^*\tau_{n-1!}} 
-\ar[d]^{\substack{\\\\\\\\
-        \tau_n^{*2}\tau_{n!} \circ \sigma_!}}\\
+\ar[d]_{\substack{\\\\
+       \tau_n^{*2}\tau_{n!} \circ
+       \mathcal{B}(A_0 \bullet \dots \bullet A_{n-2}, A_{n-1}, A_n)}}\\
 \hat{\delta}_{n-2,n}^*(
   \hat{\tau}_{n-1}^*\tau_{n-1!} \circ \tau_{n-1!})
 \ar[r]_{\cong}                   
@@ -137,11 +155,13 @@ Second, we show that $\tau_n^{*2}\tau_{n!}
           \textrm{and apply $\tau_{n-1!}$''}}}
          {\hat{\tau}_n^*(\hat{\delta}_{n-1,n}^*
           \tau_{n-1!}) \circ \tau_{n!}}
-\ar[r]^{\hat{\tau}_n^*\sigma_! \circ \tau_{n!}}
+\ar[r]^{\substack{
+  \hat{\tau}_n^*\mathcal{B}(A_n \bullet \dots \bullet A_{n-3}, 
+  A_{n-2}, A_{n-1})\\ \circ \tau_{n!}\\}}
 & \underset{\substack{\\\\
     \textrm{$``$apply $\tau_{n!}$ three times''}}}
     {\hat{\tau}_n^{*2} \tau_{n!}\circ
-     \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}}
+      \hat{\tau}_n^*\tau_{n!}\circ \tau_{n!}}
 }}
 \caption{Two homotopies between 
 $(\widehat{\delta_{n-2,n-1}\delta_{n-1,n}})^*
@@ -166,29 +186,21 @@ T(A_1 \to A_0 \to A_1).
 $$
 These two maps are homotopic via 
 two homotopies: 
-$\tau_{1!} \circ \sigma_{A_0 \to A_1 \to A_0!}$ 
+$\tau_{1!}(A_0,A_1) \circ B(A_0, A_1)$
 and 
-$\sigma_{A_1 \to A_0 \to A_1!} \circ \tau_{1!}$ 
-(see Figure \ref{fig:two_homotopies_1}; 
-for clarity, here, we indicate the sources 
-of the $\sigma_!$'s). We show that these two 
+$B(A_1, A_0) \circ \tau_{1!}(A_0,A_1)$ 
+(see Figure \ref{fig:two_homotopies_1}). 
+We show that these two 
 homotopies are the same in Appendix Proposition 
 \ref{prop:c3}, so no higher homotopies are 
-needed. In the appendix, $\tau_{1!} \circ 
-\sigma_{A_0 \to A_1 \to A_0!} = \Upsilon_{A_0,A_1} 
-\circ B_{A_0,A_1}$ and 
-$\sigma_{A_1 \to A_0 \to A_1!} \circ 
-\tau_{1!} = B_{A_1,A_0} \circ \Upsilon_{A_0,A_1}$.
+needed.
 %
 \begin{figure}%[H]
 \xymatrixrowsep{4pc}
 \centerline{\xymatrix{
 id \circ \tau_{1!} = \tau_{1!} = \tau_{1!} \circ id
- \ar@/^1pc/[d]^{\tau_{1!} \circ \sigma_{A_0 \to A_1 \to A_0!}}
- \ar@/_1pc/[d]_{\substack{
- \sigma_{A_1 \to A_0 \to A_1!} \circ \tau_{1!}\\
- = \hat{\tau}_1^*(\sigma_{A_0\to A_1\to A_0!})
- \circ \tau_{1!}}}\\
+ \ar@/^1pc/[d]^{\tau_{1!}(A_0,A_1) \circ B(A_0, A_1)}
+ \ar@/_1pc/[d]_{B(A_1, A_0) \circ \tau_{1!}(A_0,A_1)}\\
 \big( \hat{\tau}_1^{*2} \tau_{1!}\circ
    \hat{\tau}_1^*\tau_{1!}  \big)  \circ \tau_{1!} 
 =   
@@ -202,14 +214,3 @@ $\tau_{1!}$ and $\hat{\tau}_1^{*2} \tau_{1!}\circ
 Vertices are maps of dg comodules and 
 arrows are chain homotopies.
 \end{figure}
-%
-Put in coda:
-Thus, we have an $A_\infty$-functor 
-$\mathcal{F}:\chi_\infty \to
-\mathcal{D}_\infty$. Applying Reference 
-\cite{F}, Remark A.27, we can rectify 
-$\mathcal{F}$ to a dg functor 
-$\tilde{\mathcal{F}}: U(\chi_\infty) \to 
-\mathcal{D}_\infty$ where $U(\chi_\infty)$ 
-is the enveloping dg category of $\chi$ 
-(see Reference \cite{F}, Definition A.25).
