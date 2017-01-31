@@ -1,22 +1,13 @@
-To Do:
-- acknowledgements
-- check for broken refs and citations (braces are assoc, check \cite{T})
-- intro: describe what's in the rest of the sections
-- intro: future directions? --- alg in algs: apply cobar/use MS, get an action of an explicit model of E2
-- references
-- lambda notation 
----------
 Writing chunks:
-(1) pullback appendix
-- pullbacks of dg comodules--theory (everything)
-- adjunction between pullback and pushforward (everything)
-- pullback_examples_needed 
-- our cocategories and comodules are conilpotent
+(3) intro
+- describe what's in the rest of the sections
+- future directions? --- alg in algs: apply cobar/use MS, get an action of an explicit model of E2
 
-(4) coda: rectification, cobar
+(4) acknowledgements and more references
 ---------
-Edit (try submitting first):
-- check formulas for consistent notation and indexing
+Edit:
+- lambda notation 
+- check for broken refs and citations (braces are assoc, check \cite{T})
 - check margins
 - include vs input
 http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include

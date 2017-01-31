@@ -1,0 +1,184 @@
+\section{Conilpotence} \label{sec:conilpotence}
+%
+In this section, we show that the 
+dg categories and dg comodules we have been 
+working with are conilpotent. For completeness, 
+we start with the definition of a dg 
+cocategory.
+%
+\begin{defn} A dg cocategory is a 
+cocategory enriched over chain complexes. 
+More explicitly, a dg cocategory $B$ consists 
+of the following data:
+\begin{itemize}
+\item A collection of objects 
+  denoted $Obj(B)$;
+\item For each pair of objects, $x,z \in 
+  Obj(B)$, a complex $B^\bullet(x,z)$ and 
+  a morphism of complexes
+  $$
+  \Delta_B(x,z): B^\bullet(x,z) \to 
+  \prod \limits_{y \in Obj(B)}
+  B^\bullet(x,y) \otimes
+  B^\bullet(y,z)
+  $$
+  such that the following diagrams 
+  commute (coassociativity):
+  $$
+  \xymatrixcolsep{5pc}
+  \xymatrixrowsep{5pc}
+  \xymatrix{
+  B^\bullet(x,z)
+  \ar[r]^{\Delta_B(x,z)}
+  \ar[d]_{\Delta_B(x,z)}
+  & \prod \limits_{y \in Obj(B)}
+    B^\bullet(x,y) \otimes
+    B^\bullet(y,z)
+  \ar[d]^{\prod\limits_y 
+    id_{B(x,y)} \otimes \Delta_B(y,z)}\\
+  \prod \limits_{y \in Obj(B)}
+    B^\bullet(x,y) \otimes
+    B^\bullet(y,z)
+  \ar[r]^{\prod\limits_y 
+    \Delta_B(x,y) \otimes id_{B(y,z)}}
+  & \prod \limits_{y, y^\prime \in Obj(B)}
+    B^\bullet(x,y) \otimes
+    B^\bullet(y,y^\prime) \otimes
+    B^\bullet(y^\prime,z)  
+  }
+  $$
+\item For each pair of objects, $x,z \in
+  Obj(B)$, a morphism of complexes
+  $$
+  \epsilon_B(x,z): B^\bullet(x,z) \to k
+  $$
+  where $k$ is the ground field considered 
+  as a chain complex concentrated in degree 
+  0 and $\epsilon_B(x,z) = 0$ if $x\neq z$, 
+  such that the following diagrams commute 
+  (counitality):
+  $$
+  \xymatrixcolsep{5pc}
+  \xymatrixrowsep{5pc}
+  \xymatrix{
+  B^\bullet(x,z)
+  \ar[r]^{\Delta_B(x,z)}
+  \ar[d]_{\Delta_B(x,z)}
+  \ar[rd]_{id}
+  & \prod \limits_{y \in Obj(B)} 
+    B^\bullet(x,y) \otimes
+    B^\bullet(y,z)
+  \ar[d]^{\prod \limits_y
+    \epsilon_B(x,y)
+    \otimes id_{B(y,z)}} \\
+  %
+  \prod \limits_{y \in Obj(B)} 
+    B^\bullet(x,y) \otimes
+    B^\bullet(y,z)
+  \ar[r]_{\prod \limits_y
+    id_{B(x,y)} \otimes 
+    \epsilon_B(y,z)}
+  & B^\bullet(x,z).  
+  }
+  $$
+\end{itemize}
+\end{defn}
+We will denote a dg cocategory with its 
+cocomposition and counit as $(B, \Delta_B, 
+\epsilon_B)$. To make the notation more 
+readable, when the meaning is clear, 
+we will omit references to the 
+objects and write $\Delta_B$ instead of 
+$\Delta_B(x,z)$, $\epsilon_B$ instead of 
+$\epsilon_B(x,z)$, and for the differentials 
+on morphisms, $d_B$ instead of $d_B(x,z)$.
+%
+\begin{defn} A (dg) functor $F: A \to B$ 
+between two dg cocategories is a functor 
+between the cocategories satisfying 
+$d_B\circ F(f) = F\circ d_A(f)$ for all 
+morphisms $f$ in $A$.
+\end{defn}
+%
+\begin{defn} A conilpotent dg 
+cocategory is a dg cocategory $(B, 
+\Delta_B, \epsilon_B)$ satisfying: for each 
+morphism $f:x\to y$ in $B$, there exists 
+$n_f \in \mathbb{N}$ such that 
+$\bar{\Delta}_B^{n_f}(f) = 0$
+where
+\begin{align*}
+\bar{\Delta}_B(x,z): B^\bullet(x,z) 
+&\to 
+  \prod \limits_{y \in Obj(B)} 
+  B^\bullet(x,y) \otimes
+  B^\bullet(y,z)\\
+f
+&\mapsto
+\Delta_B(f)
+- \sum \limits_{e_x \in 
+  \epsilon_B(x,x)^{-1}(1)}
+  e_x \otimes f
+- \sum \limits_{e_z \in 
+  \epsilon_B(z,z)^{-1}(1)}
+  f \otimes e_z. 
+\end{align*}
+\end{defn}
+%
+The following fact follows from the 
+definitions: 
+If $B$ is a conilpotent dg cocategory, 
+then for all $x \in Obj(B)$, 
+$\epsilon_B(x,x)^{-1}(1)$ has exactly 
+one element, which we will denote $e_x$.
+%
+\begin{eg} Let $\mathcal{C}$ 
+be the category in dg cocategories defined in 
+Equation \ref{eq:cat_in_dgcocat} and 
+$A_0, \dots, A_n$ be algebras. Then, 
+$\mathcal{C}(A_0, A_1) \otimes \dots \otimes 
+\mathcal{C}(A_n,A_0)$ is conilpotent:
+$$
+\bar{\Delta}^{min(k_0,\smdots,k_n)}
+(\phi_{0,1}\smdots\phi_{0,k_0}|\smdots|
+\phi_{n,1}\smdots\phi_{n,k_n}) = 0.
+$$
+\end{eg}
+%
+
+Now, we will discuss conilpotence of the 
+dg comodules. Recall the definition of a 
+dg comodule in Definition \ref{def:dg_comod}.
+%
+\begin{defn} A conilpotent dg 
+comodule over a dg cocategory $B$ 
+is a dg comodule $(C, \Delta_C)$ 
+over $B$ satisfying: for each 
+$f \in Obj(B)$ and each element 
+$\alpha \in C^\bullet(f)$, there exists 
+$n_\alpha \in \mathbb{N}$ such that 
+$\bar{\Delta}_f^{n_\alpha}(\alpha) = 0$
+where
+\begin{align*}
+\bar{\Delta}_C(f): C^\bullet(f) 
+&\to 
+  \prod \limits_{g \in Obj(B)} 
+  B^\bullet(f,g) \otimes
+  C^\bullet(g)\\
+\alpha
+&\mapsto
+\Delta_B(\alpha) 
+  - \sum \limits_{e_f \in 
+  \epsilon_B(f,f)^{-1}(1)}
+  e_f \otimes f.
+\end{align*}
+\end{defn}
+%
+\begin{eg} 
+Since all of the dg comodules we use 
+are cofree, their comodule structure maps 
+are induced by the cocompositions of the 
+dg cocategories. Any cofree dg comodule 
+over a conilpotent dg cocategory is 
+conilpotent.
+\end{eg}

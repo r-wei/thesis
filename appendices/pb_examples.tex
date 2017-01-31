@@ -1,0 +1,125 @@
+\section{Examples of pullbacks}\label{sec:pb_example}
+%
+Now, we use Proposition \ref{prop:compute_pb} 
+to compute some examples of pullbacks of 
+dg comodules. For the examples below, 
+let $\mathcal{C}$ 
+be the category in dg cocategories defined in 
+Equation \ref{eq:cat_in_dgcocat} and $T(A)$ be the 
+dg comodule defined in Section \ref{sec:dg_comod}.
+
+\begin{eg} Let $m:\mathcal{C}(A_0,A_1) \otimes 
+\dots \otimes \mathcal{C}(A_n, A_0) \to 
+\mathcal{C}(A_0,A_0)$ be the composition 
+functor. Then, $T(A_0 \to \dots \to A_n \to A_0) 
+:= m^*T(A_0)$ is a cofree dg comodule with 
+the following structure. Let 
+$(A_0 \xrightarrow{f_0} A_1 \to \dots \to 
+A_n \xrightarrow{f_n} A_0)$ be an object 
+in $\mathcal{C}(A_0,A_1) \otimes \dots \otimes 
+\mathcal{C}(A_n, A_0)$. Then,
+\begin{align*}
+&T(A_0 \xrightarrow{f_0} A_1 \to \dots \to 
+A_n \xrightarrow{f_n} A_0)^\bullet = \\
+&= \{
+  (\phi_{0,1}|\dots|\phi_{0,k_0}) \otimes \dots \otimes
+  (\phi_{n,1}|\dots|\phi_{n,k_n}) \otimes \alpha =
+  %\resizebox{.65\vsize}{!}{
+  \xymatrix{
+  A_0 \ar@/^4pc/[r]^{f_{0,0}} 
+  \ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{0,1}}}_{f_{0,1}} 
+  \ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{0,k_0}}}
+  \ar@/_3pc/[rrrr]^{\substack{\textcolor{blue}{\alpha} \\\\}}_{ id_{A_0}}
+  & A_1 \ar@{.>}@/^4pc/[r] 
+  \ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \textcolor{blue}{\vdots}}} 
+  \ar@{.>}@/_1pc/[r]
+  & \cdots \ar@{.>}@/^4pc/[r] 
+  \ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \textcolor{blue}{\vdots}}} 
+  \ar@{.>}@/_1pc/[r]
+  & A_n \ar@/^4pc/[r]^{f_{n,0}} 
+  \ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{n,1}}}_{f_{n,1}} 
+  \ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{n,k_n}}}
+  & A_0 
+  }\\
+&\phantom{move}
+   s.t.\; \phi_{i,j} \in C^\bullet(A_i, _{f_{j-1}} {A_{i+1}}_{f_j}),
+    \alpha \in C_{-\bullet}(A_0, _{f_{n,k_n}\dots f_{0,k_0}} A_0)\}\\
+&d_{T} = 
+  \tilde{d}_{\mathcal{C}} + \tilde{b} + \tilde{\iota} 
+  \textrm{ where}\\
+&\tilde{d}_{\mathcal{C}} = 
+  \textrm{extension of the differentials on 
+  $\mathcal{C}(A_i,A_{i+1 \, (mod n+1)}), 0 \leq i \leq n$ to $T$}\\
+&\tilde{b} =
+  \textrm{extension of the Hochschild chain differential to $T$}\\
+&\tilde{\iota} = 
+  \textrm{extension of $\iota_{\scriptstyle (\phi_{0,1}|\dots|\phi_{0,k_0}) 
+    \bullet \dots \bullet (\phi_{n,1}|\dots|\phi_{n,k_n})} \alpha$ as a coderivation to $T$ (see Equation \ref{eq:contraction})}
+\end{align*}
+\end{eg}
+%
+%
+\begin{eg}[Pullbacks along rotations]
+\label{eg:pb5}
+Fix algebras $A_0, \dots, A_n$ and let 
+$\tau_n \in \Lambda([n],[n])$ 
+be a generating rotation. Set
+\begin{align*}
+\hat{\tau}_n:
+\mathcal{C}(A_0,A_1) \otimes 
+\dots \mathcal{C}(A_n,A_0) 
+\xrightarrow{\textrm{rotation functor}}
+\mathcal{C}(A_n,A_0) \otimes 
+\dots \otimes \mathcal{C}(A_{n-1},A_n)\\
+\tau_{n!}: T(A_0 \to \dots \to A_n \to A_0)
+\to \hat{\tau}_n^* T(A_n \to A_0 \dots \to A_n) 
+\textrm{ map of dg comodules.}
+\end{align*}
+Then, the target of $\tau_{n!}$, 
+$\hat{\tau}_n^* T(A_n \to A_0 \dots \to A_n)$ 
+is a cofree dg comodule with the following 
+structure. Let 
+$(A_0 \xrightarrow{f_0} A_1 \to \dots \to 
+A_n \xrightarrow{f_n} A_0)$ be an object 
+in $\mathcal{C}(A_0,A_1) \otimes \dots \otimes 
+\mathcal{C}(A_n, A_0)$. Then,
+\begin{align*}
+&\hat{\tau}_n^* 
+  T(A_n \xrightarrow{f_n} A_0 \to \dots 
+  \xrightarrow{f_{n-1}} A_n)^\bullet = \\
+&= \{
+  (\phi_{0,1}|\dots|\phi_{0,k_0}) \otimes \dots \otimes
+  (\phi_{n,1}|\dots|\phi_{n,k_n}) \otimes \alpha =
+  %\resizebox{.65\vsize}{!}{
+  \xymatrix{
+  A_n \ar@/^4pc/[r]^{f_{n,0}} 
+  \ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{n,1}}}_{f_{n,1}} 
+  \ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{n,k_n}}}
+  \ar@/_3pc/[rrrr]^{\substack{\textcolor{blue}{\alpha} \\\\}}_{ id_{A_n}}
+  & A_0 \ar@{.>}@/^4pc/[r] 
+  \ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \textcolor{blue}{\vdots}}} 
+  \ar@{.>}@/_1pc/[r]
+  & \cdots \ar@{.>}@/^4pc/[r] 
+  \ar@{.>}@/^2pc/[r]_{\substack{\\ \\ \textcolor{blue}{\vdots}}} 
+  \ar@{.>}@/_1pc/[r]
+  & A_{n-1} \ar@/^4pc/[r]^{f_{n-1,0}} 
+  \ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{n-1,1}}}_{f_{n-1,1}} 
+  \ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{n-1,k_{n-1}}}}
+  & A_n 
+  }\\
+&\phantom{move}
+   s.t.\; \phi_{i,j} \in C^\bullet(A_i, _{f_{j-1}} {A_{i+1}}_{f_j}),
+    \alpha \in C_{-\bullet}(A_n, _{f_{n-1,k_{n-1}}\dots f_{n,k_n}} A_n)\}\\
+&d_{T} = 
+  \tilde{d}_{\mathcal{C}} + \tilde{b} + \tilde{\iota} 
+  \textrm{ where}\\
+&\tilde{d}_{\mathcal{C}} = 
+  \textrm{extension of the differentials on 
+  $\mathcal{C}(A_i,A_{i+1 \, (mod n+1)}), 0 \leq i \leq n$ to $T$}\\
+&\tilde{b} =
+  \textrm{extension of the Hochschild chain differential to $T$}\\
+&\tilde{\iota} = 
+  \textrm{extension of $\iota_{\scriptstyle (\phi_{n,1}|\dots|\phi_{n,k_n}) \bullet (\phi_{0,1}|\dots|\phi_{0,k_0}) 
+    \bullet \dots \bullet (\phi_{n-1,1}|\dots|\phi_{n-1,k_{n-1}}) } \alpha$ as a coderivation to $T$.}
+\end{align*}
+\end{eg}

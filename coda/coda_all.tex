@@ -1,0 +1,221 @@
+\section{Motivation of this chapter}
+In Chapter \ref{chap:trace_up_to_homotopy}, 
+we gave an $A_\infty$-functor 
+$\mathcal{F}:\chi(\mathcal{C}) \to
+\mathcal{D}$ where $\mathcal{C}$ is 
+the category defined in Equation 
+\ref{eq:cat_in_dgcocat}. Applying Reference 
+\cite{F}, Remark A.27, we can rectify 
+$\mathcal{F}$ to a dg functor 
+$\tilde{\mathcal{F}}: U(\chi(\mathcal{C})) \to 
+\mathcal{D}$ where $U(\chi(\mathcal{C}))$ 
+is the enveloping dg category of $\chi$ 
+(see Reference \cite{F}, Definition A.25).
+
+In other words, we have shown that algebras 
+form a $``$category in dg cocategories with 
+a trace functor up to homotopy''. In this 
+chapter, we show that algebras form a 
+category in dg \textit{categories} with a 
+trace functor up to homotopy. In other words, 
+we give a dg functor $U(\chi(\mathcal{C})) \to 
+\mathcal{E}$ where $\mathcal{E}$ is a 
+dg category with objects pairs (dg category, 
+dg module).
+
+This chapter is not central to the narrative 
+of this thesis, especially since understanding 
+of what happens after applying $Cobar(-)$ is 
+still evolving.
+
+\section{A functor to dg categories} \label{sec:cobar}
+In this section, we first give a 
+dg functor $\mathcal{D} \to 
+\mathcal{D}_1$, 
+which makes use of the adjunction in 
+Proposition \ref{prop:adjunction}. Then, 
+we will give a dg functor $\Omega: 
+\mathcal{D}_1 \to \mathcal{E}$.
+
+\subsection{Using the adjunction}
+\label{sec:use_adjunction}
+Let $\mathcal{D}_1$ be the 
+dg category with the same objects 
+as $\mathcal{D}$ and morphisms
+\begin{align*}
+\mathcal{D}_1^\bullet(
+  (B_1, C_1), (B_0,C_0))
+= \big\{ \big(
+& F: 
+B_1 \to B_0 \quad \textrm{dg functor},\\
+& F_!:
+F_{\#}C_1 \to C_0 \quad \textrm{map of 
+comodules of degree $\bullet$}
+\big) \big\}\\
+d_{\mathcal{D}}(F,F_!)
+&=
+(F,\; d_{C_0} \circ F_! - (-1)^{|F_!|} 
+F_! \circ d_{F_\# C_1})
+\end{align*}
+with composition
+\begin{align*}  
+\mathcal{D}_1^\bullet(
+  (B_2, C_2), (B_1, C_1)) \otimes  
+  \mathcal{D}_1^\bullet(
+  (B_1, C_1), (B_0, C_0))
+&\to
+\mathcal{D}_1^\bullet(
+  (B_2, C_2), (B_0, C_0))\\
+(f,f_!) \otimes (g, g_!)
+&\mapsto
+(gf, g_!\circ g_\#(f_!)).
+\end{align*}
+This composition is well-defined because 
+we can apply the formulas from $g_\#$ to 
+(not necessarily graded) morphisms of 
+comodules. The composition is associative 
+because of the following easy-to-check 
+fact: $g_\#f_\#C = (gf)_\#C$ for 
+$B_2 \xrightarrow{f} B_1 \xrightarrow{g} 
+B_0$ functors of dg cocategories and $C$ 
+a dg comodule over $B_2$.
+
+Now, we define a dg functor 
+\begin{align*}
+Adj: \mathcal{D} 
+&\to 
+\mathcal{D}_1\\
+\textrm{on objects: }(B,C)
+& \mapsto
+(B,C)\\
+\textrm{on morphisms: }\bigg((B_1, C_1) 
+  \xrightarrow{(F, F_!)} (B_0,C_0)\bigg)
+& \mapsto
+\bigg((B_1, C_1) 
+  \xrightarrow{(F, \Phi^{-1}_FF)} 
+  (B_0,C_0)\bigg)
+\end{align*}
+where 
+$\Phi^{-1}_F:Hom_{\substack{
+  \textrm{dg comodules}\\\textrm{over $B_1$}}}
+  (C,F^*D) 
+\to 
+Hom_{\substack{
+  \textrm{dg comodules}\\\textrm{over $B_0$}}}
+  (F_\#C,D)$
+is defined in the proof of Proposition 
+\ref{prop:adjunction} and makes sense as 
+a function on (not necessarily graded) 
+maps of comodules. To check that $Adj$ 
+commutes with the differentials and 
+respects composition, we need
+\begin{align*}
+\Phi^{-1}_F \circ d_{Hom_{B_2}(C_2, F^*C_1)}
+&= 
+d_{Hom_{B_1}(F_\#C_2, C_1)} \circ \Phi^{-1}_F\\
+\Phi^{-1}_{GF}(F^*G_! \circ F_!)
+&=
+\Phi^{-1}_G(G_!) \circ G_\#(\Phi^{-1}_F(F_!))\\
+\textrm{where }
+(B_2, C_2) 
+  \xrightarrow{(F, F_!)} &(B_1,C_1)
+  \xrightarrow{(G, G_!)} (B_0,C_0)
+  \textrm{ in }\mathcal{D}.
+\end{align*}
+The equations above follow straight-forwardly 
+from the definitions.
+%
+%
+\subsection{Applying $Cobar$}
+\label{sec:cobar}
+In this section, we will use the notion of 
+a dg module over a dg category. This is 
+dual to a dg comodule over 
+a dg cocategory (Definition \ref{def:dg_comod}). 
+Given a dg functor between dg categories 
+$F:A_1 \to A_0$, we define $``$restriction 
+of scalars'', $F^*$, a functor from 
+the category of dg comodules over $A_0$ 
+to the category of dg comodules over $A_1$. 
+For $M_0$ a dg comodule over $A_0$ and $f \in 
+Obj(B_1)$, $F^*M_0(f):=M_0(Ff)$.
+
+Let $\mathcal{E}$ be the dg category defined 
+below:
+\begin{align*}
+Obj(\mathcal{E}) 
+&= 
+\{(A,M) |
+  \textrm{A is a dg category, 
+  M is a dg module over A}\} \\
+\mathcal{E}^p((A_1, M_1), (A_0, M_0))  
+&= 
+\{(f, f_!) | f:A_1 \to A_0 
+  \textrm{ is a dg functor,}\\
+& \phantom{{}=[(f, f_!)]{}}  
+  f_!:M_1 \to f^*M_0 
+  \textrm{ is a degree-$p$ map of modules over }
+  A_1\}\\
+d_{\mathcal{E}}(f,f_!)
+&=
+(f,\; d_{f^*M_0} \circ f_! - (-1)^{|f_!|} 
+f_! \circ d_{C_1})  
+\end{align*}
+\begin{align*}  
+\mathcal{E}^\bullet((A_2, M_2), (A_1, M_1)) \times  
+\mathcal{E}^\bullet((A_1, M_1), (A_0, M_0))
+&\xrightarrow{composition}
+\mathcal{E}^\bullet((A_2, M_2), (A_0, M_0))\\
+(f,f_!) \times (g, g_!)
+&\mapsto
+(gf, f^*(g_!)\circ f_!).
+\end{align*}
+
+We will define a dg functor $\Omega: 
+\mathcal{D}_1 \to \mathcal{E}$. 
+On objects, $$\Omega(B,C) := 
+(Cobar(B), Cobar(B,C))$$ where the first 
+Cobar is a dg functor from the category of 
+dg cocategories to the category of dg 
+categories, and the second Cobar sends 
+dg comodules over $B$ to dg modules over 
+$Cobar(B)$ (see \cite{T}, Section 4.6). 
+On morphisms, 
+\begin{align*}
+\mathcal{D}_1 \ni
+\bigg(\substack{
+	B_1 \xrightarrow{F} B_0\\
+	F_\# C_1 \xrightarrow{F_!} C_0}\bigg)
+& \mapsto
+\bigg(\substack{
+  Cobar(B_1)\xrightarrow{Cobar(F)}Cobar(B_0)\\
+  Cobar(B_1,C_1) \xrightarrow{\Omega(F_!)} 
+  (Cobar(F))^*Cobar(B_0,C_0)}\bigg)
+\in \mathcal{E}  \\
+\textrm{where } 
+\Omega(F_!): Cobar(B_1,C_1)
+& \to
+(Cobar(F))^*Cobar(B_0,C_0)\\
+(b_1|\smdots|b_n|c)
+&\mapsto
+(Fb_1|\smdots|Fb_n|F_!c)\\
+\textrm{for } 
+  b_i \in B_1^\bullet(f_{i-1},f_i),
+  c \in C_1^\bullet(f_n), 
+&\textrm{ and } f_i \in 
+  Obj(B_1), 0 \leq i \leq n.
+\end{align*}
+It's straightforward from the definitions 
+to check that $\Omega$ commutes with 
+the differentials and respects composition.
+
+\subsection{The end: putting everything together}
+We have dg functors
+$$
+U(\chi(\mathcal{C})) \xrightarrow{\tilde{\mathcal{F}}}
+\mathcal{D} \xrightarrow{Adj}
+\mathcal{D}_1 \xrightarrow{\Omega}
+\mathcal{E}.
+$$
+This gives our category in dg categories with 
+a trace functor up to homotopy.
