@@ -1,13 +1,4 @@
-Writing chunks:
-(3) intro
-- describe what's in the rest of the sections
-- future directions? --- alg in algs: apply cobar/use MS, get an action of an explicit model of E2
-
-(4) references
----------
 Edit:
-- lambda notation 
-- check for broken refs and citations (braces are assoc, check \cite{T})
 - check margins
 - include vs input
 http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
@@ -17,3 +8,8 @@ Background I need:
 - cofree comodules over cocategories
 - conilp implies unique counits
 - NOTE: we prove the pb/pf adjunction for hom SETS--do we need more?
+----------
+Maybe add:
+(3) intro
+- future directions? --- alg in algs: apply cobar/use MS, get an action of an explicit model of E2
+
