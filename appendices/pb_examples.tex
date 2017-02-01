@@ -23,8 +23,9 @@ in $\mathcal{C}(A_0,A_1) \otimes \dots \otimes
 A_n \xrightarrow{f_n} A_0)^\bullet = \\
 &= \{
   (\phi_{0,1}|\dots|\phi_{0,k_0}) \otimes \dots \otimes
-  (\phi_{n,1}|\dots|\phi_{n,k_n}) \otimes \alpha =
+  (\phi_{n,1}|\dots|\phi_{n,k_n}) \otimes \alpha = \\
   %\resizebox{.65\vsize}{!}{
+&\phantom{moveovermove} =
   \xymatrix{
   A_0 \ar@/^4pc/[r]^{f_{0,0}} 
   \ar@/^2pc/[r]^{\textcolor{blue}{\Downarrow \phi_{0,1}}}_{f_{0,1}} 
@@ -41,7 +42,7 @@ A_n \xrightarrow{f_n} A_0)^\bullet = \\
   \ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{n,k_n}}}
   & A_0 
   }\\
-&\phantom{move}
+&\phantom{moveovermove}
    s.t.\; \phi_{i,j} \in C^\bullet(A_i, _{f_{j-1}} {A_{i+1}}_{f_j}),
     \alpha \in C_{-\bullet}(A_0, _{f_{n,k_n}\dots f_{0,k_0}} A_0)\}\\
 &d_{T} = 
@@ -89,7 +90,8 @@ in $\mathcal{C}(A_0,A_1) \otimes \dots \otimes
   \xrightarrow{f_{n-1}} A_n)^\bullet = \\
 &= \{
   (\phi_{0,1}|\dots|\phi_{0,k_0}) \otimes \dots \otimes
-  (\phi_{n,1}|\dots|\phi_{n,k_n}) \otimes \alpha =
+  (\phi_{n,1}|\dots|\phi_{n,k_n}) \otimes \alpha = \\
+&\phantom{moveovermove} =
   %\resizebox{.65\vsize}{!}{
   \xymatrix{
   A_n \ar@/^4pc/[r]^{f_{n,0}} 
@@ -107,7 +109,7 @@ in $\mathcal{C}(A_0,A_1) \otimes \dots \otimes
   \ar@/_1pc/[r]^{\substack{\textcolor{blue}{\vdots}\\ f_{n-1,k_{n-1}}}}
   & A_n 
   }\\
-&\phantom{move}
+&\phantom{moveovermove}
    s.t.\; \phi_{i,j} \in C^\bullet(A_i, _{f_{j-1}} {A_{i+1}}_{f_j}),
     \alpha \in C_{-\bullet}(A_n, _{f_{n-1,k_{n-1}}\dots f_{n,k_n}} A_n)\}\\
 &d_{T} = 

@@ -1,4 +1,4 @@
-\documentclass[12pt]{nuthesis} %use [draft] to check on margins
+\documentclass[12pt, draft]{nuthesis} %use [draft] to check on margins
 
 \usepackage{bm} 	%bold in any mode
 \usepackage{amscd}        % For writing commutative diagrams.
@@ -82,7 +82,7 @@ appendices/hochschild, appendices/pullbacks}
 \input{intro/abstract}
 
 \acknowledgements	% Acknowledgements (optional).
-Text for acknowledgments.
+\input{intro/acknowledgements}
 
 %\preface		% Preface (optional).
 
@@ -105,11 +105,11 @@ Text for acknowledgments.
 			% generated and placed here.
 
 %list of tables and figures are not optional...
-% \clearpage\phantomsection % needed for the hyperlinks to work correctly
-% \listoftables		% List of Tables and List of Figures will be placed
+\clearpage\phantomsection % needed for the hyperlinks to work correctly
+\listoftables		% List of Tables and List of Figures will be placed
 
 % \clearpage\phantomsection % needed for the hyperlinks to work correctly
-% \listoffigures		% here, if applicable (optional).
+\listoffigures		% here, if applicable (optional).
 
 
 
