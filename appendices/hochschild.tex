@@ -50,24 +50,24 @@ C_{-(q-p)}(A, _fA_h) \\
 Finally, we have a $``$Lie derivative like'' 
 operation of Hochschild cochains and chains. 
 Fix an algebra $A$ and let 
-$(\phi_1\smdots \phi_n|\alpha) \in C(A \to A)(f_0)$ 
-(see Equation \ref{eq:C(f)}) be the following 
+$(\phi_1\smdots \phi_n|\alpha) \in T(A)(f_0)$ 
+(see Figure \ref{fig:phi|alpha}) be the following 
 element
 \begin{align*}
 (\phi_1\smdots \phi_n|\alpha)
 = 
 \xymatrix{
 A \ar@/^5pc/[rrr]^{f_0} 
-\ar@/^2pc/[rrr]^{\bm{\big\Downarrow \phi_1}}_{f_1} 
+\ar@/^2pc/[rrr]^{\textcolor{blue}{ \Downarrow \phi_1}}_{f_1} 
 \ar@/_2pc/[rrr]^{\substack{\vdots\\ f_{n-1}}}
-\ar@/_4pc/[rrr]^{\bm{\big\Downarrow \phi_n}}_{f_n}
-\ar@/_7pc/[rrr]_{id}^{\substack{\bm{\alpha}\\}}
+\ar@/_4pc/[rrr]^{\textcolor{blue}{\Downarrow \phi_n}}_{f_n}
+\ar@/_7pc/[rrr]_{id}^{\substack{\textcolor{blue}{\alpha}\\}}
 &&& A
 }
 \end{align*}
 We have a map of complexes 
 \begin{align*}
-C(A \to A)(f_0)
+T(A \xrightarrow{f_0} A)^\bullet
 &\to
 C_{-\bullet}(A, _{f_0}A)\\
 (\phi_1\smdots \phi_n|
@@ -92,6 +92,10 @@ C_{-\bullet}(A, _{f_0}A)\\
 \phi_n(a_{i_{2n-1}+1}, \smdots, a_{i_{2n}}) \otimes
 f_na_{i_{2n}+1} \otimes \smdots \otimes f_na_p.
 \end{align*}
+It's straightforward to check that 
+$\lambda((\phi_1 \dots \phi_n) \bullet 
+(\psi_1 \dots \psi_m)) = \lambda(\psi_1 \dots \psi_m) 
+\lambda(\phi_1 \dots \phi_n)$.
 %
 % %
 % \section{Brace operation on Hochschild cochains}
