@@ -51,11 +51,12 @@ imply that the diagram commutes.
 \end{figure}
 %
 \begin{figure}
-\centerline{\xymatrixrowsep{5pc}
+\centerline{
+\resizebox{3.5\vsize}{!}{\xymatrixrowsep{5pc} \xymatrixcolsep{1pc}
 \xymatrix{
 \bigoplus \limits_{f^\prime \in \lambda^{-1}f}
   C^\bullet(f^\prime)
-\ar[d]^{\bigoplus \limits_{f^\prime} F_{f^\prime}}
+\ar[d]_{\bigoplus \limits_{f^\prime} F_{f^\prime}}
 \ar@[red][r]^{\bigoplus \limits_{f^\prime} \Delta_C}
 & \bigoplus \limits_{\substack{
   f^\prime \in \lambda^{-1}f\\
@@ -64,7 +65,7 @@ imply that the diagram commutes.
   \otimes C^\bullet(h^\prime)
 \ar@[red][r]^{\bigoplus \limits_{f^\prime, h^\prime} 
   \lambda \otimes id_{C}}  
-\ar[d]^{\bigoplus \limits_{f^\prime, h^\prime}
+\ar[ddl]^{\bigoplus \limits_{f^\prime, h^\prime}
   id_{B_1} \otimes 
   F_{\lambda h^\prime}|_{h^\prime}}
 & \bigoplus \limits_{h^\prime \in Obj(B_1)}
@@ -79,31 +80,32 @@ imply that the diagram commutes.
   r^\prime \in Obj(B_1)}}
   B_1^\bullet(f^\prime, r^\prime) 
   \otimes D^\bullet(\lambda r^\prime)
-\ar[r]^{\substack{\Delta_{\lambda^*D} =\\
+\ar[d]_{\substack{\Delta_{\lambda^*D} =\\
   \bigoplus \limits_{f^\prime, r^\prime}
   \Delta_{B_1} \otimes id_D}}
-& \bigoplus \limits{\substack{
-  f^\prime \in \lambda^{-1}f,\\
-  h^\prime, r^\prime \in Obj(B_1)}}
-  B_1^\bullet(f^\prime, h^\prime) \otimes
-  B_1^\bullet(h^\prime, r^\prime) 
-  \otimes D^\bullet(\lambda r^\prime)
-\ar[r]^{\bigoplus 
-  \limits_{f^\prime, h^\prime, r^\prime}
-  \lambda \otimes id_{B_0} \otimes id_D}
+& 
 & \bigoplus \limits_{h^\prime, r^\prime 
   \in Obj(B_1)}
   B_0^\bullet(f,\lambda h^\prime) \otimes
   B_1^\bullet(h^\prime, r^\prime)
   \otimes D^\bullet(\lambda r^\prime)  
-\ar@[red][d]_{\bigoplus \limits_{h^\prime, r^\prime}
+\ar@[red][d]^{\bigoplus \limits_{h^\prime, r^\prime}
   id_{B_0} \otimes 
   \epsilon_{B_0} \lambda \otimes id_{D}}\\
 %
+ \bigoplus \limits{\substack{
+  f^\prime \in \lambda^{-1}f,\\
+  h^\prime, r^\prime \in Obj(B_1)}}
+  B_1^\bullet(f^\prime, h^\prime) \otimes
+  B_1^\bullet(h^\prime, r^\prime) 
+  \otimes D^\bullet(\lambda r^\prime)
+\ar[rru]_{\bigoplus 
+  \limits_{f^\prime, h^\prime, r^\prime}
+  \lambda \otimes id_{B_0} \otimes id_D}
 & & \bigoplus \limits_{h\in Obj(B_0)}
   B_0^\bullet(f,h) \otimes 
   D^\bullet(h)
-}}
+}}}
 \caption{Commuting diagram
 involving $(id_{B_1}\otimes 
 \Phi^{-1}F) \circ \Delta_{\lambda_\# C}$} \label{fig:phi-1_delta}
